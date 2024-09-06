@@ -1,0 +1,23 @@
+# For Splash : https://www.youtube.com/watch?v=U1BErwaE3zo&t=153s
+# Add images in assets folder
+# Run Command
+# flutter pub run flutter_native_splash:create --path=f:\Flutter\workspace\flutter_application_1\lib\base_structure\base\native_splash.yaml
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+# Support for Below Android 12 and IOS device Dark and Light Theme
+  background_image: "assets/splash_images/background.png"
+  image: "assets/splash_images/logo.png"
+  branding: "assets/splash_images/branding.png"
+
+  background_image_dark: "assets/splash_images/background_dark.png"
+  image_dark: "assets/splash_images/logo_dark.png"
+  branding_dark: "assets/splash_images/branding_dark.png"
+
+# Support for Android 12 and above device
+  android_12:
+    image: "assets/splash_images/android_logo.png"
+    branding: "assets/splash_images/android_branding.png"

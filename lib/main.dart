@@ -1,12 +1,33 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/ui/main_base.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:http/http.dart' as http;
+import 'package:screen_protector/screen_protector.dart';
 
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+
+  // To guarantee that the Flutter framework is fully initialized before your app starts running
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  
+  // Below line is for secure the API keys or any Key(s) also look in pubspec.yaml assets
+  // env file is at root of the project where IV and DATA defined
+  // await dotenv.load(fileName: ".env");
+
+  // Preseve splash
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // Protecting against data leakage
+  await ScreenProtector.protectDataLeakageOff();
+  // Disable Screenshot Capabilities
+  await ScreenProtector.preventScreenshotOn();
+  // Other initialization code, if needed
+
+  runApp(const MyBaseApp());
+  
 }
 
 class MyApp extends StatefulWidget {
@@ -22,7 +43,6 @@ late final Future<Album> futureAlbum;
 @override
   void initState() {
     super.initState();
-    
     // Call API
     futureAlbum = fetchAlbum(http.Client());
   }
