@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
+import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:get/get.dart';
 
 class LoginViewModel extends BaseViewModel {
@@ -8,8 +9,8 @@ class LoginViewModel extends BaseViewModel {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  var errorEmail = "".obs;
-  var errorPassword = "".obs;
+  var errorEmail = Rx<String?>(null);
+  var errorPassword = Rx<String?>(null);
 
   Future<bool> validateLogin() async {
     if (kDebugMode) {
@@ -20,18 +21,18 @@ class LoginViewModel extends BaseViewModel {
     final password = passwordController.text.trim();
 
     if (GetUtils.isNullOrBlank(email) == true) {
-      errorEmail.value = "Please enter email";
+      errorEmail.value = AppStrings.valEnterEmail;
     } else {
-      errorEmail.value = "";
+      errorEmail.value = null;
     }
 
     if (GetUtils.isNullOrBlank(password) == true) {
-      errorPassword.value = "Please enter password";
+      errorPassword.value = AppStrings.valEnterPassword;
     } else {
-      errorPassword.value = "";
+      errorPassword.value = null;
     }
 
-    if (errorEmail.value == "" && errorPassword.value == "") {
+    if (errorEmail.value == null && errorPassword.value == null) {
       return true;
     } else {
       return false;

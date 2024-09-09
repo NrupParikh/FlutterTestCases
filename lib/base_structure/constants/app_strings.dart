@@ -21,4 +21,8 @@ class AppStrings {
 
   static const lblGenerateOTP = "Generate OTP";
   static const lblBackToLogin = "Back to login";
+
+  static const valEnterEmail = "Please enter email";
+  static const valEnterPassword = "Please enter password";
+  static const valEnterOtp = "Please enter otp";
 }
