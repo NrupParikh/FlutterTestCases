@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
+import 'package:flutter_application_1/base_structure/common_widgets/custom_dialog.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:get/get.dart';
+import 'package:tuple/tuple.dart';
 
 class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
   const ForgotPasswordScreen({super.key});
@@ -89,9 +92,25 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () async {
-                        var isVerify = await vm.validateForgotPassword();
-                        if (isVerify) {
-                          Get.back();
+                        Tuple2<bool, String> ans =
+                            await vm.validateForgotPassword();
+
+                        if (kDebugMode) {
+                          print("isVerify  ${ans.item1} Message ${ans.item2}");
+                        }
+
+                        if (ans.item1 == true) {
+                          final result = await CustomDialog.showMessageDialog(
+                              AppStrings.appName, ans.item2);
+
+                          if (result) {
+                            Get.back();
+                          }
+                        } else {
+                          if (ans.item2.isNotEmpty) {
+                            CustomDialog.showMessageDialog(
+                                AppStrings.appName, ans.item2);
+                          }
                         }
                       }),
                 ),

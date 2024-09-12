@@ -2,17 +2,22 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/model/app_user.dart';
 import 'package:get/get.dart';
+import 'package:tuple/tuple.dart';
+
+import '../api/api_service.dart';
 
 class LoginViewModel extends BaseViewModel {
-  
+  final service = ApiService();
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   var errorEmail = Rx<String?>(null);
   var errorPassword = Rx<String?>(null);
 
-  Future<bool> validateLogin() async {
+  Future<Tuple2<bool, String>> validateLogin() async {
     if (kDebugMode) {
       print("Login clicked");
     }
@@ -33,9 +38,26 @@ class LoginViewModel extends BaseViewModel {
     }
 
     if (errorEmail.value == null && errorPassword.value == null) {
-      return true;
+      try {
+        var appResponse = await service.login(email, password);
+        if (kDebugMode) {
+          print("Response  ${appResponse.data}");
+        }
+        if (appResponse.statusCode == 200) {
+          AppUser userData = AppUser.fromJson(appResponse.data);
+
+          if (kDebugMode) {
+            print("Token  ${userData.token.toString()}");
+          }
+          return Tuple2(true, appResponse.message);
+        } else {
+          return Tuple2(false, appResponse.message);
+        }
+      } catch (ex) {
+        return Tuple2(false, "$ex");
+      }
     } else {
-      return false;
+      return const Tuple2(false, "");
     }
   }
 

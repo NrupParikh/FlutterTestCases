@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
@@ -6,6 +7,9 @@ import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.d
 import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:get/get.dart';
+import 'package:tuple/tuple.dart';
+
+import '../common_widgets/custom_dialog.dart';
 
 class LoginScreen extends BaseScreen<LoginViewModel> {
   const LoginScreen({super.key});
@@ -92,10 +96,26 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () async {
-                        var isVerify = await vm.validateLogin();
 
-                        if (isVerify) {
-                          Get.to(const HomeScreen());
+                        Tuple2<bool, String> ans = await vm.validateLogin();
+
+                        if (kDebugMode) {
+                          print("isVerify  ${ans.item1} Message ${ans.item2}");
+                        }
+
+                        if (ans.item1 == true) {
+                          final result = await CustomDialog.showMessageDialog(
+                              AppStrings.appName, ans.item2);
+
+                          if (result) {
+                            // Remove all previous screen from the stack and go to Home
+                            Get.offAll(const HomeScreen());
+                          }
+                        } else {
+                          if (ans.item2.isNotEmpty) {
+                            CustomDialog.showMessageDialog(
+                                AppStrings.appName, ans.item2);
+                          }
                         }
                       }),
                 )
