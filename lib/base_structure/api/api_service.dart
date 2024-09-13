@@ -4,7 +4,9 @@ import 'package:flutter_application_1/base_structure/constants/app_api_url.dart'
 import 'package:flutter_application_1/base_structure/model/app_response.dart';
 
 class ApiService {
-  final NetworkService _networkService = NetworkService();
+  // final NetworkService _networkService = NetworkService();
+  final NetworkService _networkService;
+  ApiService(this._networkService);
 
 // ===================== FORGOT PASSWORD
   Future<AppResponse> forgotPassword(String email) async {

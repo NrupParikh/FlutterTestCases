@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/api/api_service.dart';
@@ -7,8 +6,11 @@ import 'package:flutter_application_1/base_structure/constants/app_strings.dart'
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
+import '../singleton/api_service_singleton.dart';
+
 class ForgotPasswordViewModel extends BaseViewModel {
-  final service = ApiService();
+  // final service = ApiService();
+  final ApiService _apiService = ApiServiceSingleton().apiService;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController otpController = TextEditingController();
@@ -34,7 +36,7 @@ class ForgotPasswordViewModel extends BaseViewModel {
 
     if (errorEmail.value == null && errorOtp.value == null) {
       try {
-        var appResponse = await service.forgotPassword(email);
+        var appResponse = await _apiService.forgotPassword(email);
         if (appResponse.statusCode == 200) {
           return Tuple2(true, appResponse.message);
         } else {

@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:awesome_dio_interceptor/awesome_dio_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/base_structure/constants/app_api_message.dart';
 import 'package:flutter_application_1/base_structure/constants/app_api_url.dart';
 import 'package:flutter_application_1/base_structure/model/app_response.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/app_strings.dart';
 import '../utils/progress_dialog_utils.dart';
@@ -17,7 +17,7 @@ class NetworkService {
   NetworkService() {
     dio = (Dio(_baseOptions));
     if (kDebugMode) {
-      dio.interceptors.add(AwesomeDioInterceptor());
+      dio.interceptors.add(PrettyDioLogger());
     }
   }
 
@@ -116,7 +116,7 @@ class NetworkService {
         }
         throw AppApiMessage.msgConnectionTimeOut;
       } else if (e.type == DioExceptionType.cancel) {
-        throw AppApiMessage.msgCanceled;;
+        throw AppApiMessage.msgCanceled;
       }
 
       if (kDebugMode) {

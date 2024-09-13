@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/model/app_user.dart';
+import 'package:flutter_application_1/base_structure/singleton/api_service_singleton.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
 import '../api/api_service.dart';
 
 class LoginViewModel extends BaseViewModel {
-  final service = ApiService();
+  // final service = ApiService();
+  final ApiService _apiService = ApiServiceSingleton().apiService;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -39,7 +41,7 @@ class LoginViewModel extends BaseViewModel {
 
     if (errorEmail.value == null && errorPassword.value == null) {
       try {
-        var appResponse = await service.login(email, password);
+        var appResponse = await _apiService.login(email, password);
         if (kDebugMode) {
           print("Response  ${appResponse.data}");
         }
