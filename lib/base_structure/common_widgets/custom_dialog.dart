@@ -88,8 +88,7 @@ class CustomDialog {
         });
   }
 
-
-  static networkSuccessAlertDialog(String message,{String buttonText =""}) {
+  static networkSuccessAlertDialog(String message, {String buttonText = ""}) {
     showGeneralDialog(
         context: Get.context!,
         barrierDismissible: true,
@@ -109,7 +108,8 @@ class CustomDialog {
                       ? ColorConstant.black161616
                       : ColorConstant.whiteLightA70019,
                   borderRadius: BorderRadius.circular(5)),
-              child: Column(mainAxisSize: MainAxisSize.min,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   SvgPicture.asset(
                     ImageConstant.imageSuccessGreen,
@@ -137,7 +137,6 @@ class CustomDialog {
                   TextButton(
                     onPressed: () {
                       Get.back();
-
                     },
                     child: Container(
                       width: 150,
@@ -148,7 +147,10 @@ class CustomDialog {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: Text(buttonText.isEmpty ? AppStrings.errorPopupButtom : buttonText,
+                        child: Text(
+                            buttonText.isEmpty
+                                ? AppStrings.errorPopupButtom
+                                : buttonText,
                             textAlign: TextAlign.center,
                             style: Theme.of(Get.context!)
                                 .textTheme
@@ -166,21 +168,46 @@ class CustomDialog {
         });
   }
 
-   static Future<bool> showMessageDialog(String title, String message) async {
-  final result = await Get.defaultDialog(
-   title: title,
-   middleText: message,
-    actions: [
-      TextButton(
-        onPressed: () {
-          Get.back(result: true);
-        },
-        child: const Text('OK'),
-      ),
-    
-    ],
-  );
+// Common dialog with message and ok button
+  static Future<bool> showMessageDialog(String title, String message) async {
+    final result = await Get.defaultDialog(
+      title: title,
+      middleText: message,
+      barrierDismissible: false,
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.back(result: true);
+          },
+          child: const Text('OK'),
+        ),
+      ],
+    );
 
-  return result ?? false;
-}
+    return result ?? false;
+  }
+
+  static Future<bool> showOkCancelDialog(String title, String message) async {
+    final result = await Get.defaultDialog(
+      title: title,
+      middleText: message,
+      barrierDismissible: false,
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.back(result: true);
+          },
+          child: const Text('OK'),
+        ),
+        TextButton(
+          onPressed: () {
+            Get.back(result: false);
+          },
+          child: const Text('Cancel'),
+        ),
+      ],
+    );
+
+    return result ?? false;
+  }
 }

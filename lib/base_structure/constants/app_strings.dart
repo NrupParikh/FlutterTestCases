@@ -9,6 +9,7 @@ class AppStrings {
   static const lblPassword = "Password *";
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
+  static const lblLogout = "Logout";
 
   static const hintEnterYourEmail = "Enter your email";
   static const hintEnterYourPassword = "Enter your password";
@@ -31,4 +32,7 @@ class AppStrings {
   static const lblSuccess = "Success !";
 
   static const msgNetworkErr = 'Network Error';
+
+   static const msgLogoutConfirmation = 'Are you sure you want to logout from the application?';
+  
 }

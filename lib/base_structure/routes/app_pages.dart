@@ -5,7 +5,7 @@ import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
 import 'package:get/get.dart';
 
 class AppPages {
-  static const initial = Routes.initial;
+  // static const initial = Routes.initial;
 
   static final routes = [
     GetPage(name: Routes.login, page: () => const LoginScreen()),

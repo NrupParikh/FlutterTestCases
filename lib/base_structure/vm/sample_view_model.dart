@@ -8,7 +8,7 @@ class SampleViewModel extends BaseViewModel {
 
 RxInt count = 0.obs;
 
-void increaseCount(){
+void increaseCount() async{
   count(count.value + 1);
 
     final envData = envDetails();
@@ -16,15 +16,20 @@ void increaseCount(){
      print("EnvDetails $envData");
    }
 
-    final e = doEncryption("Hello");
-  if (kDebugMode) {
-    debugPrint("EncryptedData ${e.base64}");
-  }
+  //   final e = doEncryption("Hello");
+  // if (kDebugMode) {
+  //   debugPrint("EncryptedData ${e.base64}");
+  // }
 
-   final d = doDecryption(e);
-  if (kDebugMode) {
-    debugPrint("DecryptedData $d");
-  }
+  //  final d = doDecryption(e);
+  // if (kDebugMode) {
+  //   debugPrint("DecryptedData $d");
+  // }
+
+  // String? isLoggedIn = await SecureStorageSingleton().storage.read(key: AppKey.keyIsLoggedIn);
+  //   if (kDebugMode) {
+  //   debugPrint("isLoggedIn  $isLoggedIn");
+  // }
 }
 
 

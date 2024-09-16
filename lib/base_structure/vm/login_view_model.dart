@@ -1,9 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
+import 'package:flutter_application_1/base_structure/constants/app_key.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/model/app_user.dart';
 import 'package:flutter_application_1/base_structure/singleton/api_service_singleton.dart';
+import 'package:flutter_application_1/base_structure/singleton/secure_storage_singleton.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
@@ -47,6 +49,8 @@ class LoginViewModel extends BaseViewModel {
         }
         if (appResponse.statusCode == 200) {
           AppUser userData = AppUser.fromJson(appResponse.data);
+
+          await SecureStorageSingleton().storage.write(key: AppKey.keyIsLoggedIn, value: true.toString());
 
           if (kDebugMode) {
             print("Token  ${userData.token.toString()}");
