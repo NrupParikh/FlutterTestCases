@@ -8,8 +8,8 @@ class AppPages {
   // static const initial = Routes.initial;
 
   static final routes = [
-    GetPage(name: Routes.login, page: () => const LoginScreen()),
-    GetPage(name: Routes.forgotPassword, page: () => const ForgotPasswordScreen()),
-    GetPage(name: Routes.home, page: () => const HomeScreen()),
+    GetPage(name: Routes.login, page: () => LoginScreen()),
+    GetPage(name: Routes.forgotPassword, page: () => ForgotPasswordScreen()),
+    GetPage(name: Routes.home, page: () =>  HomeScreen()),
   ];
 }

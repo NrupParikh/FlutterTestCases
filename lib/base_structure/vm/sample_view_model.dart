@@ -1,37 +1,76 @@
+import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
+import 'package:flutter_application_1/base_structure/constants/app_key.dart';
+import 'package:flutter_application_1/base_structure/singleton/secure_storage_singleton.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 
+import '../model/app_user.dart';
+
 class SampleViewModel extends BaseViewModel {
+  RxInt count = 0.obs;
 
-RxInt count = 0.obs;
+  RxString firstName = "".obs;
+  RxString lastName = "".obs;
+  RxString email = "".obs;
+  RxString token = "".obs;
 
-void increaseCount() async{
-  count(count.value + 1);
+  @override
+  void init() {
+    super.init();
+    getUserData();
+  }
+
+  void increaseCount() async {
+    count(count.value + 1);
 
     final envData = envDetails();
-   if (kDebugMode) {
-     print("EnvDetails $envData");
-   }
+    if (kDebugMode) {
+      print("EnvDetails $envData");
+    }
 
-  //   final e = doEncryption("Hello");
-  // if (kDebugMode) {
-  //   debugPrint("EncryptedData ${e.base64}");
-  // }
+    //   final e = doEncryption("Hello");
+    // if (kDebugMode) {
+    //   debugPrint("EncryptedData ${e.base64}");
+    // }
 
-  //  final d = doDecryption(e);
-  // if (kDebugMode) {
-  //   debugPrint("DecryptedData $d");
-  // }
+    //  final d = doDecryption(e);
+    // if (kDebugMode) {
+    //   debugPrint("DecryptedData $d");
+    // }
 
-  // String? isLoggedIn = await SecureStorageSingleton().storage.read(key: AppKey.keyIsLoggedIn);
-  //   if (kDebugMode) {
-  //   debugPrint("isLoggedIn  $isLoggedIn");
-  // }
-}
+    // String? isLoggedIn = await SecureStorageSingleton().storage.read(key: AppKey.keyIsLoggedIn);
+    //   if (kDebugMode) {
+    //   debugPrint("isLoggedIn  $isLoggedIn");
+    // }
 
+    final String currentRouteName = getCurrentRouteName();
+
+    if (kDebugMode) {
+      print("currentRouteNameA = $currentRouteName");
+    }
+  }
+
+  Future<void> getUserData() async {
+    final jsonString =
+        await SecureStorageSingleton().storage.read(key: AppKey.keyUserObject);
+    final userMap = jsonDecode(jsonString!) as Map<String, dynamic>;
+    final object = AppUser.fromJson(userMap);
+
+    if (kDebugMode) {
+      debugPrint("First Name  ${object.firstName.toString()}");
+      debugPrint("Last Name  ${object.lastName.toString()}");
+      debugPrint("Email  ${object.email.toString()}");
+      debugPrint("Token  ${object.token.toString()}");
+    }
+
+    firstName.value = object.firstName.toString();
+    lastName.value = object.lastName.toString();
+    email.value = object.email.toString();
+    token.value = object.token.toString();
+  }
 
   @override
   void onInit() {

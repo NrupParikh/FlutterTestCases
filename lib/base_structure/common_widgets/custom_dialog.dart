@@ -175,11 +175,16 @@ class CustomDialog {
       middleText: message,
       barrierDismissible: false,
       actions: [
-        TextButton(
-          onPressed: () {
-            Get.back(result: true);
-          },
-          child: const Text('OK'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () {
+                Get.back(result: true);
+              },
+              child: const Text(AppStrings.ok),
+            ),
+          ],
         ),
       ],
     );
@@ -193,21 +198,25 @@ class CustomDialog {
       middleText: message,
       barrierDismissible: false,
       actions: [
-        TextButton(
-          onPressed: () {
-            Get.back(result: true);
-          },
-          child: const Text('OK'),
-        ),
-        TextButton(
-          onPressed: () {
-            Get.back(result: false);
-          },
-          child: const Text('Cancel'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () {
+                Get.back(result: true);
+              },
+              child: const Text(AppStrings.ok),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.back(result: false);
+              },
+              child: const Text(AppStrings.cancel),
+            ),
+          ],
         ),
       ],
     );
-
     return result ?? false;
   }
 }

@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
 class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
-  const ForgotPasswordScreen({super.key});
+  ForgotPasswordScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

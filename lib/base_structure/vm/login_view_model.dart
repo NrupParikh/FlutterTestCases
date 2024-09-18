@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
@@ -50,7 +52,18 @@ class LoginViewModel extends BaseViewModel {
         if (appResponse.statusCode == 200) {
           AppUser userData = AppUser.fromJson(appResponse.data);
 
-          await SecureStorageSingleton().storage.write(key: AppKey.keyIsLoggedIn, value: true.toString());
+          await SecureStorageSingleton()
+              .storage
+              .write(key: AppKey.keyIsLoggedIn, value: true.toString());
+
+          // Store user object in secure storage
+          final userDataJson = jsonEncode(userData);
+          if (kDebugMode) {
+            print("userDataJson  $userDataJson");
+          }
+          await SecureStorageSingleton()
+              .storage
+              .write(key: AppKey.keyUserObject, value: userDataJson);
 
           if (kDebugMode) {
             print("Token  ${userData.token.toString()}");

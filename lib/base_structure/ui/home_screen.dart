@@ -5,13 +5,12 @@ import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/sample_view_model.dart';
 import 'package:get/get.dart';
 
-import '../constants/app_key.dart';
 import '../constants/app_strings.dart';
 import '../constants/app_text_constant.dart';
 import '../singleton/secure_storage_singleton.dart';
 
 class HomeScreen extends BaseScreen<SampleViewModel> {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -19,6 +18,11 @@ class HomeScreen extends BaseScreen<SampleViewModel> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+           Obx(
+            () => Text(
+              "First Name : ${vm.firstName.string}\n"
+              "Email : ${vm.email.string}\n"),
+          ),
           Obx(
             () => Text(vm.count.string, style: context.textTheme.displayLarge),
           ),
@@ -32,10 +36,13 @@ class HomeScreen extends BaseScreen<SampleViewModel> {
                 if (result) {
 
                   // set false to key_is_loggedIn and go to login by remove all stacks
-                  await SecureStorageSingleton().storage.write(
-                      key: AppKey.keyIsLoggedIn, value: false.toString());
+                  // await SecureStorageSingleton().storage.write(
+                  //     key: AppKey.keyIsLoggedIn, value: false.toString());
 
-                  Get.offAll(const LoginScreen());
+                  // Remove all secure storage key(s)
+                  await SecureStorageSingleton().storage.deleteAll();
+
+                  Get.offAll(LoginScreen());
                 }
               })
         ],

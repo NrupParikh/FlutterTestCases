@@ -1,9 +1,18 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/routes/app_route.dart';
+import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
+import 'package:get/get.dart';
+import '../constants/app_text_constant.dart';
 
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
-  const BaseScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey;
+
+  BaseScreen({Key? key})
+      : _scaffoldKey = GlobalKey<ScaffoldState>(),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +36,29 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   }
 
   Widget _buildScaffold(BuildContext context) {
+    final String currentRouteName = getCurrentRouteName();
+
+    if (kDebugMode) {
+      print("currentRouteNameA = $currentRouteName");
+    }
+
     return Scaffold(
-      extendBody: extendedBodyBehindAppBar,
-      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-      backgroundColor: screenBackgroundColor,
-      appBar: buildAppBar(context),
-      body: buildScreen(context),
-      bottomNavigationBar: buildBottomNavigationBar(context),
-      floatingActionButtonLocation: floatingActionButtonLocation,
-      floatingActionButton: buildFloatingActionButton,
-    );
+        key: _scaffoldKey,
+        extendBody: extendedBodyBehindAppBar,
+        resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+        backgroundColor: screenBackgroundColor,
+        appBar: buildAppBar(context),
+        body: buildScreen(context),
+        bottomNavigationBar: buildBottomNavigationBar(context),
+        floatingActionButtonLocation: floatingActionButtonLocation,
+        floatingActionButton: buildFloatingActionButton,
+        drawer: (currentRouteName == HomeScreen().runtimeType.toString() ||
+                currentRouteName ==
+                    Routes.home.substring(Routes.home.lastIndexOf('/') + 1))
+            ? SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: buildDrawer())
+            : null);
   }
 
   @protected
@@ -73,8 +95,113 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Widget? buildBottomNavigationBar(BuildContext context) => null;
 
   @protected
-  PreferredSizeWidget? buildAppBar(BuildContext context) => null;
+  PreferredSizeWidget? buildAppBar(BuildContext context) {
+    final String currentRouteName = getCurrentRouteName();
+
+    if (kDebugMode) {
+      print("currentRouteNameB = $currentRouteName");
+    }
+    return AppBar(
+      leading: (currentRouteName == HomeScreen().runtimeType.toString() ||
+              currentRouteName ==
+                  Routes.home.substring(Routes.home.lastIndexOf('/') + 1))
+          ? Builder(builder: (context) {
+              return IconButton(
+                  onPressed: () {
+                    openDrawer(_scaffoldKey);
+                  },
+                  icon: const Icon(Icons.menu));
+            })
+          : null,
+    );
+  }
 
   @protected
   Widget buildScreen(BuildContext context);
+
+  Drawer buildDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+              child: Center(
+                  child: Text(AppStrings.appName,
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: AppTextConstant.poppinsBold)))),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.projectManagement,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.documentManagement,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.profile,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.notifications,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.changePassword,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.changeLanguage,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              closeDrawer(_scaffoldKey);
+            },
+            child: const ListTile(
+              title: Text(AppStrings.logout,
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/base_structure/constants/app_key.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -10,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:screen_protector/screen_protector.dart';
 
 import 'base_structure/routes/app_route.dart';
-import 'base_structure/singleton/secure_storage_singleton.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
 
 Future<void> main() async {
   // To guarantee that the Flutter framework is fully initialized before your app starts running
@@ -40,22 +38,11 @@ If user logged In then pass '/home' or pass '/login' as initial route
 */
 
 Future<String> getInitialRoute() async {
-  final storedValue =
-      await SecureStorageSingleton().storage.read(key: AppKey.keyIsLoggedIn);
-
-  bool isLoggedIn = false;
-  if (storedValue != null) {
-    isLoggedIn = bool.parse(storedValue);
-  }
-
-  if (kDebugMode) {
-    print("isLoggedIn = ${isLoggedIn.toString()}");
-  }
-
+  final isLoggedIn = await isUserLoggedIn();
   return isLoggedIn ? Routes.home : Routes.login;
 }
 
-// ====================================== EXAMPLE ONLY 
+// ====================================== EXAMPLE ONLY
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 

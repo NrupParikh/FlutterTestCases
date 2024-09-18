@@ -12,7 +12,7 @@ import 'package:tuple/tuple.dart';
 import '../common_widgets/custom_dialog.dart';
 
 class LoginScreen extends BaseScreen<LoginViewModel> {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -76,7 +76,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(const ForgotPasswordScreen());
+                    Get.to(ForgotPasswordScreen());
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
@@ -109,7 +109,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
 
                           if (result) {
                             // Remove all previous screen from the stack and go to Home
-                            Get.offAll(const HomeScreen());
+                            Get.offAll(HomeScreen());
                           }
                         } else {
                           if (ans.item2.isNotEmpty) {

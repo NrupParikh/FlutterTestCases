@@ -1,7 +1,7 @@
 // Define common Strings
 
 class AppStrings {
-  static const appName = "Base Structure";
+  static const appName = "Campus Italy";
 
   static const lblSignInNow = "Sign in now";
   static const lblEnterYourDetailsBelow = "Enter your details below";
@@ -33,6 +33,18 @@ class AppStrings {
 
   static const msgNetworkErr = 'Network Error';
 
-   static const msgLogoutConfirmation = 'Are you sure you want to logout from the application?';
-  
+  static const msgLogoutConfirmation =
+      'Are you sure you want to logout from the application?';
+
+  static const ok = "Ok";
+  static const cancel = "Cancel";
+
+  // ========== DRAWER ITEMS
+  static const projectManagement = "Project Management";
+  static const documentManagement = "Document Management";
+  static const profile = "Profile";
+  static const notifications = "Notifications";
+  static const changePassword = "Change Password";
+  static const changeLanguage = "Change Language";
+  static const logout = "Logout";
 }
