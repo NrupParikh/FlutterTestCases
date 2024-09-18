@@ -39,8 +39,14 @@ class AppStrings {
   static const ok = "Ok";
   static const cancel = "Cancel";
 
+  static const lblProjectManagement = "Project Management";
+  static const lblDocumentManagement = "Document Management";
+  static const lblProfile = "Profile";
+  static const lblNotifications = "Notifications";
+  static const lblChangePassword = "Change Password";
+  static const lblChangeLanguage = "Change Language";
+
   // ========== DRAWER ITEMS
-  static const projectManagement = "Project Management";
   static const documentManagement = "Document Management";
   static const profile = "Profile";
   static const notifications = "Notifications";

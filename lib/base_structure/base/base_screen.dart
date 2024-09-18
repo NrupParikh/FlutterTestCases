@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/routes/app_route.dart';
+import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
@@ -101,7 +102,12 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     if (kDebugMode) {
       print("currentRouteNameB = $currentRouteName");
     }
+
     return AppBar(
+      title: Text(getTitle(currentRouteName),
+          style: const TextStyle(
+              fontSize: 20, fontFamily: AppTextConstant.poppinsBold)),
+      centerTitle: true,
       leading: (currentRouteName == HomeScreen().runtimeType.toString() ||
               currentRouteName ==
                   Routes.home.substring(Routes.home.lastIndexOf('/') + 1))
@@ -132,16 +138,10 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                           fontFamily: AppTextConstant.poppinsBold)))),
           GestureDetector(
             onTap: () {
-              closeDrawer(_scaffoldKey);
-            },
-            child: const ListTile(
-              title: Text(AppStrings.projectManagement,
-                  style: TextStyle(
-                      fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
+              if (kDebugMode) {
+                print("documentManagement");
+                Get.to(DocumentsScreen());
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -152,6 +152,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           ),
           GestureDetector(
             onTap: () {
+              if (kDebugMode) {
+                print("profile");
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -162,6 +165,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           ),
           GestureDetector(
             onTap: () {
+              if (kDebugMode) {
+                print("notifications");
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -172,6 +178,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           ),
           GestureDetector(
             onTap: () {
+              if (kDebugMode) {
+                print("changePassword");
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -182,6 +191,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           ),
           GestureDetector(
             onTap: () {
+              if (kDebugMode) {
+                print("changeLanguage");
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -192,6 +204,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           ),
           GestureDetector(
             onTap: () {
+              if (kDebugMode) {
+                print("logout");
+              }
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(

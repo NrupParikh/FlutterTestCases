@@ -9,7 +9,6 @@ import 'package:tuple/tuple.dart';
 import '../singleton/api_service_singleton.dart';
 
 class ForgotPasswordViewModel extends BaseViewModel {
-  // final service = ApiService();
   final ApiService _apiService = ApiServiceSingleton().apiService;
 
   TextEditingController emailController = TextEditingController();

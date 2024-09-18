@@ -22,15 +22,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 16),
-                  child: Text(
-                    AppStrings.lblSignInNow,
-                    style: TextStyle(
-                        fontSize: 24, fontFamily: AppTextConstant.poppinsBold),
-                  ),
-                ),
+              children: [         
                 const Text(AppStrings.lblEnterYourDetailsBelow,
                     style: TextStyle(
                         fontSize: 12,

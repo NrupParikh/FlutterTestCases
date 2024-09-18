@@ -14,7 +14,6 @@ import 'package:tuple/tuple.dart';
 import '../api/api_service.dart';
 
 class LoginViewModel extends BaseViewModel {
-  // final service = ApiService();
   final ApiService _apiService = ApiServiceSingleton().apiService;
 
   TextEditingController emailController = TextEditingController();

@@ -5,6 +5,7 @@ import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
 
 import '../constants/app_key.dart';
+import '../constants/app_strings.dart';
 import '../singleton/secure_storage_singleton.dart';
 
 final iv = encrypt.IV.fromLength(16);
@@ -50,10 +51,28 @@ String getCurrentRouteName() {
   return routeName;
 }
 
-void openDrawer(GlobalKey<ScaffoldState> scaffoldKey){
+void openDrawer(GlobalKey<ScaffoldState> scaffoldKey) {
   scaffoldKey.currentState?.openDrawer();
 }
 
-void closeDrawer(GlobalKey<ScaffoldState> scaffoldKey){
+void closeDrawer(GlobalKey<ScaffoldState> scaffoldKey) {
   scaffoldKey.currentState?.closeDrawer();
+}
+
+String getTitle(String currentRouteName) {
+  String title = AppStrings.appName;
+
+  if (currentRouteName == "LoginScreen" || currentRouteName == "login") {
+    title = AppStrings.lblSignInNow;
+  } else if (currentRouteName == "ForgotPasswordScreen" ||
+      currentRouteName == "forgotPassword") {
+    title = AppStrings.lblForgotPassword;
+  } else if (currentRouteName == "HomeScreen" || currentRouteName == "home") {
+    title = AppStrings.lblProjectManagement;
+  } else if (currentRouteName == "DocumentsScreen" ||
+      currentRouteName == "documents") {
+    title = AppStrings.lblDocumentManagement;
+  }
+
+  return title;
 }

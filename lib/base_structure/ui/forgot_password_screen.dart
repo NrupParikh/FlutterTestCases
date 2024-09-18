@@ -20,14 +20,6 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 16),
-                  child: Text(
-                    AppStrings.lblForgotPassword,
-                    style: TextStyle(
-                        fontSize: 24, fontFamily: AppTextConstant.poppinsBold),
-                  ),
-                ),
                 const Text(AppStrings.lblEnterYourDetailsBelow,
                     style: TextStyle(
                         fontSize: 12,
