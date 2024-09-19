@@ -4,9 +4,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
 
+import '../common_widgets/custom_dialog.dart';
 import '../constants/app_key.dart';
 import '../constants/app_strings.dart';
 import '../singleton/secure_storage_singleton.dart';
+import '../ui/login_screen.dart';
 
 final iv = encrypt.IV.fromLength(16);
 final envKey = dotenv.env['KEY'];
@@ -72,7 +74,35 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == "DocumentsScreen" ||
       currentRouteName == "documents") {
     title = AppStrings.lblDocumentManagement;
+  } else if (currentRouteName == "ProfileScreen" ||
+      currentRouteName == "profile") {
+    title = AppStrings.lblProfile;
+  } else if (currentRouteName == "NotificationsScreen" ||
+      currentRouteName == "notifications") {
+    title = AppStrings.lblNotifications;
+  } else if (currentRouteName == "ChangePasswordScreen" ||
+      currentRouteName == "changePassword") {
+    title = AppStrings.lblChangePassword;
+  } else if (currentRouteName == "ChangeLanguageScreen" ||
+      currentRouteName == "changeLanguage") {
+    title = AppStrings.lblChangeLanguage;
   }
 
   return title;
+}
+
+void doLogout(scaffoldKey) async {
+  final result = await CustomDialog.showOkCancelDialog(
+      AppStrings.appName, AppStrings.msgLogoutConfirmation);
+  if (result) {
+    // set false to key_is_loggedIn and go to login by remove all stacks
+    // await SecureStorageSingleton().storage.write(
+    //     key: AppKey.keyIsLoggedIn, value: false.toString());
+
+    // Remove all secure storage key(s)
+    await SecureStorageSingleton().storage.deleteAll();
+
+    Get.offAll(LoginScreen());
+    closeDrawer(scaffoldKey);
+  }
 }

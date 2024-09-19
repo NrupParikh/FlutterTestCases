@@ -1,8 +1,12 @@
 import 'package:flutter_application_1/base_structure/routes/app_route.dart';
+import 'package:flutter_application_1/base_structure/ui/change_language.dart';
+import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -13,5 +17,9 @@ class AppPages {
     GetPage(name: Routes.forgotPassword, page: () => ForgotPasswordScreen()),
     GetPage(name: Routes.home, page: () =>  HomeScreen()),
     GetPage(name: Routes.documents, page: ()=>DocumentsScreen()),
+    GetPage(name: Routes.profile, page: ()=>ProfileScreen()),
+    GetPage(name: Routes.notifications, page: ()=>NotificationsScreen()),
+    GetPage(name: Routes.changePassword, page: ()=>ChangePasswordScreen()),
+    GetPage(name: Routes.changeLanguage, page: ()=>ChangeLanguageScreen()),
   ];
 }

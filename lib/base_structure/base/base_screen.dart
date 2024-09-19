@@ -2,8 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/routes/app_route.dart';
+import 'package:flutter_application_1/base_structure/ui/change_language.dart';
+import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
@@ -140,8 +144,8 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             onTap: () {
               if (kDebugMode) {
                 print("documentManagement");
-                Get.to(DocumentsScreen());
               }
+              Get.to(DocumentsScreen());
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -155,6 +159,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               if (kDebugMode) {
                 print("profile");
               }
+              Get.to(ProfileScreen());
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -168,6 +173,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               if (kDebugMode) {
                 print("notifications");
               }
+              Get.to(NotificationsScreen());
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -181,6 +187,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               if (kDebugMode) {
                 print("changePassword");
               }
+              Get.to(ChangePasswordScreen());
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -194,6 +201,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               if (kDebugMode) {
                 print("changeLanguage");
               }
+              Get.to(ChangeLanguageScreen());
               closeDrawer(_scaffoldKey);
             },
             child: const ListTile(
@@ -203,11 +211,11 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             ),
           ),
           GestureDetector(
-            onTap: () {
+            onTap: () async {
               if (kDebugMode) {
                 print("logout");
               }
-              closeDrawer(_scaffoldKey);
+              doLogout(_scaffoldKey);
             },
             child: const ListTile(
               title: Text(AppStrings.logout,

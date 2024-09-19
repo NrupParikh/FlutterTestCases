@@ -6,7 +6,7 @@ class ChangePasswordViewModel extends BaseViewModel {
   void onInit() {
     super.onInit();
     if (kDebugMode) {
-      print("Notifications VM Initialized");
+      print("Change Password VM Initialized");
     }
   }
 }
