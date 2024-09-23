@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/ui/change_language.dart';
 import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
@@ -50,7 +51,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
 
     getSelectedDrawerIndex().then((storedIndex) {
       if (kDebugMode) {
-
         if (storedIndex == "") {
           selectedIndex.value = 0;
         } else {
@@ -144,7 +144,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Widget buildScreen(BuildContext context);
 
   Drawer buildDrawer() {
-
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -160,6 +159,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               title: Text(AppStrings.projectManagement.tr,
                   style: const TextStyle(
                       fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
+              selectedTileColor: ColorConstant.selectedTileColor,
               selected: selectedIndex.value == 0,
               onTap: () => setSelected(0),
             ),
@@ -169,6 +169,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 1,
                 onTap: () => setSelected(1),
               )),
@@ -177,6 +178,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 2,
                 onTap: () => setSelected(2),
               )),
@@ -185,6 +187,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 3,
                 onTap: () => setSelected(3),
               )),
@@ -193,6 +196,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 4,
                 onTap: () => setSelected(4),
               )),
@@ -201,6 +205,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 5,
                 onTap: () => setSelected(5),
               )),
@@ -209,8 +214,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     style: const TextStyle(
                         fontSize: 14,
                         fontFamily: AppTextConstant.poppinsMedium)),
+                selectedTileColor: ColorConstant.selectedTileColor,
                 selected: selectedIndex.value == 6,
-                onTap: () => {setSelected(6), doLogout(_scaffoldKey)},
+                onTap: () => {doLogout(_scaffoldKey)},
               )),
         ],
       ),

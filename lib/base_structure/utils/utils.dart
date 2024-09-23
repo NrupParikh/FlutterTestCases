@@ -41,7 +41,6 @@ Future<bool> isDeveloperModeOn() async {
   return FlutterJailbreakDetection.developerMode;
 }
 
-
 String getCurrentRouteName() {
   final currentRoute = Get.currentRoute;
   final routeName = currentRoute.substring(currentRoute.lastIndexOf('/') + 1);
