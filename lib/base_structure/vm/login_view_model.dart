@@ -3,15 +3,14 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
-import 'package:flutter_application_1/base_structure/constants/app_key.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/model/app_user.dart';
 import 'package:flutter_application_1/base_structure/singleton/api_service_singleton.dart';
-import 'package:flutter_application_1/base_structure/singleton/secure_storage_singleton.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
 import '../api/api_service.dart';
+import '../utils/preferences.dart';
 
 class LoginViewModel extends BaseViewModel {
   final ApiService _apiService = ApiServiceSingleton().apiService;
@@ -31,13 +30,13 @@ class LoginViewModel extends BaseViewModel {
     final password = passwordController.text.trim();
 
     if (GetUtils.isNullOrBlank(email) == true) {
-      errorEmail.value = AppStrings.valEnterEmail;
+      errorEmail.value = AppStrings.valEnterEmail.tr;
     } else {
       errorEmail.value = null;
     }
 
     if (GetUtils.isNullOrBlank(password) == true) {
-      errorPassword.value = AppStrings.valEnterPassword;
+      errorPassword.value = AppStrings.valEnterPassword.tr;
     } else {
       errorPassword.value = null;
     }
@@ -51,18 +50,15 @@ class LoginViewModel extends BaseViewModel {
         if (appResponse.statusCode == 200) {
           AppUser userData = AppUser.fromJson(appResponse.data);
 
-          await SecureStorageSingleton()
-              .storage
-              .write(key: AppKey.keyIsLoggedIn, value: true.toString());
+          setIsUserLoggedIn();
 
           // Store user object in secure storage
           final userDataJson = jsonEncode(userData);
           if (kDebugMode) {
             print("userDataJson  $userDataJson");
           }
-          await SecureStorageSingleton()
-              .storage
-              .write(key: AppKey.keyUserObject, value: userDataJson);
+
+          setUserData(userDataJson);
 
           if (kDebugMode) {
             print("Token  ${userData.token.toString()}");

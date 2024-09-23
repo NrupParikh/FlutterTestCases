@@ -22,13 +22,13 @@ class ForgotPasswordViewModel extends BaseViewModel {
     final otp = otpController.text.trim();
 
     if (GetUtils.isNullOrBlank(email) == true) {
-      errorEmail.value = AppStrings.valEnterEmail;
+      errorEmail.value = AppStrings.valEnterEmail.tr;
     } else {
       errorEmail.value = null;
     }
 
     if (GetUtils.isNullOrBlank(otp) == true) {
-      errorOtp.value = AppStrings.valEnterOtp;
+      errorOtp.value = AppStrings.valEnterOtp.tr;
     } else {
       errorOtp.value = null;
     }

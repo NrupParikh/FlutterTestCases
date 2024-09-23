@@ -20,8 +20,8 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const Text(AppStrings.lblEnterYourDetailsBelow,
-                    style: TextStyle(
+                Text(AppStrings.lblEnterYourDetailsBelow.tr,
+                    style: const TextStyle(
                         fontSize: 12,
                         fontFamily: AppTextConstant.poppinsSemiBold)),
                 const SizedBox(
@@ -33,12 +33,12 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                     controller: vm.emailController,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      hintText: AppStrings.hintEnterYourEmail,
+                      hintText: AppStrings.hintEnterYourEmail.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
                       errorText: vm.errorEmail.value,
-                      label: const Text(AppStrings.lblEmailAddress,
-                          style: TextStyle(
+                      label:  Text(AppStrings.lblEmailAddress.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsRegular)),
                     ),
@@ -48,12 +48,12 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                   onTap: () {
                     // ToDO
                   },
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  child:  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Align(
                         alignment: Alignment.centerRight,
-                        child: Text(AppStrings.lblGenerateOTP,
-                            style: TextStyle(
+                        child: Text(AppStrings.lblGenerateOTP.tr,
+                            style: const TextStyle(
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsRegular))),
                   ),
@@ -65,12 +65,12 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      hintText: AppStrings.hintOTP,
+                      hintText: AppStrings.hintOTP.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
                       errorText: vm.errorOtp.value,
-                      label: const Text(AppStrings.hintEnterYourOTP,
-                          style: TextStyle(
+                      label:  Text(AppStrings.hintEnterYourOTP.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsRegular)),
                     ),
@@ -79,8 +79,8 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: OutlinedButton(
-                      child: const Text(AppStrings.lblSubmit,
-                          style: TextStyle(
+                      child: Text(AppStrings.lblSubmit.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () async {
@@ -93,7 +93,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
 
                         if (ans.item1 == true) {
                           final result = await CustomDialog.showMessageDialog(
-                              AppStrings.appName, ans.item2);
+                              AppStrings.appName.tr, ans.item2);
 
                           if (result) {
                             Get.back();
@@ -101,7 +101,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                         } else {
                           if (ans.item2.isNotEmpty) {
                             CustomDialog.showMessageDialog(
-                                AppStrings.appName, ans.item2);
+                                AppStrings.appName.tr, ans.item2);
                           }
                         }
                       }),
@@ -110,10 +110,10 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                   onTap: () {
                     Get.back();
                   },
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(AppStrings.lblBackToLogin,
-                        style: TextStyle(
+                  child:  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(AppStrings.lblBackToLogin.tr,
+                        style: const TextStyle(
                             fontSize: 12,
                             fontFamily: AppTextConstant.poppinsRegular)),
                   ),

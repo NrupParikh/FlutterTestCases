@@ -1,11 +1,11 @@
 import 'package:encrypt/encrypt.dart' as encrypt;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
 
 import '../common_widgets/custom_dialog.dart';
-import '../constants/app_key.dart';
 import '../constants/app_strings.dart';
 import '../singleton/secure_storage_singleton.dart';
 import '../ui/login_screen.dart';
@@ -41,11 +41,6 @@ Future<bool> isDeveloperModeOn() async {
   return FlutterJailbreakDetection.developerMode;
 }
 
-Future<bool> isUserLoggedIn() async {
-  final storedValue =
-      await SecureStorageSingleton().storage.read(key: AppKey.keyIsLoggedIn);
-  return storedValue != null ? bool.parse(storedValue) : false;
-}
 
 String getCurrentRouteName() {
   final currentRoute = Get.currentRoute;
@@ -54,38 +49,44 @@ String getCurrentRouteName() {
 }
 
 void openDrawer(GlobalKey<ScaffoldState> scaffoldKey) {
+  if (kDebugMode) {
+    print("Open Drawer ${scaffoldKey.toString()}");
+  }
   scaffoldKey.currentState?.openDrawer();
 }
 
 void closeDrawer(GlobalKey<ScaffoldState> scaffoldKey) {
+  if (kDebugMode) {
+    print("Close Drawer ${scaffoldKey.toString()}");
+  }
   scaffoldKey.currentState?.closeDrawer();
 }
 
 String getTitle(String currentRouteName) {
-  String title = AppStrings.appName;
+  String title = AppStrings.appName.tr;
 
   if (currentRouteName == "LoginScreen" || currentRouteName == "login") {
-    title = AppStrings.lblSignInNow;
+    title = AppStrings.lblSignInNow.tr;
   } else if (currentRouteName == "ForgotPasswordScreen" ||
       currentRouteName == "forgotPassword") {
-    title = AppStrings.lblForgotPassword;
+    title = AppStrings.lblForgotPassword.tr;
   } else if (currentRouteName == "HomeScreen" || currentRouteName == "home") {
-    title = AppStrings.lblProjectManagement;
+    title = AppStrings.projectManagement.tr;
   } else if (currentRouteName == "DocumentsScreen" ||
       currentRouteName == "documents") {
-    title = AppStrings.lblDocumentManagement;
+    title = AppStrings.documentManagement.tr;
   } else if (currentRouteName == "ProfileScreen" ||
       currentRouteName == "profile") {
-    title = AppStrings.lblProfile;
+    title = AppStrings.profile.tr;
   } else if (currentRouteName == "NotificationsScreen" ||
       currentRouteName == "notifications") {
-    title = AppStrings.lblNotifications;
+    title = AppStrings.notifications.tr;
   } else if (currentRouteName == "ChangePasswordScreen" ||
       currentRouteName == "changePassword") {
-    title = AppStrings.lblChangePassword;
+    title = AppStrings.changePassword.tr;
   } else if (currentRouteName == "ChangeLanguageScreen" ||
       currentRouteName == "changeLanguage") {
-    title = AppStrings.lblChangeLanguage;
+    title = AppStrings.changeLanguage.tr;
   }
 
   return title;
@@ -93,7 +94,7 @@ String getTitle(String currentRouteName) {
 
 void doLogout(scaffoldKey) async {
   final result = await CustomDialog.showOkCancelDialog(
-      AppStrings.appName, AppStrings.msgLogoutConfirmation);
+      AppStrings.appName.tr, AppStrings.msgLogoutConfirmation.tr);
   if (result) {
     // set false to key_is_loggedIn and go to login by remove all stacks
     // await SecureStorageSingleton().storage.write(

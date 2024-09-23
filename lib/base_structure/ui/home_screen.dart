@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
+import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/vm/sample_view_model.dart';
 import 'package:get/get.dart';
-
 
 class HomeScreen extends BaseScreen<SampleViewModel> {
   HomeScreen({super.key});
@@ -15,8 +15,9 @@ class HomeScreen extends BaseScreen<SampleViewModel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Obx(
-            () => Text("First Name : ${vm.firstName.string}\n"
-                "Email : ${vm.email.string}\n"),
+            () =>
+                Text("${AppStrings.lblFirstName.tr} : ${vm.firstName.string}\n"
+                    "${AppStrings.lblEmail.tr} : ${vm.email.string}\n"),
           ),
           Obx(
             () => Text(vm.count.string, style: context.textTheme.displayLarge),

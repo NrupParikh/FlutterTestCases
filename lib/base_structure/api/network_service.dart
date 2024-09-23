@@ -1,10 +1,11 @@
 import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_application_1/base_structure/constants/app_api_message.dart';
 import 'package:flutter_application_1/base_structure/constants/app_api_url.dart';
 import 'package:flutter_application_1/base_structure/model/app_response.dart';
+import 'package:get/get.dart' as get_response;
+
+
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/app_strings.dart';
@@ -104,9 +105,9 @@ class NetworkService {
       if (kDebugMode) {
         print("SocketException \n${e.toString()}");
       }
-      throw AppApiMessage.msgConnectInternet;
+      throw AppStrings.msgConnectInternet.tr;
     } on FormatException catch (_) {
-      throw AppStrings.msgNetworkErr;
+      throw AppStrings.msgNetworkErr.tr;
     } on DioException catch (e) {
       if (e.type == DioExceptionType.connectionTimeout) {
         if (kDebugMode) {
@@ -114,9 +115,9 @@ class NetworkService {
           print("error 211 ${e.message}");
           print("error 211 ${e.error}");
         }
-        throw AppApiMessage.msgConnectionTimeOut;
+        throw AppStrings.msgConnectionTimeOut.tr;
       } else if (e.type == DioExceptionType.cancel) {
-        throw AppApiMessage.msgCanceled;
+        throw AppStrings.msgCanceled.tr;
       }
 
       if (kDebugMode) {
@@ -124,7 +125,7 @@ class NetworkService {
         print("error 2 $e");
         print("CATCH error out side");
       }
-      throw AppApiMessage.msgConnectInternet;
+      throw AppStrings.msgConnectInternet.tr;
     } finally {
       ProgressDialogUtils.hideProgressDialog();
     }

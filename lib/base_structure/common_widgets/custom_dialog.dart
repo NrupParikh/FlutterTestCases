@@ -38,7 +38,7 @@ class CustomDialog {
                     padding: const EdgeInsets.only(
                         left: 20.0, right: 20, top: 16, bottom: 16),
                     child: Center(
-                      child: Text(AppStrings.lblFail,
+                      child: Text(AppStrings.lblFail.tr,
                           style: Theme.of(Get.context!).textTheme.labelMedium),
                     ),
                   ),
@@ -70,7 +70,7 @@ class CustomDialog {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: Text(AppStrings.errorPopupButtom,
+                        child: Text(AppStrings.errorPopupButtom.tr,
                             textAlign: TextAlign.center,
                             style: Theme.of(Get.context!)
                                 .textTheme
@@ -118,7 +118,7 @@ class CustomDialog {
                     padding: const EdgeInsets.only(
                         left: 20.0, right: 20, top: 16, bottom: 16),
                     child: Center(
-                      child: Text(AppStrings.lblSuccess,
+                      child: Text(AppStrings.lblSuccess.tr,
                           style: Theme.of(Get.context!).textTheme.labelMedium),
                     ),
                   ),
@@ -149,7 +149,7 @@ class CustomDialog {
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Text(
                             buttonText.isEmpty
-                                ? AppStrings.errorPopupButtom
+                                ? AppStrings.errorPopupButtom.tr
                                 : buttonText,
                             textAlign: TextAlign.center,
                             style: Theme.of(Get.context!)
@@ -182,7 +182,7 @@ class CustomDialog {
               onPressed: () {
                 Get.back(result: true);
               },
-              child: const Text(AppStrings.ok),
+              child: Text(AppStrings.ok.tr),
             ),
           ],
         ),
@@ -205,13 +205,13 @@ class CustomDialog {
               onPressed: () {
                 Get.back(result: true);
               },
-              child: const Text(AppStrings.ok),
+              child:  Text(AppStrings.ok.tr),
             ),
             TextButton(
               onPressed: () {
                 Get.back(result: false);
               },
-              child: const Text(AppStrings.cancel),
+              child: Text(AppStrings.cancel.tr),
             ),
           ],
         ),

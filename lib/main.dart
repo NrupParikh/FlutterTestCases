@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -8,7 +9,8 @@ import 'package:http/http.dart' as http;
 import 'package:screen_protector/screen_protector.dart';
 
 import 'base_structure/routes/app_route.dart';
-import 'package:flutter_application_1/base_structure/utils/utils.dart';
+
+import 'base_structure/utils/preferences.dart';
 
 Future<void> main() async {
   // To guarantee that the Flutter framework is fully initialized before your app starts running
@@ -29,7 +31,15 @@ Future<void> main() async {
   // Other initialization code, if needed
 
   final myInitialRoute = await getInitialRoute();
-  runApp(MyBaseApp(myInitialRoute));
+
+  final myInitialLanguage = await getInitialLanguage();
+
+  // Set Application orientation to support only Portrait mode
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp
+  ]);
+
+  runApp(MyBaseApp(myInitialRoute,myInitialLanguage));
 }
 
 /*
@@ -40,6 +50,11 @@ If user logged In then pass '/home' or pass '/login' as initial route
 Future<String> getInitialRoute() async {
   final isLoggedIn = await isUserLoggedIn();
   return isLoggedIn ? Routes.home : Routes.login;
+}
+
+Future<String> getInitialLanguage() async {
+  final local = await getStoredLanguage();
+  return local;
 }
 
 // ====================================== EXAMPLE ONLY

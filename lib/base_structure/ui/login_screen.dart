@@ -23,8 +23,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [         
-                const Text(AppStrings.lblEnterYourDetailsBelow,
-                    style: TextStyle(
+                 Text(AppStrings.lblEnterYourDetailsBelow.tr,
+                    style: const TextStyle(
                         fontSize: 12,
                         fontFamily: AppTextConstant.poppinsSemiBold)),
                 const SizedBox(
@@ -36,12 +36,12 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                     controller: vm.emailController,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      hintText: AppStrings.hintEnterYourEmail,
+                      hintText: AppStrings.hintEnterYourEmail.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
                       errorText: vm.errorEmail.value,
-                      label: const Text(AppStrings.lblEmailAddress,
-                          style: TextStyle(
+                      label: Text(AppStrings.lblEmailAddress.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsRegular)),
                     ),
@@ -55,12 +55,12 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                     obscuringCharacter: "*",
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      hintText: AppStrings.hintEnterYourPassword,
+                      hintText: AppStrings.hintEnterYourPassword.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
                       errorText: vm.errorPassword.value,
-                      label: const Text(AppStrings.lblPassword,
-                          style: TextStyle(
+                      label:  Text(AppStrings.lblPassword.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsRegular)),
                     ),
@@ -70,12 +70,12 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                   onTap: () {
                     Get.to(ForgotPasswordScreen());
                   },
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  child:  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Align(
                         alignment: Alignment.centerRight,
-                        child: Text(AppStrings.lblForgotPasswordLink,
-                            style: TextStyle(
+                        child: Text(AppStrings.lblForgotPasswordLink.tr,
+                            style: const TextStyle(
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsRegular))),
                   ),
@@ -83,8 +83,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: OutlinedButton(
-                      child: const Text(AppStrings.lblLogin,
-                          style: TextStyle(
+                      child: Text(AppStrings.lblLogin.tr,
+                          style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () async {
@@ -97,7 +97,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
 
                         if (ans.item1 == true) {
                           final result = await CustomDialog.showMessageDialog(
-                              AppStrings.appName, ans.item2);
+                              AppStrings.appName.tr, ans.item2);
 
                           if (result) {
                             // Remove all previous screen from the stack and go to Home
@@ -106,7 +106,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                         } else {
                           if (ans.item2.isNotEmpty) {
                             CustomDialog.showMessageDialog(
-                                AppStrings.appName, ans.item2);
+                                AppStrings.appName.tr, ans.item2);
                           }
                         }
                       }),

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
+import 'package:flutter_application_1/base_structure/base/local/local.dart';
 import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
@@ -10,8 +11,9 @@ import 'package:get/get.dart';
 
 class MyBaseApp extends StatefulWidget {
   final String myInitialRoute;
+  final String myInitialLanguage;
 
-  const MyBaseApp(this.myInitialRoute, {super.key});
+  const MyBaseApp(this.myInitialRoute,this.myInitialLanguage, {super.key});
 
   @override
   State<MyBaseApp> createState() => _MyBaseAppState();
@@ -60,6 +62,9 @@ class _MyBaseAppState extends State<MyBaseApp> {
       initialBinding: AppBindings(),
       initialRoute: widget.myInitialRoute,
       getPages: AppPages.routes,
+      translations: Languages(),
+      locale: Locale(widget.myInitialLanguage),
+      fallbackLocale:  const Locale('en','US'),
     );
   }
 }
