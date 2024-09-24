@@ -43,6 +43,9 @@ Future<bool> isDeveloperModeOn() async {
 
 String getCurrentRouteName() {
   final currentRoute = Get.currentRoute;
+  if (kDebugMode) {
+    print("CurrentRoute =  $currentRoute");
+  }
   final routeName = currentRoute.substring(currentRoute.lastIndexOf('/') + 1);
   return routeName;
 }

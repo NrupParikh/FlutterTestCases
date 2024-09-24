@@ -20,7 +20,6 @@ class MyBaseApp extends StatefulWidget {
 }
 
 class _MyBaseAppState extends State<MyBaseApp> {
-
   @override
   void initState() {
     super.initState();
@@ -36,13 +35,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
     FlutterNativeSplash.remove();
 
     await dotenv.load(fileName: ".env");
-
-    if (kDebugMode) {
-      print("unPausing....");
     }
-
-  }
-
 
   @override
   Widget build(BuildContext context) {

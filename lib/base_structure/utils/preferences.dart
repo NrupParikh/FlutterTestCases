@@ -38,15 +38,3 @@ Future<String> getStoredLanguage() async {
       await SecureStorageSingleton().storage.read(key: AppKey.keyStoredLang);
   return storedValue ?? "en";
 }
-
-void setSelectedDrawerIndex(int selectedIndex) async {
-  await SecureStorageSingleton().storage.write(
-      key: AppKey.keyStoredDrawerItemIndex, value: selectedIndex.toString());
-}
-
-Future<String> getSelectedDrawerIndex() async {
-  final storedValue = await SecureStorageSingleton()
-      .storage
-      .read(key: AppKey.keyStoredDrawerItemIndex);
-  return storedValue ?? "0";
-}
