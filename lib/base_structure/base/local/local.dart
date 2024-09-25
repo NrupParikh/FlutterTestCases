@@ -59,6 +59,10 @@ class Languages implements Translations {
           AppStrings.msgConnectInternet: AppStrings.msgConnectInternet,
           AppStrings.msgConnectionTimeOut: AppStrings.msgConnectionTimeOut,
           AppStrings.msgCanceled: AppStrings.msgCanceled,
+
+          AppStrings.projectFilter: AppStrings.projectFilter,
+          AppStrings.manageDocs: AppStrings.manageDocs,
+          AppStrings.documentFilter: AppStrings.documentFilter,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -117,6 +121,10 @@ class Languages implements Translations {
           AppStrings.msgConnectionTimeOut:
               "Eccezione di timeout della connessione",
           AppStrings.msgCanceled: "Annullato",
+
+          AppStrings.projectFilter: "Filtro del progetto",
+          AppStrings.manageDocs: "Gestisci documenti",
+          AppStrings.documentFilter: "Filtro documenti",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -177,6 +185,10 @@ class Languages implements Translations {
           AppStrings.msgConnectionTimeOut:
               "Excepción de tiempo de espera de conexión",
           AppStrings.msgCanceled: "Cancelado",
+
+          AppStrings.projectFilter: "Filtro de proyecto",
+          AppStrings.manageDocs: "Administrar documentos",
+          AppStrings.documentFilter: "Filtro de documentos",
         }
       };
 }

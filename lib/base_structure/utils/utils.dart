@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
 
+import '../base/constant.dart';
 import '../common_widgets/custom_dialog.dart';
 import '../constants/app_strings.dart';
 import '../singleton/secure_storage_singleton.dart';
@@ -67,28 +68,36 @@ void closeDrawer(GlobalKey<ScaffoldState> scaffoldKey) {
 String getTitle(String currentRouteName) {
   String title = AppStrings.appName.tr;
 
-  if (currentRouteName == "LoginScreen" || currentRouteName == "login") {
+  if (currentRouteName == Constant.tagLoginScreen ||
+      currentRouteName == Constant.tagLogin) {
     title = AppStrings.lblSignInNow.tr;
-  } else if (currentRouteName == "ForgotPasswordScreen" ||
-      currentRouteName == "forgotPassword") {
+  } else if (currentRouteName == Constant.tagForgotPasswordScreen ||
+      currentRouteName == Constant.tagForgotPassword) {
     title = AppStrings.lblForgotPassword.tr;
-  } else if (currentRouteName == "HomeScreen" || currentRouteName == "home") {
+  } else if (currentRouteName == Constant.tagHomeScreen ||
+      currentRouteName == Constant.tagHome) {
     title = AppStrings.projectManagement.tr;
-  } else if (currentRouteName == "DocumentsScreen" ||
-      currentRouteName == "documents") {
-    title = AppStrings.documentManagement.tr;
-  } else if (currentRouteName == "ProfileScreen" ||
-      currentRouteName == "profile") {
+  } else if (currentRouteName == Constant.tagDocumentsScreen ||
+      currentRouteName == Constant.tagDocuments) {
+    title = AppStrings.manageDocs.tr;
+  } else if (currentRouteName == Constant.tagProfileScreen ||
+      currentRouteName == Constant.tagProfile) {
     title = AppStrings.profile.tr;
-  } else if (currentRouteName == "NotificationsScreen" ||
-      currentRouteName == "notifications") {
+  } else if (currentRouteName == Constant.tagNotificationsScreen ||
+      currentRouteName == Constant.tagNotifications) {
     title = AppStrings.notifications.tr;
-  } else if (currentRouteName == "ChangePasswordScreen" ||
-      currentRouteName == "changePassword") {
+  } else if (currentRouteName == Constant.tagChangePasswordScreen ||
+      currentRouteName == Constant.tagChangePassword) {
     title = AppStrings.changePassword.tr;
-  } else if (currentRouteName == "ChangeLanguageScreen" ||
-      currentRouteName == "changeLanguage") {
+  } else if (currentRouteName == Constant.tagChangeLanguageScreen ||
+      currentRouteName == Constant.tagChangeLanguage) {
     title = AppStrings.changeLanguage.tr;
+  }else if (currentRouteName == Constant.tagProjectFilterScreen ||
+      currentRouteName == Constant.tagProjectFilter) {
+    title = AppStrings.projectFilter.tr;
+  }else if (currentRouteName == Constant.tagDocumentFilterScreen ||
+      currentRouteName == Constant.tagDocuments) {
+    title = AppStrings.documentFilter.tr;
   }
 
   return title;

@@ -1,10 +1,12 @@
 import 'package:flutter_application_1/base_structure/vm/change_language_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/change_password_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/document_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/notifications_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/project_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/sample_view_model.dart';
 import 'package:get/get.dart';
 
@@ -20,5 +22,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => NotificationsViewModel(),fenix: true);
     Get.lazyPut(() => ChangePasswordViewModel(),fenix: true);
     Get.lazyPut(() => ChangeLanguageViewModel(),fenix: true);
+    Get.lazyPut(() => ProjectFilterViewModel(),fenix: true);
+    Get.lazyPut(() => DocumentFilterViewModel(),fenix: true);
   }
 }

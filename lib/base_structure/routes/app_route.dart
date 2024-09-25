@@ -9,4 +9,6 @@ class Routes {
   static const notifications = '/notifications';
   static const changePassword = '/changePassword';
   static const changeLanguage = '/changeLanguage';  
+  static const projectFilter = '/projectFilter'; 
+  static const documentFilter = '/documentFilter'; 
 }

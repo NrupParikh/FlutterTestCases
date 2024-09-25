@@ -58,4 +58,8 @@ class AppStrings {
   static const msgConnectInternet = "Please connect Internet";
   static const msgConnectionTimeOut = "Connection Timeout Exception";
   static const msgCanceled = "Canceled";
+
+  static const projectFilter = "Project Filter";
+  static const manageDocs = "Manage Docs";
+  static const documentFilter = "Document Filter";
 }
