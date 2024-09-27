@@ -7,8 +7,8 @@ class Constant {
   static const tagForgotPasswordScreen = "ForgotPasswordScreen";
   static const tagForgotPassword = "forgotPassword";
 
-  static const tagHomeScreen = "HomeScreen";
-  static const tagHome = "home";
+  static const tagProjectManagementScreen = "ProjectManagementScreen";
+  static const tagProjectManagement = "projectManagement";
 
   static const tagDocumentsScreen = "DocumentsScreen";
   static const tagDocuments = "documents";
@@ -30,4 +30,10 @@ class Constant {
 
   static const tagDocumentFilterScreen = "DocumentFilterScreen";
   static const tagDocumentFilter = "documentFilter";
+
+  static const tagNRDScreen = "NRDScreen";
+  static const tagNRD = "nrd";
+
+  static const tagRCHScreen = "RCHScreen";
+  static const tagRCH = "rch";
 }

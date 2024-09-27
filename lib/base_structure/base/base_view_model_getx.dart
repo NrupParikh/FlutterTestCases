@@ -13,6 +13,9 @@ abstract class BaseViewModel extends GetxController {
   void init(){
 
   }
+
+  // Call this as vm.routeBack() in any Screen to go back screen
+  
   void routeBack() {
     Get.back();
   }

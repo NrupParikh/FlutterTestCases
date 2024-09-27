@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../model/app_user.dart';
 import '../utils/preferences.dart';
 
-class SampleViewModel extends BaseViewModel {
+class ProjectManagementViewModel extends BaseViewModel {
   RxInt count = 0.obs;
 
   RxString firstName = "".obs;

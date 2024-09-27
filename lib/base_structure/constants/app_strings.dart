@@ -62,4 +62,20 @@ class AppStrings {
   static const projectFilter = "Project Filter";
   static const manageDocs = "Manage Docs";
   static const documentFilter = "Document Filter";
+
+  static const lblNRD = "NRD";
+  static const lblRCH = "RCH";
+
+// ========== TABS
+  static const tabRND = "R&D";
+  static const tabIndustrialTrial = "Prueba industrial";
+  static const tabHaccp = "HACCP";
+  static const tabQcInspection = "Qc Inspection";
+  static const tabPurchasingReview = "Purchasing Review";
+
+  static const tabFasttrackEvoluation = "Fasttrack Evoluation";
+  static const tabIndustrialReview = "Industrial Review";
+
+  static const tabQuality = "Quality";
+  static const tabRegulatory = "Regulatory";
 }

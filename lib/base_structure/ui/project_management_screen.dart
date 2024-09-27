@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
-import 'package:flutter_application_1/base_structure/vm/sample_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends BaseScreen<SampleViewModel> {
-  HomeScreen({super.key});
+class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
+  ProjectManagementScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

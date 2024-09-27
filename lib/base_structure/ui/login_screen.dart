@@ -4,7 +4,7 @@ import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
-import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/project_management_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
@@ -101,7 +101,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
 
                           if (result) {
                             // Remove all previous screen from the stack and go to Home
-                            Get.offAll(HomeScreen());
+                            Get.offAll(ProjectManagementScreen());
                           }
                         } else {
                           if (ans.item2.isNotEmpty) {

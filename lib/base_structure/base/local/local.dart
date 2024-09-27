@@ -63,6 +63,22 @@ class Languages implements Translations {
           AppStrings.projectFilter: AppStrings.projectFilter,
           AppStrings.manageDocs: AppStrings.manageDocs,
           AppStrings.documentFilter: AppStrings.documentFilter,
+
+          AppStrings.lblNRD: AppStrings.lblNRD,
+          AppStrings.lblRCH: AppStrings.lblRCH,
+
+          // ========== TABS
+          AppStrings.tabRND: AppStrings.tabRND,
+          AppStrings.tabIndustrialTrial: AppStrings.tabIndustrialTrial,
+          AppStrings.tabHaccp: AppStrings.tabHaccp,
+          AppStrings.tabQcInspection: AppStrings.tabQcInspection,
+          AppStrings.tabPurchasingReview: AppStrings.tabPurchasingReview,
+
+          AppStrings.tabFasttrackEvoluation: AppStrings.tabFasttrackEvoluation,
+          AppStrings.tabIndustrialReview: AppStrings.tabIndustrialReview,
+
+          AppStrings.tabQuality: AppStrings.tabQuality,
+          AppStrings.tabRegulatory: AppStrings.tabRegulatory
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -125,6 +141,22 @@ class Languages implements Translations {
           AppStrings.projectFilter: "Filtro del progetto",
           AppStrings.manageDocs: "Gestisci documenti",
           AppStrings.documentFilter: "Filtro documenti",
+
+          AppStrings.lblNRD: "NRD",
+          AppStrings.lblRCH: "RCH",
+
+          // ========== TABS
+          AppStrings.tabRND: "Ricerca e sviluppo",
+          AppStrings.tabIndustrialTrial: "Prova industriale",
+          AppStrings.tabHaccp: "HACCP",
+          AppStrings.tabQcInspection: "Ispezione QC",
+          AppStrings.tabPurchasingReview: "Revisione degli acquisti",
+
+          AppStrings.tabFasttrackEvoluation: "Evoluzione rapida",
+          AppStrings.tabIndustrialReview: "Revisione industriale",
+
+          AppStrings.tabQuality: "Qualità",
+          AppStrings.tabRegulatory: "Normativo"
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -189,6 +221,22 @@ class Languages implements Translations {
           AppStrings.projectFilter: "Filtro de proyecto",
           AppStrings.manageDocs: "Administrar documentos",
           AppStrings.documentFilter: "Filtro de documentos",
+
+          AppStrings.lblNRD: "NRD",
+          AppStrings.lblRCH: "RCH",
+
+          // ========== TABS
+          AppStrings.tabRND: "I+D",
+          AppStrings.tabIndustrialTrial: "Prova interna",
+          AppStrings.tabHaccp: "HACCP",
+          AppStrings.tabQcInspection: "Ispezione QC",
+          AppStrings.tabPurchasingReview: "Revisione degli acquisti",
+
+          AppStrings.tabFasttrackEvoluation: "Evolución acelerada",
+          AppStrings.tabIndustrialReview: "Revisión industrial",
+
+          AppStrings.tabQuality: "Calidad",
+          AppStrings.tabRegulatory: "Regulador"
         }
       };
 }

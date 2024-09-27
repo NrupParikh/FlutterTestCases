@@ -49,7 +49,7 @@ If user logged In then pass '/home' or pass '/login' as initial route
 
 Future<String> getInitialRoute() async {
   final isLoggedIn = await isUserLoggedIn();
-  return isLoggedIn ? Routes.home : Routes.login;
+  return isLoggedIn ? Routes.projectManagement : Routes.login;
 }
 
 Future<String> getInitialLanguage() async {

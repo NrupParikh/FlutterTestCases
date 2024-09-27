@@ -74,8 +74,8 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagForgotPasswordScreen ||
       currentRouteName == Constant.tagForgotPassword) {
     title = AppStrings.lblForgotPassword.tr;
-  } else if (currentRouteName == Constant.tagHomeScreen ||
-      currentRouteName == Constant.tagHome) {
+  } else if (currentRouteName == Constant.tagProjectManagementScreen ||
+      currentRouteName == Constant.tagProjectManagement) {
     title = AppStrings.projectManagement.tr;
   } else if (currentRouteName == Constant.tagDocumentsScreen ||
       currentRouteName == Constant.tagDocuments) {
@@ -92,12 +92,18 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagChangeLanguageScreen ||
       currentRouteName == Constant.tagChangeLanguage) {
     title = AppStrings.changeLanguage.tr;
-  }else if (currentRouteName == Constant.tagProjectFilterScreen ||
+  } else if (currentRouteName == Constant.tagProjectFilterScreen ||
       currentRouteName == Constant.tagProjectFilter) {
     title = AppStrings.projectFilter.tr;
-  }else if (currentRouteName == Constant.tagDocumentFilterScreen ||
+  } else if (currentRouteName == Constant.tagDocumentFilterScreen ||
       currentRouteName == Constant.tagDocuments) {
     title = AppStrings.documentFilter.tr;
+  } else if (currentRouteName == Constant.tagNRDScreen ||
+      currentRouteName == Constant.tagNRD) {
+    title = AppStrings.lblNRD.tr;
+  } else if (currentRouteName == Constant.tagRCHScreen ||
+      currentRouteName == Constant.tagRCH) {
+    title = AppStrings.lblRCH.tr;
   }
 
   return title;

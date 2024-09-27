@@ -6,7 +6,7 @@ import 'package:flutter_application_1/base_structure/constants/app_strings.dart'
 import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/document_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
-import 'package:flutter_application_1/base_structure/ui/home_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/project_management_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
@@ -126,7 +126,11 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           : ((currentRouteName == Constant.tagProjectFilterScreen ||
                       currentRouteName == Constant.tagProjectFilter) ||
                   (currentRouteName == Constant.tagDocumentFilterScreen ||
-                      currentRouteName == Constant.tagDocuments))
+                      currentRouteName == Constant.tagDocuments) ||
+                  (currentRouteName == Constant.tagNRDScreen ||
+                      currentRouteName == Constant.tagNRD) ||
+                  (currentRouteName == Constant.tagRCHScreen ||
+                      currentRouteName == Constant.tagRCH))
               ? IconButton(
                   icon: const Icon(Icons.arrow_back),
                   onPressed: () {
@@ -141,15 +145,15 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     icon: const Icon(Icons.menu),
                   );
                 }),
-      actions: ((currentRouteName == Constant.tagHomeScreen ||
-              currentRouteName == Constant.tagHome))
+      actions: ((currentRouteName == Constant.tagProjectManagementScreen ||
+              currentRouteName == Constant.tagProjectManagement))
           ? [
               IconButton(
                   onPressed: () {
                     if (kDebugMode) {
                       print("Project Filter");
-                      Get.to(ProjectFilterScreen());
                     }
+                    Get.to(ProjectFilterScreen());
                   },
                   icon: const Icon(Icons.filter_alt_outlined))
             ]
@@ -160,12 +164,36 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                       onPressed: () {
                         if (kDebugMode) {
                           print("Document Filter");
-                          Get.to(DocumentFilterScreen());
                         }
+                        Get.to(DocumentFilterScreen());
                       },
                       icon: const Icon(Icons.filter_alt_outlined))
                 ]
-              : null,
+              : ((currentRouteName == Constant.tagProfileScreen ||
+                      currentRouteName == Constant.tagProfile))
+                  ? [
+                      IconButton(
+                          onPressed: () {
+                            if (kDebugMode) {
+                              print("Edit Profile");
+                            }
+                          },
+                          icon: const Icon(Icons.edit))
+                    ]
+                  : null,
+      // Bottom is used to add some widget below the Title such as Sub Title/Search Bars/Tabs/Divider etc.
+      bottom: (currentRouteName == Constant.tagLoginScreen ||
+              currentRouteName == Constant.tagLogin ||
+              currentRouteName == Constant.tagForgotPasswordScreen ||
+              currentRouteName == Constant.tagForgotPassword)
+          ? null
+          : PreferredSize(
+              preferredSize: const Size.fromHeight(1.0),
+              child: Container(
+                color: Colors.grey,
+                child: const Divider(height: 1.0),
+              ),
+            ),
     );
   }
 
@@ -247,8 +275,8 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   }
 
   int returnIndexBasedOnScreen(String currentRoute) {
-    if (currentRoute == Constant.tagHomeScreen ||
-        currentRoute == Constant.tagHome) {
+    if (currentRoute == Constant.tagProjectManagementScreen ||
+        currentRoute == Constant.tagProjectManagement) {
       return 0;
     } else if (currentRoute == Constant.tagDocumentsScreen ||
         currentRoute == Constant.tagDocuments) {
@@ -272,7 +300,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   void setSelected(int index) async {
     switch (index) {
       case 0:
-        Get.off(HomeScreen());
+        Get.off(ProjectManagementScreen());
         break;
       case 1:
         Get.off(DocumentsScreen());

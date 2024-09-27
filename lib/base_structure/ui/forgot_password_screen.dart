@@ -96,7 +96,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                               AppStrings.appName.tr, ans.item2);
 
                           if (result) {
-                            Get.back();
+                            vm.routeBack();
                           }
                         } else {
                           if (ans.item2.isNotEmpty) {
@@ -108,7 +108,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.back();
+                    vm.routeBack();
                   },
                   child:  Padding(
                     padding: const EdgeInsets.all(8.0),

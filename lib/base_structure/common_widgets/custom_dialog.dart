@@ -59,7 +59,6 @@ class CustomDialog {
                   TextButton(
                     onPressed: () {
                       Get.back();
-                      Get.back();
                     },
                     child: Container(
                       width: 150,
