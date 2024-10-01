@@ -2,6 +2,7 @@ import 'package:flutter_application_1/base_structure/vm/change_language_view_mod
 import 'package:flutter_application_1/base_structure/vm/change_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/document_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/notifications_view_model.dart';
@@ -28,5 +29,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => DocumentFilterViewModel(),fenix: true);
     Get.lazyPut(() => NRDViewModel(),fenix: true);
     Get.lazyPut(() => RCHViewModel(),fenix: true);
+    Get.lazyPut(() => FastTrackEvaluationViewModel(),fenix: true);
   }
 }

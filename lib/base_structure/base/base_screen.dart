@@ -11,6 +11,7 @@ import 'package:flutter_application_1/base_structure/ui/notifications_screen.dar
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
+import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 import '../ui/change_language_screen.dart';
@@ -50,6 +51,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
 
     if (kDebugMode) {
       print("currentRouteNameA _buildScaffold = $currentRouteName");
+      print("Current VM = $controller");
     }
 
     return Scaffold(
@@ -57,7 +59,11 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         backgroundColor: screenBackgroundColor,
-        appBar: buildAppBar(context),
+        // If you want to don't show the AppBar in internal screen. 
+        // Ex. Tab then check with VM and set null
+        appBar: ((controller is FastTrackEvaluationViewModel))
+            ? null
+            : buildAppBar(context),
         body: buildScreen(context),
         bottomNavigationBar: buildBottomNavigationBar(context),
         floatingActionButtonLocation: floatingActionButtonLocation,

@@ -2,6 +2,7 @@ import 'package:flutter_application_1/base_structure/routes/app_route.dart';
 import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/document_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/fast_track_evaluation_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_management_screen.dart';
@@ -31,5 +32,6 @@ class AppPages {
     GetPage(name: Routes.documentFilter, page: () => DocumentFilterScreen()),
     GetPage(name: Routes.nrd, page: () => NRDScreen()),
     GetPage(name: Routes.rch, page: () => RCHScreen()),
+    GetPage(name: Routes.fastTrackEvaluation, page: () => FastTrackEvaluationScreen()),
   ];
 }

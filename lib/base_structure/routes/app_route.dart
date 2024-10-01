@@ -1,3 +1,4 @@
+
 class Routes {
   static const splash = '/splash';
   static const login = '/login';
@@ -12,4 +13,5 @@ class Routes {
   static const documentFilter = '/documentFilter'; 
   static const nrd = '/nrd';
   static const rch = '/rch';
+  static const fastTrackEvaluation = '/fastTrackEvaluation';
 }
