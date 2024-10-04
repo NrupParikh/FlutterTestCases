@@ -11,6 +11,7 @@ import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart'
 import 'package:flutter_application_1/base_structure/vm/project_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:get/get.dart';
 
 // Define each VM here to bind with View
@@ -30,5 +31,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => NRDViewModel(),fenix: true);
     Get.lazyPut(() => RCHViewModel(),fenix: true);
     Get.lazyPut(() => FastTrackEvaluationViewModel(),fenix: true);
+    Get.lazyPut(() => RNDViewModel(),fenix: true);
   }
 }

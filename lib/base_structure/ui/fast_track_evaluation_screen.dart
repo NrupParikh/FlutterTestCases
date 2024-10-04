@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:get/get.dart';
 
 import '../constants/app_text_constant.dart';
 import '../vm/fast_track_evaluation_view_model.dart';
 
-class FastTrackEvaluationScreen extends BaseScreen<FastTrackEvaluationViewModel> {
+class FastTrackEvaluationScreen
+    extends BaseScreen<FastTrackEvaluationViewModel> {
   FastTrackEvaluationScreen({super.key});
 
   @override
@@ -42,7 +44,9 @@ class FastTrackEvaluationScreen extends BaseScreen<FastTrackEvaluationViewModel>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TabBar(
-                    isScrollable: true,
+                    tabAlignment: TabAlignment.fill,
+                    isScrollable: false,
+                    indicatorSize: TabBarIndicatorSize.tab,
                     indicatorColor: Colors.black,
                     unselectedLabelColor: Colors.grey,
                     tabs: tabs,
@@ -52,7 +56,7 @@ class FastTrackEvaluationScreen extends BaseScreen<FastTrackEvaluationViewModel>
             ),
             body: TabBarView(children: [
               Center(
-                child: Text(AppStrings.tabRND.tr),
+                child: RNDScreen(),
               ),
               Center(
                 child: Text(AppStrings.tabQuality.tr),

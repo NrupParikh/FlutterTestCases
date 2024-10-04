@@ -11,6 +11,7 @@ import 'package:flutter_application_1/base_structure/ui/notifications_screen.dar
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:get/get.dart';
 
 import '../ui/change_language_screen.dart';
@@ -32,6 +33,9 @@ class AppPages {
     GetPage(name: Routes.documentFilter, page: () => DocumentFilterScreen()),
     GetPage(name: Routes.nrd, page: () => NRDScreen()),
     GetPage(name: Routes.rch, page: () => RCHScreen()),
-    GetPage(name: Routes.fastTrackEvaluation, page: () => FastTrackEvaluationScreen()),
+    GetPage(
+        name: Routes.fastTrackEvaluation,
+        page: () => FastTrackEvaluationScreen()),
+    GetPage(name: Routes.rnd, page: () => RNDScreen()),
   ];
 }

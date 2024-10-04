@@ -14,4 +14,5 @@ class Routes {
   static const nrd = '/nrd';
   static const rch = '/rch';
   static const fastTrackEvaluation = '/fastTrackEvaluation';
+  static const rnd = '/rnd';
 }

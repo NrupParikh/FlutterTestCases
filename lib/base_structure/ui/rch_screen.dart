@@ -50,7 +50,6 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
       ),
     ];
 
-
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: DefaultTabController(
@@ -65,7 +64,9 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TabBar(
+                    tabAlignment: TabAlignment.center,
                     isScrollable: true,
+                    indicatorSize: TabBarIndicatorSize.tab,
                     indicatorColor: Colors.black,
                     unselectedLabelColor: Colors.grey,
                     tabs: tabs,
