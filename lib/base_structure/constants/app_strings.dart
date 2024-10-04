@@ -69,7 +69,7 @@ class AppStrings {
 
 // ========== TABS
   static const tabRND = "R&D";
-  static const tabIndustrialTrial = "Prueba industrial";
+  static const tabIndustrialTrial = "Industrial Trail";
   static const tabHaccp = "HACCP";
   static const tabQcInspection = "Qc Inspection";
   static const tabPurchasingReview = "Purchasing Review";

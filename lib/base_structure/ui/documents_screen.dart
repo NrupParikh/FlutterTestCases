@@ -4,7 +4,7 @@ import 'package:flutter_application_1/base_structure/constants/app_text_constant
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
 
 class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
-  DocumentsScreen({super.key});
+  const DocumentsScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

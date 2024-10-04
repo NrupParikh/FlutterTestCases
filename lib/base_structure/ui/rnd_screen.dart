@@ -8,7 +8,7 @@ import '../constants/app_text_constant.dart';
 import '../vm/rnd_view_model.dart';
 
 class RNDScreen extends BaseScreen<RNDViewModel> {
-  RNDScreen({super.key});
+  const RNDScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

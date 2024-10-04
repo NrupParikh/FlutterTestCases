@@ -20,22 +20,22 @@ class AppPages {
   // static const initial = Routes.initial;
 
   static final routes = [
-    GetPage(name: Routes.login, page: () => LoginScreen()),
-    GetPage(name: Routes.forgotPassword, page: () => ForgotPasswordScreen()),
+    GetPage(name: Routes.login, page: () => const LoginScreen()),
+    GetPage(name: Routes.forgotPassword, page: () => const ForgotPasswordScreen()),
     GetPage(
-        name: Routes.projectManagement, page: () => ProjectManagementScreen()),
-    GetPage(name: Routes.documents, page: () => DocumentsScreen()),
-    GetPage(name: Routes.profile, page: () => ProfileScreen()),
-    GetPage(name: Routes.notifications, page: () => NotificationsScreen()),
-    GetPage(name: Routes.changePassword, page: () => ChangePasswordScreen()),
-    GetPage(name: Routes.changeLanguage, page: () => ChangeLanguageScreen()),
-    GetPage(name: Routes.projectFilter, page: () => ProjectFilterScreen()),
-    GetPage(name: Routes.documentFilter, page: () => DocumentFilterScreen()),
-    GetPage(name: Routes.nrd, page: () => NRDScreen()),
-    GetPage(name: Routes.rch, page: () => RCHScreen()),
+        name: Routes.projectManagement, page: () => const ProjectManagementScreen()),
+    GetPage(name: Routes.documents, page: () => const DocumentsScreen()),
+    GetPage(name: Routes.profile, page: () => const ProfileScreen()),
+    GetPage(name: Routes.notifications, page: () => const NotificationsScreen()),
+    GetPage(name: Routes.changePassword, page: () => const ChangePasswordScreen()),
+    GetPage(name: Routes.changeLanguage, page: () => const ChangeLanguageScreen()),
+    GetPage(name: Routes.projectFilter, page: () => const ProjectFilterScreen()),
+    GetPage(name: Routes.documentFilter, page: () => const DocumentFilterScreen()),
+    GetPage(name: Routes.nrd, page: () => const NRDScreen()),
+    GetPage(name: Routes.rch, page: () => const RCHScreen()),
     GetPage(
         name: Routes.fastTrackEvaluation,
-        page: () => FastTrackEvaluationScreen()),
-    GetPage(name: Routes.rnd, page: () => RNDScreen()),
+        page: () => const FastTrackEvaluationScreen()),
+    GetPage(name: Routes.rnd, page: () => const RNDScreen()),
   ];
 }

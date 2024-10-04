@@ -4,7 +4,7 @@ import 'package:flutter_application_1/base_structure/constants/app_text_constant
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 
 class ProfileScreen extends BaseScreen<ProfileViewModel> {
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

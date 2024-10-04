@@ -5,7 +5,7 @@ import 'package:flutter_application_1/base_structure/vm/project_management_view_
 import 'package:get/get.dart';
 
 class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
-  ProjectManagementScreen({super.key});
+  const ProjectManagementScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

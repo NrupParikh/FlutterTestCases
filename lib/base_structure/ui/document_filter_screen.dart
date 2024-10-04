@@ -5,7 +5,7 @@ import 'package:flutter_application_1/base_structure/vm/document_filter_view_mod
 
 
 class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
-  DocumentFilterScreen({super.key});
+  const DocumentFilterScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

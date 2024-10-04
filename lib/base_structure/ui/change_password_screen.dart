@@ -4,7 +4,7 @@ import 'package:flutter_application_1/base_structure/constants/app_text_constant
 import 'package:flutter_application_1/base_structure/vm/change_password_view_model.dart';
 
 class ChangePasswordScreen extends BaseScreen<ChangePasswordViewModel> {
-  ChangePasswordScreen({super.key});
+  const ChangePasswordScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

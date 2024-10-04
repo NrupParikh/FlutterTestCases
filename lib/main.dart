@@ -8,6 +8,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:http/http.dart' as http;
 import 'package:screen_protector/screen_protector.dart';
 
+import 'base_structure/constants/app_strings.dart';
+import 'base_structure/constants/app_text_constant.dart';
 import 'base_structure/routes/app_route.dart';
 
 import 'base_structure/utils/preferences.dart';
@@ -40,6 +42,8 @@ Future<void> main() async {
   ]);
 
   runApp(MyBaseApp(myInitialRoute,myInitialLanguage));
+
+  // runApp(const SampleTab());
 }
 
 /*
@@ -117,3 +121,129 @@ Future<Album> fetchAlbum(http.Client client) async {
 }
 
 // ====================================== END OF EXAMPLE ONLY
+
+class SampleTab extends StatefulWidget {
+  const SampleTab({super.key});
+
+  @override
+  State<SampleTab> createState() => _SampleTabState();
+}
+
+class _SampleTabState extends State<SampleTab> {
+  List<Tab> tabs = [
+    const Tab(
+      child: Text(AppStrings.tabRND,
+          style:
+              TextStyle(fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+    ),
+    const Tab(
+      child: Text(AppStrings.tabQuality,
+          style:
+              TextStyle(fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+    ),
+    const Tab(
+      child: Text(AppStrings.tabRegulatory,
+          style:
+              TextStyle(fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            title: const Text("Fetch Data From API"),
+          ),
+          body: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DefaultTabController(
+                initialIndex: 0,
+                length: tabs.length,
+                child: Scaffold(
+                  appBar: AppBar(
+                    title: const Text(""),
+                    leading: const SizedBox(),
+                    elevation: 0,
+                    flexibleSpace: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TabBar(
+                          tabAlignment: TabAlignment.fill,
+                          isScrollable: false,
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          indicatorColor: Colors.black,
+                          unselectedLabelColor: Colors.grey,
+                          tabs: tabs,
+                        ),
+                      ],
+                    ),
+                  ),
+                  body: TabBarView(children: [
+                    Form(
+                      child: Column(
+                        children: [
+                          CheckboxListTile(
+                              controlAffinity: ListTileControlAffinity.leading,
+                              title: const Text(AppStrings.approve),
+                              value: false,
+                              onChanged: (value) {}),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: AppStrings.hintEnterComment,
+                                hintStyle: TextStyle(
+                                    fontFamily: AppTextConstant.poppinsRegular),
+                                label: Text(AppStrings.comment,
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontFamily:
+                                            AppTextConstant.poppinsRegular)),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                OutlinedButton(
+                                    child: const Text(AppStrings.approve,
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontFamily:
+                                                AppTextConstant.poppinsBold)),
+                                    onPressed: () {}),
+                                OutlinedButton(
+                                    child: const Text(AppStrings.reject,
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontFamily:
+                                                AppTextConstant.poppinsBold)),
+                                    onPressed: () {}),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const Center(
+                      child: Text(AppStrings.tabQuality),
+                    ),
+                    const Center(
+                      child: Text(AppStrings.tabRegulatory),
+                    )
+                  ]),
+                ),
+              ))),
+    );
+  }
+}

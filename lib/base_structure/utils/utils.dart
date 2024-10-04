@@ -109,7 +109,7 @@ String getTitle(String currentRouteName) {
   return title;
 }
 
-void doLogout(scaffoldKey) async {
+void doLogout() async {
   final result = await CustomDialog.showOkCancelDialog(
       AppStrings.appName.tr, AppStrings.msgLogoutConfirmation.tr);
   if (result) {
@@ -120,7 +120,6 @@ void doLogout(scaffoldKey) async {
     // Remove all secure storage key(s)
     await SecureStorageSingleton().storage.deleteAll();
 
-    Get.offAll(LoginScreen());
-    closeDrawer(scaffoldKey);
+    Get.offAll(const LoginScreen());
   }
 }

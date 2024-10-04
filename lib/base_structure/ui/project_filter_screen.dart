@@ -9,7 +9,7 @@ import '../constants/app_strings.dart';
 import '../vm/project_filter_view_model.dart';
 
 class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
-  ProjectFilterScreen({super.key});
+  const ProjectFilterScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -39,7 +39,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () {
-                        Get.to(NRDScreen());
+                        Get.to(const NRDScreen());
                       }),
                 ),
                    Padding(
@@ -50,7 +50,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () {
-                        Get.to(RCHScreen());
+                        Get.to(const RCHScreen());
                       }),
                 ),
               ],

@@ -18,10 +18,8 @@ import '../constants/app_text_constant.dart';
 import '../ui/change_language_screen.dart';
 
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
-  final GlobalKey<ScaffoldState> _scaffoldKey;
-  BaseScreen({Key? key})
-      : _scaffoldKey = GlobalKey<ScaffoldState>(),
-        super(key: key);
+  const BaseScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +54,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     }
 
     return Scaffold(
-        key: _scaffoldKey,
+        // key: _scaffoldKey,
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         backgroundColor: screenBackgroundColor,
@@ -75,7 +73,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     currentRouteName == Constant.tagForgotPassword))
             ? SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
-                child: buildDrawer(currentRouteName))
+                child: buildDrawer(context,currentRouteName))
             : null);
   }
 
@@ -147,7 +145,8 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               : Builder(builder: (context) {
                   return IconButton(
                     onPressed: () {
-                      openDrawer(_scaffoldKey);
+                      // openDrawer(_scaffoldKey);
+                      Scaffold.of(context).openDrawer();
                     },
                     icon: const Icon(Icons.menu),
                   );
@@ -160,7 +159,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     if (kDebugMode) {
                       print("Project Filter");
                     }
-                    Get.to(ProjectFilterScreen());
+                    Get.to(const ProjectFilterScreen());
                   },
                   icon: const Icon(Icons.filter_alt_outlined))
             ]
@@ -172,7 +171,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                         if (kDebugMode) {
                           print("Document Filter");
                         }
-                        Get.to(DocumentFilterScreen());
+                        Get.to(const DocumentFilterScreen());
                       },
                       icon: const Icon(Icons.filter_alt_outlined))
                 ]
@@ -207,7 +206,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   @protected
   Widget buildScreen(BuildContext context);
 
-  Drawer buildDrawer(String currentRouteName) {
+  Drawer buildDrawer(BuildContext context,String currentRouteName) {
     if (kDebugMode) {
       print("buildDrawer");
     }
@@ -274,7 +273,10 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
             selectedTileColor: ColorConstant.selectedTileColor,
-            onTap: () => {doLogout(_scaffoldKey)},
+            onTap: () => {
+              doLogout(),
+              Scaffold.of(context).closeDrawer()
+              },
           ),
         ],
       ),
@@ -307,22 +309,22 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   void setSelected(int index) async {
     switch (index) {
       case 0:
-        Get.off(ProjectManagementScreen());
+        Get.off(const ProjectManagementScreen());
         break;
       case 1:
-        Get.off(DocumentsScreen());
+        Get.off(const DocumentsScreen());
         break;
       case 2:
-        Get.off(ProfileScreen());
+        Get.off(const ProfileScreen());
         break;
       case 3:
-        Get.off(NotificationsScreen());
+        Get.off(const NotificationsScreen());
         break;
       case 4:
-        Get.off(ChangePasswordScreen());
+        Get.off(const ChangePasswordScreen());
         break;
       case 5:
-        Get.off(ChangeLanguageScreen());
+        Get.off(const ChangeLanguageScreen());
         break;
       case 6:
         break;

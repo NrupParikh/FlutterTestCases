@@ -7,7 +7,7 @@ import '../constants/app_text_constant.dart';
 import '../vm/nrd_view_model.dart';
 
 class NRDScreen extends BaseScreen<NRDViewModel> {
-  NRDScreen({super.key});
+  const NRDScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

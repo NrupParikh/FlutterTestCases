@@ -9,7 +9,7 @@ import '../vm/fast_track_evaluation_view_model.dart';
 
 class FastTrackEvaluationScreen
     extends BaseScreen<FastTrackEvaluationViewModel> {
-  FastTrackEvaluationScreen({super.key});
+  const FastTrackEvaluationScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -55,7 +55,7 @@ class FastTrackEvaluationScreen
               ),
             ),
             body: TabBarView(children: [
-              Center(
+              const Center(
                 child: RNDScreen(),
               ),
               Center(

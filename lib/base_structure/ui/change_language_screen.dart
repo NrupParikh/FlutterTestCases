@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 
 class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
-  ChangeLanguageScreen({super.key});
+  const ChangeLanguageScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

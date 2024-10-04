@@ -8,7 +8,7 @@ import '../constants/app_text_constant.dart';
 import 'fast_track_evaluation_screen.dart';
 
 class RCHScreen extends BaseScreen<RCHViewModel> {
-  RCHScreen({super.key});
+  const RCHScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -78,7 +78,7 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
               Center(
                 child: Text(AppStrings.tabRND.tr),
               ),
-              Center(child: FastTrackEvaluationScreen()),
+              const Center(child: FastTrackEvaluationScreen()),
               Center(
                 child: Text(AppStrings.tabIndustrialReview.tr),
               ),
