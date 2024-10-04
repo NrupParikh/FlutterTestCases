@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
@@ -12,50 +13,50 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
   @override
   Widget buildScreen(BuildContext context) {
     return Form(
-      child: Column(
-        children: [
-          CheckboxListTile(
-              controlAffinity: ListTileControlAffinity.leading,
-              title: Text(AppStrings.approve.tr),
-              value: false,
-              onChanged: (value) {}),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              decoration:  InputDecoration(
-                border: const OutlineInputBorder(),
-                hintText: AppStrings.hintEnterComment.tr,
-                hintStyle:
-                    const TextStyle(fontFamily: AppTextConstant.poppinsRegular),
-                label: Text(AppStrings.comment.tr,
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontFamily: AppTextConstant.poppinsRegular)),
+          child: Column(
+            children: [
+              CheckboxListTile(
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: Text(AppStrings.approve.tr),
+                  value: false,
+                  onChanged: (value) {}),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: AppStrings.hintEnterComment.tr,
+                    hintStyle: const TextStyle(
+                        fontFamily: AppTextConstant.poppinsRegular),
+                    label: Text(AppStrings.comment.tr,
+                        style: const TextStyle(
+                            fontSize: 12,
+                            fontFamily: AppTextConstant.poppinsRegular)),
+                  ),
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    OutlinedButton(
+                        child: Text(AppStrings.approve.tr,
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsBold)),
+                        onPressed: () {}),
+                    OutlinedButton(
+                        child: Text(AppStrings.reject.tr,
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsBold)),
+                        onPressed: () {}),
+                  ],
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                OutlinedButton(
-                    child:  Text(AppStrings.approve.tr,
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsBold)),
-                    onPressed: () {}),
-                OutlinedButton(
-                    child:  Text(AppStrings.reject.tr,
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsBold)),
-                    onPressed: () {}),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+        );
   }
 }

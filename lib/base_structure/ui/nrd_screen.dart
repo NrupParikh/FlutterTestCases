@@ -52,7 +52,9 @@ class NRDScreen extends BaseScreen<NRDViewModel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TabBar(
+                    tabAlignment: TabAlignment.center,
                     isScrollable: true,
+                    indicatorSize: TabBarIndicatorSize.tab,
                     indicatorColor: Colors.black,
                     unselectedLabelColor: Colors.grey,
                     tabs: tabs,
