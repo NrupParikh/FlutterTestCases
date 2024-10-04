@@ -40,6 +40,8 @@ class Languages implements Translations {
           AppStrings.hintEnterYourPassword: AppStrings.hintEnterYourPassword,
           AppStrings.hintOTP: AppStrings.hintOTP,
           AppStrings.hintEnterYourOTP: AppStrings.hintEnterYourOTP,
+          AppStrings.hintEnterComment: AppStrings.hintEnterComment,
+
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -78,7 +80,12 @@ class Languages implements Translations {
           AppStrings.tabIndustrialReview: AppStrings.tabIndustrialReview,
 
           AppStrings.tabQuality: AppStrings.tabQuality,
-          AppStrings.tabRegulatory: AppStrings.tabRegulatory
+          AppStrings.tabRegulatory: AppStrings.tabRegulatory,
+          
+          // ========== OTHER
+          AppStrings.approve: AppStrings.approve,
+          AppStrings.reject: AppStrings.reject,
+          AppStrings.comment: AppStrings.comment
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -117,6 +124,7 @@ class Languages implements Translations {
           AppStrings.hintEnterYourPassword: "Inserisci la tua password",
           AppStrings.hintOTP: "OTP",
           AppStrings.hintEnterYourOTP: "Inserisci la tua OTP *",
+          AppStrings.hintEnterComment: "Inserisci il commento",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -156,7 +164,12 @@ class Languages implements Translations {
           AppStrings.tabIndustrialReview: "Revisione industriale",
 
           AppStrings.tabQuality: "Qualità",
-          AppStrings.tabRegulatory: "Normativo"
+          AppStrings.tabRegulatory: "Normativo",
+
+          // ========== OTHER
+          AppStrings.approve: "Approvare",
+          AppStrings.reject: "Rifiutare",
+          AppStrings.comment: "Commento"
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -197,6 +210,7 @@ class Languages implements Translations {
           AppStrings.hintEnterYourPassword: "Introduce tu contraseña",
           AppStrings.hintOTP: "OTP",
           AppStrings.hintEnterYourOTP: "Ingresa tu OTP *",
+          AppStrings.hintEnterComment: "Introducir comentario",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",
@@ -236,7 +250,12 @@ class Languages implements Translations {
           AppStrings.tabIndustrialReview: "Revisión industrial",
 
           AppStrings.tabQuality: "Calidad",
-          AppStrings.tabRegulatory: "Regulador"
+          AppStrings.tabRegulatory: "Regulador",
+
+          // ========== OTHER
+          AppStrings.approve: "Aprobar",
+          AppStrings.reject: "Rechazar",
+          AppStrings.comment: "Comentario"
         }
       };
 }

@@ -39,6 +39,7 @@ class AppStrings {
   static const hintEnterYourPassword = "Enter your password";
   static const hintOTP = "OTP";
   static const hintEnterYourOTP = "Enter your OTP *";
+  static const hintEnterComment = "Enter Comment";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";
@@ -78,4 +79,10 @@ class AppStrings {
 
   static const tabQuality = "Quality";
   static const tabRegulatory = "Regulatory";
+
+// ========== OTHER
+  static const approve = "Approve";
+  static const reject = "Reject";
+  static const comment = "Comment"; 
+
 }

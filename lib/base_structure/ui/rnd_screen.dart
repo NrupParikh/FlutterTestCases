@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
+import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:get/get.dart';
 
 import '../constants/app_text_constant.dart';
 import '../vm/rnd_view_model.dart';
@@ -14,19 +16,19 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
         children: [
           CheckboxListTile(
               controlAffinity: ListTileControlAffinity.leading,
-              title: const Text("Approve"),
+              title: Text(AppStrings.approve.tr),
               value: false,
               onChanged: (value) {}),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Enter Comment",
+              decoration:  InputDecoration(
+                border: const OutlineInputBorder(),
+                hintText: AppStrings.hintEnterComment.tr,
                 hintStyle:
-                    TextStyle(fontFamily: AppTextConstant.poppinsRegular),
-                label: Text("Comment",
-                    style: TextStyle(
+                    const TextStyle(fontFamily: AppTextConstant.poppinsRegular),
+                label: Text(AppStrings.comment.tr,
+                    style: const TextStyle(
                         fontSize: 12,
                         fontFamily: AppTextConstant.poppinsRegular)),
               ),
@@ -38,14 +40,14 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 OutlinedButton(
-                    child: const Text("Approve",
-                        style: TextStyle(
+                    child:  Text(AppStrings.approve.tr,
+                        style: const TextStyle(
                             fontSize: 12,
                             fontFamily: AppTextConstant.poppinsBold)),
                     onPressed: () {}),
                 OutlinedButton(
-                    child: const Text("Reject",
-                        style: TextStyle(
+                    child:  Text(AppStrings.reject.tr,
+                        style: const TextStyle(
                             fontSize: 12,
                             fontFamily: AppTextConstant.poppinsBold)),
                     onPressed: () {}),
