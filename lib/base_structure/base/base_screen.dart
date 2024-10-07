@@ -12,6 +12,7 @@ import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
@@ -60,7 +61,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         backgroundColor: screenBackgroundColor,
         // If you want to don't show the AppBar in internal screen. 
         // Ex. Tab then check with VM and set null
-        appBar: ((controller is FastTrackEvaluationViewModel) || (controller is RNDViewModel))
+        appBar: ((controller is FastTrackEvaluationViewModel) || (controller is RNDViewModel) || (controller is QCInspectionViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),

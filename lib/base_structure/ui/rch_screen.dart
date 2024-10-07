@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:get/get.dart';
 
@@ -88,8 +89,8 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
               Center(
                 child: Text(AppStrings.tabHaccp.tr),
               ),
-              Center(
-                child: Text(AppStrings.tabQcInspection.tr),
+              const Center(
+                child: Center(child: QCInspectionScreen()),
               ),
               Center(
                 child: Text(AppStrings.tabPurchasingReview.tr),

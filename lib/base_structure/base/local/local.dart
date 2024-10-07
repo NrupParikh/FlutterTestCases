@@ -22,6 +22,12 @@ class Languages implements Translations {
           AppStrings.lblFail: AppStrings.lblFail,
           AppStrings.errorPopupButtom: AppStrings.errorPopupButtom,
           AppStrings.lblSuccess: AppStrings.lblSuccess,
+          AppStrings.lblQcAnalysis: AppStrings.lblQcAnalysis,
+          AppStrings.lblQcInspectionPlan: AppStrings.lblQcInspectionPlan,
+          AppStrings.lblQcDays: AppStrings.lblQcDays,
+          AppStrings.lblSamplingPlan: AppStrings.lblSamplingPlan,
+          AppStrings.lblReqiredSamplingPlan:
+              AppStrings.lblReqiredSamplingPlan,
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
@@ -41,7 +47,7 @@ class Languages implements Translations {
           AppStrings.hintOTP: AppStrings.hintOTP,
           AppStrings.hintEnterYourOTP: AppStrings.hintEnterYourOTP,
           AppStrings.hintEnterComment: AppStrings.hintEnterComment,
-
+          AppStrings.hintEnterQcDays: AppStrings.hintEnterQcDays,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -81,11 +87,12 @@ class Languages implements Translations {
 
           AppStrings.tabQuality: AppStrings.tabQuality,
           AppStrings.tabRegulatory: AppStrings.tabRegulatory,
-          
+
           // ========== OTHER
           AppStrings.approve: AppStrings.approve,
           AppStrings.reject: AppStrings.reject,
-          AppStrings.comment: AppStrings.comment
+          AppStrings.comment: AppStrings.comment,
+          AppStrings.updateQC: AppStrings.updateQC,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -105,6 +112,11 @@ class Languages implements Translations {
           AppStrings.lblFail: "Fallire !",
           AppStrings.errorPopupButtom: "Va bene",
           AppStrings.lblSuccess: "Successo !",
+          AppStrings.lblQcAnalysis: "Analisi QC",
+          AppStrings.lblQcInspectionPlan: "Piano di ispezione QC *",
+          AppStrings.lblQcDays: "Giornate di controllo qualità",
+          AppStrings.lblSamplingPlan: "Piano di campionamento",
+          AppStrings.lblReqiredSamplingPlan: "Piano di campionamento *",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
@@ -125,6 +137,8 @@ class Languages implements Translations {
           AppStrings.hintOTP: "OTP",
           AppStrings.hintEnterYourOTP: "Inserisci la tua OTP *",
           AppStrings.hintEnterComment: "Inserisci il commento",
+          AppStrings.hintEnterQcDays:
+              "Inserisci i giorni del controllo qualità",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -169,7 +183,8 @@ class Languages implements Translations {
           // ========== OTHER
           AppStrings.approve: "Approvare",
           AppStrings.reject: "Rifiutare",
-          AppStrings.comment: "Commento"
+          AppStrings.comment: "Commento",
+          AppStrings.updateQC: "Aggiorna il controllo di qualità",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -190,6 +205,12 @@ class Languages implements Translations {
           AppStrings.lblFail: "Fallar !",
           AppStrings.errorPopupButtom: "Bueno",
           AppStrings.lblSuccess: "Éxito !",
+          AppStrings.lblQcAnalysis: "Análisis de control de calidad",
+          AppStrings.lblQcInspectionPlan: "Plan de inspección de control de calidad *",
+          AppStrings.lblQcDays: "Días de control de calidad",
+          AppStrings.lblSamplingPlan: "Plan de muestreo",
+          AppStrings.lblReqiredSamplingPlan:
+              "Plan de muestreo *",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
@@ -220,6 +241,7 @@ class Languages implements Translations {
           AppStrings.changePassword: "Cambiar la contraseña",
           AppStrings.changeLanguage: "Cambiar idioma",
           AppStrings.logout: "Cerrar sesión",
+          AppStrings.hintEnterQcDays: "Introduzca los días de control de calidad",
 
           // ========== LANGUAGE
           AppStrings.english: "Inglés",
@@ -255,7 +277,8 @@ class Languages implements Translations {
           // ========== OTHER
           AppStrings.approve: "Aprobar",
           AppStrings.reject: "Rechazar",
-          AppStrings.comment: "Comentario"
+          AppStrings.comment: "Comentario",
+          AppStrings.updateQC: "Actualizar control de calidad",
         }
       };
 }

@@ -10,6 +10,7 @@ import 'package:flutter_application_1/base_structure/vm/nrd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:get/get.dart';
@@ -32,5 +33,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => RCHViewModel(),fenix: true);
     Get.lazyPut(() => FastTrackEvaluationViewModel(),fenix: true);
     Get.lazyPut(() => RNDViewModel(),fenix: true);
+    Get.lazyPut(() => QCInspectionViewModel(),fenix: true);
   }
 }

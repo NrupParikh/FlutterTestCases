@@ -20,6 +20,11 @@ class AppStrings {
   static const lblFail = "Fail !";
   static const errorPopupButtom = "Okay";
   static const lblSuccess = "Success !";
+  static const lblQcAnalysis = "QC Analysis";
+  static const lblQcInspectionPlan = "QC Inspection plan *";
+  static const lblQcDays = "QC Days";
+  static const lblSamplingPlan = "Sampling Plan";
+  static const lblReqiredSamplingPlan = "Sampling Plan *";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
@@ -40,6 +45,7 @@ class AppStrings {
   static const hintOTP = "OTP";
   static const hintEnterYourOTP = "Enter your OTP *";
   static const hintEnterComment = "Enter Comment";
+  static const hintEnterQcDays = "Enter QC Days";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";
@@ -84,5 +90,5 @@ class AppStrings {
   static const approve = "Approve";
   static const reject = "Reject";
   static const comment = "Comment"; 
-
+  static const updateQC = "Update QC"; 
 }

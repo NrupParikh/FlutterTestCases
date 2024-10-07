@@ -10,6 +10,7 @@ import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:get/get.dart';
@@ -37,5 +38,6 @@ class AppPages {
         name: Routes.fastTrackEvaluation,
         page: () => const FastTrackEvaluationScreen()),
     GetPage(name: Routes.rnd, page: () => const RNDScreen()),
+    GetPage(name: Routes.qcInspection, page: () => const QCInspectionScreen()),
   ];
 }
