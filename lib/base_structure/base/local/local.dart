@@ -26,8 +26,19 @@ class Languages implements Translations {
           AppStrings.lblQcInspectionPlan: AppStrings.lblQcInspectionPlan,
           AppStrings.lblQcDays: AppStrings.lblQcDays,
           AppStrings.lblSamplingPlan: AppStrings.lblSamplingPlan,
-          AppStrings.lblReqiredSamplingPlan:
-              AppStrings.lblReqiredSamplingPlan,
+          AppStrings.lblReqiredSamplingPlan: AppStrings.lblReqiredSamplingPlan,
+
+          AppStrings.lblProjectType: AppStrings.lblProjectType,
+          AppStrings.lblProjectStatus: AppStrings.lblProjectStatus,
+          AppStrings.lblLab: AppStrings.lblLab,
+          AppStrings.lblProjectManager: AppStrings.lblProjectManager,
+
+          AppStrings.lblProjectDateFrom: AppStrings.lblProjectDateFrom,
+          AppStrings.lblProjectDateTo: AppStrings.lblProjectDateTo,
+          AppStrings.lblFreeText: AppStrings.lblFreeText,
+
+          AppStrings.lblClear: AppStrings.lblClear,
+          AppStrings.lblSearch: AppStrings.lblSearch,
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
@@ -48,6 +59,7 @@ class Languages implements Translations {
           AppStrings.hintEnterYourOTP: AppStrings.hintEnterYourOTP,
           AppStrings.hintEnterComment: AppStrings.hintEnterComment,
           AppStrings.hintEnterQcDays: AppStrings.hintEnterQcDays,
+          AppStrings.hintEnterFreeText: AppStrings.hintEnterFreeText,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -93,6 +105,19 @@ class Languages implements Translations {
           AppStrings.reject: AppStrings.reject,
           AppStrings.comment: AppStrings.comment,
           AppStrings.updateQC: AppStrings.updateQC,
+
+          AppStrings.all: AppStrings.all,
+          AppStrings.created: AppStrings.created,
+          AppStrings.started: AppStrings.started,
+          AppStrings.closed: AppStrings.closed,
+          AppStrings.stopped: AppStrings.stopped,
+          AppStrings.cancelled: AppStrings.cancelled,
+
+          AppStrings.msa: AppStrings.msa,
+          AppStrings.nrd: AppStrings.nrd,
+          AppStrings.pad: AppStrings.pad,
+          AppStrings.rch: AppStrings.rch,
+          AppStrings.tgi: AppStrings.tgi,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -118,6 +143,18 @@ class Languages implements Translations {
           AppStrings.lblSamplingPlan: "Piano di campionamento",
           AppStrings.lblReqiredSamplingPlan: "Piano di campionamento *",
 
+          AppStrings.lblProjectType: "Tipo di progetto",
+          AppStrings.lblProjectStatus: "Stato del progetto",
+          AppStrings.lblLab: "Laboratorio",
+          AppStrings.lblProjectManager: "Responsabile del progetto",
+
+          AppStrings.lblProjectDateFrom: "Data del progetto da",
+          AppStrings.lblProjectDateTo: "Data del progetto a",
+          AppStrings.lblFreeText: "Testo libero",
+
+          AppStrings.lblClear: "Chiara",
+          AppStrings.lblSearch: "Ricerca",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
@@ -139,6 +176,7 @@ class Languages implements Translations {
           AppStrings.hintEnterComment: "Inserisci il commento",
           AppStrings.hintEnterQcDays:
               "Inserisci i giorni del controllo qualità",
+          AppStrings.hintEnterFreeText: "Inserisci testo libero",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -185,6 +223,19 @@ class Languages implements Translations {
           AppStrings.reject: "Rifiutare",
           AppStrings.comment: "Commento",
           AppStrings.updateQC: "Aggiorna il controllo di qualità",
+
+          AppStrings.all: "Tutto",
+          AppStrings.created: "Creata",
+          AppStrings.started: "Iniziata",
+          AppStrings.closed: "Chiusa",
+          AppStrings.stopped: "Fermato",
+          AppStrings.cancelled: "Annullata",
+
+          AppStrings.msa: "MSA-Attivazione del sito materiale",
+          AppStrings.nrd: "NRD-Sviluppo di nuove ricette",
+          AppStrings.pad: "PAD-Disattivazione dell'attivazione del prodotto",
+          AppStrings.rch: "RCH-Cambio ricetta",
+          AppStrings.tgi: "TGI-Introduzione ai beni scambiati",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -206,11 +257,23 @@ class Languages implements Translations {
           AppStrings.errorPopupButtom: "Bueno",
           AppStrings.lblSuccess: "Éxito !",
           AppStrings.lblQcAnalysis: "Análisis de control de calidad",
-          AppStrings.lblQcInspectionPlan: "Plan de inspección de control de calidad *",
+          AppStrings.lblQcInspectionPlan:
+              "Plan de inspección de control de calidad *",
           AppStrings.lblQcDays: "Días de control de calidad",
           AppStrings.lblSamplingPlan: "Plan de muestreo",
-          AppStrings.lblReqiredSamplingPlan:
-              "Plan de muestreo *",
+          AppStrings.lblReqiredSamplingPlan: "Plan de muestreo *",
+
+          AppStrings.lblProjectType: "Tipo de proyecto",
+          AppStrings.lblProjectStatus: "Estado del proyecto",
+          AppStrings.lblLab: "Laboratorio",
+          AppStrings.lblProjectManager: "Gerente de proyecto",
+
+          AppStrings.lblProjectDateFrom: "Fecha del proyecto desde",
+          AppStrings.lblProjectDateTo: "Fecha del proyecto hasta",
+          AppStrings.lblFreeText: "Texto libre",
+
+          AppStrings.lblClear: "Claro",
+          AppStrings.lblSearch: "Buscar",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
@@ -232,6 +295,7 @@ class Languages implements Translations {
           AppStrings.hintOTP: "OTP",
           AppStrings.hintEnterYourOTP: "Ingresa tu OTP *",
           AppStrings.hintEnterComment: "Introducir comentario",
+          AppStrings.hintEnterFreeText: "Ingrese texto libre",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",
@@ -241,7 +305,8 @@ class Languages implements Translations {
           AppStrings.changePassword: "Cambiar la contraseña",
           AppStrings.changeLanguage: "Cambiar idioma",
           AppStrings.logout: "Cerrar sesión",
-          AppStrings.hintEnterQcDays: "Introduzca los días de control de calidad",
+          AppStrings.hintEnterQcDays:
+              "Introduzca los días de control de calidad",
 
           // ========== LANGUAGE
           AppStrings.english: "Inglés",
@@ -279,6 +344,19 @@ class Languages implements Translations {
           AppStrings.reject: "Rechazar",
           AppStrings.comment: "Comentario",
           AppStrings.updateQC: "Actualizar control de calidad",
+
+          AppStrings.all: "Toda",
+          AppStrings.created: "Creado",
+          AppStrings.started: "Comenzó",
+          AppStrings.closed: "Cerrada",
+          AppStrings.stopped: "Interrumpida",
+          AppStrings.cancelled: "Cancelada",
+
+          AppStrings.msa: "MSA-Activación del sitio de materiales",
+          AppStrings.nrd: "NRD-Desarrollo de nuevas recetas",
+          AppStrings.pad: "PAD-Activación y desactivación del producto",
+          AppStrings.rch: "RCH-Cambio de receta",
+          AppStrings.tgi: "TGI-Introducción a los productos comercializados",
         }
       };
 }

@@ -5,7 +5,7 @@ class AppStrings {
 
   static const lblFirstName = "First Name";
   static const lblEmail = "Email";
-  
+
   static const lblSignInNow = "Sign in now";
   static const lblEnterYourDetailsBelow = "Enter your details below";
   static const lblEmailAddress = "Email Address *";
@@ -25,6 +25,15 @@ class AppStrings {
   static const lblQcDays = "QC Days";
   static const lblSamplingPlan = "Sampling Plan";
   static const lblReqiredSamplingPlan = "Sampling Plan *";
+
+  static const lblProjectType = "Project Type";
+  static const lblProjectStatus = "Project Status";
+  static const lblLab = "Lab";
+  static const lblProjectManager = "Project Manager";
+
+  static const lblProjectDateFrom = "Project Date from";
+  static const lblProjectDateTo = "Project Date To";
+  static const lblFreeText = "Free Text";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
@@ -46,6 +55,8 @@ class AppStrings {
   static const hintEnterYourOTP = "Enter your OTP *";
   static const hintEnterComment = "Enter Comment";
   static const hintEnterQcDays = "Enter QC Days";
+
+  static const hintEnterFreeText = "Enter free text";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";
@@ -73,6 +84,9 @@ class AppStrings {
   static const lblNRD = "NRD";
   static const lblRCH = "RCH";
 
+  static const lblClear = "Clear";
+  static const lblSearch = "Search";
+
 // ========== TABS
   static const tabRND = "R&D";
   static const tabIndustrialTrial = "Industrial Trail";
@@ -89,6 +103,19 @@ class AppStrings {
 // ========== OTHER
   static const approve = "Approve";
   static const reject = "Reject";
-  static const comment = "Comment"; 
-  static const updateQC = "Update QC"; 
+  static const comment = "Comment";
+  static const updateQC = "Update QC";
+
+  static const all = "All";
+  static const created = "Created";
+  static const started = "Started";
+  static const closed = "Closed";
+  static const stopped = "Stopped";
+  static const cancelled = "Cancelled";
+
+  static const msa = "MSA-Material Site Activation";
+  static const nrd = "NRD-New Recipe Developement";
+  static const pad = "PAD-Product Activation Deactivation";
+  static const rch = "RCH-Recipe Change";
+  static const tgi = "TGI-Traded Goods Introduction";
 }
