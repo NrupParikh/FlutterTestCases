@@ -58,6 +58,9 @@ dependencies:
   tuple: ^2.0.2
   pretty_dio_logger: ^1.4.0
   flutter_secure_storage: ^9.2.2
+  intl: ^0.18.1
+  flutter_localizations:
+    sdk: flutter
 
 
 dev_dependencies:

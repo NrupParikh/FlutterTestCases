@@ -4,6 +4,7 @@ import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 
 import '../constants/app_strings.dart';
@@ -164,10 +165,10 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           padding: const EdgeInsets.all(8.0),
                           child: TextFormField(
                             enabled: false,
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              label: Text("",
-                                  style: TextStyle(
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              label: Text(vm.selectedFromDate.value,
+                                  style: const TextStyle(
                                       fontSize: 12,
                                       fontFamily:
                                           AppTextConstant.poppinsRegular)),
@@ -176,7 +177,24 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.date_range))
+                          onPressed: () async {
+                            DateTime? pickedDate = await openDateTimePicker(
+                                context,
+                                AppStrings.lblProjectDateFrom.tr,
+                                DateTime.now(),
+                                DateTime.now(),
+                                DateTime(2101));
+
+                            if (kDebugMode) {
+                              // 2024-10-11 00:00:00.000
+                              print("Date Time $pickedDate");
+                            }
+                            String formattedDate =
+                                getDateInddMMyyyy(pickedDate);
+                            vm.selectedFromDate.value =
+                                formattedDate.toString();
+                          },
+                          icon: const Icon(Icons.date_range))
                     ],
                   ),
                   const SizedBox(
@@ -197,10 +215,10 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           padding: const EdgeInsets.all(8.0),
                           child: TextFormField(
                             enabled: false,
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              label: Text("",
-                                  style: TextStyle(
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              label: Text(vm.selectedToDate.value,
+                                  style: const TextStyle(
                                       fontSize: 12,
                                       fontFamily:
                                           AppTextConstant.poppinsRegular)),
@@ -209,7 +227,24 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.date_range))
+                          onPressed: () async {
+                            DateTime? pickedDate = await openDateTimePicker(
+                                context,
+                                AppStrings.lblProjectDateTo.tr,
+                                DateTime.now(),
+                                DateTime.now(),
+                                DateTime(2101));
+
+                            if (kDebugMode) {
+                              // 2024-10-11 00:00:00.000
+                              print("Date Time $pickedDate");
+                            }
+                            String formattedDate =
+                                getDateInddMMyyyy(pickedDate);
+                            vm.selectedToDate.value =
+                                formattedDate.toString();
+                          },
+                          icon: const Icon(Icons.date_range))
                     ],
                   ),
                   Padding(

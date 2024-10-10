@@ -6,14 +6,17 @@ import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart'
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+
+
 
 class MyBaseApp extends StatefulWidget {
   final String myInitialRoute;
   final String myInitialLanguage;
 
-  const MyBaseApp(this.myInitialRoute,this.myInitialLanguage, {super.key});
+  const MyBaseApp(this.myInitialRoute, this.myInitialLanguage, {super.key});
 
   @override
   State<MyBaseApp> createState() => _MyBaseAppState();
@@ -35,7 +38,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
     FlutterNativeSplash.remove();
 
     await dotenv.load(fileName: ".env");
-    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +61,17 @@ class _MyBaseAppState extends State<MyBaseApp> {
       translations: Languages(),
       locale: Locale(widget.myInitialLanguage),
       fallbackLocale:  const Locale('en','US'),
+
+      localizationsDelegates:  const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en','US'),
+        Locale('it','IT'),
+        Locale('es','ES'),
+      ],
     );
   }
 }

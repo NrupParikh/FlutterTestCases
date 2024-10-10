@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../base/constant.dart';
 import '../common_widgets/custom_dialog.dart';
@@ -122,4 +123,25 @@ void doLogout() async {
 
     Get.offAll(const LoginScreen());
   }
+}
+
+String getDateInddMMyyyy(DateTime? selectedDateTime) {
+  if (selectedDateTime != null) {
+    String formattedDate = DateFormat("dd-MM-yyyy").format(selectedDateTime);
+    return formattedDate;
+  } else {
+    return "";
+  }
+}
+
+Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
+    final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
+  final DateTime? pickedDate = await showDatePicker(
+    helpText: helpText,
+    context: context,
+    initialDate: initialDate,
+    firstDate: firstDate,
+    lastDate: lastDate,
+  );
+  return pickedDate;
 }

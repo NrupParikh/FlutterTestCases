@@ -16,6 +16,9 @@ class ProjectFilterViewModel extends BaseViewModel {
   late List<String> projectManagerList;
   late RxString selectedProjectManagerItem;
 
+  RxString selectedFromDate = "".obs;
+  RxString selectedToDate = "".obs;
+
   @override
   void onInit() {
     super.onInit();
