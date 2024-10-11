@@ -37,8 +37,6 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButton(
-                    iconDisabledColor: Colors.black,
-                    iconEnabledColor: Colors.green,
                     value: vm.selectedQcInspectionItem.value,
                     isExpanded: true,
                     items: vm.qcInspectionList
@@ -96,8 +94,6 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButton(
-                    iconDisabledColor: Colors.black,
-                    iconEnabledColor: Colors.green,
                     value: vm.selectedSamplingPlanItem.value,
                     isExpanded: true,
                     items: vm.samplingPlanlist

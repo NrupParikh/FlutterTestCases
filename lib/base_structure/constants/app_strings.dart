@@ -35,6 +35,12 @@ class AppStrings {
   static const lblProjectDateTo = "Project Date To";
   static const lblFreeText = "Free Text";
 
+  static const lblLastName = "Last Name *";
+  static const lblLanguage = "Language *";
+  static const lblSite = "Site *";
+  static const lblDateFormat = "Date Format";
+  static const lblTimeFormat = "Time Format";
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -52,11 +58,14 @@ class AppStrings {
   static const hintEnterYourEmail = "Enter your email";
   static const hintEnterYourPassword = "Enter your password";
   static const hintOTP = "OTP";
-  static const hintEnterYourOTP = "Enter your OTP *";
+  static const hintEnterYourOTP = "Enter your OTP";
   static const hintEnterComment = "Enter Comment";
   static const hintEnterQcDays = "Enter QC Days";
 
   static const hintEnterFreeText = "Enter free text";
+
+  static const hintEnterFirstName = "Enter first name";
+  static const hintEnterLastName = "Enter last name";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";

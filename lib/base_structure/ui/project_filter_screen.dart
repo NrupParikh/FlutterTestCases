@@ -32,8 +32,6 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
-                      iconDisabledColor: Colors.black,
-                      iconEnabledColor: Colors.green,
                       value: vm.selectedProjectTypeItem.value,
                       isExpanded: true,
                       items: vm.projectTypeList
@@ -64,8 +62,6 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
-                      iconDisabledColor: Colors.black,
-                      iconEnabledColor: Colors.green,
                       value: vm.selectedProjectStatusItem.value,
                       isExpanded: true,
                       items: vm.projectStatusList
@@ -96,8 +92,6 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
-                      iconDisabledColor: Colors.black,
-                      iconEnabledColor: Colors.green,
                       value: vm.selectedLabItem.value,
                       isExpanded: true,
                       items: vm.labList
@@ -128,8 +122,6 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
-                      iconDisabledColor: Colors.black,
-                      iconEnabledColor: Colors.green,
                       value: vm.selectedProjectManagerItem.value,
                       isExpanded: true,
                       items: vm.projectManagerList

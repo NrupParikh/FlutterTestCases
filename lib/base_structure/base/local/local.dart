@@ -37,6 +37,12 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: AppStrings.lblProjectDateTo,
           AppStrings.lblFreeText: AppStrings.lblFreeText,
 
+          AppStrings.lblLastName: AppStrings.lblLastName,
+          AppStrings.lblLanguage: AppStrings.lblLanguage,
+          AppStrings.lblSite: AppStrings.lblSite,
+          AppStrings.lblDateFormat: AppStrings.lblDateFormat,
+          AppStrings.lblTimeFormat: AppStrings.lblTimeFormat,
+
           AppStrings.lblClear: AppStrings.lblClear,
           AppStrings.lblSearch: AppStrings.lblSearch,
 
@@ -60,6 +66,9 @@ class Languages implements Translations {
           AppStrings.hintEnterComment: AppStrings.hintEnterComment,
           AppStrings.hintEnterQcDays: AppStrings.hintEnterQcDays,
           AppStrings.hintEnterFreeText: AppStrings.hintEnterFreeText,
+
+          AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
+          AppStrings.hintEnterLastName: AppStrings.hintEnterLastName,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -152,6 +161,12 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: "Data del progetto a",
           AppStrings.lblFreeText: "Testo libero",
 
+          AppStrings.lblLastName: "Cognome *",
+          AppStrings.lblLanguage: "Lingua *",
+          AppStrings.lblSite: "Sito *",
+          AppStrings.lblDateFormat: "Formato data",
+          AppStrings.lblTimeFormat: "Formato ora",
+
           AppStrings.lblClear: "Chiara",
           AppStrings.lblSearch: "Ricerca",
 
@@ -172,11 +187,14 @@ class Languages implements Translations {
           AppStrings.hintEnterYourEmail: "Inserisci la tua email",
           AppStrings.hintEnterYourPassword: "Inserisci la tua password",
           AppStrings.hintOTP: "OTP",
-          AppStrings.hintEnterYourOTP: "Inserisci la tua OTP *",
+          AppStrings.hintEnterYourOTP: "Inserisci la tua OTP",
           AppStrings.hintEnterComment: "Inserisci il commento",
           AppStrings.hintEnterQcDays:
               "Inserisci i giorni del controllo qualità",
           AppStrings.hintEnterFreeText: "Inserisci testo libero",
+
+          AppStrings.hintEnterFirstName: "Inserisci il nome",
+          AppStrings.hintEnterLastName: "Inserisci il cognome",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -272,6 +290,12 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: "Fecha del proyecto hasta",
           AppStrings.lblFreeText: "Texto libre",
 
+          AppStrings.lblLastName: "Apellido *",
+          AppStrings.lblLanguage: "Idioma *",
+          AppStrings.lblSite: "Sitio *",
+          AppStrings.lblDateFormat: "Formato de fecha",
+          AppStrings.lblTimeFormat: "Formato de hora",
+
           AppStrings.lblClear: "Claro",
           AppStrings.lblSearch: "Buscar",
 
@@ -293,9 +317,12 @@ class Languages implements Translations {
               "introduce tu dirección de correo electrónico",
           AppStrings.hintEnterYourPassword: "Introduce tu contraseña",
           AppStrings.hintOTP: "OTP",
-          AppStrings.hintEnterYourOTP: "Ingresa tu OTP *",
+          AppStrings.hintEnterYourOTP: "Ingresa tu OTP",
           AppStrings.hintEnterComment: "Introducir comentario",
           AppStrings.hintEnterFreeText: "Ingrese texto libre",
+
+          AppStrings.hintEnterFirstName: "Introduce el nombre",
+          AppStrings.hintEnterLastName: "Introduce el apellido",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",

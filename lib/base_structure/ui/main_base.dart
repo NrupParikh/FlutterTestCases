@@ -11,7 +11,6 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 
-
 class MyBaseApp extends StatefulWidget {
   final String myInitialRoute;
   final String myInitialLanguage;
