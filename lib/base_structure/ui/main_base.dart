@@ -38,7 +38,6 @@ class _MyBaseAppState extends State<MyBaseApp> {
 
     await dotenv.load(fileName: ".env");
   }
-
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
@@ -47,8 +46,16 @@ class _MyBaseAppState extends State<MyBaseApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      // theme: AppTheme.appPrimaryLightTheme(),
-      // darkTheme: AppTheme.appPrimaryDarkTheme(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime.shade500),
+        scaffoldBackgroundColor: Colors.lime.shade100,
+        useMaterial3: true,
+      ),
+      darkTheme:  ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade500),
+        scaffoldBackgroundColor: Colors.green.shade100,
+        useMaterial3: true,
+      ),
       themeMode: ThemeMode.system,
       defaultTransition: Transition.rightToLeft,
       transitionDuration:
@@ -59,17 +66,17 @@ class _MyBaseAppState extends State<MyBaseApp> {
       getPages: AppPages.routes,
       translations: Languages(),
       locale: Locale(widget.myInitialLanguage),
-      fallbackLocale:  const Locale('en','US'),
+      fallbackLocale: const Locale('en', 'US'),
 
-      localizationsDelegates:  const [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en','US'),
-        Locale('it','IT'),
-        Locale('es','ES'),
+        Locale('en', 'US'),
+        Locale('it', 'IT'),
+        Locale('es', 'ES'),
       ],
     );
   }

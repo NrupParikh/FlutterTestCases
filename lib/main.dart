@@ -199,6 +199,7 @@ class _SampleTabState extends State<SampleTab> {
                             child: TextFormField(
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
+                                enabledBorder: OutlineInputBorder(),
                                 hintText: AppStrings.hintEnterComment,
                                 hintStyle: TextStyle(
                                     fontFamily: AppTextConstant.poppinsRegular),
@@ -215,14 +216,14 @@ class _SampleTabState extends State<SampleTab> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                OutlinedButton(
+                                ElevatedButton(
                                     child: const Text(AppStrings.approve,
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontFamily:
                                                 AppTextConstant.poppinsBold)),
                                     onPressed: () {}),
-                                OutlinedButton(
+                                ElevatedButton(
                                     child: const Text(AppStrings.reject,
                                         style: TextStyle(
                                             fontSize: 12,

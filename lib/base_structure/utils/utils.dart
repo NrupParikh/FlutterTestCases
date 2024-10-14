@@ -145,3 +145,9 @@ Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
   );
   return pickedDate;
 }
+
+Color getPrimaryColor(){
+  return Get.theme.primaryColor;
+}
+
+

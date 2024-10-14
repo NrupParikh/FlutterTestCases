@@ -25,6 +25,7 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
                 child: TextFormField(
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
+                    enabledBorder: const OutlineInputBorder(),
                     hintText: AppStrings.hintEnterComment.tr,
                     hintStyle: const TextStyle(
                         fontFamily: AppTextConstant.poppinsRegular),
@@ -40,13 +41,13 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    OutlinedButton(
+                    ElevatedButton(
                         child: Text(AppStrings.approve.tr,
                             style: const TextStyle(
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsBold)),
                         onPressed: () {}),
-                    OutlinedButton(
+                    ElevatedButton(
                         child: Text(AppStrings.reject.tr,
                             style: const TextStyle(
                                 fontSize: 12,

@@ -36,6 +36,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                     controller: vm.emailController,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
+                      enabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintEnterYourEmail.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
@@ -55,6 +56,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                     obscuringCharacter: "*",
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
+                      enabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintEnterYourPassword.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
@@ -82,13 +84,12 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: OutlinedButton(
+                  child: ElevatedButton(
                       child: Text(AppStrings.lblLogin.tr,
                           style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsBold)),
                       onPressed: () async {
-
                         Tuple2<bool, String> ans = await vm.validateLogin();
 
                         if (kDebugMode) {

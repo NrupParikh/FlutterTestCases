@@ -32,6 +32,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedProjectTypeItem.value,
                       isExpanded: true,
                       items: vm.projectTypeList
@@ -62,6 +63,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedProjectStatusItem.value,
                       isExpanded: true,
                       items: vm.projectStatusList
@@ -92,6 +94,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedLabItem.value,
                       isExpanded: true,
                       items: vm.labList
@@ -122,6 +125,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedProjectManagerItem.value,
                       isExpanded: true,
                       items: vm.projectManagerList
@@ -159,6 +163,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                             enabled: false,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
+                              enabledBorder: const OutlineInputBorder(),
                               label: Text(vm.selectedFromDate.value,
                                   style: const TextStyle(
                                       fontSize: 12,
@@ -209,6 +214,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                             enabled: false,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
+                              enabledBorder: const OutlineInputBorder(),
                               label: Text(vm.selectedToDate.value,
                                   style: const TextStyle(
                                       fontSize: 12,
@@ -244,6 +250,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(),
                         hintText: AppStrings.hintEnterFreeText.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -262,7 +269,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: OutlinedButton(
+                        child: ElevatedButton(
                             child: Text(AppStrings.lblClear.tr,
                                 style: const TextStyle(
                                     fontSize: 12,
@@ -273,7 +280,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: OutlinedButton(
+                        child: ElevatedButton(
                             child: Text(AppStrings.lblSearch.tr,
                                 style: const TextStyle(
                                     fontSize: 12,

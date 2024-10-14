@@ -30,42 +30,44 @@ class FastTrackEvaluationScreen
                 fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
       ),
     ];
-    return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: DefaultTabController(
-          initialIndex: 0,
-          length: tabs.length,
-          child: Scaffold(
-            appBar: AppBar(
-              title: const Text(""),
-              leading: const SizedBox(),
-              elevation: 0,
-              flexibleSpace: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TabBar(
-                    tabAlignment: TabAlignment.fill,
-                    isScrollable: false,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    indicatorColor: Colors.black,
-                    unselectedLabelColor: Colors.grey,
-                    tabs: tabs,
-                  ),
-                ],
+    return DefaultTabController(
+      initialIndex: 0,
+      length: tabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(""),
+          leading: const SizedBox(),
+          elevation: 0,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ColoredBox(
+                color:  Theme.of(context).colorScheme.primaryContainer,
+                child: TabBar(
+                  tabAlignment: TabAlignment.fill,
+                  isScrollable: false,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicatorColor: Theme.of(context).primaryColor,
+                  unselectedLabelColor:
+                      Theme.of(context).colorScheme.inversePrimary,
+                  tabs: tabs,
+                ),
               ),
-            ),
-            body: TabBarView(children: [
-              const Center(
-                child: RNDScreen(),
-              ),
-              Center(
-                child: Text(AppStrings.tabQuality.tr),
-              ),
-              Center(
-                child: Text(AppStrings.tabRegulatory.tr),
-              )
-            ]),
+            ],
           ),
-        ));
+        ),
+        body: TabBarView(children: [
+          const Center(
+            child: RNDScreen(),
+          ),
+          Center(
+            child: Text(AppStrings.tabQuality.tr),
+          ),
+          Center(
+            child: Text(AppStrings.tabRegulatory.tr),
+          )
+        ]),
+      ),
+    );
   }
 }

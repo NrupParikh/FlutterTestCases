@@ -23,6 +23,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(),
                         hintText: AppStrings.hintEnterFirstName.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -38,6 +39,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(),
                         hintText: AppStrings.hintEnterLastName.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -53,6 +55,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(),
                         hintText: AppStrings.hintEnterYourEmail.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -76,6 +79,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedLanguageListItem.value,
                       isExpanded: true,
                       items: vm.languageList
@@ -106,6 +110,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedSiteListItem.value,
                       isExpanded: true,
                       items: vm.siteList
@@ -136,6 +141,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedDateFormatListItem.value,
                       isExpanded: true,
                       items: vm.dateFormatList
@@ -166,6 +172,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButton(
+                      dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                       value: vm.selectedTimeFormatListItem.value,
                       isExpanded: true,
                       items: vm.timeFormatList
@@ -190,7 +197,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     alignment: Alignment.center,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: OutlinedButton(
+                      child: ElevatedButton(
                           child: Text(AppStrings.lblSubmit.tr,
                               style: const TextStyle(
                                   fontSize: 12,

@@ -21,7 +21,6 @@ import '../ui/change_language_screen.dart';
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   const BaseScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     if (!vm.initialized) {
@@ -58,10 +57,12 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         // key: _scaffoldKey,
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-        backgroundColor: screenBackgroundColor,
-        // If you want to don't show the AppBar in internal screen. 
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        // If you want to don't show the AppBar in internal screen.
         // Ex. Tab then check with VM and set null
-        appBar: ((controller is FastTrackEvaluationViewModel) || (controller is RNDViewModel) || (controller is QCInspectionViewModel))
+        appBar: ((controller is FastTrackEvaluationViewModel) ||
+                (controller is RNDViewModel) ||
+                (controller is QCInspectionViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
@@ -74,7 +75,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     currentRouteName == Constant.tagForgotPassword))
             ? SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
-                child: buildDrawer(context,currentRouteName))
+                child: buildDrawer(context, currentRouteName))
             : null);
   }
 
@@ -120,6 +121,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     }
 
     return AppBar(
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: Text(getTitle(currentRouteName),
           style: const TextStyle(
               fontSize: 20, fontFamily: AppTextConstant.poppinsBold)),
@@ -207,11 +209,12 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   @protected
   Widget buildScreen(BuildContext context);
 
-  Drawer buildDrawer(BuildContext context,String currentRouteName) {
+  Drawer buildDrawer(BuildContext context, String currentRouteName) {
     if (kDebugMode) {
       print("buildDrawer");
     }
     return Drawer(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -274,10 +277,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
             selectedTileColor: ColorConstant.selectedTileColor,
-            onTap: () => {
-              doLogout(),
-              Scaffold.of(context).closeDrawer()
-              },
+            onTap: () => {doLogout(), Scaffold.of(context).closeDrawer()},
           ),
         ],
       ),

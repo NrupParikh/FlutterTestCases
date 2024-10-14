@@ -37,6 +37,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButton(
+                    dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                     value: vm.selectedQcInspectionItem.value,
                     isExpanded: true,
                     items: vm.qcInspectionList
@@ -60,6 +61,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
+                      enabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintEnterQcDays.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
@@ -94,6 +96,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButton(
+                    dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                     value: vm.selectedSamplingPlanItem.value,
                     isExpanded: true,
                     items: vm.samplingPlanlist
@@ -118,7 +121,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                   alignment: Alignment.center,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: OutlinedButton(
+                    child: ElevatedButton(
                         child: Text(AppStrings.updateQC.tr,
                             style: const TextStyle(
                                 fontSize: 12,
