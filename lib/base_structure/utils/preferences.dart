@@ -38,3 +38,15 @@ Future<String> getStoredLanguage() async {
       await SecureStorageSingleton().storage.read(key: AppKey.keyStoredLang);
   return storedValue ?? "en";
 }
+
+void setStoredTheme(String selectedTheme) async {
+  await SecureStorageSingleton()
+      .storage
+      .write(key: AppKey.keyStoredTheme, value: selectedTheme);
+}
+
+Future<String> getStoredTheme() async {
+  final storedValue =
+      await SecureStorageSingleton().storage.read(key: AppKey.keyStoredTheme);
+  return storedValue ?? "light";
+}

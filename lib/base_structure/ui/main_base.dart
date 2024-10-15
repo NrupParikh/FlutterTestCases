@@ -4,6 +4,7 @@ import 'package:flutter_application_1/base_structure/base/constant.dart';
 import 'package:flutter_application_1/base_structure/base/local/local.dart';
 import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/constants/app_theme.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -46,16 +47,8 @@ class _MyBaseAppState extends State<MyBaseApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime.shade500),
-        scaffoldBackgroundColor: Colors.lime.shade100,
-        useMaterial3: true,
-      ),
-      darkTheme:  ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade500),
-        scaffoldBackgroundColor: Colors.green.shade100,
-        useMaterial3: true,
-      ),
+      theme: AppTheme.myLightTheme,
+      darkTheme: AppTheme.myDarkTheme,
       themeMode: ThemeMode.system,
       defaultTransition: Transition.rightToLeft,
       transitionDuration:

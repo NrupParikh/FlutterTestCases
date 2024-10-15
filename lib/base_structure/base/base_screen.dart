@@ -10,6 +10,7 @@ import 'package:flutter_application_1/base_structure/ui/project_management_scree
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
+import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
@@ -210,20 +211,42 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Widget buildScreen(BuildContext context);
 
   Drawer buildDrawer(BuildContext context, String currentRouteName) {
-    if (kDebugMode) {
-      print("buildDrawer");
-    }
     return Drawer(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-              child: Center(
-                  child: Text(AppStrings.appName.tr,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          fontFamily: AppTextConstant.poppinsBold)))),
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(AppStrings.appName.tr,
+                    style: const TextStyle(
+                        fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.dark_mode_outlined),
+                    onPressed: () {
+                      Get.changeThemeMode(ThemeMode.dark);
+                      setStoredTheme("dark");
+                    
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.light_mode_outlined),
+                    onPressed: () async{
+                      Get.changeThemeMode(ThemeMode.light);
+                      setStoredTheme("light");
+                    },
+                  ),
+                ],
+              ),
+            ],
+          )),
           ListTile(
             title: Text(AppStrings.projectManagement.tr,
                 style: const TextStyle(
