@@ -17,6 +17,7 @@ import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
+import '../constants/app_theme.dart';
 import '../ui/change_language_screen.dart';
 
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
@@ -28,14 +29,22 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
       initViewModel();
     }
 
+    var currentTheme = AppTheme.lightTheme.obs;
+    getStoredTheme().then((value) => {
+          if (value == AppTheme.lightTheme)
+            {currentTheme.value = AppTheme.lightTheme}
+          else
+            {currentTheme.value = AppTheme.darkTheme}
+        });
+
     return Container(
         color: unsafeAreaColor,
         child: wrapWithSafeArea
             ? SafeArea(
                 top: setTopSafeArea,
                 bottom: setBottomSafeArea,
-                child: _buildScaffold(context))
-            : _buildScaffold(context));
+                child: _buildScaffold(context, currentTheme))
+            : _buildScaffold(context, currentTheme));
   }
 
   @protected
@@ -46,7 +55,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     }
   }
 
-  Widget _buildScaffold(BuildContext context) {
+  Widget _buildScaffold(BuildContext context, RxString currentTheme) {
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
@@ -76,7 +85,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     currentRouteName == Constant.tagForgotPassword))
             ? SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
-                child: buildDrawer(context, currentRouteName))
+                child: buildDrawer(context, currentRouteName, currentTheme))
             : null);
   }
 
@@ -210,40 +219,40 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   @protected
   Widget buildScreen(BuildContext context);
 
-  Drawer buildDrawer(BuildContext context, String currentRouteName) {
+  Drawer buildDrawer(
+      BuildContext context, String currentRouteName, RxString currentTheme) {
     return Drawer(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
             children: [
-              Center(
-                child: Text(AppStrings.appName.tr,
-                    style: const TextStyle(
-                        fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.dark_mode_outlined),
-                    onPressed: () {
-                      Get.changeThemeMode(ThemeMode.dark);
-                      setStoredTheme("dark");
-                    
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.light_mode_outlined),
-                    onPressed: () async{
-                      Get.changeThemeMode(ThemeMode.light);
-                      setStoredTheme("light");
-                    },
-                  ),
-                ],
+              Obx(() => Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                        onPressed: () async {
+                          final String storedTheme = await getStoredTheme();
+                          if (storedTheme == AppTheme.lightTheme) {
+                            Get.changeThemeMode(ThemeMode.dark);
+                            setStoredTheme(AppTheme.darkTheme);
+                          } else {
+                            Get.changeThemeMode(ThemeMode.light);
+                            setStoredTheme(AppTheme.lightTheme);
+                          }
+                        },
+                        icon: currentTheme.value == AppTheme.lightTheme
+                            ? const Icon(Icons.light_mode_outlined)
+                            : const Icon(Icons.dark_mode_outlined)),
+                  )),
+              Expanded(
+                child: Center(
+                  child: Text(AppStrings.appName.tr,
+                      style: const TextStyle(
+                          fontSize: 18,
+                          fontFamily: AppTextConstant.poppinsBold)),
+                ),
               ),
             ],
           )),

@@ -1,5 +1,6 @@
 
 import '../constants/app_key.dart';
+import '../constants/app_theme.dart';
 import '../singleton/secure_storage_singleton.dart';
 
 void setIsUserLoggedIn() async {
@@ -48,5 +49,5 @@ void setStoredTheme(String selectedTheme) async {
 Future<String> getStoredTheme() async {
   final storedValue =
       await SecureStorageSingleton().storage.read(key: AppKey.keyStoredTheme);
-  return storedValue ?? "light";
+  return storedValue ?? AppTheme.lightTheme;
 }

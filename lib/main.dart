@@ -36,12 +36,14 @@ Future<void> main() async {
 
   final myInitialLanguage = await getInitialLanguage();
 
+  final myInitialTheme = await getStoredTheme();
+
   // Set Application orientation to support only Portrait mode
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp
   ]);
 
-  runApp(MyBaseApp(myInitialRoute,myInitialLanguage));
+  runApp(MyBaseApp(myInitialRoute,myInitialLanguage,myInitialTheme));
 
   // runApp(const SampleTab());
 }

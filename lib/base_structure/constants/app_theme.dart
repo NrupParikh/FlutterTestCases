@@ -19,6 +19,9 @@ class AppTheme {
 // scaffoldBackgroundColor : Background color of scaffold : App Bar, body area, bottom navigation bar
 // highlight color : Define color when user taps and hold on a widget
 
+  static String lightTheme = "light";
+  static String darkTheme = "dark";
+
   static ThemeData myLightTheme = ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime.shade500),
         scaffoldBackgroundColor: Colors.lime.shade100,
