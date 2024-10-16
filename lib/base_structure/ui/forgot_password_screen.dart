@@ -33,7 +33,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                     controller: vm.emailController,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      enabledBorder: const OutlineInputBorder(),
+                      disabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintEnterYourEmail.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
@@ -66,7 +66,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      enabledBorder: const OutlineInputBorder(),
+                      disabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintOTP.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
@@ -80,7 +80,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
+                  child: OutlinedButton(
                       child: Text(AppStrings.lblSubmit.tr,
                           style: const TextStyle(
                               fontSize: 12,

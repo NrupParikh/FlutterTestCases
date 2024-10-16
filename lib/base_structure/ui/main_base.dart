@@ -52,14 +52,14 @@ class _MyBaseAppState extends State<MyBaseApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      theme: AppTheme.myLightTheme,
-      darkTheme: AppTheme.myDarkTheme,
+      theme: AppTheme.appPrimaryLightTheme(),
+      darkTheme: AppTheme.appPrimaryDarkTheme(),
       // For application specific theme support
-      themeMode: (widget.myInitialTheme.toString() == AppTheme.lightTheme)
-          ? ThemeMode.light
-          : ThemeMode.dark,
+      // themeMode: (widget.myInitialTheme.toString() == AppTheme.lightTheme)
+      //     ? ThemeMode.light
+      //     : ThemeMode.dark,
       // For system specific theme theme support
-      // themeMode: ThemeMode.system,
+      themeMode: ThemeMode.system,
       defaultTransition: Transition.rightToLeft,
       transitionDuration:
           const Duration(milliseconds: Constant.transitionDuration),

@@ -135,7 +135,7 @@ String getDateInddMMyyyy(DateTime? selectedDateTime) {
 }
 
 Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
-    final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
+  final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
   final DateTime? pickedDate = await showDatePicker(
     helpText: helpText,
     context: context,

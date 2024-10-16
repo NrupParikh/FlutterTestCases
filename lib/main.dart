@@ -218,7 +218,7 @@ class _SampleTabState extends State<SampleTab> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                ElevatedButton(
+                                OutlinedButton(
                                     child: const Text(AppStrings.approve,
                                         style: TextStyle(
                                             fontSize: 12,

@@ -23,83 +23,60 @@ class AppTheme {
   static String darkTheme = "dark";
 
   static ThemeData myLightTheme = ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime.shade500),
-        scaffoldBackgroundColor: Colors.lime.shade100,
-        useMaterial3: true,
-      );
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime.shade500),
+    scaffoldBackgroundColor: Colors.lime.shade100,
+    useMaterial3: true,
+  );
 
-  static ThemeData myDarkTheme =  ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade500),
-        scaffoldBackgroundColor: Colors.green.shade100,
-        useMaterial3: true,
-      );
-
-  static final baseLightFocusColor = Colors.black.withOpacity(0.12);
-  static final baseDarkFocusColor = Colors.white.withOpacity(0.12);
-
-  static ThemeData baseThemeData(ColorScheme colorScheme, Color focusColor) {
-    return ThemeData(
-      useMaterial3: true,
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber),
-        canvasColor: colorScheme.background,
-        scaffoldBackgroundColor: colorScheme.background,
-        highlightColor: Colors.transparent,
-        focusColor: focusColor);
-  }
-
-  static const baseLightColorScheme = ColorScheme(
-      brightness: Brightness.light,
-      primary: Color.fromARGB(255, 18, 39, 223),
-      onPrimary: Colors.black,
-      secondary: Color(0xFFEFF3F3),
-      onSecondary: Color.fromARGB(255, 156, 127, 206),
-      error: Colors.redAccent,
-      onError: Colors.white,
-      background: Color(0xFFE6EBEB),
-      onBackground: Colors.white,
-      surface: Color(0xFFFAFBFB),
-      onSurface: Color(0xFF241E30),);
-
-  static const baseDarkColorSchema = ColorScheme(
-      brightness: Brightness.dark,
-      primary: Color(0xFFFF8383),
-      onPrimary: Colors.white,
-      secondary: Color(0xFF4D1F7C),
-      onSecondary: Colors.white,
-      error: Colors.redAccent,
-      onError: Colors.white,
-      background: Color(0xFF241E30),
-      onBackground: Color(0x0DFFFFFF),
-      surface: Color(0xFF1F1929),
-      onSurface: Colors.white);
-
-      
-  static ThemeData baseLightThemeData = baseThemeData(baseLightColorScheme, baseLightFocusColor);
-  static ThemeData baseDarkThemeData = baseThemeData(baseDarkColorSchema, baseDarkFocusColor);
+  static ThemeData myDarkTheme = ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade500),
+    scaffoldBackgroundColor: Colors.green.shade100,
+    useMaterial3: true,
+  );
 
 // ======================================================================
   static ThemeData appPrimaryLightTheme() {
     final ThemeData base = ThemeData(colorScheme: lightColorScheme);
     return base.copyWith(
-        textTheme: _buildTextLightTheme(base.textTheme),
-        primaryTextTheme: _buildTextLightTheme(base.primaryTextTheme),
-        scaffoldBackgroundColor: Colors.black,
+        // textTheme: _buildTextLightTheme(base.textTheme),
+        // primaryTextTheme: _buildTextLightTheme(base.primaryTextTheme),
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: Colors.white,
+        ),
+        datePickerTheme: const DatePickerThemeData(
+            backgroundColor: Colors.white,
+            dividerColor: Colors.greenAccent,
+            headerBackgroundColor: Colors.green,
+            headerForegroundColor: Colors.white),
+        scaffoldBackgroundColor: Colors.white,
+        dialogBackgroundColor: Colors.white,
         bottomSheetTheme:
             const BottomSheetThemeData(backgroundColor: Colors.white),
-        appBarTheme:
-            const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark));
+        appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            backgroundColor: Colors.green));
   }
 
   static ThemeData appPrimaryDarkTheme() {
     final ThemeData base = ThemeData(colorScheme: darkColorScheme);
     return base.copyWith(
-        textTheme: _buildTextDarkTheme(base.textTheme),
-        primaryTextTheme: _buildTextDarkTheme(base.primaryTextTheme),
-        scaffoldBackgroundColor: Colors.white,
+        // textTheme: _buildTextDarkTheme(base.textTheme),
+        // primaryTextTheme: _buildTextDarkTheme(base.primaryTextTheme),
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: Color(0xFF1A1C19),
+        ),
+        datePickerTheme: const DatePickerThemeData(
+            backgroundColor: Color(0xFF1A1C19),
+            dividerColor: Colors.white,
+            headerBackgroundColor: Colors.green,
+            headerForegroundColor: Colors.white),
+        scaffoldBackgroundColor: Colors.black,
+        dialogBackgroundColor: Colors.black,
         bottomSheetTheme:
             const BottomSheetThemeData(backgroundColor: Colors.black),
-        appBarTheme:
-            const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.light));
+        appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle.dark,
+            backgroundColor: Colors.green));
   }
 
   static const lightColorScheme = ColorScheme(

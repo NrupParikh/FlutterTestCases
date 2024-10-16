@@ -40,7 +40,7 @@ class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
               })),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
+            child: OutlinedButton(
                 child: Text(AppStrings.lblSubmit.tr,
                     style: const TextStyle(
                         fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),

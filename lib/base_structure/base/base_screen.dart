@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
-import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/document_filter_screen.dart';
@@ -67,7 +66,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         // key: _scaffoldKey,
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         // If you want to don't show the AppBar in internal screen.
         // Ex. Tab then check with VM and set null
         appBar: ((controller is FastTrackEvaluationViewModel) ||
@@ -131,7 +129,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     }
 
     return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: Text(getTitle(currentRouteName),
           style: const TextStyle(
               fontSize: 20, fontFamily: AppTextConstant.poppinsBold)),
@@ -222,7 +219,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Drawer buildDrawer(
       BuildContext context, String currentRouteName, RxString currentTheme) {
     return Drawer(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -260,7 +256,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.projectManagement.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 0,
             onTap: () => setSelected(0),
           ),
@@ -268,7 +263,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.documentManagement.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 1,
             onTap: () => setSelected(1),
           ),
@@ -276,7 +270,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.profile.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 2,
             onTap: () => setSelected(2),
           ),
@@ -284,7 +277,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.notifications.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 3,
             onTap: () => setSelected(3),
           ),
@@ -292,7 +284,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.changePassword.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 4,
             onTap: () => setSelected(4),
           ),
@@ -300,7 +291,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.changeLanguage.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             selected: returnIndexBasedOnScreen(currentRouteName) == 5,
             onTap: () => setSelected(5),
           ),
@@ -308,7 +298,6 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
             title: Text(AppStrings.logout.tr,
                 style: const TextStyle(
                     fontSize: 14, fontFamily: AppTextConstant.poppinsMedium)),
-            selectedTileColor: ColorConstant.selectedTileColor,
             onTap: () => {doLogout(), Scaffold.of(context).closeDrawer()},
           ),
         ],

@@ -7,7 +7,6 @@ class ColorConstant {
   static Color whiteLightA70019 = fromHex('#EAE7E7');
   static Color green501 = fromHex('#45c355');
   static Color whiteFFFFFF = fromHex('#FFFFFF');
-  static Color selectedTileColor = fromHex("#eeeeee");
 
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
