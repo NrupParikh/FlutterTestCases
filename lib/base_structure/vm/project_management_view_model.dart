@@ -6,6 +6,7 @@ import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 
 import '../model/app_user.dart';
+import '../model/project.dart';
 import '../utils/preferences.dart';
 
 class ProjectManagementViewModel extends BaseViewModel {
@@ -15,6 +16,33 @@ class ProjectManagementViewModel extends BaseViewModel {
   RxString lastName = "".obs;
   RxString email = "".obs;
   RxString token = "".obs;
+
+   final projects = [
+      Project(
+        projectId: "MAD2000534",
+        lab: "Parma",
+        title: "MAD SP1",
+        projectManager: "V.Dhani",
+        dateOpened: "Apr-29-2024",
+        crmOpportunity: "PR6990",
+      ),
+      Project(
+        projectId: "MAD2000123",
+        lab: "Syndney,AU",
+        title: "MAD SP2",
+        projectManager: "M.Shah",
+        dateOpened: "Jan-30-2025",
+        crmOpportunity: "PR7000",
+      ),
+      Project(
+        projectId: "MAD2000456",
+        lab: "Singapore",
+        title: "MAD SP3",
+        projectManager: "S.Kumar",
+        dateOpened: "Feb-01-2025",
+        crmOpportunity: "PR8974",
+      ),
+    ];
 
   @override
   void init() {

@@ -15,29 +15,19 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
   Widget buildScreen(BuildContext context) {
     List<Tab> tabs = [
       Tab(
-        child: Text(AppStrings.tabRND.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabRND.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabFasttrackEvoluation.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabFasttrackEvoluation.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabIndustrialReview.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabIndustrialReview.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabIndustrialTrial.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabIndustrialTrial.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabHaccp.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabHaccp.tr),
       ),
       Tab(
         child: Text(AppStrings.tabQcInspection.tr,
@@ -62,16 +52,10 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ColoredBox(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                child: TabBar(
-                  tabAlignment: TabAlignment.center,
-                  isScrollable: true,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicatorColor: Theme.of(context).primaryColor,
-                  unselectedLabelColor: Theme.of(context).colorScheme.inversePrimary,
-                  tabs: tabs,
-                ),
+              TabBar(
+                tabAlignment: TabAlignment.center,
+                isScrollable: true,
+                tabs: tabs,
               ),
             ],
           ),

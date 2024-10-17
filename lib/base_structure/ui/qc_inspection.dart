@@ -34,9 +34,24 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                           fontSize: 14,
                           fontFamily: AppTextConstant.poppinsRegular)),
                 ),
+                const SizedBox(
+                  height: 16,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: DropdownButton(
+                  child: DropdownButtonFormField<String>(
+                    dropdownColor: Colors.green,
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(4.0),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey, width: 2.00),
+                      ),
+                    ),
                     value: vm.selectedQcInspectionItem.value,
                     isExpanded: true,
                     items: vm.qcInspectionList
@@ -53,6 +68,9 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                       vm.selectedQcInspectionItem.value = value!;
                     },
                   ),
+                ),
+                const SizedBox(
+                  height: 16,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -72,7 +90,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                   ),
                 ),
                 const SizedBox(
-                  height: 4,
+                  height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -92,9 +110,24 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                           fontSize: 14,
                           fontFamily: AppTextConstant.poppinsRegular)),
                 ),
+                const SizedBox(
+                  height: 16,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: DropdownButton(
+                  child: DropdownButtonFormField<String>(
+                    dropdownColor: Colors.green,
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(4.0),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey, width: 2.00),
+                      ),
+                    ),
                     value: vm.selectedSamplingPlanItem.value,
                     isExpanded: true,
                     items: vm.samplingPlanlist
@@ -120,11 +153,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: OutlinedButton(
-                        child: Text(AppStrings.updateQC.tr,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontFamily: AppTextConstant.poppinsBold)),
-                        onPressed: () {}),
+                        child: Text(AppStrings.updateQC.tr), onPressed: () {}),
                   ),
                 )
               ],

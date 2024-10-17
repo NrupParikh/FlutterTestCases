@@ -4,7 +4,6 @@ import 'package:flutter_application_1/base_structure/constants/app_strings.dart'
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:get/get.dart';
 
-import '../constants/app_text_constant.dart';
 import '../vm/fast_track_evaluation_view_model.dart';
 
 class FastTrackEvaluationScreen
@@ -15,19 +14,13 @@ class FastTrackEvaluationScreen
   Widget buildScreen(BuildContext context) {
     List<Tab> tabs = [
       Tab(
-        child: Text(AppStrings.tabRND.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabRND.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabQuality.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabQuality.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabRegulatory.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabRegulatory.tr),
       ),
     ];
     return DefaultTabController(
@@ -41,17 +34,10 @@ class FastTrackEvaluationScreen
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ColoredBox(
-                color:  Theme.of(context).colorScheme.primaryContainer,
-                child: TabBar(
-                  tabAlignment: TabAlignment.fill,
-                  isScrollable: false,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicatorColor: Theme.of(context).primaryColor,
-                  unselectedLabelColor:
-                      Theme.of(context).colorScheme.inversePrimary,
-                  tabs: tabs,
-                ),
+              TabBar(
+                tabAlignment: TabAlignment.fill,
+                isScrollable: false,
+                tabs: tabs,
               ),
             ],
           ),

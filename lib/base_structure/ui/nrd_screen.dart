@@ -3,7 +3,6 @@ import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:get/get.dart';
 
-import '../constants/app_text_constant.dart';
 import '../vm/nrd_view_model.dart';
 
 class NRDScreen extends BaseScreen<NRDViewModel> {
@@ -13,29 +12,19 @@ class NRDScreen extends BaseScreen<NRDViewModel> {
   Widget buildScreen(BuildContext context) {
     List<Tab> tabs = [
       Tab(
-        child: Text(AppStrings.tabRND.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabRND.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabIndustrialTrial.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabIndustrialTrial.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabHaccp.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabHaccp.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabQcInspection.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabQcInspection.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabPurchasingReview.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabPurchasingReview.tr),
       ),
     ];
     return DefaultTabController(
@@ -49,17 +38,10 @@ class NRDScreen extends BaseScreen<NRDViewModel> {
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ColoredBox(
-                color:  Theme.of(context).colorScheme.primaryContainer,
-                child: TabBar(
-                  tabAlignment: TabAlignment.center,
-                  isScrollable: true,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicatorColor: Theme.of(context).primaryColor,
-                  unselectedLabelColor:
-                      Theme.of(context).colorScheme.inversePrimary,
-                  tabs: tabs,
-                ),
+              TabBar(
+                tabAlignment: TabAlignment.center,
+                isScrollable: true,
+                tabs: tabs,
               ),
             ],
           ),

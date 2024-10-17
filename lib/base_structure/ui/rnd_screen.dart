@@ -42,16 +42,10 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     OutlinedButton(
-                        child: Text(AppStrings.approve.tr,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontFamily: AppTextConstant.poppinsBold)),
+                        child: Text(AppStrings.approve.tr),
                         onPressed: () {}),
                     OutlinedButton(
-                        child: Text(AppStrings.reject.tr,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontFamily: AppTextConstant.poppinsBold)),
+                        child: Text(AppStrings.reject.tr),
                         onPressed: () {}),
                   ],
                 ),

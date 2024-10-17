@@ -81,10 +81,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: OutlinedButton(
-                      child: Text(AppStrings.lblSubmit.tr,
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontFamily: AppTextConstant.poppinsBold)),
+                      child: Text(AppStrings.lblSubmit.tr),
                       onPressed: () async {
                         Tuple2<bool, String> ans =
                             await vm.validateForgotPassword();
