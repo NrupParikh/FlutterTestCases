@@ -27,10 +27,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                 children: [
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "Project",
-                        style: TextStyle(
+                        AppStrings.lblProject.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -45,10 +45,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                   ),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "Lab",
-                        style: TextStyle(
+                        AppStrings.lblLab.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -63,10 +63,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                   ),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "Title",
-                        style: TextStyle(
+                        AppStrings.lblTitle.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -81,10 +81,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                   ),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "Project Manager",
-                        style: TextStyle(
+                        AppStrings.lblProjectManager.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -99,10 +99,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                   ),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "Date Opened",
-                        style: TextStyle(
+                        AppStrings.lblDateOpened.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -117,10 +117,10 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
                   ),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        "CRM Opportunity",
-                        style: TextStyle(
+                        AppStrings.lblCRMopportunity.tr,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontFamily: AppTextConstant.poppinsMedium),
                       )),
@@ -151,8 +151,7 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
     //       Obx(
     //         () => Text(vm.count.string, style: context.textTheme.displayMedium),
     //       ),
-      
-      
+
     //     ],
     //   ),
     // );
@@ -164,6 +163,4 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
   //       vm.increaseCount();
   //     },
   //     child: const Icon(Icons.add));
-
-
 }

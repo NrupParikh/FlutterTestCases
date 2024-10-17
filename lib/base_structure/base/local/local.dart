@@ -43,6 +43,11 @@ class Languages implements Translations {
           AppStrings.lblDateFormat: AppStrings.lblDateFormat,
           AppStrings.lblTimeFormat: AppStrings.lblTimeFormat,
 
+          AppStrings.lblProject : AppStrings.lblProject,
+          AppStrings.lblTitle : AppStrings.lblTitle,
+          AppStrings.lblDateOpened : AppStrings.lblDateOpened,
+          AppStrings.lblCRMopportunity : AppStrings.lblCRMopportunity,
+
           AppStrings.lblClear: AppStrings.lblClear,
           AppStrings.lblSearch: AppStrings.lblSearch,
 
@@ -167,6 +172,11 @@ class Languages implements Translations {
           AppStrings.lblDateFormat: "Formato data",
           AppStrings.lblTimeFormat: "Formato ora",
 
+          AppStrings.lblProject : "Progetto",
+          AppStrings.lblTitle : "Titolo",
+          AppStrings.lblDateOpened : "Data di apertura",
+          AppStrings.lblCRMopportunity : "Opportunità CRM",
+
           AppStrings.lblClear: "Chiara",
           AppStrings.lblSearch: "Ricerca",
 
@@ -265,7 +275,7 @@ class Languages implements Translations {
               "Ingrese sus datos a continuación",
           AppStrings.lblEmailAddress: "Dirección de correo electrónico *",
           AppStrings.lblPassword: "Contraseña *",
-          AppStrings.lblForgotPasswordLink: "¿Has olvidado tu contraseña?",
+          AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
           AppStrings.lblLogin: "Acceso",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
           AppStrings.lblSubmit: "Entregar",
@@ -295,6 +305,11 @@ class Languages implements Translations {
           AppStrings.lblSite: "Sitio *",
           AppStrings.lblDateFormat: "Formato de fecha",
           AppStrings.lblTimeFormat: "Formato de hora",
+
+          AppStrings.lblProject : "Proyecto",
+          AppStrings.lblTitle : "Título",
+          AppStrings.lblDateOpened : "Fecha de apertura",
+          AppStrings.lblCRMopportunity : "Oportunidad de CRM",
 
           AppStrings.lblClear: "Claro",
           AppStrings.lblSearch: "Buscar",

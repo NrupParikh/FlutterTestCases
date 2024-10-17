@@ -40,6 +40,10 @@ class AppStrings {
   static const lblSite = "Site *";
   static const lblDateFormat = "Date Format";
   static const lblTimeFormat = "Time Format";
+  static const lblProject = "Project";
+  static const lblTitle = "Title";
+  static const lblDateOpened = "Date Opened";
+  static const lblCRMopportunity = "CRM Opportunity";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
