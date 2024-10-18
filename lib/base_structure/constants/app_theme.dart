@@ -48,7 +48,14 @@ class AppTheme {
         cardTheme: const CardTheme(
             color: Colors.green,
             elevation: 8,
-            shadowColor: Colors.black,
+            shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16)
+              ),
+              side: BorderSide(color: Colors.black)
+            ),
+            shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
@@ -90,9 +97,16 @@ class AppTheme {
           backgroundColor: Color(0xFF1A1C19),
         ),
         cardTheme: const CardTheme(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16)
+              ),
+              side: BorderSide(color: Colors.white)
+            ),
             color: Colors.green,
             elevation: 8,
-            shadowColor: Colors.white,
+            shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(

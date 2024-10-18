@@ -16,7 +16,12 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
       print("Total Projects ${vm.projects.length}");
     }
 
-    return ListView.builder(
+    return ListView.separated(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        scrollDirection: Axis.vertical,
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(width: 8);
+        },
         itemCount: vm.projects.length,
         itemBuilder: (context, index) {
           final project = vm.projects[index];
