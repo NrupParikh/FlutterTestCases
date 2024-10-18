@@ -45,6 +45,20 @@ class AppStrings {
   static const lblDateOpened = "Date Opened";
   static const lblCRMopportunity = "CRM Opportunity";
 
+  static const lblMaterialName = "Material Name";
+  static const lblMaterialId = "Material Id";
+  static const lblDocType = "Doc Type";
+  static const lblAction = "Action";
+  static const lblDocLanguage = "Language";
+  static const lblTemplate = "Template";
+  static const lblDocDate = "Doc Date";
+  static const lblExpDate = "Doc Expiry Date";
+  static const lblFileName = "File Name";
+  static const lblFileExpDate = "File Expiry Date";
+  static const lblVendorsMaterialCode = "Vendor Material Code";
+  static const lblBasePrice = "Base Price";
+  static const lblVersion = "Version";
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -131,4 +145,7 @@ class AppStrings {
   static const pad = "PAD-Product Activation Deactivation";
   static const rch = "RCH-Recipe Change";
   static const tgi = "TGI-Traded Goods Introduction";
+
+  static const noProjectFound = "No Project found";
+  static const noDocumentFound = "No Document found";
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
+import 'package:flutter_application_1/base_structure/common_widgets/no_data.dart';
 import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
 import 'package:get/get.dart';
 
@@ -16,134 +17,152 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
       print("Total Projects ${vm.projects.length}");
     }
 
-    return ListView.separated(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        scrollDirection: Axis.vertical,
-        separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(width: 8);
-        },
-        itemCount: vm.projects.length,
-        itemBuilder: (context, index) {
-          final project = vm.projects[index];
-          return Card(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Row(
+    return (vm.projects.isNotEmpty)
+        ? ListView.separated(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            scrollDirection: Axis.vertical,
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(width: 8);
+            },
+            itemCount: vm.projects.length,
+            itemBuilder: (context, index) {
+              final project = vm.projects[index];
+              return Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
                     children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblProject.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.projectId.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblProject.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.projectId.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblLab.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.lab.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblTitle.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.title.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblProjectManager.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.projectManager.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblDateOpened.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.dateOpened.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            AppStrings.lblCRMopportunity.tr,
+                            style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                          Expanded(
+                              child: Text(
+                            project.crmOpportunity.toString(),
+                            style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsMedium),
+                          )),
+                        ],
+                      )
                     ],
                   ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblLab.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.lab.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblTitle.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.title.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblProjectManager.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.projectManager.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblDateOpened.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.dateOpened.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        AppStrings.lblCRMopportunity.tr,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                      Expanded(
-                          child: Text(
-                        project.crmOpportunity.toString(),
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontFamily: AppTextConstant.poppinsMedium),
-                      )),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          );
-        });
+                ),
+              );
+            })
+        : NoData(title: AppStrings.noProjectFound.tr);
 
+// =========================================================================
     // return Center(
     //   child: Column(
     //     mainAxisAlignment: MainAxisAlignment.center,
