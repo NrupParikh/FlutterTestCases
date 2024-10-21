@@ -8,20 +8,42 @@ class NotificationsScreen extends BaseScreen<NotificationsViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
-    return const Center(
-      child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Notifications",
-              style: TextStyle(
-                  fontSize: 12, fontFamily: AppTextConstant.poppinsMedium),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView.separated(
+        itemCount: 10, // Define the number of items here
+        itemBuilder: (context, index) {
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5), // Rounded corners
             ),
-          ],
-        ),
+            elevation: 5, // Optional: add elevation to the card
+            margin: const EdgeInsets.symmetric(vertical: 5),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Notification ${index + 1}",
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontFamily: AppTextConstant.poppinsMedium,
+                    ),
+                  ),
+                  const SizedBox(height: 10), // Spacing between text
+                  const Text(
+                    "This is the description of the notification.",
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return const SizedBox(height: 10); // Separator between items
+        },
       ),
     );
   }
