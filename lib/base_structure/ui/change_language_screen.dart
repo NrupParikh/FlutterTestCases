@@ -2,10 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
-import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/change_language_view_model.dart';
 import 'package:get/get.dart';
-import '../constants/app_text_constant.dart';
 
 class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
   const ChangeLanguageScreen({super.key});
@@ -23,7 +21,7 @@ class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
               onChanged: (ans) {
                 vm.selectedValue.value = ans.toString();
               },
-              activeColor: getPrimaryColor(),)),
+              )),
           Obx(() => RadioListTile(
               title:  Text(AppStrings.italy.tr),
               value: "it",
@@ -41,9 +39,7 @@ class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: OutlinedButton(
-                child: Text(AppStrings.lblSubmit.tr,
-                    style: const TextStyle(
-                        fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+                child: Text(AppStrings.lblSubmit.tr),
                 onPressed: () async {
                   if (kDebugMode) {
                     print("Selected Language ${vm.selectedValue.value}");

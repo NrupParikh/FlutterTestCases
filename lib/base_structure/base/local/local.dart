@@ -43,8 +43,27 @@ class Languages implements Translations {
           AppStrings.lblDateFormat: AppStrings.lblDateFormat,
           AppStrings.lblTimeFormat: AppStrings.lblTimeFormat,
 
+          AppStrings.lblProject: AppStrings.lblProject,
+          AppStrings.lblTitle: AppStrings.lblTitle,
+          AppStrings.lblDateOpened: AppStrings.lblDateOpened,
+          AppStrings.lblCRMopportunity: AppStrings.lblCRMopportunity,
+
           AppStrings.lblClear: AppStrings.lblClear,
           AppStrings.lblSearch: AppStrings.lblSearch,
+
+          AppStrings.lblMaterialName: AppStrings.lblMaterialName,
+          AppStrings.lblMaterialId: AppStrings.lblMaterialId,
+          AppStrings.lblDocType: AppStrings.lblDocType,
+          AppStrings.lblAction: AppStrings.lblAction,
+          AppStrings.lblDocLanguage: AppStrings.lblDocLanguage,
+          AppStrings.lblTemplate: AppStrings.lblTemplate,
+          AppStrings.lblDocDate: AppStrings.lblDocDate,
+          AppStrings.lblExpDate: AppStrings.lblExpDate,
+          AppStrings.lblFileName: AppStrings.lblFileName,
+          AppStrings.lblFileExpDate: AppStrings.lblFileExpDate,
+          AppStrings.lblVendorsMaterialCode: AppStrings.lblVendorsMaterialCode,
+          AppStrings.lblBasePrice: AppStrings.lblBasePrice,
+          AppStrings.lblVersion: AppStrings.lblVersion,
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
@@ -127,6 +146,9 @@ class Languages implements Translations {
           AppStrings.pad: AppStrings.pad,
           AppStrings.rch: AppStrings.rch,
           AppStrings.tgi: AppStrings.tgi,
+
+          AppStrings.noProjectFound : AppStrings.noProjectFound,
+          AppStrings.noDocumentFound : AppStrings.noDocumentFound,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -167,8 +189,27 @@ class Languages implements Translations {
           AppStrings.lblDateFormat: "Formato data",
           AppStrings.lblTimeFormat: "Formato ora",
 
+          AppStrings.lblProject: "Progetto",
+          AppStrings.lblTitle: "Titolo",
+          AppStrings.lblDateOpened: "Data di apertura",
+          AppStrings.lblCRMopportunity: "Opportunità CRM",
+
           AppStrings.lblClear: "Chiara",
           AppStrings.lblSearch: "Ricerca",
+
+          AppStrings.lblMaterialName: "Nome del materiale",
+          AppStrings.lblMaterialId: "Identificativo materiale",
+          AppStrings.lblDocType: "Tipo documento",
+          AppStrings.lblAction: "Azione",
+          AppStrings.lblDocLanguage: "Lingua",
+          AppStrings.lblTemplate: "Modello",
+          AppStrings.lblDocDate: "Data del documento",
+          AppStrings.lblExpDate: "Data di scadenza del documento",
+          AppStrings.lblFileName: "Nome del file",
+          AppStrings.lblFileExpDate: "Data di scadenza del file",
+          AppStrings.lblVendorsMaterialCode: "Codice materiale del venditore",
+          AppStrings.lblBasePrice: "Prezzo base",
+          AppStrings.lblVersion: "Versione",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
@@ -254,6 +295,9 @@ class Languages implements Translations {
           AppStrings.pad: "PAD-Disattivazione dell'attivazione del prodotto",
           AppStrings.rch: "RCH-Cambio ricetta",
           AppStrings.tgi: "TGI-Introduzione ai beni scambiati",
+
+          AppStrings.noProjectFound : "Nessun progetto trovato",
+          AppStrings.noDocumentFound : "Nessun documento trovato",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -265,7 +309,7 @@ class Languages implements Translations {
               "Ingrese sus datos a continuación",
           AppStrings.lblEmailAddress: "Dirección de correo electrónico *",
           AppStrings.lblPassword: "Contraseña *",
-          AppStrings.lblForgotPasswordLink: "¿Has olvidado tu contraseña?",
+          AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
           AppStrings.lblLogin: "Acceso",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
           AppStrings.lblSubmit: "Entregar",
@@ -296,8 +340,27 @@ class Languages implements Translations {
           AppStrings.lblDateFormat: "Formato de fecha",
           AppStrings.lblTimeFormat: "Formato de hora",
 
+          AppStrings.lblProject: "Proyecto",
+          AppStrings.lblTitle: "Título",
+          AppStrings.lblDateOpened: "Fecha de apertura",
+          AppStrings.lblCRMopportunity: "Oportunidad de CRM",
+
           AppStrings.lblClear: "Claro",
           AppStrings.lblSearch: "Buscar",
+
+          AppStrings.lblMaterialName: "Nombre del material",
+          AppStrings.lblMaterialId: "Identificación del material",
+          AppStrings.lblDocType: "Tipo de documento",
+          AppStrings.lblAction: "Acción",
+          AppStrings.lblDocLanguage: "Idioma",
+          AppStrings.lblTemplate: "Plantilla",
+          AppStrings.lblDocDate: "Fecha del documento",
+          AppStrings.lblExpDate: "Fecha de vencimiento del documento",
+          AppStrings.lblFileName: "Nombre del archivo",
+          AppStrings.lblFileExpDate: "Fecha de vencimiento del archivo",
+          AppStrings.lblVendorsMaterialCode: "Código de material del proveedor",
+          AppStrings.lblBasePrice: "Precio base",
+          AppStrings.lblVersion: "Versión",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
@@ -384,6 +447,9 @@ class Languages implements Translations {
           AppStrings.pad: "PAD-Activación y desactivación del producto",
           AppStrings.rch: "RCH-Cambio de receta",
           AppStrings.tgi: "TGI-Introducción a los productos comercializados",
+
+          AppStrings.noProjectFound : "No se encontró ningún proyecto",
+          AppStrings.noDocumentFound : "No se encontró ningún documento",
         }
       };
 }

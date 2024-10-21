@@ -85,10 +85,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: OutlinedButton(
-                      child: Text(AppStrings.lblLogin.tr,
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontFamily: AppTextConstant.poppinsBold)),
+                      child: Text(AppStrings.lblLogin.tr),
                       onPressed: () async {
                         Tuple2<bool, String> ans = await vm.validateLogin();
 

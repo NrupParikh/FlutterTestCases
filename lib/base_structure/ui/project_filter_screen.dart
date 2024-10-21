@@ -36,7 +36,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
                       dropdownColor: Colors.green,
-                       decoration: const InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -44,10 +44,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  Colors.grey,
-                              width: 2.00),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.00),
                         ),
                       ),
                       value: vm.selectedProjectTypeItem.value,
@@ -84,7 +82,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
                       dropdownColor: Colors.green,
-                        decoration: const InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -92,10 +90,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  Colors.grey,
-                              width: 2.00),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.00),
                         ),
                       ),
                       value: vm.selectedProjectStatusItem.value,
@@ -132,7 +128,6 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
                       dropdownColor: Colors.green,
-                 
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -141,9 +136,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:Colors.grey,
-                              width: 2.00),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.00),
                         ),
                       ),
                       value: vm.selectedLabItem.value,
@@ -178,8 +172,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
-                    child: DropdownButtonFormField<String>(   
-                      dropdownColor: Colors.green,                
+                    child: DropdownButtonFormField<String>(
+                      dropdownColor: Colors.green,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -188,10 +182,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  Colors.grey,
-                              width: 2.00),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.00),
                         ),
                       ),
                       value: vm.selectedProjectManagerItem.value,
@@ -231,7 +223,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                             enabled: false,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
-                              disabledBorder: const OutlineInputBorder(),
+                              disabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)),
                               label: Text(vm.selectedFromDate.value,
                                   style: const TextStyle(
                                       fontSize: 12,
@@ -282,7 +275,8 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                             enabled: false,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
-                              disabledBorder: const OutlineInputBorder(),
+                              disabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey)),
                               label: Text(vm.selectedToDate.value,
                                   style: const TextStyle(
                                       fontSize: 12,
@@ -337,10 +331,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: OutlinedButton(
-                            child: Text(AppStrings.lblClear.tr,
-                                style: const TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: AppTextConstant.poppinsBold)),
+                            child: Text(AppStrings.lblClear.tr),
                             onPressed: () {
                               Get.to(const NRDScreen());
                             }),
@@ -348,10 +339,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: OutlinedButton(
-                            child: Text(AppStrings.lblSearch.tr,
-                                style: const TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: AppTextConstant.poppinsBold)),
+                            child: Text(AppStrings.lblSearch.tr),
                             onPressed: () {
                               if (kDebugMode) {
                                 print(

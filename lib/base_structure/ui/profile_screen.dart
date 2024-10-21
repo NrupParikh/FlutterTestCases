@@ -258,10 +258,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OutlinedButton(
-                          child: Text(AppStrings.lblSubmit.tr,
-                              style: const TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: AppTextConstant.poppinsBold)),
+                          child: Text(AppStrings.lblSubmit.tr),
                           onPressed: () {}),
                     ),
                   ),

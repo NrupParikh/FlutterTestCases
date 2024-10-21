@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'app_text_constant.dart';
+
 class AppTheme {
 // focus color : Used by widgets like TextField and TextFormField primary color
 // ColorSchema : A set of 30 colors based on the Material Spec
@@ -43,6 +45,35 @@ class AppTheme {
         drawerTheme: const DrawerThemeData(
           backgroundColor: Colors.white,
         ),
+        cardTheme: const CardTheme(
+            color: Colors.green,
+            elevation: 8,
+            shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16)
+              ),
+              side: BorderSide(color: Colors.black)
+            ),
+            shadowColor: Colors.greenAccent,
+            margin: EdgeInsets.all(8.0)),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+                textStyle: const TextStyle(
+                    fontSize: 12, fontFamily: AppTextConstant.poppinsBold))),
+        tabBarTheme: const TabBarTheme(
+            labelColor: Colors.white,
+            labelStyle: TextStyle(
+                fontSize: 14, fontFamily: AppTextConstant.poppinsBold),
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorColor: Color(0xFFFFFFFF),
+            unselectedLabelColor: Color(0xFF66DF6E),
+            unselectedLabelStyle: TextStyle(
+                fontSize: 12, fontFamily: AppTextConstant.poppinsRegular),
+            dividerColor: Colors.transparent),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.all(const Color(0xFF006E1F)),
+        ),
         datePickerTheme: const DatePickerThemeData(
             backgroundColor: Colors.white,
             dividerColor: Colors.greenAccent,
@@ -64,6 +95,35 @@ class AppTheme {
         // primaryTextTheme: _buildTextDarkTheme(base.primaryTextTheme),
         drawerTheme: const DrawerThemeData(
           backgroundColor: Color(0xFF1A1C19),
+        ),
+        cardTheme: const CardTheme(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16)
+              ),
+              side: BorderSide(color: Colors.white)
+            ),
+            color: Colors.green,
+            elevation: 8,
+            shadowColor: Colors.greenAccent,
+            margin: EdgeInsets.all(8.0)),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+                textStyle: const TextStyle(
+                    fontSize: 12, fontFamily: AppTextConstant.poppinsBold))),
+        tabBarTheme: const TabBarTheme(
+            labelColor: Colors.white,
+            labelStyle: TextStyle(
+                fontSize: 14, fontFamily: AppTextConstant.poppinsBold),
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorColor: Color(0xFF00390C),
+            unselectedLabelColor: Color(0xFF66DF6E),
+            unselectedLabelStyle: TextStyle(
+                fontSize: 12, fontFamily: AppTextConstant.poppinsRegular),
+            dividerColor: Colors.transparent),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.all(const Color(0xFF66DF6E)),
         ),
         datePickerTheme: const DatePickerThemeData(
             backgroundColor: Color(0xFF1A1C19),
