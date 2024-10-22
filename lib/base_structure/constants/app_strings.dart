@@ -59,6 +59,17 @@ class AppStrings {
   static const lblBasePrice = "Base Price";
   static const lblVersion = "Version";
 
+  static const lblCommonMaterialCode = "Common Material Code";
+  static const lblDocumentTemplate = "Document Template";
+  static const lblSearchMaterial = "Search Material";
+  static const lblSearchProject = "Search Project";
+  static const lblSearchBusinessPartner = "Search Bussiness Partner";
+  static const lblCreationDateFrom = "Creation Date From";
+  static const lblCreationDateTo = "Creation Date To";
+  static const lblExpirationDateFrom = "Expiration Date From";
+  static const lblExpirationDateTo = "Expiration Date To";
+
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -84,6 +95,8 @@ class AppStrings {
 
   static const hintEnterFirstName = "Enter first name";
   static const hintEnterLastName = "Enter last name";
+
+  static const hintEnterCommonMaterialCode = "Enter common material code";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";

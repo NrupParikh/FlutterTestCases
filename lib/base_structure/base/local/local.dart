@@ -65,6 +65,17 @@ class Languages implements Translations {
           AppStrings.lblBasePrice: AppStrings.lblBasePrice,
           AppStrings.lblVersion: AppStrings.lblVersion,
 
+          AppStrings.lblCommonMaterialCode: AppStrings.lblCommonMaterialCode,
+          AppStrings.lblDocumentTemplate: AppStrings.lblDocumentTemplate,
+          AppStrings.lblSearchMaterial: AppStrings.lblSearchMaterial,
+          AppStrings.lblSearchProject: AppStrings.lblSearchProject,
+          AppStrings.lblSearchBusinessPartner:
+              AppStrings.lblSearchBusinessPartner,
+          AppStrings.lblCreationDateFrom: AppStrings.lblCreationDateFrom,
+          AppStrings.lblCreationDateTo: AppStrings.lblCreationDateTo,
+          AppStrings.lblExpirationDateFrom: AppStrings.lblExpirationDateFrom,
+          AppStrings.lblExpirationDateTo: AppStrings.lblExpirationDateTo,
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
@@ -88,6 +99,9 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
           AppStrings.hintEnterLastName: AppStrings.hintEnterLastName,
+
+          AppStrings.hintEnterCommonMaterialCode:
+              AppStrings.hintEnterCommonMaterialCode,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -147,8 +161,8 @@ class Languages implements Translations {
           AppStrings.rch: AppStrings.rch,
           AppStrings.tgi: AppStrings.tgi,
 
-          AppStrings.noProjectFound : AppStrings.noProjectFound,
-          AppStrings.noDocumentFound : AppStrings.noDocumentFound,
+          AppStrings.noProjectFound: AppStrings.noProjectFound,
+          AppStrings.noDocumentFound: AppStrings.noDocumentFound,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -211,6 +225,16 @@ class Languages implements Translations {
           AppStrings.lblBasePrice: "Prezzo base",
           AppStrings.lblVersion: "Versione",
 
+          AppStrings.lblCommonMaterialCode: "Codice materiale comune",
+          AppStrings.lblDocumentTemplate: "Modello di documento",
+          AppStrings.lblSearchMaterial: "Cerca materiale",
+          AppStrings.lblSearchProject: "Progetto di ricerca",
+          AppStrings.lblSearchBusinessPartner: "Cerca partner commerciale",
+          AppStrings.lblCreationDateFrom: "Data di creazione da",
+          AppStrings.lblCreationDateTo: "Data di creazione a",
+          AppStrings.lblExpirationDateFrom: "Data di scadenza da",
+          AppStrings.lblExpirationDateTo: "Data di scadenza a",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
@@ -236,6 +260,9 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: "Inserisci il nome",
           AppStrings.hintEnterLastName: "Inserisci il cognome",
+
+          AppStrings.hintEnterCommonMaterialCode:
+              "Inserisci il codice materiale comune",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -296,8 +323,8 @@ class Languages implements Translations {
           AppStrings.rch: "RCH-Cambio ricetta",
           AppStrings.tgi: "TGI-Introduzione ai beni scambiati",
 
-          AppStrings.noProjectFound : "Nessun progetto trovato",
-          AppStrings.noDocumentFound : "Nessun documento trovato",
+          AppStrings.noProjectFound: "Nessun progetto trovato",
+          AppStrings.noDocumentFound: "Nessun documento trovato",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -362,6 +389,16 @@ class Languages implements Translations {
           AppStrings.lblBasePrice: "Precio base",
           AppStrings.lblVersion: "Versión",
 
+          AppStrings.lblCommonMaterialCode: "Código de materiales común",
+          AppStrings.lblDocumentTemplate: "Documento ejemplar",
+          AppStrings.lblSearchMaterial: "Buscar materiales",
+          AppStrings.lblSearchProject: "Proyecto de búsqueda",
+          AppStrings.lblSearchBusinessPartner: "Buscar socio comercial",
+          AppStrings.lblCreationDateFrom: "Fecha de creación desde",
+          AppStrings.lblCreationDateTo: "Fecha de creación hasta",
+          AppStrings.lblExpirationDateFrom: "Fecha de vencimiento desde",
+          AppStrings.lblExpirationDateTo: "Fecha de vencimiento hasta",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
@@ -386,6 +423,9 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: "Introduce el nombre",
           AppStrings.hintEnterLastName: "Introduce el apellido",
+
+          AppStrings.hintEnterCommonMaterialCode:
+              "Introduzca el código de material común",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",
@@ -448,8 +488,8 @@ class Languages implements Translations {
           AppStrings.rch: "RCH-Cambio de receta",
           AppStrings.tgi: "TGI-Introducción a los productos comercializados",
 
-          AppStrings.noProjectFound : "No se encontró ningún proyecto",
-          AppStrings.noDocumentFound : "No se encontró ningún documento",
+          AppStrings.noProjectFound: "No se encontró ningún proyecto",
+          AppStrings.noDocumentFound: "No se encontró ningún documento",
         }
       };
 }

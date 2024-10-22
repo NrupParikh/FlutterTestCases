@@ -131,7 +131,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     return AppBar(
       title: Text(getTitle(currentRouteName),
           style: const TextStyle(
-              fontSize: 20, fontFamily: AppTextConstant.poppinsBold)),
+              fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
       centerTitle: true,
       leading: (currentRouteName == Constant.tagLoginScreen ||
               currentRouteName == Constant.tagLogin ||

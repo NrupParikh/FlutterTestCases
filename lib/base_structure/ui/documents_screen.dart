@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
@@ -335,7 +336,9 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
                       child: IconButton(
                           color: Colors.black,
                           onPressed: () {
-                            print("Share");
+                            if (kDebugMode) {
+                              print("Share");
+                            }
                           },
                           icon: const Icon(Icons.share)),
                     ),
