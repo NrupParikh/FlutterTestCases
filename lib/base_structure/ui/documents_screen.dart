@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
 import 'package:get/get.dart';
 
@@ -350,7 +351,9 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
                           color: Colors.black,
-                          onPressed: () {},
+                          onPressed: () {
+                            removeDoc();
+                          },
                           icon: const Icon(Icons.delete)),
                     ),
                   )

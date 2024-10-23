@@ -69,11 +69,25 @@ class AppStrings {
   static const lblExpirationDateFrom = "Expiration Date From";
   static const lblExpirationDateTo = "Expiration Date To";
 
+  static const lblRecipeId = "Recipe Id";
+  static const lblName = "Name";
+  static const lblCreatedBy = "Created By";
+  static const lblCreatedOn = "Created On";
+  static const lblBaseSize = "Base Size";
+  static const lblUOM = "UOM";
+  static const lblCost = "Cost";
+  static const lblCurrency = "Currency";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
       'Are you sure you want to logout from the application?';
+
+  static const msgDeleteDocConfirmation =
+      'Are you sure you want to delete this document?';
+
+  static const msgDeleteRecipeConfirmation =
+      'Are you sure you want to delete this recipe?';    
 
   static const ok = "Ok";
   static const cancel = "Cancel";
@@ -161,4 +175,5 @@ class AppStrings {
 
   static const noProjectFound = "No Project found";
   static const noDocumentFound = "No Document found";
+  static const noRecipeFound = "No Recipe found";
 }

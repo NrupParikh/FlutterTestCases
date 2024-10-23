@@ -76,9 +76,22 @@ class Languages implements Translations {
           AppStrings.lblExpirationDateFrom: AppStrings.lblExpirationDateFrom,
           AppStrings.lblExpirationDateTo: AppStrings.lblExpirationDateTo,
 
+          AppStrings.lblRecipeId: AppStrings.lblRecipeId,
+          AppStrings.lblName: AppStrings.lblName,
+          AppStrings.lblCreatedBy: AppStrings.lblCreatedBy,
+          AppStrings.lblCreatedOn: AppStrings.lblCreatedOn,
+          AppStrings.lblBaseSize: AppStrings.lblBaseSize,
+          AppStrings.lblUOM: AppStrings.lblUOM,
+          AppStrings.lblCost: AppStrings.lblCost,
+          AppStrings.lblCurrency: AppStrings.lblCurrency,
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
+          AppStrings.msgDeleteDocConfirmation:
+              AppStrings.msgDeleteDocConfirmation,
+          AppStrings.msgDeleteRecipeConfirmation:
+              AppStrings.msgDeleteRecipeConfirmation,
 
           AppStrings.ok: AppStrings.ok,
           AppStrings.cancel: AppStrings.cancel,
@@ -163,6 +176,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: AppStrings.noProjectFound,
           AppStrings.noDocumentFound: AppStrings.noDocumentFound,
+          AppStrings.noRecipeFound: AppStrings.noRecipeFound,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -235,10 +249,24 @@ class Languages implements Translations {
           AppStrings.lblExpirationDateFrom: "Data di scadenza da",
           AppStrings.lblExpirationDateTo: "Data di scadenza a",
 
+          AppStrings.lblRecipeId: "Identificativo della ricetta",
+          AppStrings.lblName: "Nome",
+          AppStrings.lblCreatedBy: "Creato da",
+          AppStrings.lblCreatedOn: "Creato il",
+          AppStrings.lblBaseSize: "Dimensione base",
+          AppStrings.lblUOM: "UM",
+          AppStrings.lblCost: "Costo",
+          AppStrings.lblCurrency: "Valuta",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
               "Sei sicuro di voler uscire dall'applicazione?",
+          AppStrings.msgDeleteDocConfirmation:
+              'Sei sicuro di voler eliminare questo documento?',
+
+          AppStrings.msgDeleteRecipeConfirmation:
+              "Sei sicuro di voler eliminare questa ricetta?",
 
           AppStrings.ok: "OK",
           AppStrings.cancel: "Cancellare",
@@ -325,6 +353,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: "Nessun progetto trovato",
           AppStrings.noDocumentFound: "Nessun documento trovato",
+          AppStrings.noRecipeFound: "Nessuna ricetta trovata",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -399,10 +428,25 @@ class Languages implements Translations {
           AppStrings.lblExpirationDateFrom: "Fecha de vencimiento desde",
           AppStrings.lblExpirationDateTo: "Fecha de vencimiento hasta",
 
+          AppStrings.lblRecipeId: "ID de receta",
+          AppStrings.lblName: "Nombre",
+          AppStrings.lblCreatedBy: "Creado por",
+          AppStrings.lblCreatedOn: "Creado el",
+          AppStrings.lblBaseSize: "Tamaño básico",
+          AppStrings.lblUOM: "unidad de medida",
+          AppStrings.lblCost: "Costo",
+          AppStrings.lblCurrency: "Divisa",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
               "¿Está seguro de que desea cerrar sesión en la aplicación?",
+
+          AppStrings.msgDeleteDocConfirmation:
+              "¿Está seguro de que desea eliminar este documento?",
+
+          AppStrings.msgDeleteRecipeConfirmation:
+              "¿Estás seguro de que quieres eliminar esta receta?",
 
           AppStrings.ok: "De acuerdo",
           AppStrings.cancel: "Cancelar",
@@ -490,6 +534,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: "No se encontró ningún proyecto",
           AppStrings.noDocumentFound: "No se encontró ningún documento",
+          AppStrings.noRecipeFound: "No se encontró ninguna receta",
         }
       };
 }
