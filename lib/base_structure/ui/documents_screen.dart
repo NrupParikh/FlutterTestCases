@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
-import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
 import 'package:get/get.dart';
 
+import '../common_widgets/custom_dialog.dart';
 import '../common_widgets/no_data.dart';
 
 class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
@@ -14,7 +14,10 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
-    return (vm.documents.isNotEmpty)
+    return 
+    Obx(() =>
+    
+    (vm.documents.isNotEmpty)
         ? ListView.separated(
             padding: const EdgeInsets.symmetric(vertical: 8),
             scrollDirection: Axis.vertical,
@@ -233,11 +236,11 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
                                   child: Text(
                                 document.fileName.toString(),
                                 style: const TextStyle(
-                                    color: Colors.greenAccent,
+                                    color: Colors.green,
                                     decoration: TextDecoration.underline,
-                                    decorationColor: Colors.greenAccent,
+                                    decorationColor: Colors.green,
                                     fontSize: 12,
-                                    fontFamily: AppTextConstant.poppinsMedium),
+                                    fontFamily: AppTextConstant.poppinsBold),
                               )),
                             ],
                           ),
@@ -341,7 +344,7 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
                               print("Share");
                             }
                           },
-                          icon: const Icon(Icons.share)),
+                          icon: const Icon(Icons.share,color: Colors.green,)),
                     ),
                   ),
                   Positioned(
@@ -351,15 +354,21 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
                           color: Colors.black,
-                          onPressed: () {
-                            removeDoc();
+                          onPressed: () async {
+                            final result =
+                                await CustomDialog.showOkCancelDialog(
+                                    AppStrings.appName.tr,
+                                    AppStrings.msgDeleteDocConfirmation.tr);
+                            if (result) {
+                              vm.deleteDocument(index);
+                            }
                           },
-                          icon: const Icon(Icons.delete)),
+                          icon: const Icon(Icons.delete,color: Colors.green,)),
                     ),
                   )
                 ],
               );
             })
-        : NoData(title: AppStrings.noDocumentFound.tr);
+        : NoData(title: AppStrings.noDocumentFound.tr));
   }
 }

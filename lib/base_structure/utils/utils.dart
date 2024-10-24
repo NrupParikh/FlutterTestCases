@@ -125,20 +125,6 @@ void doLogout() async {
   }
 }
 
-void removeDoc()async {
-   final result = await CustomDialog.showOkCancelDialog(
-      AppStrings.appName.tr, AppStrings.msgDeleteDocConfirmation.tr);
-  if (result) {
-  }
-}
-
-void removeRecipe()async {
-   final result = await CustomDialog.showOkCancelDialog(
-      AppStrings.appName.tr, AppStrings.msgDeleteRecipeConfirmation.tr);
-  if (result) {
-  }
-}
-
 String getDateInddMMyyyy(DateTime? selectedDateTime) {
   if (selectedDateTime != null) {
     String formattedDate = DateFormat("dd-MM-yyyy").format(selectedDateTime);

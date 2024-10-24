@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
-import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 
+import '../common_widgets/custom_dialog.dart';
 import '../common_widgets/no_data.dart';
 import '../constants/app_text_constant.dart';
 import '../vm/rnd_view_model.dart';
@@ -13,7 +13,7 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
-    return (vm.recipes.isNotEmpty)
+    return Obx(() => (vm.recipes.isNotEmpty)
         ? ListView.separated(
             padding: const EdgeInsets.symmetric(vertical: 8),
             scrollDirection: Axis.vertical,
@@ -226,14 +226,19 @@ class RNDScreen extends BaseScreen<RNDViewModel> {
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
                         color: Colors.black,
-                        onPressed: () {
-                          removeRecipe();
+                        onPressed: () async {
+                          final result = await CustomDialog.showOkCancelDialog(
+                              AppStrings.appName.tr,
+                              AppStrings.msgDeleteRecipeConfirmation.tr);
+                          if (result) {
+                            vm.deleteRecipe(index);
+                          }
                         },
-                        icon: const Icon(Icons.delete)),
+                        icon: const Icon(Icons.delete,color: Colors.green,)),
                   ),
                 )
               ]);
             })
-        : NoData(title: AppStrings.noRecipeFound.tr);
+        : NoData(title: AppStrings.noRecipeFound.tr));
   }
 }

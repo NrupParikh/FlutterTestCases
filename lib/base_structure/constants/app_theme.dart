@@ -46,8 +46,7 @@ class AppTheme {
           backgroundColor: Colors.white,
         ),
         cardTheme: const CardTheme(
-            color: Colors.green,
-            elevation: 8,
+            color: Colors.white,
             shape: RoundedRectangleBorder(
                borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(16),
@@ -94,7 +93,7 @@ class AppTheme {
         // textTheme: _buildTextDarkTheme(base.textTheme),
         // primaryTextTheme: _buildTextDarkTheme(base.primaryTextTheme),
         drawerTheme: const DrawerThemeData(
-          backgroundColor: Color(0xFF1A1C19),
+          backgroundColor: Color.fromARGB(255, 22, 22, 22),
         ),
         cardTheme: const CardTheme(
             shape: RoundedRectangleBorder(
@@ -104,8 +103,7 @@ class AppTheme {
               ),
               side: BorderSide(color: Colors.white)
             ),
-            color: Colors.green,
-            elevation: 8,
+            color: Colors.black,
             shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(

@@ -21,6 +21,8 @@ class LoginViewModel extends BaseViewModel {
   var errorEmail = Rx<String?>(null);
   var errorPassword = Rx<String?>(null);
 
+  var passwordVisible = false.obs;
+
   Future<Tuple2<bool, String>> validateLogin() async {
     if (kDebugMode) {
       print("Login clicked");

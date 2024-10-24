@@ -10,9 +10,14 @@ class Languages implements Translations {
           AppStrings.lblEmail: AppStrings.lblEmail,
           AppStrings.lblSignInNow: AppStrings.lblSignInNow,
           AppStrings.lblEnterYourDetailsBelow:
-              AppStrings.lblEnterYourDetailsBelow,
+          AppStrings.lblEnterYourDetailsBelow,
           AppStrings.lblEmailAddress: AppStrings.lblEmailAddress,
           AppStrings.lblPassword: AppStrings.lblPassword,
+
+          AppStrings.lblCurrentPassword :AppStrings.lblCurrentPassword,
+          AppStrings.lblNewPassword :AppStrings.lblNewPassword,
+          AppStrings.lblConfirmPassword :AppStrings.lblConfirmPassword,
+
           AppStrings.lblForgotPasswordLink: AppStrings.lblForgotPasswordLink,
           AppStrings.lblLogin: AppStrings.lblLogin,
           AppStrings.lblForgotPassword: AppStrings.lblForgotPassword,
@@ -101,6 +106,10 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: AppStrings.valEnterPassword,
           AppStrings.valEnterOtp: AppStrings.valEnterOtp,
 
+          AppStrings.valEnterCurrentPassword: AppStrings.valEnterCurrentPassword,
+          AppStrings.valEnterNewPassword: AppStrings.valEnterNewPassword,
+          AppStrings.valEnterConfirmPassword: AppStrings.valEnterConfirmPassword,
+
           // ========== HINT
           AppStrings.hintEnterYourEmail: AppStrings.hintEnterYourEmail,
           AppStrings.hintEnterYourPassword: AppStrings.hintEnterYourPassword,
@@ -115,6 +124,12 @@ class Languages implements Translations {
 
           AppStrings.hintEnterCommonMaterialCode:
               AppStrings.hintEnterCommonMaterialCode,
+
+          AppStrings.hintEnterYourCurrentPassword : AppStrings.hintEnterYourCurrentPassword,
+          AppStrings.hintEnterYourNewPassword : AppStrings.hintEnterYourNewPassword,
+          AppStrings.hintEnterPasswordAgain :AppStrings.hintEnterPasswordAgain,
+          AppStrings.msgPasswordMustBeMatch : AppStrings.msgPasswordMustBeMatch,
+          AppStrings.msgPasswordUpdated : AppStrings.msgPasswordUpdated,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -187,6 +202,11 @@ class Languages implements Translations {
               "Inserisci i tuoi dati qui sotto",
           AppStrings.lblEmailAddress: "Indirizzo e-mail *",
           AppStrings.lblPassword: "Parola d'ordine *",
+
+          AppStrings.lblCurrentPassword: "Password attuale *",
+          AppStrings.lblNewPassword: "Nuova password *",
+          AppStrings.lblConfirmPassword: "Conferma password *",
+
           AppStrings.lblForgotPasswordLink: "Ha dimenticato la password?",
           AppStrings.lblLogin: "Login",
           AppStrings.lblForgotPassword: "Ha dimenticato la password",
@@ -276,6 +296,11 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: "Inserisci la password",
           AppStrings.valEnterOtp: "Per favore inserisci otp",
 
+
+          AppStrings.valEnterCurrentPassword: "Inserisci la password attuale",
+          AppStrings.valEnterNewPassword:  "Inserisci la nuova password",
+          AppStrings.valEnterConfirmPassword: "Inserisci nuovamente la password",
+
           // ========== HINT
           AppStrings.hintEnterYourEmail: "Inserisci la tua email",
           AppStrings.hintEnterYourPassword: "Inserisci la tua password",
@@ -291,6 +316,12 @@ class Languages implements Translations {
 
           AppStrings.hintEnterCommonMaterialCode:
               "Inserisci il codice materiale comune",
+
+          AppStrings.hintEnterYourCurrentPassword : "nserisci la tua password attuale",
+          AppStrings.hintEnterYourNewPassword : "Inserisci la tua nuova password",
+          AppStrings.hintEnterPasswordAgain :"Immettere nuovamente la password",
+          AppStrings.msgPasswordMustBeMatch : "La password deve corrispondere alla nuova password",
+          AppStrings.msgPasswordUpdated : "Password aggiornata",    
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -365,6 +396,11 @@ class Languages implements Translations {
               "Ingrese sus datos a continuación",
           AppStrings.lblEmailAddress: "Dirección de correo electrónico *",
           AppStrings.lblPassword: "Contraseña *",
+
+          AppStrings.lblCurrentPassword: "Contraseña actual *",
+          AppStrings.lblNewPassword: "Nueva contraseña *",
+          AppStrings.lblConfirmPassword: "Confirmar Contraseña *",
+
           AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
           AppStrings.lblLogin: "Acceso",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
@@ -456,6 +492,10 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: "Por favor ingrese la contraseña",
           AppStrings.valEnterOtp: "Por favor ingresa otp",
 
+          AppStrings.valEnterCurrentPassword: "Por favor ingrese la contraseña actual",
+          AppStrings.valEnterNewPassword: "Por favor ingrese una nueva contraseña",
+          AppStrings.valEnterConfirmPassword: "Por favor ingrese la contraseña nuevamente",
+
           // ========== HINT
           AppStrings.hintEnterYourEmail:
               "introduce tu dirección de correo electrónico",
@@ -470,6 +510,12 @@ class Languages implements Translations {
 
           AppStrings.hintEnterCommonMaterialCode:
               "Introduzca el código de material común",
+
+          AppStrings.hintEnterYourCurrentPassword : "Ingrese su contraseña actual",
+          AppStrings.hintEnterYourNewPassword : "Ingresa tu nueva contraseña",
+          AppStrings.hintEnterPasswordAgain : "Ingrese la contraseña nuevamente",
+          AppStrings.msgPasswordMustBeMatch : "La contraseña debe coincidir con la nueva contraseña",
+          AppStrings.msgPasswordUpdated : "Contraseña actualizada",    
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",

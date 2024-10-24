@@ -82,7 +82,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -98,11 +98,15 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedLanguageListItem.value,
                       isExpanded: true,
                       items: vm.languageList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color:
+                                      vm.selectedLanguageListItem.value == item
+                                          ? Colors.green
+                                          : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -128,7 +132,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -144,11 +148,14 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedSiteListItem.value,
                       isExpanded: true,
                       items: vm.siteList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedSiteListItem.value == item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -174,7 +181,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -190,11 +197,15 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedDateFormatListItem.value,
                       isExpanded: true,
                       items: vm.dateFormatList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedDateFormatListItem.value ==
+                                          item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -220,7 +231,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -236,11 +247,15 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedTimeFormatListItem.value,
                       isExpanded: true,
                       items: vm.timeFormatList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedTimeFormatListItem.value ==
+                                          item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );

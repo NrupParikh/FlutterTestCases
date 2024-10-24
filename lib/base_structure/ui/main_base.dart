@@ -52,7 +52,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      theme: AppTheme.appPrimaryLightTheme(),
+      theme: AppTheme.appPrimaryDarkTheme(),
       darkTheme: AppTheme.appPrimaryDarkTheme(),
       // For application specific theme support
       // themeMode: (widget.myInitialTheme.toString() == AppTheme.lightTheme)

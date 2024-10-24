@@ -10,6 +10,11 @@ class AppStrings {
   static const lblEnterYourDetailsBelow = "Enter your details below";
   static const lblEmailAddress = "Email Address *";
   static const lblPassword = "Password *";
+
+  static const lblCurrentPassword = "Current Password *";
+  static const lblNewPassword = "New Password *";
+  static const lblConfirmPassword = "Confirm Password *";
+  
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
 
@@ -97,6 +102,10 @@ class AppStrings {
   static const valEnterPassword = "Please enter password";
   static const valEnterOtp = "Please enter otp";
 
+  static const valEnterCurrentPassword = "Please enter current password";
+  static const valEnterNewPassword = "Please enter new password";
+  static const valEnterConfirmPassword = "Please enter password again";
+
   // ========== HINT
   static const hintEnterYourEmail = "Enter your email";
   static const hintEnterYourPassword = "Enter your password";
@@ -111,6 +120,13 @@ class AppStrings {
   static const hintEnterLastName = "Enter last name";
 
   static const hintEnterCommonMaterialCode = "Enter common material code";
+
+  static const hintEnterYourCurrentPassword = "Enter your current password";
+  static const hintEnterYourNewPassword = "Enter your new password";
+  static const hintEnterPasswordAgain = "Enter password again";
+
+  static const msgPasswordMustBeMatch = "Password must be match with new password";
+  static const msgPasswordUpdated = "Password updated";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";

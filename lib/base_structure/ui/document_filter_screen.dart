@@ -33,7 +33,7 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -49,11 +49,14 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                       value: vm.selectedDocTypeItem.value,
                       isExpanded: true,
                       items: vm.docTypeList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedDocTypeItem.value == item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -98,7 +101,7 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -114,11 +117,14 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                       value: vm.selecteLanguageItem.value,
                       isExpanded: true,
                       items: vm.languageList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selecteLanguageItem.value == item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -144,7 +150,7 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -160,11 +166,14 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
                       value: vm.selectedocTemplateItem.value,
                       isExpanded: true,
                       items: vm.docTemplateList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedocTemplateItem.value == item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );

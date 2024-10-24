@@ -64,6 +64,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
 
     return Scaffold(
         // key: _scaffoldKey,
+        drawerEnableOpenDragGesture: false,
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         // If you want to don't show the AppBar in internal screen.

@@ -35,7 +35,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -51,13 +51,19 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       value: vm.selectedProjectTypeItem.value,
                       isExpanded: true,
                       items: vm.projectTypeList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
-                                  fontSize: 14,
-                                  fontFamily: AppTextConstant.poppinsRegular)),
+                          value: item,
+                          child: Text(
+                            item,
+                            style: TextStyle(
+                              color: vm.selectedProjectTypeItem.value == item
+                                  ? Colors.green
+                                  : Colors.white,
+                              fontSize: 14,
+                              fontFamily: AppTextConstant.poppinsRegular,
+                            ),
+                          ),
                         );
                       }).toList(),
                       onChanged: (String? value) {
@@ -81,7 +87,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -97,11 +103,15 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       value: vm.selectedProjectStatusItem.value,
                       isExpanded: true,
                       items: vm.projectStatusList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color:
+                                      vm.selectedProjectStatusItem.value == item
+                                          ? Colors.green
+                                          : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -127,7 +137,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -143,11 +153,14 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       value: vm.selectedLabItem.value,
                       isExpanded: true,
                       items: vm.labList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedLabItem.value == item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
@@ -173,7 +186,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -189,11 +202,15 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                       value: vm.selectedProjectManagerItem.value,
                       isExpanded: true,
                       items: vm.projectManagerList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedProjectManagerItem.value ==
+                                          item
+                                      ? Colors.green
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
