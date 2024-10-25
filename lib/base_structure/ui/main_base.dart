@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
 import 'package:flutter_application_1/base_structure/base/local/local.dart';
 import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart';
@@ -44,6 +45,12 @@ class _MyBaseAppState extends State<MyBaseApp> {
 
   @override
   Widget build(BuildContext context) {
+    // Set status bar and navigation bar color
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.green,
+        systemNavigationBarColor: Colors.green,
+        systemNavigationBarDividerColor: Colors.white));
+
     if (kDebugMode) {
       print("myInitialRoute =  ${widget.myInitialRoute.toString()}");
       print("myInitialLanguage =  ${widget.myInitialLanguage.toString()}");

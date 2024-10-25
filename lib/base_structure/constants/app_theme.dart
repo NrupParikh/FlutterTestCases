@@ -48,12 +48,10 @@ class AppTheme {
         cardTheme: const CardTheme(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomRight: Radius.circular(16)
-              ),
-              side: BorderSide(color: Colors.black)
-            ),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(16)),
+                side: BorderSide(color: Colors.black)),
             shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(
@@ -96,13 +94,12 @@ class AppTheme {
           backgroundColor: Color.fromARGB(255, 22, 22, 22),
         ),
         cardTheme: const CardTheme(
+            elevation: 8,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomRight: Radius.circular(16)
-              ),
-              side: BorderSide(color: Colors.white)
-            ),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(16)),
+                side: BorderSide(color: Colors.white)),
             color: Colors.black,
             shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
@@ -135,6 +132,7 @@ class AppTheme {
         appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle.dark,
             backgroundColor: Colors.green));
+            
   }
 
   static const lightColorScheme = ColorScheme(
