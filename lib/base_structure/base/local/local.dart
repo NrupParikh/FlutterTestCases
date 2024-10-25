@@ -64,10 +64,13 @@ class Languages implements Translations {
           AppStrings.lblVendorsMaterialCode: AppStrings.lblVendorsMaterialCode,
           AppStrings.lblBasePrice: AppStrings.lblBasePrice,
           AppStrings.lblVersion: AppStrings.lblVersion,
+          AppStrings.lblNotification: AppStrings.lblNotification,
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
+          AppStrings.msgDeleteNotificationConfirmation:
+              AppStrings.msgDeleteNotificationConfirmation,
 
           AppStrings.ok: AppStrings.ok,
           AppStrings.cancel: AppStrings.cancel,
@@ -147,8 +150,8 @@ class Languages implements Translations {
           AppStrings.rch: AppStrings.rch,
           AppStrings.tgi: AppStrings.tgi,
 
-          AppStrings.noProjectFound : AppStrings.noProjectFound,
-          AppStrings.noDocumentFound : AppStrings.noDocumentFound,
+          AppStrings.noProjectFound: AppStrings.noProjectFound,
+          AppStrings.noDocumentFound: AppStrings.noDocumentFound,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -210,11 +213,15 @@ class Languages implements Translations {
           AppStrings.lblVendorsMaterialCode: "Codice materiale del venditore",
           AppStrings.lblBasePrice: "Prezzo base",
           AppStrings.lblVersion: "Versione",
+          AppStrings.lblNotification: "Notifica",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
               "Sei sicuro di voler uscire dall'applicazione?",
+
+          AppStrings.msgDeleteNotificationConfirmation:
+              "Sei sicuro di voler eliminare questa notifica?",
 
           AppStrings.ok: "OK",
           AppStrings.cancel: "Cancellare",
@@ -296,8 +303,8 @@ class Languages implements Translations {
           AppStrings.rch: "RCH-Cambio ricetta",
           AppStrings.tgi: "TGI-Introduzione ai beni scambiati",
 
-          AppStrings.noProjectFound : "Nessun progetto trovato",
-          AppStrings.noDocumentFound : "Nessun documento trovato",
+          AppStrings.noProjectFound: "Nessun progetto trovato",
+          AppStrings.noDocumentFound: "Nessun documento trovato",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -361,11 +368,15 @@ class Languages implements Translations {
           AppStrings.lblVendorsMaterialCode: "Código de material del proveedor",
           AppStrings.lblBasePrice: "Precio base",
           AppStrings.lblVersion: "Versión",
+          AppStrings.lblNotification: "Notificación",
 
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
               "¿Está seguro de que desea cerrar sesión en la aplicación?",
+
+          AppStrings.msgDeleteNotificationConfirmation:
+              "¿Está seguro de que desea eliminar esta notificación?",
 
           AppStrings.ok: "De acuerdo",
           AppStrings.cancel: "Cancelar",
@@ -448,8 +459,8 @@ class Languages implements Translations {
           AppStrings.rch: "RCH-Cambio de receta",
           AppStrings.tgi: "TGI-Introducción a los productos comercializados",
 
-          AppStrings.noProjectFound : "No se encontró ningún proyecto",
-          AppStrings.noDocumentFound : "No se encontró ningún documento",
+          AppStrings.noProjectFound: "No se encontró ningún proyecto",
+          AppStrings.noDocumentFound: "No se encontró ningún documento",
         }
       };
 }

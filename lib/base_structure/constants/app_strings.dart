@@ -58,11 +58,15 @@ class AppStrings {
   static const lblVendorsMaterialCode = "Vendor Material Code";
   static const lblBasePrice = "Base Price";
   static const lblVersion = "Version";
+  static const lblNotification = "Notification";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
       'Are you sure you want to logout from the application?';
+
+  static const msgDeleteNotificationConfirmation =
+      'Are you sure you want to delete this notification?';
 
   static const ok = "Ok";
   static const cancel = "Cancel";
@@ -148,4 +152,5 @@ class AppStrings {
 
   static const noProjectFound = "No Project found";
   static const noDocumentFound = "No Document found";
+  static const noNotificationFound = "No Notification found";
 }

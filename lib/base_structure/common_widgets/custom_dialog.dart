@@ -204,7 +204,7 @@ class CustomDialog {
               onPressed: () {
                 Get.back(result: true);
               },
-              child:  Text(AppStrings.ok.tr),
+              child: Text(AppStrings.ok.tr),
             ),
             TextButton(
               onPressed: () {
