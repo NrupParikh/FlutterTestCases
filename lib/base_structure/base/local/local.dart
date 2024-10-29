@@ -10,18 +10,19 @@ class Languages implements Translations {
           AppStrings.lblEmail: AppStrings.lblEmail,
           AppStrings.lblSignInNow: AppStrings.lblSignInNow,
           AppStrings.lblEnterYourDetailsBelow:
-          AppStrings.lblEnterYourDetailsBelow,
+              AppStrings.lblEnterYourDetailsBelow,
           AppStrings.lblEmailAddress: AppStrings.lblEmailAddress,
           AppStrings.lblPassword: AppStrings.lblPassword,
 
-          AppStrings.lblCurrentPassword :AppStrings.lblCurrentPassword,
-          AppStrings.lblNewPassword :AppStrings.lblNewPassword,
-          AppStrings.lblConfirmPassword :AppStrings.lblConfirmPassword,
+          AppStrings.lblCurrentPassword: AppStrings.lblCurrentPassword,
+          AppStrings.lblNewPassword: AppStrings.lblNewPassword,
+          AppStrings.lblConfirmPassword: AppStrings.lblConfirmPassword,
 
           AppStrings.lblForgotPasswordLink: AppStrings.lblForgotPasswordLink,
           AppStrings.lblLogin: AppStrings.lblLogin,
           AppStrings.lblForgotPassword: AppStrings.lblForgotPassword,
           AppStrings.lblSubmit: AppStrings.lblSubmit,
+          AppStrings.lblSave: AppStrings.lblSave,
           AppStrings.lblGenerateOTP: AppStrings.lblGenerateOTP,
           AppStrings.lblBackToLogin: AppStrings.lblBackToLogin,
           AppStrings.lblFail: AppStrings.lblFail,
@@ -42,6 +43,15 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: AppStrings.lblProjectDateTo,
           AppStrings.lblFreeText: AppStrings.lblFreeText,
 
+          AppStrings.lblMoQ: AppStrings.lblMoQ,
+          AppStrings.lblBagWeightKg: AppStrings.lblBagWeightKg,
+          AppStrings.lblPalletWieightKg: AppStrings.lblPalletWieightKg,
+          AppStrings.lblMinLevel: AppStrings.lblMinLevel,
+          AppStrings.lblLeadTimeDD: AppStrings.lblLeadTimeDD,
+          AppStrings.lblPalletHeightCM: AppStrings.lblPalletHeightCM,
+          AppStrings.lblBagsOrPallet: AppStrings.lblBagsOrPallet,
+          AppStrings.lblSupplyLimitations: AppStrings.lblSupplyLimitations,
+
           AppStrings.lblLastName: AppStrings.lblLastName,
           AppStrings.lblLanguage: AppStrings.lblLanguage,
           AppStrings.lblSite: AppStrings.lblSite,
@@ -59,6 +69,12 @@ class Languages implements Translations {
           AppStrings.lblMaterialName: AppStrings.lblMaterialName,
           AppStrings.lblMaterialId: AppStrings.lblMaterialId,
           AppStrings.lblDocType: AppStrings.lblDocType,
+
+          AppStrings.lblPackType: AppStrings.lblPackType,
+          AppStrings.lblPalletType: AppStrings.lblPalletType,
+          AppStrings.lblMajorCode: AppStrings.lblMajorCode,
+          AppStrings.lblMinorCode: AppStrings.lblMinorCode,
+
           AppStrings.lblAction: AppStrings.lblAction,
           AppStrings.lblDocLanguage: AppStrings.lblDocLanguage,
           AppStrings.lblTemplate: AppStrings.lblTemplate,
@@ -106,9 +122,11 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: AppStrings.valEnterPassword,
           AppStrings.valEnterOtp: AppStrings.valEnterOtp,
 
-          AppStrings.valEnterCurrentPassword: AppStrings.valEnterCurrentPassword,
+          AppStrings.valEnterCurrentPassword:
+              AppStrings.valEnterCurrentPassword,
           AppStrings.valEnterNewPassword: AppStrings.valEnterNewPassword,
-          AppStrings.valEnterConfirmPassword: AppStrings.valEnterConfirmPassword,
+          AppStrings.valEnterConfirmPassword:
+              AppStrings.valEnterConfirmPassword,
 
           // ========== HINT
           AppStrings.hintEnterYourEmail: AppStrings.hintEnterYourEmail,
@@ -117,7 +135,17 @@ class Languages implements Translations {
           AppStrings.hintEnterYourOTP: AppStrings.hintEnterYourOTP,
           AppStrings.hintEnterComment: AppStrings.hintEnterComment,
           AppStrings.hintEnterQcDays: AppStrings.hintEnterQcDays,
+
           AppStrings.hintEnterFreeText: AppStrings.hintEnterFreeText,
+          AppStrings.hintEnterMoQ: AppStrings.hintEnterMoQ,
+          AppStrings.hintEnterBagWeight: AppStrings.hintEnterBagWeight,
+          AppStrings.hintEnterPalletWeight: AppStrings.hintEnterPalletWeight,
+          AppStrings.hintEnterMinLevel: AppStrings.hintEnterMinLevel,
+          AppStrings.hintEnterLeadTimeDD: AppStrings.hintEnterLeadTimeDD,
+          AppStrings.hintEnterPalletHeight: AppStrings.hintEnterPalletHeight,
+          AppStrings.hintEnterBagsOrPallet: AppStrings.hintEnterBagsOrPallet,
+          AppStrings.hintEnterSupplyLimitations:
+              AppStrings.hintEnterSupplyLimitations,
 
           AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
           AppStrings.hintEnterLastName: AppStrings.hintEnterLastName,
@@ -125,11 +153,13 @@ class Languages implements Translations {
           AppStrings.hintEnterCommonMaterialCode:
               AppStrings.hintEnterCommonMaterialCode,
 
-          AppStrings.hintEnterYourCurrentPassword : AppStrings.hintEnterYourCurrentPassword,
-          AppStrings.hintEnterYourNewPassword : AppStrings.hintEnterYourNewPassword,
-          AppStrings.hintEnterPasswordAgain :AppStrings.hintEnterPasswordAgain,
-          AppStrings.msgPasswordMustBeMatch : AppStrings.msgPasswordMustBeMatch,
-          AppStrings.msgPasswordUpdated : AppStrings.msgPasswordUpdated,
+          AppStrings.hintEnterYourCurrentPassword:
+              AppStrings.hintEnterYourCurrentPassword,
+          AppStrings.hintEnterYourNewPassword:
+              AppStrings.hintEnterYourNewPassword,
+          AppStrings.hintEnterPasswordAgain: AppStrings.hintEnterPasswordAgain,
+          AppStrings.msgPasswordMustBeMatch: AppStrings.msgPasswordMustBeMatch,
+          AppStrings.msgPasswordUpdated: AppStrings.msgPasswordUpdated,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -157,6 +187,10 @@ class Languages implements Translations {
           AppStrings.lblNRD: AppStrings.lblNRD,
           AppStrings.lblRCH: AppStrings.lblRCH,
 
+          AppStrings.lblTGI: AppStrings.lblTGI,
+          AppStrings.lblPAD: AppStrings.lblPAD,
+          AppStrings.lblMSA: AppStrings.lblMSA,
+
           // ========== TABS
           AppStrings.tabRND: AppStrings.tabRND,
           AppStrings.tabIndustrialTrial: AppStrings.tabIndustrialTrial,
@@ -169,6 +203,9 @@ class Languages implements Translations {
 
           AppStrings.tabQuality: AppStrings.tabQuality,
           AppStrings.tabRegulatory: AppStrings.tabRegulatory,
+
+          AppStrings.tabPurchasing: AppStrings.tabPurchasing,
+          AppStrings.tabWarehousing: AppStrings.tabWarehousing,
 
           // ========== OTHER
           AppStrings.approve: AppStrings.approve,
@@ -210,6 +247,9 @@ class Languages implements Translations {
           AppStrings.lblForgotPasswordLink: "Ha dimenticato la password?",
           AppStrings.lblLogin: "Login",
           AppStrings.lblForgotPassword: "Ha dimenticato la password",
+
+          AppStrings.lblSave: "Salva",
+
           AppStrings.lblSubmit: "Invia",
           AppStrings.lblGenerateOTP: "Genera OTP",
           AppStrings.lblBackToLogin: "Torna al login",
@@ -231,6 +271,15 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: "Data del progetto a",
           AppStrings.lblFreeText: "Testo libero",
 
+          AppStrings.lblMoQ: "MoQ",
+          AppStrings.lblBagWeightKg: "Peso Sacco KG",
+          AppStrings.lblPalletWieightKg: "Peso Pallet KG",
+          AppStrings.lblMinLevel: "Livello minimo",
+          AppStrings.lblLeadTimeDD: "Tempi di consegna GG",
+          AppStrings.lblPalletHeightCM: "Altezza Bancale CM",
+          AppStrings.lblBagsOrPallet: "Sacchi/Pallet",
+          AppStrings.lblSupplyLimitations: "Limitazioni della fornitura *",
+
           AppStrings.lblLastName: "Cognome *",
           AppStrings.lblLanguage: "Lingua *",
           AppStrings.lblSite: "Sito *",
@@ -248,6 +297,12 @@ class Languages implements Translations {
           AppStrings.lblMaterialName: "Nome del materiale",
           AppStrings.lblMaterialId: "Identificativo materiale",
           AppStrings.lblDocType: "Tipo documento",
+
+          AppStrings.lblPackType: "Tipo di confezione",
+          AppStrings.lblPalletType: "Tipo di pallet",
+          AppStrings.lblMajorCode: "Codice Maggiore",
+          AppStrings.lblMinorCode: "Codice minore",
+
           AppStrings.lblAction: "Azione",
           AppStrings.lblDocLanguage: "Lingua",
           AppStrings.lblTemplate: "Modello",
@@ -296,10 +351,10 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: "Inserisci la password",
           AppStrings.valEnterOtp: "Per favore inserisci otp",
 
-
           AppStrings.valEnterCurrentPassword: "Inserisci la password attuale",
-          AppStrings.valEnterNewPassword:  "Inserisci la nuova password",
-          AppStrings.valEnterConfirmPassword: "Inserisci nuovamente la password",
+          AppStrings.valEnterNewPassword: "Inserisci la nuova password",
+          AppStrings.valEnterConfirmPassword:
+              "Inserisci nuovamente la password",
 
           // ========== HINT
           AppStrings.hintEnterYourEmail: "Inserisci la tua email",
@@ -309,6 +364,17 @@ class Languages implements Translations {
           AppStrings.hintEnterComment: "Inserisci il commento",
           AppStrings.hintEnterQcDays:
               "Inserisci i giorni del controllo qualità",
+
+          AppStrings.hintEnterMoQ: "Inserisci MoQ",
+          AppStrings.hintEnterBagWeight: "Inserisci il peso del bagaglio",
+          AppStrings.hintEnterPalletWeight: "Inserisci il peso del pallet",
+          AppStrings.hintEnterMinLevel: "Inserisci il livello minimo",
+          AppStrings.hintEnterLeadTimeDD: "Inserisci il tempo di consegna GG",
+          AppStrings.hintEnterPalletHeight: "Inserisci l'altezza del pallet",
+          AppStrings.hintEnterBagsOrPallet: "Inserisci sacchi/pallet",
+          AppStrings.hintEnterSupplyLimitations:
+              "Inserisci i limiti di fornitura",
+
           AppStrings.hintEnterFreeText: "Inserisci testo libero",
 
           AppStrings.hintEnterFirstName: "Inserisci il nome",
@@ -317,11 +383,14 @@ class Languages implements Translations {
           AppStrings.hintEnterCommonMaterialCode:
               "Inserisci il codice materiale comune",
 
-          AppStrings.hintEnterYourCurrentPassword : "nserisci la tua password attuale",
-          AppStrings.hintEnterYourNewPassword : "Inserisci la tua nuova password",
-          AppStrings.hintEnterPasswordAgain :"Immettere nuovamente la password",
-          AppStrings.msgPasswordMustBeMatch : "La password deve corrispondere alla nuova password",
-          AppStrings.msgPasswordUpdated : "Password aggiornata",    
+          AppStrings.hintEnterYourCurrentPassword:
+              "Inserisci la tua password attuale",
+          AppStrings.hintEnterYourNewPassword:
+              "Inserisci la tua nuova password",
+          AppStrings.hintEnterPasswordAgain: "Immettere nuovamente la password",
+          AppStrings.msgPasswordMustBeMatch:
+              "La password deve corrispondere alla nuova password",
+          AppStrings.msgPasswordUpdated: "Password aggiornata",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -350,6 +419,10 @@ class Languages implements Translations {
           AppStrings.lblNRD: "NRD",
           AppStrings.lblRCH: "RCH",
 
+          AppStrings.lblTGI: "TGI",
+          AppStrings.lblPAD: "PAD",
+          AppStrings.lblMSA: "MSA",
+
           // ========== TABS
           AppStrings.tabRND: "Ricerca e sviluppo",
           AppStrings.tabIndustrialTrial: "Prova industriale",
@@ -362,6 +435,9 @@ class Languages implements Translations {
 
           AppStrings.tabQuality: "Qualità",
           AppStrings.tabRegulatory: "Normativo",
+
+          AppStrings.tabPurchasing: "Acquisto",
+          AppStrings.tabWarehousing: "Magazzinaggio",
 
           // ========== OTHER
           AppStrings.approve: "Approvare",
@@ -402,6 +478,9 @@ class Languages implements Translations {
           AppStrings.lblConfirmPassword: "Confirmar Contraseña *",
 
           AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
+
+          AppStrings.lblSave: "Ahorrar",
+
           AppStrings.lblLogin: "Acceso",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
           AppStrings.lblSubmit: "Entregar",
@@ -426,6 +505,15 @@ class Languages implements Translations {
           AppStrings.lblProjectDateTo: "Fecha del proyecto hasta",
           AppStrings.lblFreeText: "Texto libre",
 
+          AppStrings.lblMoQ: "MoQ",
+          AppStrings.lblBagWeightKg: "Peso de la bolsa kg",
+          AppStrings.lblPalletWieightKg: "Peso Palet KG",
+          AppStrings.lblMinLevel: "Nivel mínimo",
+          AppStrings.lblLeadTimeDD: "Plazo de entrega DD",
+          AppStrings.lblPalletHeightCM: "Altura del palet CM",
+          AppStrings.lblBagsOrPallet: "Bolsas/Palet",
+          AppStrings.lblSupplyLimitations: "Limitaciones de suministro",
+
           AppStrings.lblLastName: "Apellido *",
           AppStrings.lblLanguage: "Idioma *",
           AppStrings.lblSite: "Sitio *",
@@ -443,6 +531,12 @@ class Languages implements Translations {
           AppStrings.lblMaterialName: "Nombre del material",
           AppStrings.lblMaterialId: "Identificación del material",
           AppStrings.lblDocType: "Tipo de documento",
+
+          AppStrings.lblPackType: "Tipo de paquete",
+          AppStrings.lblPalletType: "Tipo de palet",
+          AppStrings.lblMajorCode: "Código mayor",
+          AppStrings.lblMinorCode: "Código menor",
+
           AppStrings.lblAction: "Acción",
           AppStrings.lblDocLanguage: "Idioma",
           AppStrings.lblTemplate: "Plantilla",
@@ -492,9 +586,12 @@ class Languages implements Translations {
           AppStrings.valEnterPassword: "Por favor ingrese la contraseña",
           AppStrings.valEnterOtp: "Por favor ingresa otp",
 
-          AppStrings.valEnterCurrentPassword: "Por favor ingrese la contraseña actual",
-          AppStrings.valEnterNewPassword: "Por favor ingrese una nueva contraseña",
-          AppStrings.valEnterConfirmPassword: "Por favor ingrese la contraseña nuevamente",
+          AppStrings.valEnterCurrentPassword:
+              "Por favor ingrese la contraseña actual",
+          AppStrings.valEnterNewPassword:
+              "Por favor ingrese una nueva contraseña",
+          AppStrings.valEnterConfirmPassword:
+              "Por favor ingrese la contraseña nuevamente",
 
           // ========== HINT
           AppStrings.hintEnterYourEmail:
@@ -511,11 +608,13 @@ class Languages implements Translations {
           AppStrings.hintEnterCommonMaterialCode:
               "Introduzca el código de material común",
 
-          AppStrings.hintEnterYourCurrentPassword : "Ingrese su contraseña actual",
-          AppStrings.hintEnterYourNewPassword : "Ingresa tu nueva contraseña",
-          AppStrings.hintEnterPasswordAgain : "Ingrese la contraseña nuevamente",
-          AppStrings.msgPasswordMustBeMatch : "La contraseña debe coincidir con la nueva contraseña",
-          AppStrings.msgPasswordUpdated : "Contraseña actualizada",    
+          AppStrings.hintEnterYourCurrentPassword:
+              "Ingrese su contraseña actual",
+          AppStrings.hintEnterYourNewPassword: "Ingresa tu nueva contraseña",
+          AppStrings.hintEnterPasswordAgain: "Ingrese la contraseña nuevamente",
+          AppStrings.msgPasswordMustBeMatch:
+              "La contraseña debe coincidir con la nueva contraseña",
+          AppStrings.msgPasswordUpdated: "Contraseña actualizada",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",
@@ -528,6 +627,15 @@ class Languages implements Translations {
           AppStrings.hintEnterQcDays:
               "Introduzca los días de control de calidad",
 
+          AppStrings.hintEnterMoQ:"Introduzca la cantidad mínima de pedido",
+          AppStrings.hintEnterBagWeight:"Introduzca el peso de la bolsa",
+          AppStrings.hintEnterPalletWeight:"Introduzca el peso del palet",
+          AppStrings.hintEnterMinLevel:"Introduzca el nivel mínimo",
+          AppStrings.hintEnterLeadTimeDD:"Introduzca el plazo de entrega DD",
+          AppStrings.hintEnterPalletHeight:"Introduzca la altura del palet",
+          AppStrings.hintEnterBagsOrPallet:"Introducir bolsas/pallet",
+          AppStrings.hintEnterSupplyLimitations:"Introduzca las limitaciones de suministro",
+          
           // ========== LANGUAGE
           AppStrings.english: "Inglés",
           AppStrings.italy: "Italia",
@@ -546,6 +654,10 @@ class Languages implements Translations {
           AppStrings.lblNRD: "NRD",
           AppStrings.lblRCH: "RCH",
 
+          AppStrings.lblTGI: "TGI",
+          AppStrings.lblPAD: "PAD",
+          AppStrings.lblMSA: "MSA",
+
           // ========== TABS
           AppStrings.tabRND: "I+D",
           AppStrings.tabIndustrialTrial: "Prova interna",
@@ -558,6 +670,9 @@ class Languages implements Translations {
 
           AppStrings.tabQuality: "Calidad",
           AppStrings.tabRegulatory: "Regulador",
+
+          AppStrings.tabPurchasing: "Adquisitivo",
+          AppStrings.tabWarehousing: "almacenamiento",
 
           // ========== OTHER
           AppStrings.approve: "Aprobar",

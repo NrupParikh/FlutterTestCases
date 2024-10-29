@@ -16,4 +16,7 @@ class Routes {
   static const fastTrackEvaluation = '/fastTrackEvaluation';
   static const rnd = '/rnd';
   static const qcInspection = '/qcInspection';
+  static const tgi = '/tgi';
+  static const pad = '/pad';
+  static const msa = '/msa';
 }

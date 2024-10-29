@@ -4,7 +4,9 @@ import 'package:flutter_application_1/base_structure/ui/document_filter_screen.d
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/fast_track_evaluation_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/pad_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_management_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
@@ -13,6 +15,7 @@ import 'package:flutter_application_1/base_structure/ui/project_filter_screen.da
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/tgi_screen.dart';
 import 'package:get/get.dart';
 
 import '../ui/change_language_screen.dart';
@@ -39,5 +42,8 @@ class AppPages {
         page: () => const FastTrackEvaluationScreen()),
     GetPage(name: Routes.rnd, page: () => const RNDScreen()),
     GetPage(name: Routes.qcInspection, page: () => const QCInspectionScreen()),
+    GetPage(name: Routes.tgi, page: () => const TGIScreen()),
+    GetPage(name: Routes.pad, page: () => const PADScreen()),
+    GetPage(name: Routes.msa, page: () => const MSAScreen()),
   ];
 }

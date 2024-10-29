@@ -105,6 +105,15 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagRCHScreen ||
       currentRouteName == Constant.tagRCH) {
     title = AppStrings.lblRCH.tr;
+  } else if (currentRouteName == Constant.tagTGIScreen ||
+      currentRouteName == Constant.tagTGI) {
+    title = AppStrings.lblTGI.tr;
+  }else if (currentRouteName == Constant.tagPADScreen ||
+      currentRouteName == Constant.tagPAD) {
+    title = AppStrings.lblPAD.tr;
+  }else if (currentRouteName == Constant.tagMSAScreen ||
+      currentRouteName == Constant.tagMSA) {
+    title = AppStrings.lblMSA.tr;
   }
 
   return title;

@@ -13,8 +13,10 @@ import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 import '../constants/app_theme.dart';
@@ -72,7 +74,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         // Ex. Tab then check with VM and set null
         appBar: ((controller is FastTrackEvaluationViewModel) ||
                 (controller is RNDViewModel) ||
-                (controller is QCInspectionViewModel))
+                (controller is QCInspectionViewModel)||
+                (controller is PurchasingViewModel)||
+                (controller is WarehousingViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
@@ -149,7 +153,13 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                   (currentRouteName == Constant.tagNRDScreen ||
                       currentRouteName == Constant.tagNRD) ||
                   (currentRouteName == Constant.tagRCHScreen ||
-                      currentRouteName == Constant.tagRCH))
+                      currentRouteName == Constant.tagRCH)||
+                  (currentRouteName == Constant.tagTGIScreen ||
+                      currentRouteName == Constant.tagTGI)||
+                  (currentRouteName == Constant.tagPADScreen ||
+                      currentRouteName == Constant.tagPAD)||
+                  (currentRouteName == Constant.tagMSAScreen ||
+                      currentRouteName == Constant.tagMSA))
               ? IconButton(
                   icon: const Icon(Icons.arrow_back),
                   onPressed: () {

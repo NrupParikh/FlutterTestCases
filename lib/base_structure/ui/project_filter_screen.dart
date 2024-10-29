@@ -2,13 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
+import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/pad_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:get/get.dart';
 
 import '../constants/app_strings.dart';
 import '../vm/project_filter_view_model.dart';
+import 'tgi_screen.dart';
 
 class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
   const ProjectFilterScreen({super.key});
@@ -368,6 +371,15 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
                               } else if (vm.selectedProjectTypeItem.value ==
                                   AppStrings.rch.tr) {
                                 Get.to(const RCHScreen());
+                              } else if (vm.selectedProjectTypeItem.value ==
+                                  AppStrings.tgi.tr) {
+                                Get.to(const TGIScreen());
+                              } else if (vm.selectedProjectTypeItem.value ==
+                                  AppStrings.pad.tr) {
+                                Get.to(const PADScreen());
+                              } else if (vm.selectedProjectTypeItem.value ==
+                                  AppStrings.msa.tr) {
+                                Get.to(const MSAScreen());
                               }
                             }),
                       ),

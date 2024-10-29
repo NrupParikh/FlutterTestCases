@@ -14,12 +14,13 @@ class AppStrings {
   static const lblCurrentPassword = "Current Password *";
   static const lblNewPassword = "New Password *";
   static const lblConfirmPassword = "Confirm Password *";
-  
+
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
 
   static const lblForgotPassword = "Forgot password";
   static const lblSubmit = "Submit";
+  static const lblSave = "Save";
   static const lblGenerateOTP = "Generate OTP";
   static const lblBackToLogin = "Back to login";
   static const lblFail = "Fail !";
@@ -40,6 +41,15 @@ class AppStrings {
   static const lblProjectDateTo = "Project Date To";
   static const lblFreeText = "Free Text";
 
+  static const lblMoQ = "MoQ";
+  static const lblBagWeightKg = "Bag Weight KG";
+  static const lblPalletWieightKg = "Pallet Weight KG";
+  static const lblMinLevel = "Min Level";
+  static const lblLeadTimeDD = "Lead Time DD";
+  static const lblPalletHeightCM = "Pallet Height CM";
+  static const lblBagsOrPallet = "Bags/Pallet";
+  static const lblSupplyLimitations = "Supply Limitations *";
+
   static const lblLastName = "Last Name *";
   static const lblLanguage = "Language *";
   static const lblSite = "Site *";
@@ -53,6 +63,12 @@ class AppStrings {
   static const lblMaterialName = "Material Name";
   static const lblMaterialId = "Material Id";
   static const lblDocType = "Doc Type";
+
+  static const lblPackType = "Pack Type";
+  static const lblPalletType = "Pallet Type";
+  static const lblMajorCode = "Major Code";
+  static const lblMinorCode = "Minor Code";
+
   static const lblAction = "Action";
   static const lblDocLanguage = "Language";
   static const lblTemplate = "Template";
@@ -92,7 +108,7 @@ class AppStrings {
       'Are you sure you want to delete this document?';
 
   static const msgDeleteRecipeConfirmation =
-      'Are you sure you want to delete this recipe?';    
+      'Are you sure you want to delete this recipe?';
 
   static const ok = "Ok";
   static const cancel = "Cancel";
@@ -115,6 +131,14 @@ class AppStrings {
   static const hintEnterQcDays = "Enter QC Days";
 
   static const hintEnterFreeText = "Enter free text";
+  static const hintEnterMoQ = "Enter MoQ";
+  static const hintEnterBagWeight = "Enter bag weight";
+  static const hintEnterPalletWeight = "Enter pallet weight";
+  static const hintEnterMinLevel = "Enter min level";
+  static const hintEnterLeadTimeDD = "Enter lead time DD";
+  static const hintEnterPalletHeight = "Enter pallet height";
+  static const hintEnterBagsOrPallet = "Enter bags/pallet";
+  static const hintEnterSupplyLimitations = "Enter Supply Limitations";
 
   static const hintEnterFirstName = "Enter first name";
   static const hintEnterLastName = "Enter last name";
@@ -125,7 +149,8 @@ class AppStrings {
   static const hintEnterYourNewPassword = "Enter your new password";
   static const hintEnterPasswordAgain = "Enter password again";
 
-  static const msgPasswordMustBeMatch = "Password must be match with new password";
+  static const msgPasswordMustBeMatch =
+      "Password must be match with new password";
   static const msgPasswordUpdated = "Password updated";
 
   // ========== DRAWER ITEMS AND OTHER
@@ -154,6 +179,10 @@ class AppStrings {
   static const lblNRD = "NRD";
   static const lblRCH = "RCH";
 
+  static const lblTGI = "TGI";
+  static const lblPAD = "PAD";
+  static const lblMSA = "MSA";
+
   static const lblClear = "Clear";
   static const lblSearch = "Search";
 
@@ -169,6 +198,9 @@ class AppStrings {
 
   static const tabQuality = "Quality";
   static const tabRegulatory = "Regulatory";
+
+  static const tabPurchasing = "Purchasing";
+  static const tabWarehousing = "Warehousing";
 
 // ========== OTHER
   static const approve = "Approve";
