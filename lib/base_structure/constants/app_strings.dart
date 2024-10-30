@@ -69,6 +69,9 @@ class AppStrings {
   static const lblMajorCode = "Major Code";
   static const lblMinorCode = "Minor Code";
 
+  static const lblPalletizationIssues = "Palletization Issues *";
+  static const lblWarehouseZone = "Warehouse Zone *";
+
   static const lblAction = "Action";
   static const lblDocLanguage = "Language";
   static const lblTemplate = "Template";
@@ -139,6 +142,8 @@ class AppStrings {
   static const hintEnterPalletHeight = "Enter pallet height";
   static const hintEnterBagsOrPallet = "Enter bags/pallet";
   static const hintEnterSupplyLimitations = "Enter Supply Limitations";
+  static const hintEnterPalletizationIssues = "Enter Palletization Issues";
+  static const hintEnterWarehouseZone = "Enter Warehouse Zone";
 
   static const hintEnterFirstName = "Enter first name";
   static const hintEnterLastName = "Enter last name";

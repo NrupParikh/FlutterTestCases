@@ -75,6 +75,9 @@ class Languages implements Translations {
           AppStrings.lblMajorCode: AppStrings.lblMajorCode,
           AppStrings.lblMinorCode: AppStrings.lblMinorCode,
 
+          AppStrings.lblPalletizationIssues: AppStrings.lblPalletizationIssues,
+          AppStrings.lblWarehouseZone: AppStrings.lblWarehouseZone,
+
           AppStrings.lblAction: AppStrings.lblAction,
           AppStrings.lblDocLanguage: AppStrings.lblDocLanguage,
           AppStrings.lblTemplate: AppStrings.lblTemplate,
@@ -146,6 +149,10 @@ class Languages implements Translations {
           AppStrings.hintEnterBagsOrPallet: AppStrings.hintEnterBagsOrPallet,
           AppStrings.hintEnterSupplyLimitations:
               AppStrings.hintEnterSupplyLimitations,
+
+          AppStrings.hintEnterPalletizationIssues:
+              AppStrings.hintEnterPalletizationIssues,
+          AppStrings.hintEnterWarehouseZone: AppStrings.hintEnterWarehouseZone,
 
           AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
           AppStrings.hintEnterLastName: AppStrings.hintEnterLastName,
@@ -303,6 +310,9 @@ class Languages implements Translations {
           AppStrings.lblMajorCode: "Codice Maggiore",
           AppStrings.lblMinorCode: "Codice minore",
 
+          AppStrings.lblPalletizationIssues: "Problemi di pallettizzazione *",
+          AppStrings.lblWarehouseZone: "Zona Magazzino *",
+
           AppStrings.lblAction: "Azione",
           AppStrings.lblDocLanguage: "Lingua",
           AppStrings.lblTemplate: "Modello",
@@ -374,6 +384,11 @@ class Languages implements Translations {
           AppStrings.hintEnterBagsOrPallet: "Inserisci sacchi/pallet",
           AppStrings.hintEnterSupplyLimitations:
               "Inserisci i limiti di fornitura",
+
+          AppStrings.hintEnterPalletizationIssues:
+              "Inserisci i problemi di pallettizzazione",
+
+          AppStrings.hintEnterWarehouseZone: "Entra nella zona del magazzino",
 
           AppStrings.hintEnterFreeText: "Inserisci testo libero",
 
@@ -537,6 +552,9 @@ class Languages implements Translations {
           AppStrings.lblMajorCode: "Código mayor",
           AppStrings.lblMinorCode: "Código menor",
 
+          AppStrings.lblPalletizationIssues: "Problemas de paletización *",
+          AppStrings.lblWarehouseZone: "Zona de Almacén *",
+
           AppStrings.lblAction: "Acción",
           AppStrings.lblDocLanguage: "Idioma",
           AppStrings.lblTemplate: "Plantilla",
@@ -627,15 +645,21 @@ class Languages implements Translations {
           AppStrings.hintEnterQcDays:
               "Introduzca los días de control de calidad",
 
-          AppStrings.hintEnterMoQ:"Introduzca la cantidad mínima de pedido",
-          AppStrings.hintEnterBagWeight:"Introduzca el peso de la bolsa",
-          AppStrings.hintEnterPalletWeight:"Introduzca el peso del palet",
-          AppStrings.hintEnterMinLevel:"Introduzca el nivel mínimo",
-          AppStrings.hintEnterLeadTimeDD:"Introduzca el plazo de entrega DD",
-          AppStrings.hintEnterPalletHeight:"Introduzca la altura del palet",
-          AppStrings.hintEnterBagsOrPallet:"Introducir bolsas/pallet",
-          AppStrings.hintEnterSupplyLimitations:"Introduzca las limitaciones de suministro",
-          
+          AppStrings.hintEnterMoQ: "Introduzca la cantidad mínima de pedido",
+          AppStrings.hintEnterBagWeight: "Introduzca el peso de la bolsa",
+          AppStrings.hintEnterPalletWeight: "Introduzca el peso del palet",
+          AppStrings.hintEnterMinLevel: "Introduzca el nivel mínimo",
+          AppStrings.hintEnterLeadTimeDD: "Introduzca el plazo de entrega DD",
+          AppStrings.hintEnterPalletHeight: "Introduzca la altura del palet",
+          AppStrings.hintEnterBagsOrPallet: "Introducir bolsas/pallet",
+          AppStrings.hintEnterSupplyLimitations:
+              "Introduzca las limitaciones de suministro",
+
+          AppStrings.hintEnterPalletizationIssues:
+              "Ingrese los problemas de paletización",
+
+          AppStrings.hintEnterWarehouseZone: "Ingresar a la zona de almacén",
+
           // ========== LANGUAGE
           AppStrings.english: "Inglés",
           AppStrings.italy: "Italia",
