@@ -19,4 +19,5 @@ class Routes {
   static const tgi = '/tgi';
   static const pad = '/pad';
   static const msa = '/msa';
+  static const haccp = '/haccp';
 }

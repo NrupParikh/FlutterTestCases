@@ -20,6 +20,8 @@ import 'package:flutter_application_1/base_structure/vm/tgi_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 
+import '../vm/haccp.dart';
+
 // Define each VM here to bind with View
 class AppBindings extends Bindings {
   @override
@@ -44,5 +46,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => WarehousingViewModel(), fenix: true);
     Get.lazyPut(() => PADViewModel(), fenix: true);
     Get.lazyPut(() => MSAViewModel(), fenix: true);
+    Get.lazyPut(() => HACCPViewModel(), fenix: true);
   }
 }

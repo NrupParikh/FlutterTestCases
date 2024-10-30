@@ -12,6 +12,7 @@ import 'package:flutter_application_1/base_structure/ui/project_filter_screen.da
 import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/haccp.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
@@ -76,7 +77,10 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 (controller is RNDViewModel) ||
                 (controller is QCInspectionViewModel)||
                 (controller is PurchasingViewModel)||
-                (controller is WarehousingViewModel))
+                (controller is WarehousingViewModel)||
+                (controller is HACCPViewModel)
+                
+                )
             ? null
             : buildAppBar(context),
         body: buildScreen(context),

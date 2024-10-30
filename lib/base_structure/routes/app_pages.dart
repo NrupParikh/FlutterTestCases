@@ -4,6 +4,7 @@ import 'package:flutter_application_1/base_structure/ui/document_filter_screen.d
 import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/fast_track_evaluation_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/haccp.dart';
 import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/pad_screen.dart';
@@ -45,5 +46,6 @@ class AppPages {
     GetPage(name: Routes.tgi, page: () => const TGIScreen()),
     GetPage(name: Routes.pad, page: () => const PADScreen()),
     GetPage(name: Routes.msa, page: () => const MSAScreen()),
+    GetPage(name: Routes.haccp, page: () => const HACCPScreen()),
   ];
 }

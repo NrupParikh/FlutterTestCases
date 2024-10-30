@@ -72,6 +72,10 @@ class AppStrings {
   static const lblPalletizationIssues = "Palletization Issues *";
   static const lblWarehouseZone = "Warehouse Zone *";
 
+  static const lblMicroAnalysisReq = "Micro Analysis Requirements";
+  static const lblChemicalAnalysisReq = "Chemical Analysis Requirements";
+  static const lblAllergenAnalysisReq = "Allergen Analysis Requirements";
+
   static const lblAction = "Action";
   static const lblDocLanguage = "Language";
   static const lblTemplate = "Template";
@@ -101,6 +105,9 @@ class AppStrings {
   static const lblUOM = "UOM";
   static const lblCost = "Cost";
   static const lblCurrency = "Currency";
+
+  static const lblIncludeInHACCPplan = "Include In HACCP plan";
+  static const lblMicroAnalysisNeeded = "Micro Analysis Needed";
 
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
@@ -143,6 +150,12 @@ class AppStrings {
   static const hintEnterBagsOrPallet = "Enter bags/pallet";
   static const hintEnterSupplyLimitations = "Enter Supply Limitations";
   static const hintEnterPalletizationIssues = "Enter Palletization Issues";
+
+
+  static const hintEnterMicroAnalysisReq = "Enter Micro Analysis Requirements";
+  static const hintEnterChemicalAnalysisReq = "Enter Chemical Analysis Requirements";
+  static const hintEnterAllergenAnalysisReq = "Enter Allergen Analysis Requirements";
+
   static const hintEnterWarehouseZone = "Enter Warehouse Zone";
 
   static const hintEnterFirstName = "Enter first name";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/haccp.dart';
 import 'package:flutter_application_1/base_structure/ui/purchasing_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
 import 'package:get/get.dart';
@@ -44,12 +45,10 @@ class MSAScreen extends BaseScreen<MSAViewModel> {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          Center(
-            child: Text(AppStrings.tabHaccp.tr),
-          ),
-          const QCInspectionScreen(),
-          const PurchasingScreen(),
+        body: const TabBarView(children: [
+          HACCPScreen(),
+          QCInspectionScreen(),
+          PurchasingScreen(),
         ]),
       ),
     );

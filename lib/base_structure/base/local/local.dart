@@ -109,6 +109,9 @@ class Languages implements Translations {
           AppStrings.lblCost: AppStrings.lblCost,
           AppStrings.lblCurrency: AppStrings.lblCurrency,
 
+          AppStrings.lblIncludeInHACCPplan: AppStrings.lblIncludeInHACCPplan,
+          AppStrings.lblMicroAnalysisNeeded: AppStrings.lblMicroAnalysisNeeded,
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
@@ -152,6 +155,14 @@ class Languages implements Translations {
 
           AppStrings.hintEnterPalletizationIssues:
               AppStrings.hintEnterPalletizationIssues,
+
+          AppStrings.hintEnterMicroAnalysisReq:
+              "Enter Micro Analysis Requirements",
+          AppStrings.hintEnterChemicalAnalysisReq:
+              "Enter Chemical Analysis Requirements",
+          AppStrings.hintEnterAllergenAnalysisReq:
+              "Enter Allergen Analysis Requirements",
+
           AppStrings.hintEnterWarehouseZone: AppStrings.hintEnterWarehouseZone,
 
           AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
@@ -343,6 +354,9 @@ class Languages implements Translations {
           AppStrings.lblCost: "Costo",
           AppStrings.lblCurrency: "Valuta",
 
+          AppStrings.lblIncludeInHACCPplan: "Includere nel piano HACCP",
+          AppStrings.lblMicroAnalysisNeeded: "Necessaria la microanalisi",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
@@ -387,6 +401,13 @@ class Languages implements Translations {
 
           AppStrings.hintEnterPalletizationIssues:
               "Inserisci i problemi di pallettizzazione",
+
+          AppStrings.hintEnterMicroAnalysisReq:
+              "Inserisci i requisiti di microanalisi",
+          AppStrings.hintEnterChemicalAnalysisReq:
+              "Inserisci i requisiti di analisi chimica",
+          AppStrings.hintEnterAllergenAnalysisReq:
+              "Inserisci i requisiti per l'analisi degli allergeni",
 
           AppStrings.hintEnterWarehouseZone: "Entra nella zona del magazzino",
 
@@ -585,6 +606,9 @@ class Languages implements Translations {
           AppStrings.lblCost: "Costo",
           AppStrings.lblCurrency: "Divisa",
 
+          AppStrings.lblIncludeInHACCPplan: "Incluir en el plan HACCP",
+          AppStrings.lblMicroAnalysisNeeded: "Se necesita microanálisis",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
@@ -657,6 +681,13 @@ class Languages implements Translations {
 
           AppStrings.hintEnterPalletizationIssues:
               "Ingrese los problemas de paletización",
+
+          AppStrings.hintEnterMicroAnalysisReq:
+              "Ingrese los requisitos de microanálisis",
+          AppStrings.hintEnterChemicalAnalysisReq:
+              "Ingrese los requisitos de análisis químico",
+          AppStrings.hintEnterAllergenAnalysisReq:
+              "Ingrese los requisitos de análisis de alérgenos",
 
           AppStrings.hintEnterWarehouseZone: "Ingresar a la zona de almacén",
 
