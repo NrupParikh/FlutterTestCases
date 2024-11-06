@@ -20,4 +20,5 @@ class Routes {
   static const pad = '/pad';
   static const msa = '/msa';
   static const haccp = '/haccp';
+  static const purchasingReview = '/purchasingReview';
 }

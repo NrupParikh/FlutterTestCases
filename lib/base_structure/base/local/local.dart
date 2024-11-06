@@ -52,6 +52,11 @@ class Languages implements Translations {
           AppStrings.lblBagsOrPallet: AppStrings.lblBagsOrPallet,
           AppStrings.lblSupplyLimitations: AppStrings.lblSupplyLimitations,
 
+          AppStrings.lblPurchasingNotes: AppStrings.lblPurchasingNotes,
+          AppStrings.lblChangePlan: AppStrings.lblChangePlan,
+          AppStrings.lblPreferredDateForChange:
+              AppStrings.lblPreferredDateForChange,
+
           AppStrings.lblLastName: AppStrings.lblLastName,
           AppStrings.lblLanguage: AppStrings.lblLanguage,
           AppStrings.lblSite: AppStrings.lblSite,
@@ -176,6 +181,11 @@ class Languages implements Translations {
           AppStrings.hintEnterYourNewPassword:
               AppStrings.hintEnterYourNewPassword,
           AppStrings.hintEnterPasswordAgain: AppStrings.hintEnterPasswordAgain,
+
+          AppStrings.hintEnterPurchasingNotes:
+              AppStrings.hintEnterPurchasingNotes,
+          AppStrings.hintEnterChangePlan: AppStrings.hintEnterChangePlan,
+
           AppStrings.msgPasswordMustBeMatch: AppStrings.msgPasswordMustBeMatch,
           AppStrings.msgPasswordUpdated: AppStrings.msgPasswordUpdated,
 
@@ -255,12 +265,12 @@ class Languages implements Translations {
           AppStrings.lblSignInNow: "Accedi ora",
           AppStrings.lblEnterYourDetailsBelow:
               "Inserisci i tuoi dati qui sotto",
-          AppStrings.lblEmailAddress: "Indirizzo e-mail *",
-          AppStrings.lblPassword: "Parola d'ordine *",
+          AppStrings.lblEmailAddress: "Indirizzo e-mail*",
+          AppStrings.lblPassword: "Parola d'ordine*",
 
-          AppStrings.lblCurrentPassword: "Password attuale *",
-          AppStrings.lblNewPassword: "Nuova password *",
-          AppStrings.lblConfirmPassword: "Conferma password *",
+          AppStrings.lblCurrentPassword: "Password attuale*",
+          AppStrings.lblNewPassword: "Nuova password*",
+          AppStrings.lblConfirmPassword: "Conferma password*",
 
           AppStrings.lblForgotPasswordLink: "Ha dimenticato la password?",
           AppStrings.lblLogin: "Login",
@@ -275,10 +285,10 @@ class Languages implements Translations {
           AppStrings.errorPopupButtom: "Va bene",
           AppStrings.lblSuccess: "Successo !",
           AppStrings.lblQcAnalysis: "Analisi QC",
-          AppStrings.lblQcInspectionPlan: "Piano di ispezione QC *",
+          AppStrings.lblQcInspectionPlan: "Piano di ispezione QC*",
           AppStrings.lblQcDays: "Giornate di controllo qualità",
           AppStrings.lblSamplingPlan: "Piano di campionamento",
-          AppStrings.lblReqiredSamplingPlan: "Piano di campionamento *",
+          AppStrings.lblReqiredSamplingPlan: "Piano di campionamento*",
 
           AppStrings.lblProjectType: "Tipo di progetto",
           AppStrings.lblProjectStatus: "Stato del progetto",
@@ -296,11 +306,15 @@ class Languages implements Translations {
           AppStrings.lblLeadTimeDD: "Tempi di consegna GG",
           AppStrings.lblPalletHeightCM: "Altezza Bancale CM",
           AppStrings.lblBagsOrPallet: "Sacchi/Pallet",
-          AppStrings.lblSupplyLimitations: "Limitazioni della fornitura *",
+          AppStrings.lblSupplyLimitations: "Limitazioni della fornitura*",
 
-          AppStrings.lblLastName: "Cognome *",
-          AppStrings.lblLanguage: "Lingua *",
-          AppStrings.lblSite: "Sito *",
+          AppStrings.lblPurchasingNotes: "Note di acquisto*",
+          AppStrings.lblChangePlan: "Cambia piano*",
+          AppStrings.lblPreferredDateForChange: "Data preferita per la modifica*",
+
+          AppStrings.lblLastName: "Cognome*",
+          AppStrings.lblLanguage: "Lingua*",
+          AppStrings.lblSite: "Sito*",
           AppStrings.lblDateFormat: "Formato data",
           AppStrings.lblTimeFormat: "Formato ora",
 
@@ -321,8 +335,8 @@ class Languages implements Translations {
           AppStrings.lblMajorCode: "Codice Maggiore",
           AppStrings.lblMinorCode: "Codice minore",
 
-          AppStrings.lblPalletizationIssues: "Problemi di pallettizzazione *",
-          AppStrings.lblWarehouseZone: "Zona Magazzino *",
+          AppStrings.lblPalletizationIssues: "Problemi di pallettizzazione*",
+          AppStrings.lblWarehouseZone: "Zona Magazzino*",
 
           AppStrings.lblAction: "Azione",
           AppStrings.lblDocLanguage: "Lingua",
@@ -424,6 +438,10 @@ class Languages implements Translations {
           AppStrings.hintEnterYourNewPassword:
               "Inserisci la tua nuova password",
           AppStrings.hintEnterPasswordAgain: "Immettere nuovamente la password",
+
+          AppStrings.hintEnterPurchasingNotes: "Inserisci le note di acquisto",
+          AppStrings.hintEnterChangePlan: "Inserisci il piano di modifica",
+
           AppStrings.msgPasswordMustBeMatch:
               "La password deve corrispondere alla nuova password",
           AppStrings.msgPasswordUpdated: "Password aggiornata",
@@ -506,12 +524,12 @@ class Languages implements Translations {
           AppStrings.lblSignInNow: "Iniciar sesión ahora",
           AppStrings.lblEnterYourDetailsBelow:
               "Ingrese sus datos a continuación",
-          AppStrings.lblEmailAddress: "Dirección de correo electrónico *",
-          AppStrings.lblPassword: "Contraseña *",
+          AppStrings.lblEmailAddress: "Dirección de correo electrónico*",
+          AppStrings.lblPassword: "Contraseña*",
 
-          AppStrings.lblCurrentPassword: "Contraseña actual *",
-          AppStrings.lblNewPassword: "Nueva contraseña *",
-          AppStrings.lblConfirmPassword: "Confirmar Contraseña *",
+          AppStrings.lblCurrentPassword: "Contraseña actual*",
+          AppStrings.lblNewPassword: "Nueva contraseña*",
+          AppStrings.lblConfirmPassword: "Confirmar Contraseña*",
 
           AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
 
@@ -527,10 +545,10 @@ class Languages implements Translations {
           AppStrings.lblSuccess: "Éxito !",
           AppStrings.lblQcAnalysis: "Análisis de control de calidad",
           AppStrings.lblQcInspectionPlan:
-              "Plan de inspección de control de calidad *",
+              "Plan de inspección de control de calidad*",
           AppStrings.lblQcDays: "Días de control de calidad",
           AppStrings.lblSamplingPlan: "Plan de muestreo",
-          AppStrings.lblReqiredSamplingPlan: "Plan de muestreo *",
+          AppStrings.lblReqiredSamplingPlan: "Plan de muestreo*",
 
           AppStrings.lblProjectType: "Tipo de proyecto",
           AppStrings.lblProjectStatus: "Estado del proyecto",
@@ -550,9 +568,13 @@ class Languages implements Translations {
           AppStrings.lblBagsOrPallet: "Bolsas/Palet",
           AppStrings.lblSupplyLimitations: "Limitaciones de suministro",
 
-          AppStrings.lblLastName: "Apellido *",
-          AppStrings.lblLanguage: "Idioma *",
-          AppStrings.lblSite: "Sitio *",
+          AppStrings.lblPurchasingNotes: "Notas de compra*",
+          AppStrings.lblChangePlan: "Cambiar plan*",
+          AppStrings.lblPreferredDateForChange: "Fecha preferida para el cambio*",
+
+          AppStrings.lblLastName: "Apellido*",
+          AppStrings.lblLanguage: "Idioma*",
+          AppStrings.lblSite: "Sitio*",
           AppStrings.lblDateFormat: "Formato de fecha",
           AppStrings.lblTimeFormat: "Formato de hora",
 
@@ -573,8 +595,8 @@ class Languages implements Translations {
           AppStrings.lblMajorCode: "Código mayor",
           AppStrings.lblMinorCode: "Código menor",
 
-          AppStrings.lblPalletizationIssues: "Problemas de paletización *",
-          AppStrings.lblWarehouseZone: "Zona de Almacén *",
+          AppStrings.lblPalletizationIssues: "Problemas de paletización*",
+          AppStrings.lblWarehouseZone: "Zona de Almacén*",
 
           AppStrings.lblAction: "Acción",
           AppStrings.lblDocLanguage: "Idioma",
@@ -654,6 +676,10 @@ class Languages implements Translations {
               "Ingrese su contraseña actual",
           AppStrings.hintEnterYourNewPassword: "Ingresa tu nueva contraseña",
           AppStrings.hintEnterPasswordAgain: "Ingrese la contraseña nuevamente",
+
+          AppStrings.hintEnterPurchasingNotes: "Ingresar notas de compra",
+          AppStrings.hintEnterChangePlan: "Ingrese al plan de cambio",
+
           AppStrings.msgPasswordMustBeMatch:
               "La contraseña debe coincidir con la nueva contraseña",
           AppStrings.msgPasswordUpdated: "Contraseña actualizada",

@@ -13,6 +13,7 @@ import 'package:flutter_application_1/base_structure/ui/login_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/purchasing_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
@@ -47,5 +48,6 @@ class AppPages {
     GetPage(name: Routes.pad, page: () => const PADScreen()),
     GetPage(name: Routes.msa, page: () => const MSAScreen()),
     GetPage(name: Routes.haccp, page: () => const HACCPScreen()),
+    GetPage(name: Routes.purchasingReview, page: () => const PurchasingReviewScreen()),
   ];
 }

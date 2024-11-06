@@ -8,12 +8,12 @@ class AppStrings {
 
   static const lblSignInNow = "Sign in now";
   static const lblEnterYourDetailsBelow = "Enter your details below";
-  static const lblEmailAddress = "Email Address *";
-  static const lblPassword = "Password *";
+  static const lblEmailAddress = "Email Address*";
+  static const lblPassword = "Password*";
 
-  static const lblCurrentPassword = "Current Password *";
-  static const lblNewPassword = "New Password *";
-  static const lblConfirmPassword = "Confirm Password *";
+  static const lblCurrentPassword = "Current Password*";
+  static const lblNewPassword = "New Password*";
+  static const lblConfirmPassword = "Confirm Password*";
 
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
@@ -27,10 +27,10 @@ class AppStrings {
   static const errorPopupButtom = "Okay";
   static const lblSuccess = "Success !";
   static const lblQcAnalysis = "QC Analysis";
-  static const lblQcInspectionPlan = "QC Inspection plan *";
+  static const lblQcInspectionPlan = "QC Inspection plan*";
   static const lblQcDays = "QC Days";
   static const lblSamplingPlan = "Sampling Plan";
-  static const lblReqiredSamplingPlan = "Sampling Plan *";
+  static const lblReqiredSamplingPlan = "Sampling Plan*";
 
   static const lblProjectType = "Project Type";
   static const lblProjectStatus = "Project Status";
@@ -48,11 +48,15 @@ class AppStrings {
   static const lblLeadTimeDD = "Lead Time DD";
   static const lblPalletHeightCM = "Pallet Height CM";
   static const lblBagsOrPallet = "Bags/Pallet";
-  static const lblSupplyLimitations = "Supply Limitations *";
+  static const lblSupplyLimitations = "Supply Limitations*";
 
-  static const lblLastName = "Last Name *";
-  static const lblLanguage = "Language *";
-  static const lblSite = "Site *";
+  static const lblPurchasingNotes = "Purchasing Notes*";
+  static const lblChangePlan = "Change Plan*";
+  static const lblPreferredDateForChange = "Preferred Date for Change*";
+
+  static const lblLastName = "Last Name*";
+  static const lblLanguage = "Language*";
+  static const lblSite = "Site*";
   static const lblDateFormat = "Date Format";
   static const lblTimeFormat = "Time Format";
   static const lblProject = "Project";
@@ -69,8 +73,8 @@ class AppStrings {
   static const lblMajorCode = "Major Code";
   static const lblMinorCode = "Minor Code";
 
-  static const lblPalletizationIssues = "Palletization Issues *";
-  static const lblWarehouseZone = "Warehouse Zone *";
+  static const lblPalletizationIssues = "Palletization Issues*";
+  static const lblWarehouseZone = "Warehouse Zone*";
 
   static const lblMicroAnalysisReq = "Micro Analysis Requirements";
   static const lblChemicalAnalysisReq = "Chemical Analysis Requirements";
@@ -166,6 +170,9 @@ class AppStrings {
   static const hintEnterYourCurrentPassword = "Enter your current password";
   static const hintEnterYourNewPassword = "Enter your new password";
   static const hintEnterPasswordAgain = "Enter password again";
+
+  static const hintEnterPurchasingNotes = "Enter Purchasing Notes";
+  static const hintEnterChangePlan = "Enter Change Plan";
 
   static const msgPasswordMustBeMatch =
       "Password must be match with new password";

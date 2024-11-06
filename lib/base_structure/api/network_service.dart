@@ -12,7 +12,7 @@ import '../constants/app_strings.dart';
 import '../utils/progress_dialog_utils.dart';
 
 class NetworkService {
-  static const int requestTimeOut = 120 * 100;
+  static const int requestTimeOut = 10;
   late Dio dio;
 
   NetworkService() {

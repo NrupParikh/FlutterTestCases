@@ -12,6 +12,7 @@ import 'package:flutter_application_1/base_structure/vm/pad_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/purchasing_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
@@ -47,5 +48,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => PADViewModel(), fenix: true);
     Get.lazyPut(() => MSAViewModel(), fenix: true);
     Get.lazyPut(() => HACCPViewModel(), fenix: true);
+    Get.lazyPut(() => PurchasingReviewViewModel(), fenix: true);
   }
 }
