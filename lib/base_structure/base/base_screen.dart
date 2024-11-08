@@ -15,6 +15,12 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/haccp.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_finance_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_production_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_purchasing_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_warehouse_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
@@ -81,16 +87,22 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         // Ex. Tab then check with VM and set null
         appBar: ((controller is FastTrackEvaluationViewModel) ||
                 (controller is RNDViewModel) ||
-                (controller is QCInspectionViewModel)||
-                (controller is PurchasingViewModel)||
-                (controller is WarehousingViewModel)||
-                (controller is HACCPViewModel)||
-                (controller is PurchasingReviewViewModel)||
-                (controller is IndustrialTrialViewModel)||
-                (controller is IndustrialReviewViewModel)||
-                (controller is RchRNDViewModel)||
-                (controller is RchQualityViewModel)||
-                (controller is RchRegulatoryViewModel))
+                (controller is QCInspectionViewModel) ||
+                (controller is PurchasingViewModel) ||
+                (controller is WarehousingViewModel) ||
+                (controller is HACCPViewModel) ||
+                (controller is PurchasingReviewViewModel) ||
+                (controller is IndustrialTrialViewModel) ||
+                (controller is IndustrialReviewViewModel) ||
+                (controller is RchRNDViewModel) ||
+                (controller is RchQualityViewModel) ||
+                (controller is RchRegulatoryViewModel) ||
+                (controller is PadDepartmentViewModel) ||
+                (controller is PadCommertialReviewViewModel) ||
+                (controller is PadFinanceViewModel) ||
+                (controller is PadPurchasingViewModel) ||
+                (controller is PadProductionViewModel) ||
+                (controller is PadWarehouseViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
@@ -167,11 +179,11 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                   (currentRouteName == Constant.tagNRDScreen ||
                       currentRouteName == Constant.tagNRD) ||
                   (currentRouteName == Constant.tagRCHScreen ||
-                      currentRouteName == Constant.tagRCH)||
+                      currentRouteName == Constant.tagRCH) ||
                   (currentRouteName == Constant.tagTGIScreen ||
-                      currentRouteName == Constant.tagTGI)||
+                      currentRouteName == Constant.tagTGI) ||
                   (currentRouteName == Constant.tagPADScreen ||
-                      currentRouteName == Constant.tagPAD)||
+                      currentRouteName == Constant.tagPAD) ||
                   (currentRouteName == Constant.tagMSAScreen ||
                       currentRouteName == Constant.tagMSA))
               ? IconButton(

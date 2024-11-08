@@ -135,6 +135,8 @@ class Languages implements Translations {
           AppStrings.lblIncludeInHACCPplan: AppStrings.lblIncludeInHACCPplan,
           AppStrings.lblMicroAnalysisNeeded: AppStrings.lblMicroAnalysisNeeded,
 
+          AppStrings.lblStinginess: AppStrings.lblStinginess,
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
@@ -261,6 +263,12 @@ class Languages implements Translations {
 
           AppStrings.tabPurchasing: AppStrings.tabPurchasing,
           AppStrings.tabWarehousing: AppStrings.tabWarehousing,
+
+          AppStrings.tabDepartment: AppStrings.tabDepartment,
+          AppStrings.tabCommertialReview: AppStrings.tabCommertialReview,
+          AppStrings.tabFinance: AppStrings.tabFinance,
+          AppStrings.tabProduction: AppStrings.tabProduction,
+          AppStrings.tabWherehouse: AppStrings.tabWherehouse,
 
           // ========== OTHER
           AppStrings.approve: AppStrings.approve,
@@ -416,6 +424,8 @@ class Languages implements Translations {
           AppStrings.lblIncludeInHACCPplan: "Includere nel piano HACCP",
           AppStrings.lblMicroAnalysisNeeded: "Necessaria la microanalisi",
 
+          AppStrings.lblStinginess: "Avarizia",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
@@ -546,6 +556,12 @@ class Languages implements Translations {
 
           AppStrings.tabPurchasing: "Acquisto",
           AppStrings.tabWarehousing: "Magazzinaggio",
+
+          AppStrings.tabDepartment: "Dipartimento",
+          AppStrings.tabCommertialReview: "Revisione commerciale",
+          AppStrings.tabFinance: "Finanza",
+          AppStrings.tabProduction: "Produzione",
+          AppStrings.tabWherehouse: "Dovecasa",
 
           // ========== OTHER
           AppStrings.approve: "Approvare",
@@ -703,6 +719,8 @@ class Languages implements Translations {
           AppStrings.lblIncludeInHACCPplan: "Incluir en el plan HACCP",
           AppStrings.lblMicroAnalysisNeeded: "Se necesita microanálisis",
 
+          AppStrings.lblStinginess: "Tacañería",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
@@ -835,6 +853,12 @@ class Languages implements Translations {
 
           AppStrings.tabPurchasing: "Adquisitivo",
           AppStrings.tabWarehousing: "almacenamiento",
+
+          AppStrings.tabDepartment: "Departamento",
+          AppStrings.tabCommertialReview: "Revisión comercial",
+          AppStrings.tabFinance: "Finanzas",
+          AppStrings.tabProduction: "Producción",
+          AppStrings.tabWherehouse: "Donde casa",
 
           // ========== OTHER
           AppStrings.approve: "Aprobar",

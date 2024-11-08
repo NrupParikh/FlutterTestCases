@@ -117,6 +117,8 @@ class AppStrings {
   static const lblIncludeInHACCPplan = "Include In HACCP plan";
   static const lblMicroAnalysisNeeded = "Micro Analysis Needed";
 
+  static const lblStinginess = "Stinginess";
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -238,6 +240,12 @@ class AppStrings {
 
   static const tabPurchasing = "Purchasing";
   static const tabWarehousing = "Warehousing";
+
+  static const tabDepartment = "Department";
+  static const tabCommertialReview = "Commertial Review";
+  static const tabFinance = "Finanance";
+  static const tabProduction = "Production";
+  static const tabWherehouse = "Wherehouse";
 
 // ========== OTHER
   static const approve = "Approve";

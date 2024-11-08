@@ -10,7 +10,13 @@ import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/notifications_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/nrd_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_finance_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_production_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_warehouse_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_filter_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/project_management_view_model.dart';
@@ -60,5 +66,13 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => RchRNDViewModel(), fenix: true);
     Get.lazyPut(() => RchQualityViewModel(), fenix: true);
     Get.lazyPut(() => RchRegulatoryViewModel(), fenix: true);
+    
+    Get.lazyPut(() => PadFinanceViewModel(), fenix: true);
+    Get.lazyPut(() => PadPurchasingViewModel(), fenix: true);
+    Get.lazyPut(() => PadProductionViewModel(), fenix: true);
+    Get.lazyPut(() => PadWarehouseViewModel(), fenix: true);
+
+    Get.lazyPut(() => PadDepartmentViewModel(), fenix: true);
+    Get.lazyPut(() => PadCommertialReviewViewModel(), fenix: true);
   }
 }

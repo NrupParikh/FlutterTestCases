@@ -27,4 +27,12 @@ class Routes {
   static const rchRND = '/rchRND';
   static const rchQuality = '/rchQuality';
   static const rchRegulatory = '/rchRegulatory';
+
+  static const padDepartment = '/padDepartment';
+  static const padCommertialReview = '/padCommertialReview';
+  static const padFinanace = '/padFinanace';
+  static const padPurchasing = '/padPurchasing';
+  static const padProduction = '/padProduction';
+  static const padWherehouse = '/padWherehouse';
+
 }
