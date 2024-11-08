@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/ui/haccp.dart';
+import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:get/get.dart';
 
 import 'fast_track_evaluation_screen.dart';
+import 'industrial_trial_screen.dart';
 import 'purchasing_review_screen.dart';
 
 class RCHScreen extends BaseScreen<RCHViewModel> {
@@ -58,26 +60,14 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          const Center(
-            child: RNDScreen(),
-          ),
-          const Center(child: FastTrackEvaluationScreen()),
-          Center(
-            child: Text(AppStrings.tabIndustrialReview.tr),
-          ),
-          Center(
-            child: Text(AppStrings.tabIndustrialTrial.tr),
-          ),
-          const Center(
-            child: HACCPScreen(),
-          ),
-          const Center(
-            child: Center(child: QCInspectionScreen()),
-          ),
-          const Center(
-            child: PurchasingReviewScreen(),
-          )
+        body: const TabBarView(children: [
+          RNDScreen(),
+          FastTrackEvaluationScreen(),
+          IndustrialReviewScreen(),
+          IndustrialTrialScreen(),
+          HACCPScreen(),
+          QCInspectionScreen(),
+          PurchasingReviewScreen()
         ]),
       ),
     );

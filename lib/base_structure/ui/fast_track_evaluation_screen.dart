@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_quality_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_regulatory_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_rnd_creen.dart';
 import 'package:get/get.dart';
 
 import '../vm/fast_track_evaluation_view_model.dart';
@@ -41,16 +44,10 @@ class FastTrackEvaluationScreen
             ],
           ),
         ),
-        body: TabBarView(children: [
-           Center(
-             child: Text(AppStrings.tabRND.tr),
-          ),
-          Center(
-            child: Text(AppStrings.tabQuality.tr),
-          ),
-          Center(
-            child: Text(AppStrings.tabRegulatory.tr),
-          )
+        body: const TabBarView(children: [
+          RchRndScreen(),
+          RchQualityScreen(),
+          RchRegulatoryScreen()
         ]),
       ),
     );

@@ -5,6 +5,8 @@ import 'package:flutter_application_1/base_structure/ui/documents_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/fast_track_evaluation_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/haccp.dart';
+import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/industrial_trial_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/pad_screen.dart';
@@ -15,6 +17,9 @@ import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/purchasing_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_quality_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_regulatory_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/rch_rnd_creen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/tgi_screen.dart';
@@ -49,5 +54,11 @@ class AppPages {
     GetPage(name: Routes.msa, page: () => const MSAScreen()),
     GetPage(name: Routes.haccp, page: () => const HACCPScreen()),
     GetPage(name: Routes.purchasingReview, page: () => const PurchasingReviewScreen()),
+    GetPage(name: Routes.industrialTrial, page: () => const IndustrialTrialScreen()),
+    GetPage(name: Routes.industrialReview, page: () => const IndustrialReviewScreen()),
+
+    GetPage(name: Routes.rchRND, page: () => const RchRndScreen()),   
+    GetPage(name: Routes.rchQuality, page: () => const RchQualityScreen()),
+    GetPage(name: Routes.rchRegulatory, page: () => const RchRegulatoryScreen()),
   ];
 }

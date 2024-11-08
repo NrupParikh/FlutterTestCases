@@ -13,10 +13,15 @@ import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/haccp.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_quality_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
@@ -80,9 +85,12 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 (controller is PurchasingViewModel)||
                 (controller is WarehousingViewModel)||
                 (controller is HACCPViewModel)||
-                (controller is PurchasingReviewViewModel)
-                
-                )
+                (controller is PurchasingReviewViewModel)||
+                (controller is IndustrialTrialViewModel)||
+                (controller is IndustrialReviewViewModel)||
+                (controller is RchRNDViewModel)||
+                (controller is RchQualityViewModel)||
+                (controller is RchRegulatoryViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
@@ -247,23 +255,23 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           DrawerHeader(
               child: Stack(
             children: [
-              Obx(() => Align(
-                    alignment: Alignment.topRight,
-                    child: IconButton(
-                        onPressed: () async {
-                          final String storedTheme = await getStoredTheme();
-                          if (storedTheme == AppTheme.lightTheme) {
-                            Get.changeThemeMode(ThemeMode.dark);
-                            setStoredTheme(AppTheme.darkTheme);
-                          } else {
-                            Get.changeThemeMode(ThemeMode.light);
-                            setStoredTheme(AppTheme.lightTheme);
-                          }
-                        },
-                        icon: currentTheme.value == AppTheme.lightTheme
-                            ? const Icon(Icons.light_mode_outlined)
-                            : const Icon(Icons.dark_mode_outlined)),
-                  )),
+              // Obx(() => Align(
+              //       alignment: Alignment.topRight,
+              //       child: IconButton(
+              //           onPressed: () async {
+              //             final String storedTheme = await getStoredTheme();
+              //             if (storedTheme == AppTheme.lightTheme) {
+              //               Get.changeThemeMode(ThemeMode.dark);
+              //               setStoredTheme(AppTheme.darkTheme);
+              //             } else {
+              //               Get.changeThemeMode(ThemeMode.light);
+              //               setStoredTheme(AppTheme.lightTheme);
+              //             }
+              //           },
+              //           icon: currentTheme.value == AppTheme.lightTheme
+              //               ? const Icon(Icons.light_mode_outlined)
+              //               : const Icon(Icons.dark_mode_outlined)),
+              //     )),
               Expanded(
                 child: Center(
                   child: Text(AppStrings.appName.tr,

@@ -17,6 +17,7 @@ class AppStrings {
 
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
+  static const lblUpdateProduction = "Update Production";
 
   static const lblForgotPassword = "Forgot password";
   static const lblSubmit = "Submit";
@@ -79,6 +80,9 @@ class AppStrings {
   static const lblMicroAnalysisReq = "Micro Analysis Requirements";
   static const lblChemicalAnalysisReq = "Chemical Analysis Requirements";
   static const lblAllergenAnalysisReq = "Allergen Analysis Requirements";
+
+  static const lblProcessInstructions = "Process Instructions*";
+  static const lblIndustrialTrialObservations = "Industrial Trial Observations*";
 
   static const lblAction = "Action";
   static const lblDocLanguage = "Language";
@@ -160,6 +164,9 @@ class AppStrings {
   static const hintEnterChemicalAnalysisReq = "Enter Chemical Analysis Requirements";
   static const hintEnterAllergenAnalysisReq = "Enter Allergen Analysis Requirements";
 
+  static const hintEnterProcessInstructions = "Enter Process Instructions";
+  static const hintEnterIndustrialTrialObservations = "Enter Industrial Trial Observations";
+
   static const hintEnterWarehouseZone = "Enter Warehouse Zone";
 
   static const hintEnterFirstName = "Enter first name";
@@ -173,6 +180,7 @@ class AppStrings {
 
   static const hintEnterPurchasingNotes = "Enter Purchasing Notes";
   static const hintEnterChangePlan = "Enter Change Plan";
+  static const hintEnterIndustrialReviewObservations = "Enter Industrial Review Observations";
 
   static const msgPasswordMustBeMatch =
       "Password must be match with new password";
@@ -210,6 +218,10 @@ class AppStrings {
 
   static const lblClear = "Clear";
   static const lblSearch = "Search";
+
+  static const lblIndustrialTrialSuccessFul = "Industrial Trail Successful";
+  static const lblIndustrialReviewSuccessFul = "Industrial Review Successful";
+  static const lblIndustrialReviewObservations = "Industrial Review Observations*";
 
 // ========== TABS
   static const tabRND = "R&D";

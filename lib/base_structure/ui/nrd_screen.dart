@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/industrial_trial_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/purchasing_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
@@ -50,22 +51,12 @@ class NRDScreen extends BaseScreen<NRDViewModel> {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          const Center(
-            child: RNDScreen(),
-          ),
-          Center(
-            child: Text(AppStrings.tabIndustrialTrial.tr),
-          ),
-          const Center(
-            child: HACCPScreen(),
-          ),
-          const Center(
-            child: QCInspectionScreen(),
-          ),
-          const Center(
-            child: PurchasingReviewScreen(),
-          )
+        body: const TabBarView(children: [
+          RNDScreen(),
+          IndustrialTrialScreen(),
+          HACCPScreen(),
+          QCInspectionScreen(),
+          PurchasingReviewScreen()
         ]),
       ),
     );

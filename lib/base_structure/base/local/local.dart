@@ -20,6 +20,7 @@ class Languages implements Translations {
 
           AppStrings.lblForgotPasswordLink: AppStrings.lblForgotPasswordLink,
           AppStrings.lblLogin: AppStrings.lblLogin,
+          AppStrings.lblUpdateProduction: AppStrings.lblUpdateProduction,
           AppStrings.lblForgotPassword: AppStrings.lblForgotPassword,
           AppStrings.lblSubmit: AppStrings.lblSubmit,
           AppStrings.lblSave: AppStrings.lblSave,
@@ -71,6 +72,15 @@ class Languages implements Translations {
           AppStrings.lblClear: AppStrings.lblClear,
           AppStrings.lblSearch: AppStrings.lblSearch,
 
+          AppStrings.lblIndustrialTrialSuccessFul:
+              AppStrings.lblIndustrialTrialSuccessFul,
+
+          AppStrings.lblIndustrialReviewSuccessFul:
+              AppStrings.lblIndustrialReviewSuccessFul,
+
+          AppStrings.lblIndustrialReviewObservations:
+              AppStrings.lblIndustrialReviewObservations,
+
           AppStrings.lblMaterialName: AppStrings.lblMaterialName,
           AppStrings.lblMaterialId: AppStrings.lblMaterialId,
           AppStrings.lblDocType: AppStrings.lblDocType,
@@ -82,6 +92,14 @@ class Languages implements Translations {
 
           AppStrings.lblPalletizationIssues: AppStrings.lblPalletizationIssues,
           AppStrings.lblWarehouseZone: AppStrings.lblWarehouseZone,
+
+          AppStrings.lblMicroAnalysisReq: AppStrings.lblMicroAnalysisReq,
+          AppStrings.lblChemicalAnalysisReq: AppStrings.lblChemicalAnalysisReq,
+          AppStrings.lblAllergenAnalysisReq: AppStrings.lblAllergenAnalysisReq,
+
+          AppStrings.lblProcessInstructions: AppStrings.lblProcessInstructions,
+          AppStrings.lblIndustrialTrialObservations:
+              AppStrings.lblIndustrialTrialObservations,
 
           AppStrings.lblAction: AppStrings.lblAction,
           AppStrings.lblDocLanguage: AppStrings.lblDocLanguage,
@@ -162,11 +180,17 @@ class Languages implements Translations {
               AppStrings.hintEnterPalletizationIssues,
 
           AppStrings.hintEnterMicroAnalysisReq:
-              "Enter Micro Analysis Requirements",
+              AppStrings.hintEnterMicroAnalysisReq,
           AppStrings.hintEnterChemicalAnalysisReq:
-              "Enter Chemical Analysis Requirements",
+              AppStrings.hintEnterChemicalAnalysisReq,
           AppStrings.hintEnterAllergenAnalysisReq:
-              "Enter Allergen Analysis Requirements",
+              AppStrings.hintEnterAllergenAnalysisReq,
+
+          AppStrings.hintEnterProcessInstructions:
+              AppStrings.hintEnterProcessInstructions,
+
+          AppStrings.hintEnterIndustrialTrialObservations:
+              AppStrings.hintEnterIndustrialTrialObservations,
 
           AppStrings.hintEnterWarehouseZone: AppStrings.hintEnterWarehouseZone,
 
@@ -185,6 +209,9 @@ class Languages implements Translations {
           AppStrings.hintEnterPurchasingNotes:
               AppStrings.hintEnterPurchasingNotes,
           AppStrings.hintEnterChangePlan: AppStrings.hintEnterChangePlan,
+
+          AppStrings.hintEnterIndustrialReviewObservations:
+              AppStrings.hintEnterIndustrialReviewObservations,
 
           AppStrings.msgPasswordMustBeMatch: AppStrings.msgPasswordMustBeMatch,
           AppStrings.msgPasswordUpdated: AppStrings.msgPasswordUpdated,
@@ -274,6 +301,7 @@ class Languages implements Translations {
 
           AppStrings.lblForgotPasswordLink: "Ha dimenticato la password?",
           AppStrings.lblLogin: "Login",
+          AppStrings.lblUpdateProduction: "Aggiorna produzione",
           AppStrings.lblForgotPassword: "Ha dimenticato la password",
 
           AppStrings.lblSave: "Salva",
@@ -310,7 +338,8 @@ class Languages implements Translations {
 
           AppStrings.lblPurchasingNotes: "Note di acquisto*",
           AppStrings.lblChangePlan: "Cambia piano*",
-          AppStrings.lblPreferredDateForChange: "Data preferita per la modifica*",
+          AppStrings.lblPreferredDateForChange:
+              "Data preferita per la modifica*",
 
           AppStrings.lblLastName: "Cognome*",
           AppStrings.lblLanguage: "Lingua*",
@@ -326,6 +355,13 @@ class Languages implements Translations {
           AppStrings.lblClear: "Chiara",
           AppStrings.lblSearch: "Ricerca",
 
+          AppStrings.lblIndustrialTrialSuccessFul: "Prova industriale riuscita",
+          AppStrings.lblIndustrialReviewSuccessFul:
+              "Revisione industriale riuscita",
+
+          AppStrings.lblIndustrialReviewObservations:
+              "Osservazioni di revisione industriale*",
+
           AppStrings.lblMaterialName: "Nome del materiale",
           AppStrings.lblMaterialId: "Identificativo materiale",
           AppStrings.lblDocType: "Tipo documento",
@@ -337,6 +373,15 @@ class Languages implements Translations {
 
           AppStrings.lblPalletizationIssues: "Problemi di pallettizzazione*",
           AppStrings.lblWarehouseZone: "Zona Magazzino*",
+
+          AppStrings.lblMicroAnalysisReq: "Requisiti di microanalisi",
+          AppStrings.lblChemicalAnalysisReq: "Requisiti di analisi chimica",
+          AppStrings.lblAllergenAnalysisReq:
+              "Requisiti per l'analisi degli allergeni",
+
+          AppStrings.lblProcessInstructions: "Istruzioni di processo*",
+          AppStrings.lblIndustrialTrialObservations:
+              "Osservazioni sulle sperimentazioni industriali*",
 
           AppStrings.lblAction: "Azione",
           AppStrings.lblDocLanguage: "Lingua",
@@ -423,6 +468,12 @@ class Languages implements Translations {
           AppStrings.hintEnterAllergenAnalysisReq:
               "Inserisci i requisiti per l'analisi degli allergeni",
 
+          AppStrings.hintEnterProcessInstructions:
+              "Immettere le istruzioni di processo",
+
+          AppStrings.hintEnterIndustrialTrialObservations:
+              "Inserisci le osservazioni sulle sperimentazioni industriali",
+
           AppStrings.hintEnterWarehouseZone: "Entra nella zona del magazzino",
 
           AppStrings.hintEnterFreeText: "Inserisci testo libero",
@@ -441,6 +492,9 @@ class Languages implements Translations {
 
           AppStrings.hintEnterPurchasingNotes: "Inserisci le note di acquisto",
           AppStrings.hintEnterChangePlan: "Inserisci il piano di modifica",
+
+          AppStrings.hintEnterIndustrialReviewObservations:
+              "Inserisci le osservazioni di revisione industriale",
 
           AppStrings.msgPasswordMustBeMatch:
               "La password deve corrispondere alla nuova password",
@@ -536,6 +590,7 @@ class Languages implements Translations {
           AppStrings.lblSave: "Ahorrar",
 
           AppStrings.lblLogin: "Acceso",
+          AppStrings.lblUpdateProduction: "Actualizar producción",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
           AppStrings.lblSubmit: "Entregar",
           AppStrings.lblGenerateOTP: "Generar OTP",
@@ -570,7 +625,8 @@ class Languages implements Translations {
 
           AppStrings.lblPurchasingNotes: "Notas de compra*",
           AppStrings.lblChangePlan: "Cambiar plan*",
-          AppStrings.lblPreferredDateForChange: "Fecha preferida para el cambio*",
+          AppStrings.lblPreferredDateForChange:
+              "Fecha preferida para el cambio*",
 
           AppStrings.lblLastName: "Apellido*",
           AppStrings.lblLanguage: "Idioma*",
@@ -586,6 +642,13 @@ class Languages implements Translations {
           AppStrings.lblClear: "Claro",
           AppStrings.lblSearch: "Buscar",
 
+          AppStrings.lblIndustrialTrialSuccessFul: "Prueba industrial exitosa",
+          AppStrings.lblIndustrialReviewSuccessFul:
+              "Revisión industrial exitosa",
+
+          AppStrings.lblIndustrialReviewObservations:
+              "Observaciones del examen industrial*",
+
           AppStrings.lblMaterialName: "Nombre del material",
           AppStrings.lblMaterialId: "Identificación del material",
           AppStrings.lblDocType: "Tipo de documento",
@@ -597,6 +660,15 @@ class Languages implements Translations {
 
           AppStrings.lblPalletizationIssues: "Problemas de paletización*",
           AppStrings.lblWarehouseZone: "Zona de Almacén*",
+
+          AppStrings.lblMicroAnalysisReq: "Requisitos de microanálisis",
+          AppStrings.lblChemicalAnalysisReq: "Requisitos de análisis químico",
+          AppStrings.lblAllergenAnalysisReq:
+              "Requisitos de análisis de alérgenos",
+
+          AppStrings.lblProcessInstructions: "Instrucciones de proceso*",
+          AppStrings.lblIndustrialTrialObservations:
+              "Observaciones de ensayos industriales*",
 
           AppStrings.lblAction: "Acción",
           AppStrings.lblDocLanguage: "Idioma",
@@ -680,6 +752,9 @@ class Languages implements Translations {
           AppStrings.hintEnterPurchasingNotes: "Ingresar notas de compra",
           AppStrings.hintEnterChangePlan: "Ingrese al plan de cambio",
 
+          AppStrings.hintEnterIndustrialReviewObservations:
+              "Ingrese las observaciones de la revisión industrial",
+
           AppStrings.msgPasswordMustBeMatch:
               "La contraseña debe coincidir con la nueva contraseña",
           AppStrings.msgPasswordUpdated: "Contraseña actualizada",
@@ -714,6 +789,12 @@ class Languages implements Translations {
               "Ingrese los requisitos de análisis químico",
           AppStrings.hintEnterAllergenAnalysisReq:
               "Ingrese los requisitos de análisis de alérgenos",
+
+          AppStrings.hintEnterProcessInstructions:
+              "Ingrese las instrucciones del proceso",
+
+          AppStrings.hintEnterIndustrialTrialObservations:
+              "Ingrese las observaciones de los ensayos industriales",
 
           AppStrings.hintEnterWarehouseZone: "Ingresar a la zona de almacén",
 

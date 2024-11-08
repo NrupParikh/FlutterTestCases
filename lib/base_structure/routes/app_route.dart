@@ -21,4 +21,10 @@ class Routes {
   static const msa = '/msa';
   static const haccp = '/haccp';
   static const purchasingReview = '/purchasingReview';
+  static const industrialTrial = '/industrialTrial';
+  static const industrialReview = '/industrialReview';
+  
+  static const rchRND = '/rchRND';
+  static const rchQuality = '/rchQuality';
+  static const rchRegulatory = '/rchRegulatory';
 }

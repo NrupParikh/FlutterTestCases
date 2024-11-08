@@ -4,6 +4,8 @@ import 'package:flutter_application_1/base_structure/vm/document_filter_view_mod
 import 'package:flutter_application_1/base_structure/vm/documents_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/notifications_view_model.dart';
@@ -15,6 +17,9 @@ import 'package:flutter_application_1/base_structure/vm/project_management_view_
 import 'package:flutter_application_1/base_structure/vm/purchasing_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_quality_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/tgi_view_model.dart';
@@ -49,5 +54,11 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => MSAViewModel(), fenix: true);
     Get.lazyPut(() => HACCPViewModel(), fenix: true);
     Get.lazyPut(() => PurchasingReviewViewModel(), fenix: true);
+    Get.lazyPut(() => IndustrialTrialViewModel(), fenix: true);
+    Get.lazyPut(() => IndustrialReviewViewModel(), fenix: true);
+
+    Get.lazyPut(() => RchRNDViewModel(), fenix: true);
+    Get.lazyPut(() => RchQualityViewModel(), fenix: true);
+    Get.lazyPut(() => RchRegulatoryViewModel(), fenix: true);
   }
 }
