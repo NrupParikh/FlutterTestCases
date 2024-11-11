@@ -175,7 +175,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           : ((currentRouteName == Constant.tagProjectFilterScreen ||
                       currentRouteName == Constant.tagProjectFilter) ||
                   (currentRouteName == Constant.tagDocumentFilterScreen ||
-                      currentRouteName == Constant.tagDocuments) ||
+                      currentRouteName == Constant.tagDocumentFilter) ||
                   (currentRouteName == Constant.tagNRDScreen ||
                       currentRouteName == Constant.tagNRD) ||
                   (currentRouteName == Constant.tagRCHScreen ||

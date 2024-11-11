@@ -56,7 +56,7 @@ class PADPurchasingScreen extends BaseScreen<PadPurchasingViewModel> {
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsBold)),
                         onPressed: () {}),
-                    ElevatedButton(
+                    OutlinedButton(
                         child: const Text(AppStrings.reject,
                             style: TextStyle(
                                 fontSize: 12,

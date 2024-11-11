@@ -56,7 +56,7 @@ class PADProductionScreen extends BaseScreen<PadProductionViewModel> {
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsBold)),
                         onPressed: () {}),
-                    ElevatedButton(
+                    OutlinedButton(
                         child: const Text(AppStrings.reject,
                             style: TextStyle(
                                 fontSize: 12,

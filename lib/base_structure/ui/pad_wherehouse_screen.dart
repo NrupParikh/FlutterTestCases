@@ -56,7 +56,7 @@ class PADWherehouseScreen extends BaseScreen<PadWarehouseViewModel> {
                                 fontSize: 12,
                                 fontFamily: AppTextConstant.poppinsBold)),
                         onPressed: () {}),
-                    ElevatedButton(
+                    OutlinedButton(
                         child: const Text(AppStrings.reject,
                             style: TextStyle(
                                 fontSize: 12,
