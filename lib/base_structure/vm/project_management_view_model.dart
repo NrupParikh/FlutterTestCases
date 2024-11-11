@@ -125,7 +125,7 @@ class ProjectManagementViewModel extends BaseViewModel {
   void onInit() {
     super.onInit();
     if (kDebugMode) {
-      print("Sample VM Initialized");
+      print("Project Management VM Initialized");
     }
   }
 }

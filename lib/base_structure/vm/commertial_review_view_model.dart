@@ -6,7 +6,7 @@ class CommertialReviewViewModel extends BaseViewModel {
   void onInit() {
     super.onInit();
     if (kDebugMode) {
-      print("PAD Commertial Review VM Initialized");
+      print("Commertial Review VM Initialized");
     }
   }
 }

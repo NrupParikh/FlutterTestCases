@@ -7,7 +7,7 @@ class HACCPViewModel extends BaseViewModel {
   void onInit() {
     super.onInit();
     if (kDebugMode) {
-      print("QC Inspection VM Initialized");
+      print("HACCP VM Initialized");
     }
 
   }
