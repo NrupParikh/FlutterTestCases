@@ -172,27 +172,19 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               currentRouteName == Constant.tagForgotPasswordScreen ||
               currentRouteName == Constant.tagForgotPassword)
           ? null
-          : ((currentRouteName == Constant.tagProjectFilterScreen ||
-                      currentRouteName == Constant.tagProjectFilter) ||
-                  (currentRouteName == Constant.tagDocumentFilterScreen ||
-                      currentRouteName == Constant.tagDocumentFilter) ||
-                  (currentRouteName == Constant.tagNRDScreen ||
-                      currentRouteName == Constant.tagNRD) ||
-                  (currentRouteName == Constant.tagRCHScreen ||
-                      currentRouteName == Constant.tagRCH) ||
-                  (currentRouteName == Constant.tagTGIScreen ||
-                      currentRouteName == Constant.tagTGI) ||
-                  (currentRouteName == Constant.tagPADScreen ||
-                      currentRouteName == Constant.tagPAD) ||
-                  (currentRouteName == Constant.tagMSAScreen ||
-                      currentRouteName == Constant.tagMSA))
-              ? IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Get.back();
-                  },
-                )
-              : Builder(builder: (context) {
+          : ((currentRouteName == Constant.tagProjectManagementScreen ||
+                      currentRouteName == Constant.tagProjectManagement) ||
+                  (currentRouteName == Constant.tagDocumentsScreen ||
+                      currentRouteName == Constant.tagDocuments) ||
+                  (currentRouteName == Constant.tagProfileScreen ||
+                      currentRouteName == Constant.tagProfile) ||
+                  (currentRouteName == Constant.tagNotificationsScreen ||
+                      currentRouteName == Constant.tagNotifications) ||
+                  (currentRouteName == Constant.tagChangePasswordScreen ||
+                      currentRouteName == Constant.tagChangePassword) ||
+                  (currentRouteName == Constant.tagChangeLanguageScreen ||
+                      currentRouteName == Constant.tagChangeLanguage))
+              ? Builder(builder: (context) {
                   return IconButton(
                     onPressed: () {
                       // openDrawer(_scaffoldKey);
@@ -200,7 +192,13 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     },
                     icon: const Icon(Icons.menu),
                   );
-                }),
+                })
+              : IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
       actions: ((currentRouteName == Constant.tagProjectManagementScreen ||
               currentRouteName == Constant.tagProjectManagement))
           ? [
