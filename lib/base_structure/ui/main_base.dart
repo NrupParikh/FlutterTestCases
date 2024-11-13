@@ -38,7 +38,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
     super.initState();
     initialization();
 
-    // handleForgroundNotifications();
+    handleForgroundNotifications();
     handleBackgroundNotifications();
     
   }
