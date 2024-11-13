@@ -116,7 +116,14 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                           }
                         }
                       }),
-                )
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(vm.firebaseToken.value,
+                    style: const TextStyle(
+                        fontSize: 12,
+                        fontFamily: AppTextConstant.poppinsRegular))
               ],
             ),
           ),

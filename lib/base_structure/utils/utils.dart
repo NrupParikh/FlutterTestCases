@@ -1,6 +1,7 @@
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/constants/app_key.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:get/get.dart';
@@ -127,8 +128,14 @@ void doLogout() async {
     // await SecureStorageSingleton().storage.write(
     //     key: AppKey.keyIsLoggedIn, value: false.toString());
 
-    // Remove all secure storage key(s)
-    await SecureStorageSingleton().storage.deleteAll();
+    // // Remove all secure storage key(s)
+    // await SecureStorageSingleton().storage.deleteAll();
+
+    // Not delete firebase token here.
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyIsLoggedIn);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyStoredLang);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyStoredTheme);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyUserObject);
 
     Get.offAll(const LoginScreen());
   }

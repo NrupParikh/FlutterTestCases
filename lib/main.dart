@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
+import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:http/http.dart' as http;
@@ -13,10 +16,50 @@ import 'base_structure/constants/app_text_constant.dart';
 import 'base_structure/routes/app_route.dart';
 
 import 'base_structure/utils/preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
   // To guarantee that the Flutter framework is fully initialized before your app starts running
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  // ---------------------- Firebase ---------------------
+
+  // await Firebase.initializeApp(
+  //   options: const FirebaseOptions(
+  //     apiKey: 'any',
+  //     appId: 'any',
+  //     messagingSenderId: 'any',
+  //     projectId: 'demo-project')
+  // );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Request notification permission
+  final FirebaseMessaging messaging = FirebaseMessaging.instance;
+  final NotificationSettings settings = await messaging.requestPermission();
+
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  // For Android
+  String? androidFCMToken = await messaging.getToken();
+  if (kDebugMode) {
+    if (androidFCMToken != null) {
+      print('Firebase Token for Android: $androidFCMToken');
+      setFirebaseToken(androidFCMToken);
+    }
+  }
+
+  // For IOS
+
+  String? apnsToken = await messaging.getAPNSToken();
+  if (kDebugMode) {
+    if (apnsToken != null) {
+      print('Firebase Token for IOS: $apnsToken');
+      setFirebaseToken(apnsToken);
+    }
+  }
+
+  // -----------------------------------------------------
 
   // Below line is for secure the API keys or any Key(s) also look in pubspec.yaml assets
   // env file is at root of the project where IV and DATA defined
@@ -39,13 +82,22 @@ Future<void> main() async {
   final myInitialTheme = await getStoredTheme();
 
   // Set Application orientation to support only Portrait mode
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(MyBaseApp(myInitialRoute,myInitialLanguage,myInitialTheme));
+  runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
 
   // runApp(const SampleTab());
+}
+
+// ----------------- Receiving the notification when app is in background or
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message)async{
+   if (kDebugMode) {
+     print('Handling a background message: ${message.messageId}');
+     if(message.notification!=null){
+      print("Title ${message.notification!.title}");
+      print("Body ${message.notification!.body}");
+     }
+   }
 }
 
 /*

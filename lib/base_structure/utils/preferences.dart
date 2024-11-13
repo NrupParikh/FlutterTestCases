@@ -51,3 +51,15 @@ Future<String> getStoredTheme() async {
       await SecureStorageSingleton().storage.read(key: AppKey.keyStoredTheme);
   return storedValue ?? AppTheme.lightTheme;
 }
+
+void setFirebaseToken(String firebaseToken) async {
+  await SecureStorageSingleton()
+      .storage
+      .write(key: AppKey.keyFirebaseToken, value: firebaseToken);
+}
+
+Future<String> getFirebaseToken() async {
+  final storedValue =
+      await SecureStorageSingleton().storage.read(key: AppKey.keyFirebaseToken);
+  return storedValue ?? "";
+}
