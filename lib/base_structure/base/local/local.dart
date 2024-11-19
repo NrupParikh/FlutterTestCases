@@ -13,6 +13,11 @@ class Languages implements Translations {
               AppStrings.lblEnterYourDetailsBelow,
           AppStrings.lblEmailAddress: AppStrings.lblEmailAddress,
           AppStrings.lblPassword: AppStrings.lblPassword,
+
+          AppStrings.lblCurrentPassword: AppStrings.lblCurrentPassword,
+          AppStrings.lblNewPassword: AppStrings.lblNewPassword,
+          AppStrings.lblConfirmPassword: AppStrings.lblConfirmPassword,
+
           AppStrings.lblForgotPasswordLink: AppStrings.lblForgotPasswordLink,
           AppStrings.lblLogin: AppStrings.lblLogin,
           AppStrings.lblForgotPassword: AppStrings.lblForgotPassword,
@@ -66,11 +71,35 @@ class Languages implements Translations {
           AppStrings.lblVersion: AppStrings.lblVersion,
           AppStrings.lblNotification: AppStrings.lblNotification,
 
+          AppStrings.lblCommonMaterialCode: AppStrings.lblCommonMaterialCode,
+          AppStrings.lblDocumentTemplate: AppStrings.lblDocumentTemplate,
+          AppStrings.lblSearchMaterial: AppStrings.lblSearchMaterial,
+          AppStrings.lblSearchProject: AppStrings.lblSearchProject,
+          AppStrings.lblSearchBusinessPartner:
+              AppStrings.lblSearchBusinessPartner,
+          AppStrings.lblCreationDateFrom: AppStrings.lblCreationDateFrom,
+          AppStrings.lblCreationDateTo: AppStrings.lblCreationDateTo,
+          AppStrings.lblExpirationDateFrom: AppStrings.lblExpirationDateFrom,
+          AppStrings.lblExpirationDateTo: AppStrings.lblExpirationDateTo,
+
+          AppStrings.lblRecipeId: AppStrings.lblRecipeId,
+          AppStrings.lblName: AppStrings.lblName,
+          AppStrings.lblCreatedBy: AppStrings.lblCreatedBy,
+          AppStrings.lblCreatedOn: AppStrings.lblCreatedOn,
+          AppStrings.lblBaseSize: AppStrings.lblBaseSize,
+          AppStrings.lblUOM: AppStrings.lblUOM,
+          AppStrings.lblCost: AppStrings.lblCost,
+          AppStrings.lblCurrency: AppStrings.lblCurrency,
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: AppStrings.msgNetworkErr,
           AppStrings.msgLogoutConfirmation: AppStrings.msgLogoutConfirmation,
           AppStrings.msgDeleteNotificationConfirmation:
               AppStrings.msgDeleteNotificationConfirmation,
+          AppStrings.msgDeleteDocConfirmation:
+              AppStrings.msgDeleteDocConfirmation,
+          AppStrings.msgDeleteRecipeConfirmation:
+              AppStrings.msgDeleteRecipeConfirmation,
 
           AppStrings.ok: AppStrings.ok,
           AppStrings.cancel: AppStrings.cancel,
@@ -79,6 +108,12 @@ class Languages implements Translations {
           AppStrings.valEnterEmail: AppStrings.valEnterEmail,
           AppStrings.valEnterPassword: AppStrings.valEnterPassword,
           AppStrings.valEnterOtp: AppStrings.valEnterOtp,
+
+          AppStrings.valEnterCurrentPassword:
+              AppStrings.valEnterCurrentPassword,
+          AppStrings.valEnterNewPassword: AppStrings.valEnterNewPassword,
+          AppStrings.valEnterConfirmPassword:
+              AppStrings.valEnterConfirmPassword,
 
           // ========== HINT
           AppStrings.hintEnterYourEmail: AppStrings.hintEnterYourEmail,
@@ -91,6 +126,17 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: AppStrings.hintEnterFirstName,
           AppStrings.hintEnterLastName: AppStrings.hintEnterLastName,
+
+          AppStrings.hintEnterCommonMaterialCode:
+              AppStrings.hintEnterCommonMaterialCode,
+
+          AppStrings.hintEnterYourCurrentPassword:
+              AppStrings.hintEnterYourCurrentPassword,
+          AppStrings.hintEnterYourNewPassword:
+              AppStrings.hintEnterYourNewPassword,
+          AppStrings.hintEnterPasswordAgain: AppStrings.hintEnterPasswordAgain,
+          AppStrings.msgPasswordMustBeMatch: AppStrings.msgPasswordMustBeMatch,
+          AppStrings.msgPasswordUpdated: AppStrings.msgPasswordUpdated,
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: AppStrings.projectManagement,
@@ -152,6 +198,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: AppStrings.noProjectFound,
           AppStrings.noDocumentFound: AppStrings.noDocumentFound,
+          AppStrings.noRecipeFound: AppStrings.noRecipeFound,
         },
         "it_IT": {
           AppStrings.appName: "Campus Italia",
@@ -162,6 +209,11 @@ class Languages implements Translations {
               "Inserisci i tuoi dati qui sotto",
           AppStrings.lblEmailAddress: "Indirizzo e-mail *",
           AppStrings.lblPassword: "Parola d'ordine *",
+
+          AppStrings.lblCurrentPassword: "Password attuale *",
+          AppStrings.lblNewPassword: "Nuova password *",
+          AppStrings.lblConfirmPassword: "Conferma password *",
+
           AppStrings.lblForgotPasswordLink: "Ha dimenticato la password?",
           AppStrings.lblLogin: "Login",
           AppStrings.lblForgotPassword: "Ha dimenticato la password",
@@ -215,10 +267,34 @@ class Languages implements Translations {
           AppStrings.lblVersion: "Versione",
           AppStrings.lblNotification: "Notifica",
 
+          AppStrings.lblCommonMaterialCode: "Codice materiale comune",
+          AppStrings.lblDocumentTemplate: "Modello di documento",
+          AppStrings.lblSearchMaterial: "Cerca materiale",
+          AppStrings.lblSearchProject: "Progetto di ricerca",
+          AppStrings.lblSearchBusinessPartner: "Cerca partner commerciale",
+          AppStrings.lblCreationDateFrom: "Data di creazione da",
+          AppStrings.lblCreationDateTo: "Data di creazione a",
+          AppStrings.lblExpirationDateFrom: "Data di scadenza da",
+          AppStrings.lblExpirationDateTo: "Data di scadenza a",
+
+          AppStrings.lblRecipeId: "Identificativo della ricetta",
+          AppStrings.lblName: "Nome",
+          AppStrings.lblCreatedBy: "Creato da",
+          AppStrings.lblCreatedOn: "Creato il",
+          AppStrings.lblBaseSize: "Dimensione base",
+          AppStrings.lblUOM: "UM",
+          AppStrings.lblCost: "Costo",
+          AppStrings.lblCurrency: "Valuta",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Errore di rete",
           AppStrings.msgLogoutConfirmation:
               "Sei sicuro di voler uscire dall'applicazione?",
+          AppStrings.msgDeleteDocConfirmation:
+              'Sei sicuro di voler eliminare questo documento?',
+
+          AppStrings.msgDeleteRecipeConfirmation:
+              "Sei sicuro di voler eliminare questa ricetta?",
 
           AppStrings.msgDeleteNotificationConfirmation:
               "Sei sicuro di voler eliminare questa notifica?",
@@ -230,6 +306,11 @@ class Languages implements Translations {
           AppStrings.valEnterEmail: "Inserisci l'e-mail",
           AppStrings.valEnterPassword: "Inserisci la password",
           AppStrings.valEnterOtp: "Per favore inserisci otp",
+
+          AppStrings.valEnterCurrentPassword: "Inserisci la password attuale",
+          AppStrings.valEnterNewPassword: "Inserisci la nuova password",
+          AppStrings.valEnterConfirmPassword:
+              "Inserisci nuovamente la password",
 
           // ========== HINT
           AppStrings.hintEnterYourEmail: "Inserisci la tua email",
@@ -243,6 +324,18 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: "Inserisci il nome",
           AppStrings.hintEnterLastName: "Inserisci il cognome",
+
+          AppStrings.hintEnterCommonMaterialCode:
+              "Inserisci il codice materiale comune",
+
+          AppStrings.hintEnterYourCurrentPassword:
+              "nserisci la tua password attuale",
+          AppStrings.hintEnterYourNewPassword:
+              "Inserisci la tua nuova password",
+          AppStrings.hintEnterPasswordAgain: "Immettere nuovamente la password",
+          AppStrings.msgPasswordMustBeMatch:
+              "La password deve corrispondere alla nuova password",
+          AppStrings.msgPasswordUpdated: "Password aggiornata",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestione del progetto",
@@ -305,6 +398,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: "Nessun progetto trovato",
           AppStrings.noDocumentFound: "Nessun documento trovato",
+          AppStrings.noRecipeFound: "Nessuna ricetta trovata",
         },
         "es_ES": {
           AppStrings.appName: "Campus Italia",
@@ -316,6 +410,11 @@ class Languages implements Translations {
               "Ingrese sus datos a continuación",
           AppStrings.lblEmailAddress: "Dirección de correo electrónico *",
           AppStrings.lblPassword: "Contraseña *",
+
+          AppStrings.lblCurrentPassword: "Contraseña actual *",
+          AppStrings.lblNewPassword: "Nueva contraseña *",
+          AppStrings.lblConfirmPassword: "Confirmar Contraseña *",
+
           AppStrings.lblForgotPasswordLink: "Has olvidado tu contraseña?",
           AppStrings.lblLogin: "Acceso",
           AppStrings.lblForgotPassword: "Has olvidado tu contraseña",
@@ -370,6 +469,25 @@ class Languages implements Translations {
           AppStrings.lblVersion: "Versión",
           AppStrings.lblNotification: "Notificación",
 
+          AppStrings.lblCommonMaterialCode: "Código de materiales común",
+          AppStrings.lblDocumentTemplate: "Documento ejemplar",
+          AppStrings.lblSearchMaterial: "Buscar materiales",
+          AppStrings.lblSearchProject: "Proyecto de búsqueda",
+          AppStrings.lblSearchBusinessPartner: "Buscar socio comercial",
+          AppStrings.lblCreationDateFrom: "Fecha de creación desde",
+          AppStrings.lblCreationDateTo: "Fecha de creación hasta",
+          AppStrings.lblExpirationDateFrom: "Fecha de vencimiento desde",
+          AppStrings.lblExpirationDateTo: "Fecha de vencimiento hasta",
+
+          AppStrings.lblRecipeId: "ID de receta",
+          AppStrings.lblName: "Nombre",
+          AppStrings.lblCreatedBy: "Creado por",
+          AppStrings.lblCreatedOn: "Creado el",
+          AppStrings.lblBaseSize: "Tamaño básico",
+          AppStrings.lblUOM: "unidad de medida",
+          AppStrings.lblCost: "Costo",
+          AppStrings.lblCurrency: "Divisa",
+
           // ========== MESSAGES
           AppStrings.msgNetworkErr: "Error de red",
           AppStrings.msgLogoutConfirmation:
@@ -377,6 +495,11 @@ class Languages implements Translations {
 
           AppStrings.msgDeleteNotificationConfirmation:
               "¿Está seguro de que desea eliminar esta notificación?",
+          AppStrings.msgDeleteDocConfirmation:
+              "¿Está seguro de que desea eliminar este documento?",
+
+          AppStrings.msgDeleteRecipeConfirmation:
+              "¿Estás seguro de que quieres eliminar esta receta?",
 
           AppStrings.ok: "De acuerdo",
           AppStrings.cancel: "Cancelar",
@@ -385,6 +508,13 @@ class Languages implements Translations {
           AppStrings.valEnterEmail: "Por favor ingrese el correo electrónico",
           AppStrings.valEnterPassword: "Por favor ingrese la contraseña",
           AppStrings.valEnterOtp: "Por favor ingresa otp",
+
+          AppStrings.valEnterCurrentPassword:
+              "Por favor ingrese la contraseña actual",
+          AppStrings.valEnterNewPassword:
+              "Por favor ingrese una nueva contraseña",
+          AppStrings.valEnterConfirmPassword:
+              "Por favor ingrese la contraseña nuevamente",
 
           // ========== HINT
           AppStrings.hintEnterYourEmail:
@@ -397,6 +527,17 @@ class Languages implements Translations {
 
           AppStrings.hintEnterFirstName: "Introduce el nombre",
           AppStrings.hintEnterLastName: "Introduce el apellido",
+
+          AppStrings.hintEnterCommonMaterialCode:
+              "Introduzca el código de material común",
+
+          AppStrings.hintEnterYourCurrentPassword:
+              "Ingrese su contraseña actual",
+          AppStrings.hintEnterYourNewPassword: "Ingresa tu nueva contraseña",
+          AppStrings.hintEnterPasswordAgain: "Ingrese la contraseña nuevamente",
+          AppStrings.msgPasswordMustBeMatch:
+              "La contraseña debe coincidir con la nueva contraseña",
+          AppStrings.msgPasswordUpdated: "Contraseña actualizada",
 
           // ========== DRAWER ITEMS
           AppStrings.projectManagement: "Gestión de proyectos",
@@ -461,6 +602,7 @@ class Languages implements Translations {
 
           AppStrings.noProjectFound: "No se encontró ningún proyecto",
           AppStrings.noDocumentFound: "No se encontró ningún documento",
+          AppStrings.noRecipeFound: "No se encontró ninguna receta",
         }
       };
 }

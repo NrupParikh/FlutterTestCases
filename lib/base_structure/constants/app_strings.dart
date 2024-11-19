@@ -10,6 +10,11 @@ class AppStrings {
   static const lblEnterYourDetailsBelow = "Enter your details below";
   static const lblEmailAddress = "Email Address *";
   static const lblPassword = "Password *";
+
+  static const lblCurrentPassword = "Current Password *";
+  static const lblNewPassword = "New Password *";
+  static const lblConfirmPassword = "Confirm Password *";
+
   static const lblForgotPasswordLink = "Forgot password?";
   static const lblLogin = "Login";
 
@@ -60,6 +65,25 @@ class AppStrings {
   static const lblVersion = "Version";
   static const lblNotification = "Notification";
 
+  static const lblCommonMaterialCode = "Common Material Code";
+  static const lblDocumentTemplate = "Document Template";
+  static const lblSearchMaterial = "Search Material";
+  static const lblSearchProject = "Search Project";
+  static const lblSearchBusinessPartner = "Search Bussiness Partner";
+  static const lblCreationDateFrom = "Creation Date From";
+  static const lblCreationDateTo = "Creation Date To";
+  static const lblExpirationDateFrom = "Expiration Date From";
+  static const lblExpirationDateTo = "Expiration Date To";
+
+  static const lblRecipeId = "Recipe Id";
+  static const lblName = "Name";
+  static const lblCreatedBy = "Created By";
+  static const lblCreatedOn = "Created On";
+  static const lblBaseSize = "Base Size";
+  static const lblUOM = "UOM";
+  static const lblCost = "Cost";
+  static const lblCurrency = "Currency";
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -67,6 +91,11 @@ class AppStrings {
 
   static const msgDeleteNotificationConfirmation =
       'Are you sure you want to delete this notification?';
+  static const msgDeleteDocConfirmation =
+      'Are you sure you want to delete this document?';
+
+  static const msgDeleteRecipeConfirmation =
+      'Are you sure you want to delete this recipe?';
 
   static const ok = "Ok";
   static const cancel = "Cancel";
@@ -75,6 +104,10 @@ class AppStrings {
   static const valEnterEmail = "Please enter email";
   static const valEnterPassword = "Please enter password";
   static const valEnterOtp = "Please enter otp";
+
+  static const valEnterCurrentPassword = "Please enter current password";
+  static const valEnterNewPassword = "Please enter new password";
+  static const valEnterConfirmPassword = "Please enter password again";
 
   // ========== HINT
   static const hintEnterYourEmail = "Enter your email";
@@ -88,6 +121,16 @@ class AppStrings {
 
   static const hintEnterFirstName = "Enter first name";
   static const hintEnterLastName = "Enter last name";
+
+  static const hintEnterCommonMaterialCode = "Enter common material code";
+
+  static const hintEnterYourCurrentPassword = "Enter your current password";
+  static const hintEnterYourNewPassword = "Enter your new password";
+  static const hintEnterPasswordAgain = "Enter password again";
+
+  static const msgPasswordMustBeMatch =
+      "Password must be match with new password";
+  static const msgPasswordUpdated = "Password updated";
 
   // ========== DRAWER ITEMS AND OTHER
   static const projectManagement = "Project Management";
@@ -153,4 +196,5 @@ class AppStrings {
   static const noProjectFound = "No Project found";
   static const noDocumentFound = "No Document found";
   static const noNotificationFound = "No Notification found";
+  static const noRecipeFound = "No Recipe found";
 }

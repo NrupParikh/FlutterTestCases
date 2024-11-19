@@ -15,6 +15,12 @@ class ProfileViewModel extends BaseViewModel {
   late List<String> timeFormatList;
   late RxString selectedTimeFormatListItem;
 
+  RxBool isEdit = false.obs;
+
+  Future<void> doEdit() async {
+    isEdit.value = !isEdit.value;
+  }
+
   @override
   void onInit() {
     super.onInit();

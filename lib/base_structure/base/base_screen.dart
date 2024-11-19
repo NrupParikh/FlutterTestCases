@@ -12,6 +12,7 @@ import 'package:flutter_application_1/base_structure/ui/project_filter_screen.da
 import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:get/get.dart';
@@ -64,6 +65,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
 
     return Scaffold(
         // key: _scaffoldKey,
+        drawerEnableOpenDragGesture: false,
         extendBody: extendedBodyBehindAppBar,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         // If you want to don't show the AppBar in internal screen.
@@ -121,7 +123,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Widget? buildBottomNavigationBar(BuildContext context) => null;
 
   @protected
-  PreferredSizeWidget? buildAppBar(BuildContext context) {
+  PreferredSizeWidget? buildAppBar(
+    BuildContext context,
+  ) {
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
@@ -131,7 +135,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
     return AppBar(
       title: Text(getTitle(currentRouteName),
           style: const TextStyle(
-              fontSize: 20, fontFamily: AppTextConstant.poppinsBold)),
+              fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
       centerTitle: true,
       leading: (currentRouteName == Constant.tagLoginScreen ||
               currentRouteName == Constant.tagLogin ||
@@ -193,6 +197,8 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                             if (kDebugMode) {
                               print("Edit Profile");
                             }
+                            final controller = Get.find<ProfileViewModel>();
+                            controller.doEdit();
                           },
                           icon: const Icon(Icons.edit))
                     ]

@@ -40,7 +40,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButtonFormField<String>(
-                    dropdownColor: Colors.green,
+                    dropdownColor: Colors.black,
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                       border: OutlineInputBorder(
@@ -55,11 +55,14 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                     value: vm.selectedQcInspectionItem.value,
                     isExpanded: true,
                     items: vm.qcInspectionList
-                        .map<DropdownMenuItem<String>>((String value) {
+                        .map<DropdownMenuItem<String>>((String item) {
                       return DropdownMenuItem(
-                        value: value,
-                        child: Text(value,
-                            style: const TextStyle(
+                        value: item,
+                        child: Text(item,
+                            style: TextStyle(
+                                color: vm.selectedQcInspectionItem.value == item
+                                    ? Colors.green
+                                    : Colors.white,
                                 fontSize: 14,
                                 fontFamily: AppTextConstant.poppinsRegular)),
                       );
@@ -116,7 +119,7 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: DropdownButtonFormField<String>(
-                    dropdownColor: Colors.green,
+                    dropdownColor: Colors.black,
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                       border: OutlineInputBorder(
@@ -131,11 +134,14 @@ class QCInspectionScreen extends BaseScreen<QCInspectionViewModel> {
                     value: vm.selectedSamplingPlanItem.value,
                     isExpanded: true,
                     items: vm.samplingPlanlist
-                        .map<DropdownMenuItem<String>>((String value) {
+                        .map<DropdownMenuItem<String>>((String item) {
                       return DropdownMenuItem(
-                        value: value,
-                        child: Text(value,
-                            style: const TextStyle(
+                        value: item,
+                        child: Text(item,
+                            style: TextStyle(
+                                color: vm.selectedSamplingPlanItem.value == item
+                                    ? Colors.green
+                                    : Colors.white,
                                 fontSize: 14,
                                 fontFamily: AppTextConstant.poppinsRegular)),
                       );

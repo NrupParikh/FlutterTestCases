@@ -46,15 +46,12 @@ class AppTheme {
           backgroundColor: Colors.white,
         ),
         cardTheme: const CardTheme(
-            color: Colors.green,
-            elevation: 8,
+            color: Colors.white,
             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomRight: Radius.circular(16)
-              ),
-              side: BorderSide(color: Colors.black)
-            ),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(16)),
+                side: BorderSide(color: Colors.black)),
             shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(
@@ -94,18 +91,16 @@ class AppTheme {
         // textTheme: _buildTextDarkTheme(base.textTheme),
         // primaryTextTheme: _buildTextDarkTheme(base.primaryTextTheme),
         drawerTheme: const DrawerThemeData(
-          backgroundColor: Color(0xFF1A1C19),
+          backgroundColor: Color.fromARGB(255, 22, 22, 22),
         ),
         cardTheme: const CardTheme(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomRight: Radius.circular(16)
-              ),
-              side: BorderSide(color: Colors.white)
-            ),
-            color: Colors.green,
             elevation: 8,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(16)),
+                side: BorderSide(color: Colors.white)),
+            color: Colors.black,
             shadowColor: Colors.greenAccent,
             margin: EdgeInsets.all(8.0)),
         outlinedButtonTheme: OutlinedButtonThemeData(
@@ -137,6 +132,7 @@ class AppTheme {
         appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle.dark,
             backgroundColor: Colors.green));
+            
   }
 
   static const lightColorScheme = ColorScheme(

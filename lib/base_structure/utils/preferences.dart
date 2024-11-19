@@ -1,4 +1,3 @@
-
 import '../constants/app_key.dart';
 import '../constants/app_theme.dart';
 import '../singleton/secure_storage_singleton.dart';
@@ -26,7 +25,6 @@ Future<String> getUserData() async {
       await SecureStorageSingleton().storage.read(key: AppKey.keyUserObject);
   return jsonString ?? "";
 }
-
 
 void setStoredLanguage(String selectedLanguage) async {
   await SecureStorageSingleton()

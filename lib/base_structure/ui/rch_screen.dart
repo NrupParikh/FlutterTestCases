@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
+import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:get/get.dart';
 
@@ -61,8 +62,8 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
           ),
         ),
         body: TabBarView(children: [
-          Center(
-            child: Text(AppStrings.tabRND.tr),
+          const Center(
+            child: RNDScreen(),
           ),
           const Center(child: FastTrackEvaluationScreen()),
           Center(

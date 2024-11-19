@@ -22,8 +22,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              children: [         
-                 Text(AppStrings.lblEnterYourDetailsBelow.tr,
+              children: [
+                Text(AppStrings.lblEnterYourDetailsBelow.tr,
                     style: const TextStyle(
                         fontSize: 12,
                         fontFamily: AppTextConstant.poppinsSemiBold)),
@@ -52,16 +52,24 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: vm.passwordController,
-                    obscureText: true,
+                    obscureText: !vm.passwordVisible.value,
                     obscuringCharacter: "*",
                     decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            vm.passwordVisible.value =
+                                !vm.passwordVisible.value;
+                          },
+                          icon: Icon(vm.passwordVisible.value
+                              ? Icons.visibility
+                              : Icons.visibility_off)),
                       border: const OutlineInputBorder(),
                       disabledBorder: const OutlineInputBorder(),
                       hintText: AppStrings.hintEnterYourPassword.tr,
                       hintStyle: const TextStyle(
                           fontFamily: AppTextConstant.poppinsRegular),
                       errorText: vm.errorPassword.value,
-                      label:  Text(AppStrings.lblPassword.tr,
+                      label: Text(AppStrings.lblPassword.tr,
                           style: const TextStyle(
                               fontSize: 12,
                               fontFamily: AppTextConstant.poppinsRegular)),
@@ -72,7 +80,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                   onTap: () {
                     Get.to(const ForgotPasswordScreen());
                   },
-                  child:  Padding(
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Align(
                         alignment: Alignment.centerRight,

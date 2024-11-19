@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
@@ -22,8 +23,10 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
+                        enabled: vm.isEdit.value,
                         border: const OutlineInputBorder(),
-                        disabledBorder: const OutlineInputBorder(),
+                        disabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey)),
                         hintText: AppStrings.hintEnterFirstName.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -37,9 +40,11 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      enabled: vm.isEdit.value,
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        disabledBorder: const OutlineInputBorder(),
+                        disabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey)),
                         hintText: AppStrings.hintEnterLastName.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -53,9 +58,11 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      enabled: vm.isEdit.value,
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        disabledBorder: const OutlineInputBorder(),
+                        disabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey)),
                         hintText: AppStrings.hintEnterYourEmail.tr,
                         hintStyle: const TextStyle(
                             fontFamily: AppTextConstant.poppinsRegular),
@@ -82,7 +89,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -94,22 +101,34 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                           borderSide:
                               BorderSide(color: Colors.grey, width: 2.00),
                         ),
+                        disabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.00),
+                        ),
                       ),
                       value: vm.selectedLanguageListItem.value,
                       isExpanded: true,
                       items: vm.languageList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color:
+                                      vm.selectedLanguageListItem.value == item
+                                          ? (vm.isEdit.value)
+                                              ? Colors.green
+                                              : Colors.grey
+                                          : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
                       }).toList(),
-                      onChanged: (String? value) {
-                        vm.selectedLanguageListItem.value = value!;
-                      },
+                      onChanged: (vm.isEdit.value == true)
+                          ? (String? value) {
+                              vm.selectedLanguageListItem.value = value!;
+                            }
+                          : null,
                     ),
                   ),
                   const SizedBox(
@@ -128,7 +147,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -144,18 +163,25 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedSiteListItem.value,
                       isExpanded: true,
                       items: vm.siteList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedSiteListItem.value == item
+                                      ? (vm.isEdit.value)
+                                          ? Colors.green
+                                          : Colors.grey
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
                       }).toList(),
-                      onChanged: (String? value) {
-                        vm.selectedSiteListItem.value = value!;
-                      },
+                      onChanged: (vm.isEdit.value == true)
+                          ? (String? value) {
+                              vm.selectedSiteListItem.value = value!;
+                            }
+                          : null,
                     ),
                   ),
                   const SizedBox(
@@ -174,7 +200,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -190,18 +216,26 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedDateFormatListItem.value,
                       isExpanded: true,
                       items: vm.dateFormatList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedDateFormatListItem.value ==
+                                          item
+                                      ? (vm.isEdit.value)
+                                          ? Colors.green
+                                          : Colors.grey
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
                       }).toList(),
-                      onChanged: (String? value) {
-                        vm.selectedDateFormatListItem.value = value!;
-                      },
+                      onChanged: vm.isEdit.value == true
+                          ? (String? value) {
+                              vm.selectedDateFormatListItem.value = value!;
+                            }
+                          : null,
                     ),
                   ),
                   const SizedBox(
@@ -220,7 +254,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8, right: 8),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Colors.green,
+                      dropdownColor: Colors.black,
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                         border: OutlineInputBorder(
@@ -236,18 +270,26 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                       value: vm.selectedTimeFormatListItem.value,
                       isExpanded: true,
                       items: vm.timeFormatList
-                          .map<DropdownMenuItem<String>>((String value) {
+                          .map<DropdownMenuItem<String>>((String item) {
                         return DropdownMenuItem(
-                          value: value,
-                          child: Text(value,
-                              style: const TextStyle(
+                          value: item,
+                          child: Text(item,
+                              style: TextStyle(
+                                  color: vm.selectedTimeFormatListItem.value ==
+                                          item
+                                      ? (vm.isEdit.value)
+                                          ? Colors.green
+                                          : Colors.grey
+                                      : Colors.white,
                                   fontSize: 14,
                                   fontFamily: AppTextConstant.poppinsRegular)),
                         );
                       }).toList(),
-                      onChanged: (String? value) {
-                        vm.selectedTimeFormatListItem.value = value!;
-                      },
+                      onChanged: vm.isEdit.value == true
+                          ? (String? value) {
+                              vm.selectedTimeFormatListItem.value = value!;
+                            }
+                          : null,
                     ),
                   ),
                   const SizedBox(
@@ -258,8 +300,17 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OutlinedButton(
-                          child: Text(AppStrings.lblSubmit.tr),
-                          onPressed: () {}),
+                          style: OutlinedButton.styleFrom(
+                              side: BorderSide(
+                                  color: (vm.isEdit.value)
+                                      ? Colors.green
+                                      : Colors.grey)),
+                          onPressed: (vm.isEdit.value == true) ? () {
+                            if (kDebugMode) {
+                              print("Profile Edited");
+                            }
+                          } : null,
+                          child: Text(AppStrings.lblSubmit.tr)),
                     ),
                   ),
                 ],

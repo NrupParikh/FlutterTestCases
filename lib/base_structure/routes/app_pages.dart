@@ -22,16 +22,23 @@ class AppPages {
 
   static final routes = [
     GetPage(name: Routes.login, page: () => const LoginScreen()),
-    GetPage(name: Routes.forgotPassword, page: () => const ForgotPasswordScreen()),
     GetPage(
-        name: Routes.projectManagement, page: () => const ProjectManagementScreen()),
+        name: Routes.forgotPassword, page: () => const ForgotPasswordScreen()),
+    GetPage(
+        name: Routes.projectManagement,
+        page: () => const ProjectManagementScreen()),
     GetPage(name: Routes.documents, page: () => const DocumentsScreen()),
     GetPage(name: Routes.profile, page: () => const ProfileScreen()),
-    GetPage(name: Routes.notifications, page: () => const NotificationsScreen()),
-    GetPage(name: Routes.changePassword, page: () => const ChangePasswordScreen()),
-    GetPage(name: Routes.changeLanguage, page: () => const ChangeLanguageScreen()),
-    GetPage(name: Routes.projectFilter, page: () => const ProjectFilterScreen()),
-    GetPage(name: Routes.documentFilter, page: () => const DocumentFilterScreen()),
+    GetPage(
+        name: Routes.notifications, page: () => const NotificationsScreen()),
+    GetPage(
+        name: Routes.changePassword, page: () => const ChangePasswordScreen()),
+    GetPage(
+        name: Routes.changeLanguage, page: () => const ChangeLanguageScreen()),
+    GetPage(
+        name: Routes.projectFilter, page: () => const ProjectFilterScreen()),
+    GetPage(
+        name: Routes.documentFilter, page: () => const DocumentFilterScreen()),
     GetPage(name: Routes.nrd, page: () => const NRDScreen()),
     GetPage(name: Routes.rch, page: () => const RCHScreen()),
     GetPage(
