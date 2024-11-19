@@ -1,4 +1,3 @@
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +8,13 @@ import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart'
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_theme.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
-import 'package:flutter_application_1/base_structure/vm/notification_controller.dart';
+import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
-import '../common_widgets/custom_dialog.dart';
 import '../utils/preferences.dart';
 import 'project_filter_screen.dart';
 
@@ -37,73 +36,6 @@ class _MyBaseAppState extends State<MyBaseApp> {
   void initState() {
     super.initState();
     initialization();
-
-    handleForgroundNotifications();
-    handleBackgroundNotifications();
-    
-  }
-
- // ----------  Forgound Notifications (onMessage) -------------
-
-  void handleForgroundNotifications() {
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) async{
-      if (kDebugMode) {
-        print("Notification: At Forground received");
-        print("Message Data ${message.data}");
-
-        if (message.notification != null) {
-          print("Title ${message.notification!.title}");
-          print("Body ${message.notification!.body}");
-
-
-          // showDialog(
-          //     context: context,
-          //     builder: (context) => AlertDialog(
-          //           title: Text(message.notification!.title ?? ""),
-          //           content: Text(message.notification!.body ?? ""),
-          //           actions: [
-          //             TextButton(
-          //                 onPressed: () => Navigator.pop(context),
-          //                 child: const Text("OK"))
-          //           ],
-          //         ));
-        }
-      }
-    });
-  }
-
- // ----------  Background Notifications (onMessageOpenedApp) -------------
-
-   void handleBackgroundNotifications() {
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      if (kDebugMode) {
-        print("Notification : At Background received");
-        print("Message Data ${message.data}");
-
-        if (message.notification != null) {
-          print("Title ${message.notification!.title}");
-          print("Body ${message.notification!.body}");
-
-            isUserLoggedIn().then((value) => {
-              if(value==true){
-                Get.to(const ProjectFilterScreen())
-              }                 
-            });
-
-           // Navigate to a specific screen or perform a task based on the notification
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => NotificationDetailsScreen(
-            //       title: message.notification!.title ?? '',
-            //       body: message.notification!.body ?? '',
-            //     ),
-            //   ),
-            // );
-
-        }
-      }
-    });
   }
 
   void initialization() async {
@@ -184,7 +116,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
       //               }else {
       //                  return Container();
       //               }
-                   
+
       //             }),
       //           ),
       //         ),
