@@ -36,4 +36,13 @@ class Constant {
 
   static const tagRCHScreen = "RCHScreen";
   static const tagRCH = "rch";
+
+  static const tagTGIScreen = "TGIScreen";
+  static const tagTGI = "tgi";
+
+  static const tagPADScreen = "PADScreen";
+  static const tagPAD = "pad";
+
+  static const tagMSAScreen = "MSAScreen";
+  static const tagMSA = "msa";
 }

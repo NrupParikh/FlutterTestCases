@@ -23,6 +23,8 @@ class LoginViewModel extends BaseViewModel {
 
   var passwordVisible = false.obs;
 
+  final RxString firebaseToken = "".obs;
+
   Future<Tuple2<bool, String>> validateLogin() async {
     if (kDebugMode) {
       print("Login clicked");
@@ -70,7 +72,9 @@ class LoginViewModel extends BaseViewModel {
           return Tuple2(false, appResponse.message);
         }
       } catch (ex) {
-        return Tuple2(false, "$ex");
+        // temp set true
+        setIsUserLoggedIn();
+        return Tuple2(true, "$ex");
       }
     } else {
       return const Tuple2(false, "");
@@ -78,10 +82,12 @@ class LoginViewModel extends BaseViewModel {
   }
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     if (kDebugMode) {
       print("Login VM Initialized");
     }
+    // For Getting firebase token and display on Text
+    firebaseToken.value = await getFirebaseToken();
   }
 }

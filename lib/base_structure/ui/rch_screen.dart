@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
+import 'package:flutter_application_1/base_structure/ui/haccp.dart';
+import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/qc_inspection.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:get/get.dart';
 
-import '../constants/app_text_constant.dart';
 import 'fast_track_evaluation_screen.dart';
+import 'industrial_trial_screen.dart';
+import 'purchasing_review_screen.dart';
 
 class RCHScreen extends BaseScreen<RCHViewModel> {
   const RCHScreen({super.key});
@@ -31,14 +34,10 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
         child: Text(AppStrings.tabHaccp.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabQcInspection.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabQcInspection.tr),
       ),
       Tab(
-        child: Text(AppStrings.tabPurchasingReview.tr,
-            style: const TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsBold)),
+        child: Text(AppStrings.tabPurchasingReview.tr),
       ),
     ];
 
@@ -61,26 +60,14 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          const Center(
-            child: RNDScreen(),
-          ),
-          const Center(child: FastTrackEvaluationScreen()),
-          Center(
-            child: Text(AppStrings.tabIndustrialReview.tr),
-          ),
-          Center(
-            child: Text(AppStrings.tabIndustrialTrial.tr),
-          ),
-          Center(
-            child: Text(AppStrings.tabHaccp.tr),
-          ),
-          const Center(
-            child: Center(child: QCInspectionScreen()),
-          ),
-          Center(
-            child: Text(AppStrings.tabPurchasingReview.tr),
-          )
+        body: const TabBarView(children: [
+          RNDScreen(),
+          FastTrackEvaluationScreen(),
+          IndustrialReviewScreen(),
+          IndustrialTrialScreen(),
+          HACCPScreen(),
+          QCInspectionScreen(),
+          PurchasingReviewScreen()
         ]),
       ),
     );

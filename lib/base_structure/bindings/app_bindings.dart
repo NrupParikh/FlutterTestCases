@@ -22,17 +22,17 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => ProjectManagementViewModel(), fenix: true);
     Get.lazyPut(() => LoginViewModel(), fenix: true);
     Get.lazyPut(() => ForgotPasswordViewModel(), fenix: true);
-    Get.lazyPut(() => DocumentsViewModel(), fenix: true);
-    Get.lazyPut(() => ProfileViewModel(), fenix: true);
-    Get.lazyPut(() => NotificationsViewModel(), fenix: true);
-    Get.lazyPut(() => ChangePasswordViewModel(), fenix: true);
-    Get.lazyPut(() => ChangeLanguageViewModel(), fenix: true);
-    Get.lazyPut(() => ProjectFilterViewModel(), fenix: true);
-    Get.lazyPut(() => DocumentFilterViewModel(), fenix: true);
-    Get.lazyPut(() => NRDViewModel(), fenix: true);
-    Get.lazyPut(() => RCHViewModel(), fenix: true);
-    Get.lazyPut(() => FastTrackEvaluationViewModel(), fenix: true);
-    Get.lazyPut(() => RNDViewModel(), fenix: true);
-    Get.lazyPut(() => QCInspectionViewModel(), fenix: true);
+    Get.lazyPut(() => DocumentsViewModel(),fenix: true);
+    Get.lazyPut(() => ProfileViewModel(),fenix: true);
+    Get.lazyPut(() => NotificationsViewModel(),fenix: true);
+    Get.lazyPut(() => ChangePasswordViewModel(),fenix: true);
+    Get.lazyPut(() => ChangeLanguageViewModel(),fenix: true);
+    Get.lazyPut(() => ProjectFilterViewModel(),fenix: true);
+    Get.lazyPut(() => DocumentFilterViewModel(),fenix: true);
+    Get.lazyPut(() => NRDViewModel(),fenix: true);
+    Get.lazyPut(() => RCHViewModel(),fenix: true);
+    Get.lazyPut(() => FastTrackEvaluationViewModel(),fenix: true);
+    Get.lazyPut(() => RNDViewModel(),fenix: true);
+    Get.lazyPut(() => QCInspectionViewModel(),fenix: true);
   }
 }

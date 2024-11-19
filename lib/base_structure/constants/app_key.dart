@@ -3,4 +3,5 @@ class AppKey {
   static const keyUserObject = "key_user_object";
   static const keyStoredLang = "key_stored_lang";
   static const keyStoredTheme = "key_stored_theme";
+  static const keyFirebaseToken = "key_firebase_token";
 }

@@ -1,10 +1,15 @@
 import 'dart:convert';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
+import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:screen_protector/screen_protector.dart';
 
@@ -12,11 +17,124 @@ import 'base_structure/constants/app_strings.dart';
 import 'base_structure/constants/app_text_constant.dart';
 import 'base_structure/routes/app_route.dart';
 
+import 'base_structure/ui/forgot_password_screen.dart';
 import 'base_structure/utils/preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'base_structure/utils/utils.dart';
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  if (message.notification != null) {
+    showNotification(message.notification!.title, message.notification!.body,
+        message.data['screen']);
+  }
+}
 
 Future<void> main() async {
   // To guarantee that the Flutter framework is fully initialized before your app starts running
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  // ---------------------- Firebase ---------------------
+
+  // await Firebase.initializeApp(
+  //   options: const FirebaseOptions(
+  //     apiKey: 'any',
+  //     appId: 'any',
+  //     messagingSenderId: 'any',
+  //     projectId: 'demo-project')
+  // );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // -------------- Firebase local notification plugin ---------
+
+  final localNotifications = FlutterLocalNotificationsPlugin();
+
+  const AndroidInitializationSettings initializationSettingsAndroid =
+      AndroidInitializationSettings('@mipmap/ic_launcher');
+
+  const InitializationSettings initializationSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+  );
+
+  void onDidReceiveLocalNotification(NotificationResponse? response) {
+    var data = response?.payload.toString();
+    if (kDebugMode) {
+      print("onDidReceiveNotificationResponse ${data.toString()}");
+    }
+    if (data != null) {
+      Get.to(const ForgotPasswordScreen());
+    }
+  }
+
+  void onDidReceiveBackgroundNotificationResponse(
+      NotificationResponse? response) {
+    var data = response?.payload.toString();
+    if (kDebugMode) {
+      print("onDidReceiveBackgroundNotificationResponse");
+    }
+    if (data != null) {
+      Get.to(const ForgotPasswordScreen());
+    }
+  }
+
+  await localNotifications.initialize(
+    initializationSettings,
+    onDidReceiveNotificationResponse: onDidReceiveLocalNotification,
+    // onDidReceiveBackgroundNotificationResponse:
+    //     onDidReceiveBackgroundNotificationResponse,
+  );
+
+  //-----------------------------------------------------------
+
+  // Listen forground notification
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    if (message.notification != null) {
+      // Show a custom notification using flutter_local_notifications
+      showNotification(message.notification!.title, message.notification!.body,
+          message.data['screen']);
+    }
+  });
+
+  // Listen background notification
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  // -------------------- Request notification permission
+  final FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+  final NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true);
+
+  if (kDebugMode) {
+    print('User granted permission: ${settings.authorizationStatus}');
+  }
+
+  // For Android
+  String? androidFCMToken = await messaging.getToken();
+  if (kDebugMode) {
+    if (androidFCMToken != null) {
+      print('Firebase Token for Android: $androidFCMToken');
+      setFirebaseToken(androidFCMToken);
+    }
+  }
+
+  // For IOS
+
+  String? apnsToken = await messaging.getAPNSToken();
+  if (kDebugMode) {
+    if (apnsToken != null) {
+      print('Firebase Token for IOS: $apnsToken');
+      setFirebaseToken(apnsToken);
+    }
+  }
+
+  // -----------------------------------------------------
 
   // Below line is for secure the API keys or any Key(s) also look in pubspec.yaml assets
   // env file is at root of the project where IV and DATA defined
@@ -39,11 +157,9 @@ Future<void> main() async {
   final myInitialTheme = await getStoredTheme();
 
   // Set Application orientation to support only Portrait mode
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(MyBaseApp(myInitialRoute,myInitialLanguage,myInitialTheme));
+  runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
 
   // runApp(const SampleTab());
 }

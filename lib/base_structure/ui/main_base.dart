@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,10 +8,15 @@ import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart'
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_theme.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
+import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
+import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+
+import '../utils/preferences.dart';
+import 'project_filter_screen.dart';
 
 class MyBaseApp extends StatefulWidget {
   final String myInitialRoute;
@@ -87,6 +93,37 @@ class _MyBaseAppState extends State<MyBaseApp> {
         Locale('it', 'IT'),
         Locale('es', 'ES'),
       ],
+      // builder: (context,child){
+      //   return GetBuilder<NotificationController>(
+      //     init: NotificationController(),
+      //     builder: (NotificationController controller) {
+      //       return MaterialApp(
+      //         home: Scaffold(
+      //           body: Center(
+      //             child: Obx(() {
+      //               if(controller.notificationData.value!=null){
+      //                 final notificationValue = controller.notificationData.value!;
+      //                 return AlertDialog(
+      //                   title: Text(notificationValue.notification?.title ?? ""),
+      //                   content: Text(notificationValue.notification?.body ?? ""),
+      //                   actions: [
+      //                     TextButton(onPressed: (){
+      //                       controller.notificationData.value = null;
+      //                         Navigator.pop(context);
+      //                     }, child: const Text("Ok"))
+      //                   ],
+      //                 );
+      //               }else {
+      //                  return Container();
+      //               }
+
+      //             }),
+      //           ),
+      //         ),
+      //       );
+      //     },
+      //   );
+      // },
     );
   }
 }

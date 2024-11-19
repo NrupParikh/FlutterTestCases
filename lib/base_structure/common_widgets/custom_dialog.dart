@@ -204,13 +204,13 @@ class CustomDialog {
               onPressed: () {
                 Get.back(result: true);
               },
-              child: Text(AppStrings.ok.tr),
+              child:  const Text(AppStrings.ok),
             ),
             TextButton(
               onPressed: () {
                 Get.back(result: false);
               },
-              child: Text(AppStrings.cancel.tr),
+              child: const Text(AppStrings.cancel),
             ),
           ],
         ),

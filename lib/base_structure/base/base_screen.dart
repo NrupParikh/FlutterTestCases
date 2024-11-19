@@ -12,9 +12,24 @@ import 'package:flutter_application_1/base_structure/ui/project_filter_screen.da
 import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/haccp.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_finance_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_production_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_purchasing_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/pad_warehouse_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/profile_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/purchasing_review_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/purchasing_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/qc_inspection_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_quality_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 import '../constants/app_theme.dart';
@@ -72,7 +87,22 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         // Ex. Tab then check with VM and set null
         appBar: ((controller is FastTrackEvaluationViewModel) ||
                 (controller is RNDViewModel) ||
-                (controller is QCInspectionViewModel))
+                (controller is QCInspectionViewModel) ||
+                (controller is PurchasingViewModel) ||
+                (controller is WarehousingViewModel) ||
+                (controller is HACCPViewModel) ||
+                (controller is PurchasingReviewViewModel) ||
+                (controller is IndustrialTrialViewModel) ||
+                (controller is IndustrialReviewViewModel) ||
+                (controller is RchRNDViewModel) ||
+                (controller is RchQualityViewModel) ||
+                (controller is RchRegulatoryViewModel) ||
+                (controller is PadDepartmentViewModel) ||
+                (controller is PadCommertialReviewViewModel) ||
+                (controller is PadFinanceViewModel) ||
+                (controller is PadPurchasingViewModel) ||
+                (controller is PadProductionViewModel) ||
+                (controller is PadWarehouseViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
@@ -142,21 +172,19 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               currentRouteName == Constant.tagForgotPasswordScreen ||
               currentRouteName == Constant.tagForgotPassword)
           ? null
-          : ((currentRouteName == Constant.tagProjectFilterScreen ||
-                      currentRouteName == Constant.tagProjectFilter) ||
-                  (currentRouteName == Constant.tagDocumentFilterScreen ||
+          : ((currentRouteName == Constant.tagProjectManagementScreen ||
+                      currentRouteName == Constant.tagProjectManagement) ||
+                  (currentRouteName == Constant.tagDocumentsScreen ||
                       currentRouteName == Constant.tagDocuments) ||
-                  (currentRouteName == Constant.tagNRDScreen ||
-                      currentRouteName == Constant.tagNRD) ||
-                  (currentRouteName == Constant.tagRCHScreen ||
-                      currentRouteName == Constant.tagRCH))
-              ? IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Get.back();
-                  },
-                )
-              : Builder(builder: (context) {
+                  (currentRouteName == Constant.tagProfileScreen ||
+                      currentRouteName == Constant.tagProfile) ||
+                  (currentRouteName == Constant.tagNotificationsScreen ||
+                      currentRouteName == Constant.tagNotifications) ||
+                  (currentRouteName == Constant.tagChangePasswordScreen ||
+                      currentRouteName == Constant.tagChangePassword) ||
+                  (currentRouteName == Constant.tagChangeLanguageScreen ||
+                      currentRouteName == Constant.tagChangeLanguage))
+              ? Builder(builder: (context) {
                   return IconButton(
                     onPressed: () {
                       // openDrawer(_scaffoldKey);
@@ -164,7 +192,13 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                     },
                     icon: const Icon(Icons.menu),
                   );
-                }),
+                })
+              : IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
       actions: ((currentRouteName == Constant.tagProjectManagementScreen ||
               currentRouteName == Constant.tagProjectManagement))
           ? [
@@ -231,23 +265,23 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
           DrawerHeader(
               child: Stack(
             children: [
-              Obx(() => Align(
-                    alignment: Alignment.topRight,
-                    child: IconButton(
-                        onPressed: () async {
-                          final String storedTheme = await getStoredTheme();
-                          if (storedTheme == AppTheme.lightTheme) {
-                            Get.changeThemeMode(ThemeMode.dark);
-                            setStoredTheme(AppTheme.darkTheme);
-                          } else {
-                            Get.changeThemeMode(ThemeMode.light);
-                            setStoredTheme(AppTheme.lightTheme);
-                          }
-                        },
-                        icon: currentTheme.value == AppTheme.lightTheme
-                            ? const Icon(Icons.light_mode_outlined)
-                            : const Icon(Icons.dark_mode_outlined)),
-                  )),
+              // Obx(() => Align(
+              //       alignment: Alignment.topRight,
+              //       child: IconButton(
+              //           onPressed: () async {
+              //             final String storedTheme = await getStoredTheme();
+              //             if (storedTheme == AppTheme.lightTheme) {
+              //               Get.changeThemeMode(ThemeMode.dark);
+              //               setStoredTheme(AppTheme.darkTheme);
+              //             } else {
+              //               Get.changeThemeMode(ThemeMode.light);
+              //               setStoredTheme(AppTheme.lightTheme);
+              //             }
+              //           },
+              //           icon: currentTheme.value == AppTheme.lightTheme
+              //               ? const Icon(Icons.light_mode_outlined)
+              //               : const Icon(Icons.dark_mode_outlined)),
+              //     )),
               Expanded(
                 child: Center(
                   child: Text(AppStrings.appName.tr,

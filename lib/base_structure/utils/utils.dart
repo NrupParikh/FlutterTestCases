@@ -1,11 +1,16 @@
+import 'dart:math';
+
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/constants/app_key.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../main.dart';
 import '../base/constant.dart';
 import '../common_widgets/custom_dialog.dart';
 import '../constants/app_strings.dart';
@@ -105,6 +110,15 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagRCHScreen ||
       currentRouteName == Constant.tagRCH) {
     title = AppStrings.lblRCH.tr;
+  } else if (currentRouteName == Constant.tagTGIScreen ||
+      currentRouteName == Constant.tagTGI) {
+    title = AppStrings.lblTGI.tr;
+  }else if (currentRouteName == Constant.tagPADScreen ||
+      currentRouteName == Constant.tagPAD) {
+    title = AppStrings.lblPAD.tr;
+  }else if (currentRouteName == Constant.tagMSAScreen ||
+      currentRouteName == Constant.tagMSA) {
+    title = AppStrings.lblMSA.tr;
   }
 
   return title;
@@ -118,8 +132,14 @@ void doLogout() async {
     // await SecureStorageSingleton().storage.write(
     //     key: AppKey.keyIsLoggedIn, value: false.toString());
 
-    // Remove all secure storage key(s)
-    await SecureStorageSingleton().storage.deleteAll();
+    // // Remove all secure storage key(s)
+    // await SecureStorageSingleton().storage.deleteAll();
+
+    // Not delete firebase token here.
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyIsLoggedIn);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyStoredLang);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyStoredTheme);
+    await SecureStorageSingleton().storage.delete(key: AppKey.keyUserObject);
 
     Get.offAll(const LoginScreen());
   }
@@ -135,7 +155,7 @@ String getDateInddMMyyyy(DateTime? selectedDateTime) {
 }
 
 Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
-    final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
+  final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
   final DateTime? pickedDate = await showDatePicker(
     helpText: helpText,
     context: context,
@@ -146,6 +166,36 @@ Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
   return pickedDate;
 }
 
-Color getPrimaryColor() {
+Color getPrimaryColor(){
   return Get.theme.primaryColor;
 }
+
+bool isKeyboardOpen(BuildContext context) {
+  return MediaQuery.of(context).viewInsets.bottom != 0;
+}
+
+// ----------------- Show notification in notification tray
+
+void showNotification(String? title, String? body, String? screen) async {
+   final random = Random();
+  int randomNumber = random.nextInt(100);
+  await FlutterLocalNotificationsPlugin().show(
+    0,
+    title.toString()+randomNumber.toString(),
+    body,
+    const NotificationDetails(
+      android: AndroidNotificationDetails("channelId", "channelName",
+          channelDescription: "channelDescription",
+          importance: Importance.high,
+          priority: Priority.high),
+    ),
+    payload: screen
+  );
+
+  if (kDebugMode) {
+    print("Title $title");
+    print("Body $body");
+  }
+}
+
+

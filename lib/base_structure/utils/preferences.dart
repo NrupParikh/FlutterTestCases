@@ -1,3 +1,4 @@
+
 import '../constants/app_key.dart';
 import '../constants/app_theme.dart';
 import '../singleton/secure_storage_singleton.dart';
@@ -26,6 +27,7 @@ Future<String> getUserData() async {
   return jsonString ?? "";
 }
 
+
 void setStoredLanguage(String selectedLanguage) async {
   await SecureStorageSingleton()
       .storage
@@ -48,4 +50,16 @@ Future<String> getStoredTheme() async {
   final storedValue =
       await SecureStorageSingleton().storage.read(key: AppKey.keyStoredTheme);
   return storedValue ?? AppTheme.lightTheme;
+}
+
+void setFirebaseToken(String firebaseToken) async {
+  await SecureStorageSingleton()
+      .storage
+      .write(key: AppKey.keyFirebaseToken, value: firebaseToken);
+}
+
+Future<String> getFirebaseToken() async {
+  final storedValue =
+      await SecureStorageSingleton().storage.read(key: AppKey.keyFirebaseToken);
+  return storedValue ?? "";
 }
