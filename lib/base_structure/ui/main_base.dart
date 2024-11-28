@@ -9,14 +9,13 @@ import 'package:flutter_application_1/base_structure/constants/app_strings.dart'
 import 'package:flutter_application_1/base_structure/constants/app_theme.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
-import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 import '../utils/preferences.dart';
-import 'project_filter_screen.dart';
+import '../utils/utils.dart';
 
 class MyBaseApp extends StatefulWidget {
   final String myInitialRoute;
@@ -32,10 +31,16 @@ class MyBaseApp extends StatefulWidget {
 }
 
 class _MyBaseAppState extends State<MyBaseApp> {
+  final FirebaseMessaging messaging = FirebaseMessaging.instance;
+
   @override
   void initState() {
     super.initState();
     initialization();
+    requestPermission();
+    getAndroidToken();
+    getIOSToken();
+    listenToMessage();
   }
 
   void initialization() async {
@@ -47,6 +52,70 @@ class _MyBaseAppState extends State<MyBaseApp> {
     FlutterNativeSplash.remove();
 
     await dotenv.load(fileName: ".env");
+  }
+
+  void requestPermission() async {
+    NotificationSettings settings = await messaging.requestPermission(
+        alert: true, badge: true, sound: true);
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      if (kDebugMode) {
+        print('User granted permission');
+      }
+    } else if (settings.authorizationStatus ==
+        AuthorizationStatus.provisional) {
+      if (kDebugMode) {
+        print('User granted provisional permission');
+      }
+    } else {
+      if (kDebugMode) {
+        print('User declined or has not accepted permission');
+      }
+    }
+  }
+
+// For Android
+  void getAndroidToken() async {
+    String? androidFCMToken = await messaging.getToken();
+    if (kDebugMode) {
+      if (androidFCMToken != null) {
+        print('Firebase Token for Android: $androidFCMToken');
+        setFirebaseToken(androidFCMToken);
+      }
+    }
+  }
+
+  // For IOS
+  void getIOSToken() async {
+    String? apnsToken = await messaging.getAPNSToken();
+    if (kDebugMode) {
+      if (apnsToken != null) {
+        print('Firebase Token for IOS: $apnsToken');
+        setFirebaseToken(apnsToken);
+      }
+    }
+  }
+
+  void listenToMessage() {
+    // Listen forground notification
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      if (kDebugMode) {
+        print("onMessage.listen");
+      }
+      if (message.notification != null) {
+        // Show a custom notification using flutter_local_notifications
+        showNotification(
+            message.notification!.title, message.notification!.body);
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      if (kDebugMode) {
+        print("onMessageOpenedApp.listen");
+        print("Screen is ${message.data["screen"]}");
+      }
+      Get.to(const ForgotPasswordScreen());
+    });
   }
 
   @override
@@ -63,67 +132,35 @@ class _MyBaseAppState extends State<MyBaseApp> {
       print("myInitialTheme =  ${widget.myInitialTheme.toString()}");
     }
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: AppStrings.appName,
-      theme: AppTheme.appPrimaryDarkTheme(),
-      darkTheme: AppTheme.appPrimaryDarkTheme(),
-      // For application specific theme support
-      // themeMode: (widget.myInitialTheme.toString() == AppTheme.lightTheme)
-      //     ? ThemeMode.light
-      //     : ThemeMode.dark,
-      // For system specific theme theme support
-      themeMode: ThemeMode.system,
-      defaultTransition: Transition.rightToLeft,
-      transitionDuration:
-          const Duration(milliseconds: Constant.transitionDuration),
-      enableLog: true,
-      initialBinding: AppBindings(),
-      initialRoute: widget.myInitialRoute,
-      getPages: AppPages.routes,
-      translations: Languages(),
-      locale: Locale(widget.myInitialLanguage),
-      fallbackLocale: const Locale('en', 'US'),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('it', 'IT'),
-        Locale('es', 'ES'),
-      ],
-      // builder: (context,child){
-      //   return GetBuilder<NotificationController>(
-      //     init: NotificationController(),
-      //     builder: (NotificationController controller) {
-      //       return MaterialApp(
-      //         home: Scaffold(
-      //           body: Center(
-      //             child: Obx(() {
-      //               if(controller.notificationData.value!=null){
-      //                 final notificationValue = controller.notificationData.value!;
-      //                 return AlertDialog(
-      //                   title: Text(notificationValue.notification?.title ?? ""),
-      //                   content: Text(notificationValue.notification?.body ?? ""),
-      //                   actions: [
-      //                     TextButton(onPressed: (){
-      //                       controller.notificationData.value = null;
-      //                         Navigator.pop(context);
-      //                     }, child: const Text("Ok"))
-      //                   ],
-      //                 );
-      //               }else {
-      //                  return Container();
-      //               }
-
-      //             }),
-      //           ),
-      //         ),
-      //       );
-      //     },
-      //   );
-      // },
-    );
+        debugShowCheckedModeBanner: false,
+        title: AppStrings.appName,
+        theme: AppTheme.appPrimaryDarkTheme(),
+        darkTheme: AppTheme.appPrimaryDarkTheme(),
+        // For application specific theme support
+        // themeMode: (widget.myInitialTheme.toString() == AppTheme.lightTheme)
+        //     ? ThemeMode.light
+        //     : ThemeMode.dark,
+        // For system specific theme theme support
+        themeMode: ThemeMode.system,
+        defaultTransition: Transition.rightToLeft,
+        transitionDuration:
+            const Duration(milliseconds: Constant.transitionDuration),
+        enableLog: true,
+        initialBinding: AppBindings(),
+        initialRoute: widget.myInitialRoute,
+        getPages: AppPages.routes,
+        translations: Languages(),
+        locale: Locale(widget.myInitialLanguage),
+        fallbackLocale: const Locale('en', 'US'),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en', 'US'),
+          Locale('it', 'IT'),
+          Locale('es', 'ES'),
+        ]);
   }
 }

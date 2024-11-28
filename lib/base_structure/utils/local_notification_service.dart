@@ -52,7 +52,7 @@ class LocalNotificationService {
     
       onDidReceiveNotificationResponse: (details) {
       
-        const String data = "Data Achieved from foreground notifications";
+        // const String data = "Data Achieved from foreground notifications";
         // Navigator.of(context).push(MaterialPageRoute(
         //   builder: (context) => const DataPage(data: data),
         // ));
