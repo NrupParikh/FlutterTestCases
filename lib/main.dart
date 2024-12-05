@@ -28,8 +28,12 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'channelName', // title
 
     description: 'channelDescription',
-    importance: Importance.high);
+    importance: Importance.high,
+    showBadge: true,
+    playSound: true,
+    enableLights: true);
 
+// Redirect to particular screen when user tap on the forground notification
 void onDidReceiveNotificationResponse(NotificationResponse? response) {
   if (kDebugMode) {
     print("onDidReceiveNotificationResponse");

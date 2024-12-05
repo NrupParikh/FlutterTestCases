@@ -14,6 +14,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
+import '../base/notification_service.dart';
 import '../utils/preferences.dart';
 import '../utils/utils.dart';
 
@@ -31,13 +32,15 @@ class MyBaseApp extends StatefulWidget {
 }
 
 class _MyBaseAppState extends State<MyBaseApp> {
+
   final FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationService notificationService = NotificationService();
 
   @override
   void initState() {
     super.initState();
     initialization();
-    requestPermission();
+    notificationService.requestNotificationPermission();
     getAndroidToken();
     getIOSToken();
     listenToMessage();
@@ -54,25 +57,6 @@ class _MyBaseAppState extends State<MyBaseApp> {
     await dotenv.load(fileName: ".env");
   }
 
-  void requestPermission() async {
-    NotificationSettings settings = await messaging.requestPermission(
-        alert: true, badge: true, sound: true);
-
-    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      if (kDebugMode) {
-        print('User granted permission');
-      }
-    } else if (settings.authorizationStatus ==
-        AuthorizationStatus.provisional) {
-      if (kDebugMode) {
-        print('User granted provisional permission');
-      }
-    } else {
-      if (kDebugMode) {
-        print('User declined or has not accepted permission');
-      }
-    }
-  }
 
 // For Android
   void getAndroidToken() async {
@@ -97,7 +81,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
   }
 
   void listenToMessage() {
-    // Listen forground notification
+    // Listen forground notification and show in the notification tray using show Notification
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (kDebugMode) {
         print("onMessage.listen");
@@ -109,6 +93,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
       }
     });
 
+    // Get called when notfication comes while app is killed or in background and user tap on it
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       if (kDebugMode) {
         print("onMessageOpenedApp.listen");
