@@ -9,6 +9,7 @@ import 'package:flutter_application_1/base_structure/singleton/api_service_singl
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
+import '../../main.dart';
 import '../api/api_service.dart';
 import '../utils/preferences.dart';
 
@@ -22,8 +23,6 @@ class LoginViewModel extends BaseViewModel {
   var errorPassword = Rx<String?>(null);
 
   var passwordVisible = false.obs;
-
-  final RxString firebaseToken = "".obs;
 
   Future<Tuple2<bool, String>> validateLogin() async {
     if (kDebugMode) {
@@ -84,10 +83,5 @@ class LoginViewModel extends BaseViewModel {
   @override
   void onInit() async {
     super.onInit();
-    if (kDebugMode) {
-      print("Login VM Initialized");
-    }
-    // For Getting firebase token and display on Text
-    firebaseToken.value = await getFirebaseToken();
   }
 }

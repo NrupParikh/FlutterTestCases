@@ -9,6 +9,7 @@ import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
+import '../../main.dart';
 import '../common_widgets/custom_dialog.dart';
 
 class LoginScreen extends BaseScreen<LoginViewModel> {
@@ -120,7 +121,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 const SizedBox(
                   height: 20,
                 ),
-                Text(vm.firebaseToken.value,
+                Text(firebaseToken.value,
                     style: const TextStyle(
                         fontSize: 12,
                         fontFamily: AppTextConstant.poppinsRegular))

@@ -14,6 +14,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
+import '../../main.dart';
 import '../base/notification_service.dart';
 import '../utils/preferences.dart';
 import '../utils/utils.dart';
@@ -35,7 +36,6 @@ class _MyBaseAppState extends State<MyBaseApp> {
 
   final FirebaseMessaging messaging = FirebaseMessaging.instance;
   NotificationService notificationService = NotificationService();
-
   @override
   void initState() {
     super.initState();
@@ -65,6 +65,8 @@ class _MyBaseAppState extends State<MyBaseApp> {
       if (androidFCMToken != null) {
         print('Firebase Token for Android: $androidFCMToken');
         setFirebaseToken(androidFCMToken);
+        firebaseToken.value = await getFirebaseToken();
+        print("firebaseTokenIS = ${firebaseToken.value}");
       }
     }
   }
@@ -76,6 +78,8 @@ class _MyBaseAppState extends State<MyBaseApp> {
       if (apnsToken != null) {
         print('Firebase Token for IOS: $apnsToken');
         setFirebaseToken(apnsToken);
+        firebaseToken.value = await getFirebaseToken();
+        print("firebaseTokenIS = ${firebaseToken.value}");
       }
     }
   }
