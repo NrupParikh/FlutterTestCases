@@ -10,7 +10,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import '../../main.dart';
 import '../base/constant.dart';
 import '../common_widgets/custom_dialog.dart';
 import '../constants/app_strings.dart';
@@ -176,7 +175,7 @@ bool isKeyboardOpen(BuildContext context) {
 
 // ----------------- Show notification in notification tray
 
-void showNotification(String? title, String? body, String? screen) async {
+void showNotification(String? title, String? body) async {
    final random = Random();
   int randomNumber = random.nextInt(100);
   await FlutterLocalNotificationsPlugin().show(
@@ -187,9 +186,9 @@ void showNotification(String? title, String? body, String? screen) async {
       android: AndroidNotificationDetails("channelId", "channelName",
           channelDescription: "channelDescription",
           importance: Importance.high,
-          priority: Priority.high),
-    ),
-    payload: screen
+          priority: Priority.high,
+          icon: '@mipmap/ic_launcher'),
+    )
   );
 
   if (kDebugMode) {
@@ -197,5 +196,6 @@ void showNotification(String? title, String? body, String? screen) async {
     print("Body $body");
   }
 }
+
 
 
