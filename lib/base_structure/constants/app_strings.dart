@@ -119,6 +119,11 @@ class AppStrings {
 
   static const lblStinginess = "Stinginess";
 
+  static const lblNotification = "Notification";
+  static const msgDeleteNotificationConfirmation =
+      'Are you sure you want to delete this notification?';
+
+
   // ========== MESSAGES
   static const msgNetworkErr = 'Network Error';
   static const msgLogoutConfirmation =
@@ -269,4 +274,5 @@ class AppStrings {
   static const noProjectFound = "No Project found";
   static const noDocumentFound = "No Document found";
   static const noRecipeFound = "No Recipe found";
+  static const noNotificationFound = "No Notification found";
 }
