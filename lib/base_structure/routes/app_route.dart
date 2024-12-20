@@ -34,5 +34,6 @@ class Routes {
   static const padPurchasing = '/padPurchasing';
   static const padProduction = '/padProduction';
   static const padWherehouse = '/padWherehouse';
+  static const sixPackView = '/sixPackView';
 
 }

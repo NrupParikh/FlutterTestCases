@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -119,6 +117,9 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagMSAScreen ||
       currentRouteName == Constant.tagMSA) {
     title = AppStrings.lblMSA.tr;
+  }else if (currentRouteName == Constant.tagSixPackViewScreen ||
+      currentRouteName == Constant.tagSixPackView) {
+    title = "Six Pack View";
   }
 
   return title;

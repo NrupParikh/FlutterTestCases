@@ -97,7 +97,7 @@ Future<void> main() async {
   final myInitialTheme = await getStoredTheme();
 
   // Set Application orientation to support only Portrait mode
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
 

@@ -5,6 +5,7 @@ import 'package:flutter_application_1/base_structure/constants/app_strings.dart'
 import 'package:flutter_application_1/base_structure/constants/app_text_constant.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_management_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pack_view_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
@@ -79,7 +80,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(const ForgotPasswordScreen());
+                    // Get.to(const ForgotPasswordScreen());
+                     Get.to(const SixPackViewScreen());
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

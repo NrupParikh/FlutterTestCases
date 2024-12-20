@@ -45,4 +45,7 @@ class Constant {
 
   static const tagMSAScreen = "MSAScreen";
   static const tagMSA = "msa";
+
+  static const tagSixPackViewScreen = "SixPackViewScreen";
+  static const tagSixPackView= "sixPackView";
 }
