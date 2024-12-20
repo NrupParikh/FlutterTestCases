@@ -6,7 +6,6 @@ import '../common_widgets/custom_dialog.dart';
 import '../constants/app_strings.dart';
 
 class NotificationService {
-
   void requestNotificationPermission() async {
     PermissionStatus status = await Permission.notification.request();
     if (status.isGranted) {
@@ -16,15 +15,12 @@ class NotificationService {
     } else if (status.isDenied) {
       if (kDebugMode) {
         print('User denied notification permission');
-      
-
-      final result = await CustomDialog.showOkCancelDialog(
-          AppStrings.appName.tr,
-          "You have denied the notification permission.");
-      if (result) {
-        openAppSettings();
-      }
-
+        final result = await CustomDialog.showOkCancelDialog(
+            AppStrings.appName.tr,
+            "You have denied the notification permission.");
+        if (result) {
+          openAppSettings();
+        }
       }
     } else if (status.isPermanentlyDenied) {
       if (kDebugMode) {
