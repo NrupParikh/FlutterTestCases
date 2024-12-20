@@ -9,7 +9,6 @@ import 'package:flutter_application_1/base_structure/singleton/api_service_singl
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
-import '../../main.dart';
 import '../api/api_service.dart';
 import '../utils/preferences.dart';
 
@@ -78,10 +77,5 @@ class LoginViewModel extends BaseViewModel {
     } else {
       return const Tuple2(false, "");
     }
-  }
-
-  @override
-  void onInit() async {
-    super.onInit();
   }
 }

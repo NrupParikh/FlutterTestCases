@@ -10,6 +10,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../main.dart';
 import '../base/constant.dart';
 import '../common_widgets/custom_dialog.dart';
 import '../constants/app_strings.dart';
@@ -112,10 +113,10 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagTGIScreen ||
       currentRouteName == Constant.tagTGI) {
     title = AppStrings.lblTGI.tr;
-  }else if (currentRouteName == Constant.tagPADScreen ||
+  } else if (currentRouteName == Constant.tagPADScreen ||
       currentRouteName == Constant.tagPAD) {
     title = AppStrings.lblPAD.tr;
-  }else if (currentRouteName == Constant.tagMSAScreen ||
+  } else if (currentRouteName == Constant.tagMSAScreen ||
       currentRouteName == Constant.tagMSA) {
     title = AppStrings.lblMSA.tr;
   }
@@ -154,7 +155,7 @@ String getDateInddMMyyyy(DateTime? selectedDateTime) {
 }
 
 Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
-  final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
+    final DateTime initialDate, DateTime firstDate, DateTime lastDate) async {
   final DateTime? pickedDate = await showDatePicker(
     helpText: helpText,
     context: context,
@@ -165,7 +166,7 @@ Future<DateTime?> openDateTimePicker(BuildContext context, String helpText,
   return pickedDate;
 }
 
-Color getPrimaryColor(){
+Color getPrimaryColor() {
   return Get.theme.primaryColor;
 }
 
@@ -174,28 +175,67 @@ bool isKeyboardOpen(BuildContext context) {
 }
 
 // ----------------- Show notification in notification tray
+// In-memory list to hold notifications
+
+final List<String> notificationList = [];
 
 void showNotification(String? title, String? body) async {
-   final random = Random();
-  int randomNumber = random.nextInt(100);
+  // Add the new notification to the in-memory list
+  notificationList.add('$title|$body');
+
+  //  final random = Random();
+  // int randomNumber = random.nextInt(100);
   await FlutterLocalNotificationsPlugin().show(
-    0,
-    title.toString()+randomNumber.toString(),
-    body,
-    const NotificationDetails(
-      android: AndroidNotificationDetails("channelId", "channelName",
-          channelDescription: "channelDescription",
-          importance: Importance.high,
-          priority: Priority.high,
-          icon: '@mipmap/ic_launcher'),
-    )
-  );
+      notificationList.length,
+      title.toString(),
+      body,
+      const NotificationDetails(
+        android: AndroidNotificationDetails("channelId", "channelName",
+            channelDescription: "channelDescription",
+            importance: Importance.high,
+            priority: Priority.high,
+            icon: '@mipmap/ic_launcher',
+            groupKey: "groupKey"),
+      ));
 
   if (kDebugMode) {
     print("Title $title");
     print("Body $body");
+    print("NotificationList Size ${notificationList.length}");
   }
+
+  // --------------------- Group Summary Notification using InboxStyle
+  final List<String> lines = notificationList
+      .map((notification) => notification.split('|').join(': '))
+      .toList();
+
+  if (kDebugMode) {
+    print("lines Size ${lines.length}");
+  }
+
+  final InboxStyleInformation inboxStyleInformation = InboxStyleInformation(
+    lines,
+    contentTitle: '${notificationList.length} new messages',
+    summaryText: 'You have ${notificationList.length} new notifications',
+  );
+
+  await localNotifications.show(
+    0, // Static ID for the summary notification
+    'Grouped Notifications',
+    '${notificationList.length} new messages',
+    NotificationDetails(
+      android: AndroidNotificationDetails(
+        "channelId",
+        "channelName",
+        channelDescription: "channelDescription",
+        importance: Importance.high,
+        priority: Priority.high,
+        groupKey: "groupKey",
+        setAsGroupSummary: true, // Mark this as the group summary
+        styleInformation: inboxStyleInformation, // Set InboxStyle here
+        icon: '@mipmap/ic_launcher',
+      ),
+    ),
+  );
+  // ---------------------------------------------
 }
-
-
-
