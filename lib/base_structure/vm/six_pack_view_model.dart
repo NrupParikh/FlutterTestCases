@@ -9,7 +9,9 @@ import 'package:tuple/tuple.dart';
 class SixPackViewModel extends BaseViewModel {
   RxDouble imageWidth = 0.0.obs;
   RxDouble imageHeight = 0.0.obs;
-  RxDouble progress = 0.0.obs;
+
+  RxDouble progress1 = 0.0.obs;
+  RxDouble progress2 = 0.0.obs;
 
   Future<Tuple2<double, double>> loadImageDimensions(String assetPath) async {
     // Load image from assets

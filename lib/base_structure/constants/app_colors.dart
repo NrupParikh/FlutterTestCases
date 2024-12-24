@@ -8,6 +8,11 @@ class ColorConstant {
   static Color green501 = fromHex('#45c355');
   static Color whiteFFFFFF = fromHex('#FFFFFF');
 
+  static Color backgroundBlueColor = fromHex('#FF0B1E38');
+  static Color blueColor = fromHex('#00A9E0');
+  static Color orangeColor = fromHex('#E35C39');
+  static Color yellowColor = fromHex('#F7A900');
+
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
