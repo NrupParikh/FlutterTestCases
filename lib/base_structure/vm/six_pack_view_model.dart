@@ -13,6 +13,31 @@ class SixPackViewModel extends BaseViewModel {
   RxDouble progress1 = 0.0.obs;
   RxDouble progress2 = 0.0.obs;
 
+  RxInt goalCal = 1300.obs;
+  RxInt leftCal = 1300.obs;
+
+  RxBool isBurned = false.obs;
+  RxInt currentCal = 0.obs;
+  RxInt consumedCal = 0.obs;
+  RxInt burnedCal = 0.obs;
+
+  TextEditingController calController = TextEditingController();
+
+  void updateBurnedCal(String submittedValue) {
+    currentCal.value = currentCal.value - int.parse(submittedValue);
+    burnedCal.value = burnedCal.value + int.parse(submittedValue);
+  }
+
+  void updateConsumedCal(String submittedValue) {
+    currentCal.value = currentCal.value + int.parse(submittedValue);
+    consumedCal.value = consumedCal.value + int.parse(submittedValue);
+  }
+
+  int remainingCal(){
+    leftCal.value = (goalCal.value - currentCal.value);
+    return leftCal.value;
+  }
+
   Future<Tuple2<double, double>> loadImageDimensions(String assetPath) async {
     // Load image from assets
     final ByteData data = await rootBundle.load(assetPath);

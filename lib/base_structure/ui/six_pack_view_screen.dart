@@ -1,10 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pack_view_model.dart';
 import 'package:get/get.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
+
+import '../constants/app_text_constant.dart';
 
 class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
   const SixPackViewScreen({super.key});
@@ -30,6 +33,19 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Text(
+                    "${(vm.currentCal.value)} Current Kcal",
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  Switch(
+                      value: vm.isBurned.value,
+                      onChanged: (value) {
+                        vm.isBurned.value = value;
+                      }),
+                  const Text(
+                    "Update Calories",
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  ),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -139,17 +155,17 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
 
                   SizedBox(
                     width: myViewWidth,
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "Goal: 1300 Kcal",
                           style: TextStyle(fontSize: 10),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
-                          "Remaining: 1300 Kcal",
-                          style: TextStyle(fontSize: 10),
+                          "Left: ${vm.remainingCal()} Kcal",
+                          style: const TextStyle(fontSize: 10),
                         )
                       ],
                     ),
@@ -213,24 +229,22 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                   ),
                   SizedBox(
                     width: myViewWidth,
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "0 Kcal Consumed",
-                          style: TextStyle(fontSize: 10),
+                          "${(vm.consumedCal.value)} Kcal Consumed",
+                          style: const TextStyle(fontSize: 10),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
-                          "0 Kcal Burned",
-                          style: TextStyle(fontSize: 10),
+                          "${(vm.burnedCal.value)} Kcal Burned",
+                          style: const TextStyle(fontSize: 10),
                         )
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 4,
-                  ),
+
                   // ========================= SLIDER 1
 
                   SizedBox(
@@ -239,6 +253,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Slider(
+                          label: vm.progress1.value.toString(),
                           value: vm.progress1.value,
                           onChanged: (double value) {
                             vm.progress1.value = value;
@@ -247,7 +262,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                             }
                           },
                         ),
-                        Text("${(vm.progress1.value) * 100}%"),
+                        Text("${(vm.progress1.value)*100}%"),
                       ],
                     ),
                   ),
@@ -260,6 +275,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Slider(
+                          label: vm.progress2.value.toString(),
                           value: vm.progress2.value,
                           onChanged: (double value) {
                             vm.progress2.value = value;
@@ -268,8 +284,77 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                             }
                           },
                         ),
-                        Text("${(vm.progress2.value) * 100}%"),
+                        Text("${(vm.progress2.value)*100}%"),
                       ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      controller: vm.calController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        disabledBorder: OutlineInputBorder(),
+                        hintText: "Enter cal",
+                        hintStyle: TextStyle(
+                            fontFamily: AppTextConstant.poppinsRegular),
+                        errorText: "Enter cal",
+                        label: Text("Cal",
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: AppTextConstant.poppinsRegular)),
+                      ),
+                      onFieldSubmitted: (submittedValue) {
+                        if (kDebugMode) {
+                          
+                          print("TAG_User submitted: $submittedValue");
+                          print("TAG_Is Burned: ${vm.isBurned.value}");
+
+                          if (vm.isBurned.value) {
+                            vm.updateBurnedCal(submittedValue);
+                            // If user enter >650 then fill P2 = 0% and remaining for P1
+                          
+                            //  if(vm.progress2.value==1 && vm.currentCal.value>(vm.goalCal.value/2)){
+                            //   vm.progress2.value = 0;
+                            //   Future.delayed(const Duration(seconds: 3)).then((value) {
+                            //     vm.progress1.value = ((vm.currentCal.value/(vm.goalCal.value/2)));
+                            //   });                              
+                            // }
+                            // >=650 to <=1300 : P2
+                             if(vm.currentCal.value>=(vm.goalCal.value/2) && vm.currentCal.value<=(vm.goalCal.value)){
+                              vm.progress2.value = vm.progress2.value-(int.parse(submittedValue)/(vm.goalCal.value/2));
+                            }
+                            // >=0 to <=650 : P1
+                            else if(vm.currentCal.value>=0 && vm.currentCal.value<=(vm.goalCal.value/2)){
+                              vm.progress1.value = vm.progress1.value-(int.parse(submittedValue)/(vm.goalCal.value/2));
+                            }
+                              
+                          } else {
+                            vm.updateConsumedCal(submittedValue);
+                              // If User enter >650 then fill P1 = 100% and remaining for P2
+                          if(vm.progress1.value!=1 && vm.currentCal.value>(vm.goalCal.value/2)){
+                              vm.progress1.value = 1;
+                              Future.delayed(const Duration(seconds: 3)).then((value) {
+                                vm.progress2.value = ((vm.currentCal.value/(vm.goalCal.value/2)))-1;
+                              });
+                              
+                          }
+                          // >=0 to <=650 : P1
+                          else if(vm.currentCal.value>=0 && vm.currentCal.value<=(vm.goalCal.value/2)){
+                            vm.progress1.value = vm.progress1.value+(int.parse(submittedValue)/(vm.goalCal.value/2));
+                          }
+                          // >650 to <=1300 : P2
+                          else if(vm.currentCal.value>(vm.goalCal.value/2)&&vm.currentCal.value<=vm.goalCal.value){
+                            vm.progress2.value = vm.progress2.value+(int.parse(submittedValue)/(vm.goalCal.value/2));
+                          }
+                          }
+                          print("TAG_Current Cal: ${vm.currentCal.value}");
+                          vm.calController.clear();
+                        }
+                      },
                     ),
                   ),
                 ],
@@ -280,15 +365,15 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
   }
 }
 
-        // Container(
-              //   decoration: const BoxDecoration(
-              //       gradient: LinearGradient(
-              //           begin: Alignment.topCenter,
-              //           end: Alignment.bottomCenter,
-              //           colors: [Colors.orange, Colors.yellow, Colors.blue])),
-              //   child: const Column(
-              //     children: [
-              //       Image(image: AssetImage("assets/images/img_six_pack.png"))
-              //     ],
-              //   ),
-              // ),
+// Container(
+//   decoration: const BoxDecoration(
+//       gradient: LinearGradient(
+//           begin: Alignment.topCenter,
+//           end: Alignment.bottomCenter,
+//           colors: [Colors.orange, Colors.yellow, Colors.blue])),
+//   child: const Column(
+//     children: [
+//       Image(image: AssetImage("assets/images/img_six_pack.png"))
+//     ],
+//   ),
+// ),
