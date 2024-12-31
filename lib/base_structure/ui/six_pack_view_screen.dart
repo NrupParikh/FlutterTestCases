@@ -158,9 +158,9 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          "Goal: 1300 Kcal",
-                          style: TextStyle(fontSize: 10),
+                        Text(
+                          "Goal: ${vm.goalCal.value.toInt()} Kcal",
+                          style: const TextStyle(fontSize: 10),
                         ),
                         const Spacer(),
                         Text(
@@ -262,7 +262,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                             }
                           },
                         ),
-                        Text("${(vm.progress1.value)*100}%"),
+                        Text("${(vm.progress1.value)}%"),
                       ],
                     ),
                   ),
@@ -284,7 +284,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                             }
                           },
                         ),
-                        Text("${(vm.progress2.value)*100}%"),
+                        Text("${(vm.progress2.value)}%"),
                       ],
                     ),
                   ),
@@ -308,51 +308,9 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                                 fontFamily: AppTextConstant.poppinsRegular)),
                       ),
                       onFieldSubmitted: (submittedValue) {
-                        if (kDebugMode) {
-                          
-                          print("TAG_User submitted: $submittedValue");
-                          print("TAG_Is Burned: ${vm.isBurned.value}");
-
-                          if (vm.isBurned.value) {
-                            vm.updateBurnedCal(submittedValue);
-                            // If user enter >650 then fill P2 = 0% and remaining for P1
-                          
-                            //  if(vm.progress2.value==1 && vm.currentCal.value>(vm.goalCal.value/2)){
-                            //   vm.progress2.value = 0;
-                            //   Future.delayed(const Duration(seconds: 3)).then((value) {
-                            //     vm.progress1.value = ((vm.currentCal.value/(vm.goalCal.value/2)));
-                            //   });                              
-                            // }
-                            // >=650 to <=1300 : P2
-                             if(vm.currentCal.value>=(vm.goalCal.value/2) && vm.currentCal.value<=(vm.goalCal.value)){
-                              vm.progress2.value = vm.progress2.value-(int.parse(submittedValue)/(vm.goalCal.value/2));
-                            }
-                            // >=0 to <=650 : P1
-                            else if(vm.currentCal.value>=0 && vm.currentCal.value<=(vm.goalCal.value/2)){
-                              vm.progress1.value = vm.progress1.value-(int.parse(submittedValue)/(vm.goalCal.value/2));
-                            }
-                              
-                          } else {
-                            vm.updateConsumedCal(submittedValue);
-                              // If User enter >650 then fill P1 = 100% and remaining for P2
-                          if(vm.progress1.value!=1 && vm.currentCal.value>(vm.goalCal.value/2)){
-                              vm.progress1.value = 1;
-                              Future.delayed(const Duration(seconds: 3)).then((value) {
-                                vm.progress2.value = ((vm.currentCal.value/(vm.goalCal.value/2)))-1;
-                              });
-                              
-                          }
-                          // >=0 to <=650 : P1
-                          else if(vm.currentCal.value>=0 && vm.currentCal.value<=(vm.goalCal.value/2)){
-                            vm.progress1.value = vm.progress1.value+(int.parse(submittedValue)/(vm.goalCal.value/2));
-                          }
-                          // >650 to <=1300 : P2
-                          else if(vm.currentCal.value>(vm.goalCal.value/2)&&vm.currentCal.value<=vm.goalCal.value){
-                            vm.progress2.value = vm.progress2.value+(int.parse(submittedValue)/(vm.goalCal.value/2));
-                          }
-                          }
-                          print("TAG_Current Cal: ${vm.currentCal.value}");
-                          vm.calController.clear();
+                        if (kDebugMode) {                          
+                          print("TAG_User_submitted: $submittedValue");
+                          vm.updateProgress(submittedValue);
                         }
                       },
                     ),
@@ -362,7 +320,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
             ),
           ),
         ));
-  }
+  } 
 }
 
 // Container(
