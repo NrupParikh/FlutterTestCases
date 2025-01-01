@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
 import 'package:flutter_application_1/firebase_options.dart';
@@ -86,7 +85,7 @@ Future<void> main() async {
   // Protecting against data leakage
   await ScreenProtector.protectDataLeakageOff();
   // Disable Screenshot Capabilities
-  await ScreenProtector.preventScreenshotOn();
+  // await ScreenProtector.preventScreenshotOn();
 
   // Other initialization code, if needed
 

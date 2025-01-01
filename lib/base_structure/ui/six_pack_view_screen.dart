@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
 
 import '../constants/app_text_constant.dart';
-
+// https://www.gifgit.com/
 class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
   const SixPackViewScreen({super.key});
 
@@ -74,8 +74,8 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 1
                       Center(
                         child: SizedBox(
-                          width: myViewWidth,
-                          height: myViewHeight,
+                          width: myViewWidth-1, // Fore remove border
+                          height: myViewHeight-1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress1.value,
                             width: myViewWidth,
@@ -98,8 +98,8 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 2
                       Center(
                         child: SizedBox(
-                          width: myViewWidth,
-                          height: myViewHeight,
+                          width: myViewWidth-1, // Fore remove border
+                          height: myViewHeight-1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress2.value,
                             width: myViewWidth,
@@ -126,7 +126,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                           child: const Image(
                               fit: BoxFit.contain,
                               image:
-                                  AssetImage("assets/images/img_six_pack.png")),
+                                  AssetImage("assets/images/img_six_pack_latest.png")),
                         ),
                       ),
                       Center(
