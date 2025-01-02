@@ -58,7 +58,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                                 flex: 1,
                                 child: Align(
                                     alignment: Alignment.topCenter,
-                                    child: Text("CALORE TRACKER"))),
+                                    child: Text("CALORIE TRACKER"))),
                             Image(
                                 color: Colors.white,
                                 width: 24,
@@ -164,7 +164,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                         ),
                         const Spacer(),
                         Text(
-                          "Left: ${vm.remainingCal()} Kcal",
+                          "Remaining: ${vm.remainingCal()} Kcal",
                           style: const TextStyle(fontSize: 10),
                         )
                       ],

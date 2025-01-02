@@ -17,8 +17,8 @@ class SixPackViewModel extends BaseViewModel {
 
   RxDouble tempProgress = 0.0.obs;
 
-  RxInt goalCal = 2000.obs;
-  RxInt leftCal = 2000.obs;
+  RxInt goalCal = 1486.obs;
+  RxInt leftCal = 1486.obs;
 
   RxBool isBurned = false.obs;
   RxInt currentCal = 0.obs;
