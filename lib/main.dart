@@ -44,6 +44,7 @@ void onDidReceiveNotificationResponse(NotificationResponse? response) {
 }
 
 final RxString firebaseToken = "".obs;
+final RxBool isBurned = false.obs;
 
 Future<void> main() async {
   // To guarantee that the Flutter framework is fully initialized before your app starts running

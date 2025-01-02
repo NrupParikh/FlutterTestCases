@@ -6,6 +6,7 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/notifications_view_model.dart';
@@ -76,5 +77,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => PadDepartmentViewModel(), fenix: true);
     Get.lazyPut(() => PadCommertialReviewViewModel(), fenix: true);
     Get.lazyPut(() => SixPackViewModel(), fenix: true);
+    Get.lazyPut(() => LogActivityViewModel(), fenix: true);
   }
 }

@@ -7,6 +7,7 @@ import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.d
 import 'package:flutter_application_1/base_structure/ui/haccp.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_trial_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/log_activity_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/pad_commertial_review_screen.dart';
@@ -94,5 +95,7 @@ class AppPages {
         name: Routes.padWherehouse, page: () => const PADWherehouseScreen()),
 
     GetPage(name: Routes.sixPackView, page: () => const SixPackViewScreen()),
+    
+    GetPage(name: Routes.logActivity, page: () => const LogActivityScreen()),
   ];
 }

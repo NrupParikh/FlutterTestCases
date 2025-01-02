@@ -172,7 +172,9 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
               currentRouteName == Constant.tagForgotPasswordScreen ||
               currentRouteName == Constant.tagForgotPassword||
               currentRouteName == Constant.tagSixPackViewScreen||
-              currentRouteName == Constant.tagSixPackView)
+              currentRouteName == Constant.tagSixPackView||
+              currentRouteName == Constant.tagLogActivityScreen||
+              currentRouteName == Constant.tagLogActivity)
           ? null
           : ((currentRouteName == Constant.tagProjectManagementScreen ||
                       currentRouteName == Constant.tagProjectManagement) ||

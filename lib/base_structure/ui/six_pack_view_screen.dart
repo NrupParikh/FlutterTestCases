@@ -1,13 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
+import 'package:flutter_application_1/base_structure/ui/log_activity_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pack_view_model.dart';
 import 'package:get/get.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
+import 'package:tuple/tuple.dart';
 
-import '../constants/app_text_constant.dart';
+import '../../main.dart';
+
 // https://www.gifgit.com/
 class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
   const SixPackViewScreen({super.key});
@@ -33,19 +35,6 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    "${(vm.currentCal.value)} Current Kcal",
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  Switch(
-                      value: vm.isBurned.value,
-                      onChanged: (value) {
-                        vm.isBurned.value = value;
-                      }),
-                  const Text(
-                    "Update Calories",
-                    style: TextStyle(decoration: TextDecoration.underline),
-                  ),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -74,8 +63,8 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 1
                       Center(
                         child: SizedBox(
-                          width: myViewWidth-1, // Fore remove border
-                          height: myViewHeight-1,
+                          width: myViewWidth - 1, // Fore remove border
+                          height: myViewHeight - 1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress1.value,
                             width: myViewWidth,
@@ -98,8 +87,8 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 2
                       Center(
                         child: SizedBox(
-                          width: myViewWidth-1, // Fore remove border
-                          height: myViewHeight-1,
+                          width: myViewWidth - 1, // Fore remove border
+                          height: myViewHeight - 1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress2.value,
                             width: myViewWidth,
@@ -125,24 +114,41 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                           height: myViewHeight,
                           child: const Image(
                               fit: BoxFit.contain,
-                              image:
-                                  AssetImage("assets/images/img_six_pack_latest.png")),
+                              image: AssetImage(
+                                  "assets/images/img_six_pack_latest.png")),
                         ),
                       ),
                       Center(
                         child: Positioned(
                           // Adjust this value to control overlap
-                          child: SizedBox(
-                            width: myViewWidth,
-                            height: myViewHeight + 12,
-                            child: const Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Image(
-                                  width: 24,
-                                  height: 24,
-                                  image:
-                                      AssetImage("assets/images/ic_add.png")),
+                          child: GestureDetector(
+                            child: SizedBox(
+                              width: myViewWidth,
+                              height: myViewHeight + 12,
+                              child: const Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Image(
+                                    width: 24,
+                                    height: 24,
+                                    image:
+                                        AssetImage("assets/images/ic_add.png")),
+                              ),
                             ),
+                            onTap: () async {
+                              final result = await Get.to<Tuple2<bool, String>>(
+                                  const LogActivityScreen());
+                              if (result != null) {
+                                if (kDebugMode) {
+                                  print("TAG_Item1 ${result.item1}");
+                                  print("TAG_Item2 ${result.item2}");
+                                }
+
+                                if (result.item2.isNotEmpty) {
+                                  isBurned.value = result.item1;
+                                  vm.updateProgress(result.item2);
+                                }
+                              }
+                            },
                           ),
                         ),
                       ),
@@ -244,94 +250,17 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       ],
                     ),
                   ),
-
-                  // ========================= SLIDER 1
-
-                  SizedBox(
-                    width: myViewWidth,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Slider(
-                          label: vm.progress1.value.toString(),
-                          value: vm.progress1.value,
-                          onChanged: (double value) {
-                            vm.progress1.value = value;
-                            if (kDebugMode) {
-                              print("Progress1 Value is ${vm.progress1.value}");
-                            }
-                          },
-                        ),
-                        Text("${(vm.progress1.value)}%"),
-                      ],
-                    ),
+                  const SizedBox(
+                    height: 48,
                   ),
-
-                  // ========================= SLIDER 2
-
-                  SizedBox(
-                    width: myViewWidth,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Slider(
-                          label: vm.progress2.value.toString(),
-                          value: vm.progress2.value,
-                          onChanged: (double value) {
-                            vm.progress2.value = value;
-                            if (kDebugMode) {
-                              print("Progress2 Value is ${vm.progress2.value}");
-                            }
-                          },
-                        ),
-                        Text("${(vm.progress2.value)}%"),
-                      ],
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      controller: vm.calController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        disabledBorder: OutlineInputBorder(),
-                        hintText: "Enter cal",
-                        hintStyle: TextStyle(
-                            fontFamily: AppTextConstant.poppinsRegular),
-                        errorText: "Enter cal",
-                        label: Text("Cal",
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontFamily: AppTextConstant.poppinsRegular)),
-                      ),
-                      onFieldSubmitted: (submittedValue) {
-                        if (kDebugMode) {                          
-                          print("TAG_User_submitted: $submittedValue");
-                          vm.updateProgress(submittedValue);
-                        }
-                      },
-                    ),
+                  Text(
+                    "${(vm.currentCal.value)} Current Kcal",
+                    style: const TextStyle(fontSize: 10),
                   ),
                 ],
               ),
             ),
           ),
         ));
-  } 
+  }
 }
-
-// Container(
-//   decoration: const BoxDecoration(
-//       gradient: LinearGradient(
-//           begin: Alignment.topCenter,
-//           end: Alignment.bottomCenter,
-//           colors: [Colors.orange, Colors.yellow, Colors.blue])),
-//   child: const Column(
-//     children: [
-//       Image(image: AssetImage("assets/images/img_six_pack.png"))
-//     ],
-//   ),
-// ),

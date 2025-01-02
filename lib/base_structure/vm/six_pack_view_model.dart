@@ -8,6 +8,8 @@ import 'dart:ui' as ui;
 
 import 'package:tuple/tuple.dart';
 
+import '../../main.dart';
+
 class SixPackViewModel extends BaseViewModel {
   RxDouble imageWidth = 0.0.obs;
   RxDouble imageHeight = 0.0.obs;
@@ -17,15 +19,13 @@ class SixPackViewModel extends BaseViewModel {
 
   RxDouble tempProgress = 0.0.obs;
 
-  RxInt goalCal = 1486.obs;
-  RxInt leftCal = 1486.obs;
+  RxInt goalCal = 2000.obs;
+  RxInt leftCal = 2000.obs;
 
-  RxBool isBurned = false.obs;
   RxInt currentCal = 0.obs;
   RxInt consumedCal = 0.obs;
   RxInt burnedCal = 0.obs;
 
-  TextEditingController calController = TextEditingController();
 
   void updateBurnedCal(String submittedValue) {
     currentCal.value = currentCal.value - int.parse(submittedValue);
@@ -114,7 +114,6 @@ class SixPackViewModel extends BaseViewModel {
         }
       }                            
     }
-    calController.clear();
   }
 
   Future<Tuple2<double, double>> loadImageDimensions(String assetPath) async {

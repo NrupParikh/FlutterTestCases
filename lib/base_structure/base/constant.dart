@@ -48,4 +48,7 @@ class Constant {
 
   static const tagSixPackViewScreen = "SixPackViewScreen";
   static const tagSixPackView= "sixPackView";
+
+    static const tagLogActivityScreen = "LogActivityScreen";
+  static const tagLogActivity= "logActivity";
 }

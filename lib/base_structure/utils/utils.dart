@@ -120,6 +120,9 @@ String getTitle(String currentRouteName) {
   }else if (currentRouteName == Constant.tagSixPackViewScreen ||
       currentRouteName == Constant.tagSixPackView) {
     title = "Six Pack View";
+  }else if (currentRouteName == Constant.tagLogActivityScreen ||
+      currentRouteName == Constant.tagLogActivity) {
+    title = "Log Activity";
   }
 
   return title;
