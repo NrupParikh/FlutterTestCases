@@ -29,6 +29,7 @@ import 'package:flutter_application_1/base_structure/ui/rch_regulatory_screen.da
 import 'package:flutter_application_1/base_structure/ui/rch_rnd_creen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pack_view_home_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pack_view_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/tgi_screen.dart';
 import 'package:get/get.dart';
@@ -93,6 +94,8 @@ class AppPages {
         name: Routes.padProduction, page: () => const PADProductionScreen()),
     GetPage(
         name: Routes.padWherehouse, page: () => const PADWherehouseScreen()),
+
+    GetPage(name: Routes.sixPackViewHome, page: () => const SixPackViewHomeScreen()),    
 
     GetPage(name: Routes.sixPackView, page: () => const SixPackViewScreen()),
     

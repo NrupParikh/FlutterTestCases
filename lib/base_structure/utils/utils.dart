@@ -117,7 +117,12 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagMSAScreen ||
       currentRouteName == Constant.tagMSA) {
     title = AppStrings.lblMSA.tr;
-  }else if (currentRouteName == Constant.tagSixPackViewScreen ||
+  }
+  else if (currentRouteName == Constant.tagSixPackViewHomeScreen ||
+      currentRouteName == Constant.tagSixPackViewHome) {
+    title = "SIX PACK HOME";
+  }
+  else if (currentRouteName == Constant.tagSixPackViewScreen ||
       currentRouteName == Constant.tagSixPackView) {
     title = "Six Pack View";
   }else if (currentRouteName == Constant.tagLogActivityScreen ||
