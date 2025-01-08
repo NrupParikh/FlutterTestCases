@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
-import 'package:flutter_application_1/base_structure/vm/log_activity_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_log_activity_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
 import '../../main.dart';
 import '../constants/app_text_constant.dart';
 
-class LogActivityScreen extends BaseScreen<LogActivityViewModel> {
-  const LogActivityScreen({super.key});
+class SixPacLogActivityScreen extends BaseScreen<SixPacLogActivityViewModel> {
+  const SixPacLogActivityScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {

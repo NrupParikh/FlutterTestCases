@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/base_structure/base/CustomFloatingActionButtonLocation.dart';
+import 'package:flutter_application_1/base_structure/base/custom_floating_action_button_location.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
@@ -18,7 +18,7 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/haccp.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/log_activity_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_finance_view_model.dart';
@@ -34,13 +34,19 @@ import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_mode
 import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 import '../constants/app_theme.dart';
 import '../ui/change_language_screen.dart';
-import '../ui/six_pack_view_screen.dart';
+import '../ui/six_pac_tab1_screen.dart';
+import '../ui/six_pac_tab2_screen.dart';
+import '../ui/six_pac_tab3_screen.dart';
+import '../ui/six_pac_tab4_screen.dart';
+import '../vm/six_pac_tab2_view_model.dart';
+import '../vm/six_pac_tab3_view_model.dart';
+import '../vm/six_pac_tab4_view_model.dart';
 
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   const BaseScreen({super.key});
@@ -110,21 +116,32 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 (controller is PadPurchasingViewModel) ||
                 (controller is PadProductionViewModel) ||
                 (controller is PadWarehouseViewModel) ||
+                (controller is SixPacTab1ViewModel) ||                
+                (controller is SixPacTab2ViewModel)||
+                (controller is SixPacTab3ViewModel)||
+                (controller is SixPacTab4ViewModel)||
                 (controller is SixPacHomeViewHomeModel) ||
-                (controller is SixPacViewModel) ||
-                (controller is LogActivityViewModel))
+                (controller is SixPacLogActivityViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
         bottomNavigationBar: (controller is SixPacHomeViewHomeModel ||
-                controller is SixPacViewModel ||
-                controller is LogActivityViewModel)
+                controller is SixPacTab1ViewModel ||                
+                controller is SixPacTab2ViewModel||
+                controller is SixPacTab3ViewModel||
+                controller is SixPacTab4ViewModel||
+                controller is SixPacHomeViewHomeModel ||
+                controller is SixPacLogActivityViewModel)
             ? buildBottomNavigationBar(context)
             : null,
         floatingActionButtonLocation: floatingActionButtonLocation,
-        floatingActionButton: (controller is SixPacHomeViewHomeModel ||
-                controller is SixPacViewModel ||
-                controller is LogActivityViewModel)
+        floatingActionButton: (
+                controller is SixPacTab1ViewModel ||                
+                controller is SixPacTab2ViewModel||
+                controller is SixPacTab3ViewModel||
+                controller is SixPacTab4ViewModel||
+                controller is SixPacHomeViewHomeModel ||
+                controller is SixPacLogActivityViewModel)
             ? buildFloatingActionButton
             : null,
         drawer: (!(currentRouteName == Constant.tagLoginScreen ||
@@ -211,7 +228,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                         height: 30,
                         image: AssetImage("assets/images/ic_first.png")),
                     onTap: () {
-                      Get.to(const SixPacViewScreen());
+                      Get.to(const SixPacTab1Screen());
                       if (kDebugMode) {
                         print("TAG_ic_first");
                       }
@@ -223,6 +240,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                         height: 30,
                         image: AssetImage("assets/images/ic_second.png")),
                     onTap: () {
+                      Get.to(const SixPacTab2Screen());
                       if (kDebugMode) {
                         print("TAG_ic_second");
                       }
@@ -246,6 +264,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                         height: 30,
                         image: AssetImage("assets/images/ic_third.png")),
                     onTap: () {
+                        Get.to(const SixPacTab3Screen());
                       if (kDebugMode) {
                         print("TAG_ic_third");
                       }
@@ -257,6 +276,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                         height: 30,
                         image: AssetImage("assets/images/ic_fourth.png")),
                     onTap: () {
+                        Get.to(const SixPacTab4Screen());
                       if (kDebugMode) {
                         print("TAG_ic_forth");
                       }

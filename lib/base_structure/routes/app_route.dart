@@ -34,8 +34,14 @@ class Routes {
   static const padPurchasing = '/padPurchasing';
   static const padProduction = '/padProduction';
   static const padWherehouse = '/padWherehouse';
-  static const sixPackViewHome = '/sixPackViewHome';
-  static const sixPackView = '/sixPackView';
-  static const logActivity = '/logActivity';
+  
+  // SIX PAC
 
+  static const sixPacTab1 = '/sixPacTab1';
+  static const sixPacTab2 = '/sixPacTab2';
+  static const sixPacTab3 = '/sixPacTab3';
+  static const sixPacTab4 = '/sixPacTab4';
+
+  static const logActivity = '/logActivity';
+  static const sixPackViewHome = '/sixPackViewHome';
 }

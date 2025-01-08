@@ -131,7 +131,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
         //     : ThemeMode.dark,
         // For system specific theme theme support
         themeMode: ThemeMode.system,
-        defaultTransition: Transition.rightToLeft,
+        defaultTransition: Transition.native,
         transitionDuration:
             const Duration(milliseconds: Constant.transitionDuration),
         enableLog: true,

@@ -8,6 +8,6 @@ class CustomFloatingActionButtonLocation extends FloatingActionButtonLocation{
     final double fabY = scaffoldGeometry.scaffoldSize.height -
         scaffoldGeometry.floatingActionButtonSize.height -
         scaffoldGeometry.minInsets.bottom;
-    return Offset(fabX, fabY);    
+    return Offset(fabX, fabY);
   }
 }

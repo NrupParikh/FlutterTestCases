@@ -10,7 +10,7 @@ import 'package:tuple/tuple.dart';
 
 import '../../main.dart';
 
-class SixPacViewModel extends BaseViewModel {
+class SixPacTab1ViewModel extends BaseViewModel {
   RxDouble imageWidth = 0.0.obs;
   RxDouble imageHeight = 0.0.obs;
 

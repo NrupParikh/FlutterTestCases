@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
 
-class LogActivityViewModel extends BaseViewModel {
+class SixPacLogActivityViewModel extends BaseViewModel {
 
   TextEditingController calController = TextEditingController();
   

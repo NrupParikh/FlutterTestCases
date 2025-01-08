@@ -7,7 +7,7 @@ import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.d
 import 'package:flutter_application_1/base_structure/ui/haccp.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_trial_screen.dart';
-import 'package:flutter_application_1/base_structure/ui/log_activity_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_log_activity_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/pad_commertial_review_screen.dart';
@@ -30,11 +30,14 @@ import 'package:flutter_application_1/base_structure/ui/rch_rnd_creen.dart';
 import 'package:flutter_application_1/base_structure/ui/rch_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/rnd_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_view_home_screen.dart';
-import 'package:flutter_application_1/base_structure/ui/six_pack_view_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_tab1_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/tgi_screen.dart';
 import 'package:get/get.dart';
 
 import '../ui/change_language_screen.dart';
+import '../ui/six_pac_tab2_screen.dart';
+import '../ui/six_pac_tab3_screen.dart';
+import '../ui/six_pac_tab4_screen.dart';
 
 class AppPages {
   // static const initial = Routes.initial;
@@ -95,10 +98,14 @@ class AppPages {
     GetPage(
         name: Routes.padWherehouse, page: () => const PADWherehouseScreen()),
 
-    GetPage(name: Routes.sixPackViewHome, page: () => const SixPacViewHomeScreen()),    
+       
+    // SIX PAC
+    GetPage(name: Routes.sixPacTab1, page: () => const SixPacTab1Screen()),
+    GetPage(name: Routes.sixPacTab2, page: () => const SixPacTab2Screen()),
+    GetPage(name: Routes.sixPacTab3, page: () => const SixPacTab3Screen()),
+    GetPage(name: Routes.sixPacTab4, page: () => const SixPacTab4Screen()),
 
-    GetPage(name: Routes.sixPackView, page: () => const SixPacViewScreen()),
-    
-    GetPage(name: Routes.logActivity, page: () => const LogActivityScreen()),
+    GetPage(name: Routes.sixPackViewHome, page: () => const SixPacViewHomeScreen()), 
+    GetPage(name: Routes.logActivity, page: () => const SixPacLogActivityScreen()),
   ];
 }

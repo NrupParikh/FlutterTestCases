@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
-import 'package:flutter_application_1/base_structure/ui/log_activity_screen.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_view_model.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_log_activity_screen.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
 import 'package:get/get.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
 import 'package:tuple/tuple.dart';
@@ -11,8 +11,8 @@ import 'package:tuple/tuple.dart';
 import '../../main.dart';
 
 // https://www.gifgit.com/
-class SixPacViewScreen extends BaseScreen<SixPacViewModel> {
-  const SixPacViewScreen({super.key});
+class SixPacTab1Screen extends BaseScreen<SixPacTab1ViewModel> {
+  const SixPacTab1Screen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
@@ -136,7 +136,7 @@ class SixPacViewScreen extends BaseScreen<SixPacViewModel> {
                             ),
                             onTap: () async {
                               final result = await Get.to<Tuple2<bool, String>>(
-                                  const LogActivityScreen());
+                                  const SixPacLogActivityScreen());
                               if (result != null) {
                                 if (kDebugMode) {
                                   print("TAG_Item1 ${result.item1}");
