@@ -118,18 +118,6 @@ String getTitle(String currentRouteName) {
       currentRouteName == Constant.tagMSA) {
     title = AppStrings.lblMSA.tr;
   }
-  else if (currentRouteName == Constant.tagSixPackViewHomeScreen ||
-      currentRouteName == Constant.tagSixPackViewHome) {
-    title = "SIX PACK HOME";
-  }
-  else if (currentRouteName == Constant.tagSixPackViewScreen ||
-      currentRouteName == Constant.tagSixPackView) {
-    title = "Six Pack View";
-  }else if (currentRouteName == Constant.tagLogActivityScreen ||
-      currentRouteName == Constant.tagLogActivity) {
-    title = "Log Activity";
-  }
-
   return title;
 }
 

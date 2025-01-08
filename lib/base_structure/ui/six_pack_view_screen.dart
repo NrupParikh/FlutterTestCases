@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/ui/log_activity_screen.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pack_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_view_model.dart';
 import 'package:get/get.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
 import 'package:tuple/tuple.dart';
@@ -11,18 +11,18 @@ import 'package:tuple/tuple.dart';
 import '../../main.dart';
 
 // https://www.gifgit.com/
-class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
-  const SixPackViewScreen({super.key});
+class SixPacViewScreen extends BaseScreen<SixPacViewModel> {
+  const SixPacViewScreen({super.key});
 
   @override
   Widget buildScreen(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
     double deviceHeight = MediaQuery.of(context).size.height;
 
-    double myViewWidth = 200;
-    double myViewHeight = 292;
+    double myViewWidth = 300;
+    double myViewHeight = 392;
 
-    // vm.loadImageDimensions("assets/images/img_six_pack.png");
+    // vm.loadImageDimensions("assets/images/img_six_pac.png");
 
     return Obx(() => Container(
           width: deviceWidth,
@@ -63,7 +63,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 1
                       Center(
                         child: SizedBox(
-                          width: myViewWidth - 1, // Fore remove border
+                          width: myViewWidth - 32, // Fore remove border
                           height: myViewHeight - 1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress1.value,
@@ -87,7 +87,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       // ========================= V PROGRESS BAR 2
                       Center(
                         child: SizedBox(
-                          width: myViewWidth - 1, // Fore remove border
+                          width: myViewWidth - 32, // Fore remove border
                           height: myViewHeight - 1,
                           child: SimpleAnimationProgressBar(
                             ratio: vm.progress2.value,
@@ -115,7 +115,7 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                           child: const Image(
                               fit: BoxFit.contain,
                               image: AssetImage(
-                                  "assets/images/img_six_pack_latest.png")),
+                                  "assets/images/img_six_pac_latest.png")),
                         ),
                       ),
                       Center(
@@ -124,12 +124,12 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                           child: GestureDetector(
                             child: SizedBox(
                               width: myViewWidth,
-                              height: myViewHeight + 12,
+                              height: myViewHeight + 18,
                               child: const Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Image(
-                                    width: 24,
-                                    height: 24,
+                                    width: 36,
+                                    height: 36,
                                     image:
                                         AssetImage("assets/images/ic_add.png")),
                               ),
@@ -250,13 +250,13 @@ class SixPackViewScreen extends BaseScreen<SixPackViewModel> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 48,
-                  ),
-                  Text(
-                    "${(vm.currentCal.value)} Current Kcal",
-                    style: const TextStyle(fontSize: 10),
-                  ),
+                  // const SizedBox(
+                  //   height: 48,
+                  // ),
+                  // Text(
+                  //   "${(vm.currentCal.value)} Current Kcal",
+                  //   style: const TextStyle(fontSize: 10),
+                  // ),
                 ],
               ),
             ),

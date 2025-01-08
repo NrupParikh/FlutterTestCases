@@ -29,8 +29,8 @@ import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_mode
 import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pack_home_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pack_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/tgi_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
@@ -77,8 +77,8 @@ class AppBindings extends Bindings {
 
     Get.lazyPut(() => PadDepartmentViewModel(), fenix: true);
     Get.lazyPut(() => PadCommertialReviewViewModel(), fenix: true);
-    Get.lazyPut(() => SixPackHomeViewHomeModel(), fenix: true);
-    Get.lazyPut(() => SixPackViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacHomeViewHomeModel(), fenix: true);
+    Get.lazyPut(() => SixPacViewModel(), fenix: true);
     Get.lazyPut(() => LogActivityViewModel(), fenix: true);
   }
 }

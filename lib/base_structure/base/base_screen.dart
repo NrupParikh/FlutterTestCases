@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/base/CustomFloatingActionButtonLocation.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
+import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/ui/change_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/document_filter_screen.dart';
@@ -9,12 +11,14 @@ import 'package:flutter_application_1/base_structure/ui/project_management_scree
 import 'package:flutter_application_1/base_structure/ui/notifications_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/profile_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/project_filter_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_view_home_screen.dart';
 import 'package:flutter_application_1/base_structure/utils/preferences.dart';
 import 'package:flutter_application_1/base_structure/utils/utils.dart';
 import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/haccp.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_finance_view_model.dart';
@@ -29,11 +33,14 @@ import 'package:flutter_application_1/base_structure/vm/rch_quality_view_model.d
 import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 import '../constants/app_text_constant.dart';
 import '../constants/app_theme.dart';
 import '../ui/change_language_screen.dart';
+import '../ui/six_pack_view_screen.dart';
 
 abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   const BaseScreen({super.key});
@@ -102,13 +109,24 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 (controller is PadFinanceViewModel) ||
                 (controller is PadPurchasingViewModel) ||
                 (controller is PadProductionViewModel) ||
-                (controller is PadWarehouseViewModel))
+                (controller is PadWarehouseViewModel) ||
+                (controller is SixPacHomeViewHomeModel) ||
+                (controller is SixPacViewModel) ||
+                (controller is LogActivityViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
-        bottomNavigationBar: buildBottomNavigationBar(context),
+        bottomNavigationBar: (controller is SixPacHomeViewHomeModel ||
+                controller is SixPacViewModel ||
+                controller is LogActivityViewModel)
+            ? buildBottomNavigationBar(context)
+            : null,
         floatingActionButtonLocation: floatingActionButtonLocation,
-        floatingActionButton: buildFloatingActionButton,
+        floatingActionButton: (controller is SixPacHomeViewHomeModel ||
+                controller is SixPacViewModel ||
+                controller is LogActivityViewModel)
+            ? buildFloatingActionButton
+            : null,
         drawer: (!(currentRouteName == Constant.tagLoginScreen ||
                     currentRouteName == Constant.tagLogin) &&
                 !(currentRouteName == Constant.tagForgotPasswordScreen ||
@@ -137,20 +155,119 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   @protected
   bool get extendedBodyBehindAppBar => false;
 
+  // Ex. Prevent floating action button to move up when keyboard open (if false)
   @protected
-  bool get resizeToAvoidBottomInset => true;
+  bool get resizeToAvoidBottomInset => false;
 
   @protected
   Color? get screenBackgroundColor => Colors.white;
 
-  @protected
-  Widget? get buildFloatingActionButton => null;
+  // @protected
+  // Widget? get buildFloatingActionButton => null;
+
+  // @protected
+  // FloatingActionButtonLocation? get floatingActionButtonLocation => null;
+
+  // @protected
+  // Widget? buildBottomNavigationBar(BuildContext context) => null;
 
   @protected
-  FloatingActionButtonLocation? get floatingActionButtonLocation => null;
+  Widget? get buildFloatingActionButton => GestureDetector(
+      onTap: () {
+        if (kDebugMode) {
+          print("TAG_SIX_PAC");
+        }
+        Get.off(const SixPacViewHomeScreen());
+      },
+      child: const SizedBox(
+        width: 60,
+        height: 60,
+        child: Image(image: AssetImage("assets/images/ic_floating.png")),
+      ));
+
+  // @protected
+  // FloatingActionButtonLocation? get floatingActionButtonLocation =>
+  //     FloatingActionButtonLocation.centerDocked;
 
   @protected
-  Widget? buildBottomNavigationBar(BuildContext context) => null;
+  FloatingActionButtonLocation? get floatingActionButtonLocation =>
+      CustomFloatingActionButtonLocation();
+
+  @protected
+  Widget? buildBottomNavigationBar(BuildContext context) => BottomAppBar(
+        color: ColorConstant.backgroundBlueColor,
+        height: 48,
+        notchMargin: 0.0,
+        child: Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  GestureDetector(
+                    child: const Image(
+                        width: 30,
+                        height: 30,
+                        image: AssetImage("assets/images/ic_first.png")),
+                    onTap: () {
+                      Get.to(const SixPacViewScreen());
+                      if (kDebugMode) {
+                        print("TAG_ic_first");
+                      }
+                    },
+                  ),
+                  GestureDetector(
+                    child: const Image(
+                        width: 30,
+                        height: 30,
+                        image: AssetImage("assets/images/ic_second.png")),
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("TAG_ic_second");
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              width: 60,
+              height: 60,
+            ),
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  GestureDetector(
+                    child: const Image(
+                        width: 30,
+                        height: 30,
+                        image: AssetImage("assets/images/ic_third.png")),
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("TAG_ic_third");
+                      }
+                    },
+                  ),
+                  GestureDetector(
+                    child: const Image(
+                        width: 30,
+                        height: 30,
+                        image: AssetImage("assets/images/ic_fourth.png")),
+                    onTap: () {
+                      if (kDebugMode) {
+                        print("TAG_ic_forth");
+                      }
+                    },
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
 
   @protected
   PreferredSizeWidget? buildAppBar(
@@ -170,13 +287,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
       leading: (currentRouteName == Constant.tagLoginScreen ||
               currentRouteName == Constant.tagLogin ||
               currentRouteName == Constant.tagForgotPasswordScreen ||
-              currentRouteName == Constant.tagForgotPassword||
-              currentRouteName == Constant.tagSixPackViewHomeScreen||
-              currentRouteName == Constant.tagSixPackViewHome||
-              currentRouteName == Constant.tagSixPackViewScreen||
-              currentRouteName == Constant.tagSixPackView||
-              currentRouteName == Constant.tagLogActivityScreen||
-              currentRouteName == Constant.tagLogActivity)
+              currentRouteName == Constant.tagForgotPassword)
           ? null
           : ((currentRouteName == Constant.tagProjectManagementScreen ||
                       currentRouteName == Constant.tagProjectManagement) ||
