@@ -35,6 +35,7 @@ class SixPacTab1Screen extends BaseScreen<SixPacTab1ViewModel> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const SizedBox(height: 34,),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

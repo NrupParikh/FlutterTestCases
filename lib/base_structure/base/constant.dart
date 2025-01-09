@@ -1,5 +1,5 @@
 class Constant {
-  static const transitionDuration = 100;
+  static const transitionDuration = 0;
 
   static const tagLoginScreen = "LoginScreen";
   static const tagLogin = "login";

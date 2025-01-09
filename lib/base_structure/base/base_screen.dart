@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/base_structure/base/base_view_model_getx.dart';
 import 'package:flutter_application_1/base_structure/base/custom_floating_action_button_location.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
@@ -37,6 +38,7 @@ import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.
 import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
+import '../../main.dart';
 import '../constants/app_text_constant.dart';
 import '../constants/app_theme.dart';
 import '../ui/change_language_screen.dart';
@@ -48,7 +50,7 @@ import '../vm/six_pac_tab2_view_model.dart';
 import '../vm/six_pac_tab3_view_model.dart';
 import '../vm/six_pac_tab4_view_model.dart';
 
-abstract class BaseScreen<T extends GetxController> extends GetView<T> {
+abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
   const BaseScreen({super.key});
 
   @override
@@ -116,30 +118,29 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 (controller is PadPurchasingViewModel) ||
                 (controller is PadProductionViewModel) ||
                 (controller is PadWarehouseViewModel) ||
-                (controller is SixPacTab1ViewModel) ||                
-                (controller is SixPacTab2ViewModel)||
-                (controller is SixPacTab3ViewModel)||
-                (controller is SixPacTab4ViewModel)||
+                (controller is SixPacTab1ViewModel) ||
+                (controller is SixPacTab2ViewModel) ||
+                (controller is SixPacTab3ViewModel) ||
+                (controller is SixPacTab4ViewModel) ||
                 (controller is SixPacHomeViewHomeModel) ||
                 (controller is SixPacLogActivityViewModel))
             ? null
             : buildAppBar(context),
         body: buildScreen(context),
         bottomNavigationBar: (controller is SixPacHomeViewHomeModel ||
-                controller is SixPacTab1ViewModel ||                
-                controller is SixPacTab2ViewModel||
-                controller is SixPacTab3ViewModel||
-                controller is SixPacTab4ViewModel||
+                controller is SixPacTab1ViewModel ||
+                controller is SixPacTab2ViewModel ||
+                controller is SixPacTab3ViewModel ||
+                controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
                 controller is SixPacLogActivityViewModel)
             ? buildBottomNavigationBar(context)
             : null,
         floatingActionButtonLocation: floatingActionButtonLocation,
-        floatingActionButton: (
-                controller is SixPacTab1ViewModel ||                
-                controller is SixPacTab2ViewModel||
-                controller is SixPacTab3ViewModel||
-                controller is SixPacTab4ViewModel||
+        floatingActionButton: (controller is SixPacTab1ViewModel ||
+                controller is SixPacTab2ViewModel ||
+                controller is SixPacTab3ViewModel ||
+                controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
                 controller is SixPacLogActivityViewModel)
             ? buildFloatingActionButton
@@ -194,6 +195,7 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
         if (kDebugMode) {
           print("TAG_SIX_PAC");
         }
+        selectedBottomNavigationBarItemIndex.value = 0;
         Get.off(const SixPacViewHomeScreen());
       },
       child: const SizedBox(
@@ -203,13 +205,57 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
       ));
 
   // @protected
-  // FloatingActionButtonLocation? get floatingActionButtonLocation =>
-  //     FloatingActionButtonLocation.centerDocked;
+  FloatingActionButtonLocation? get floatingActionButtonLocation =>
+      FloatingActionButtonLocation.centerDocked;
 
   @protected
-  FloatingActionButtonLocation? get floatingActionButtonLocation =>
-      CustomFloatingActionButtonLocation();
+  // FloatingActionButtonLocation? get floatingActionButtonLocation =>
+  //     CustomFloatingActionButtonLocation();
+  // @protected
+  // Widget? buildBottomNavigationBar(BuildContext context) =>
+  // BottomNavigationBar(
+  //   currentIndex: vm.selectedBottomNavigationBarItemIndex.value,
+  //   onTap: vm.changeTabIndexOfBottomAppBar,
+  //   selectedItemColor: ColorConstant.blueColor,
+  //   unselectedItemColor: Colors.white,
+  //   type: BottomNavigationBarType.fixed,
+  //   backgroundColor:  ColorConstant.bottomAppBarBgColor,
+  //   showSelectedLabels: false,
+  //   showUnselectedLabels: false,
+  //   items: [
+  //   BottomNavigationBarItem(
+  //     icon: Image.asset(
+  //       "assets/images/ic_first.png",
+  //       width: 24,
+  //       height: 24,
+  //     ),
+  //     label: "First"
+  //   ),
+  //   BottomNavigationBarItem(
+  //     icon: Image.asset(
+  //       "assets/images/ic_second.png",
+  //       width: 24,
+  //       height: 24,
+  //     ),label: "Second"
+  //   ),
 
+  //   BottomNavigationBarItem(
+  //     icon: Image.asset(
+  //       "assets/images/ic_third.png",
+  //       width: 24,
+  //       height: 24,
+  //     ),
+  //     label: "Third"
+  //   ),
+  //   BottomNavigationBarItem(
+  //     icon: Image.asset(
+  //       "assets/images/ic_fourth.png",
+  //       width: 24,
+  //       height: 24,
+  //     ),
+  //     label: "Fourth"
+  //   ),
+  // ]);
   @protected
   Widget? buildBottomNavigationBar(BuildContext context) => BottomAppBar(
         color: ColorConstant.backgroundBlueColor,
@@ -223,24 +269,32 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
-                    child: const Image(
+                    child: Image(
+                        color:
+                            (selectedBottomNavigationBarItemIndex.value == 1)
+                                ? ColorConstant.blueColor
+                                : Colors.white,
                         width: 30,
                         height: 30,
-                        image: AssetImage("assets/images/ic_first.png")),
+                        image: const AssetImage("assets/images/ic_first.png")),
                     onTap: () {
-                      Get.to(const SixPacTab1Screen());
+                      vm.changeTabIndexOfBottomAppBar(1);
                       if (kDebugMode) {
                         print("TAG_ic_first");
                       }
                     },
                   ),
                   GestureDetector(
-                    child: const Image(
+                    child: Image(
+                        color:
+                            (selectedBottomNavigationBarItemIndex.value == 2)
+                                ? ColorConstant.blueColor
+                                : Colors.white,
                         width: 30,
                         height: 30,
-                        image: AssetImage("assets/images/ic_second.png")),
+                        image: const AssetImage("assets/images/ic_second.png")),
                     onTap: () {
-                      Get.to(const SixPacTab2Screen());
+                      vm.changeTabIndexOfBottomAppBar(2);
                       if (kDebugMode) {
                         print("TAG_ic_second");
                       }
@@ -259,24 +313,33 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
-                    child: const Image(
+                    child: Image(
+                        color:
+                            (selectedBottomNavigationBarItemIndex.value == 3)
+                                ? ColorConstant.blueColor
+                                : Colors.white,
                         width: 30,
                         height: 30,
-                        image: AssetImage("assets/images/ic_third.png")),
+                        image: const AssetImage("assets/images/ic_third.png")),
                     onTap: () {
-                        Get.to(const SixPacTab3Screen());
+                      vm.changeTabIndexOfBottomAppBar(3);
                       if (kDebugMode) {
                         print("TAG_ic_third");
                       }
                     },
                   ),
                   GestureDetector(
-                    child: const Image(
+                    child: 
+                    Image(
+                        color:
+                            (selectedBottomNavigationBarItemIndex.value == 4)
+                                ? ColorConstant.blueColor
+                                : Colors.white,
                         width: 30,
                         height: 30,
-                        image: AssetImage("assets/images/ic_fourth.png")),
+                        image: const AssetImage("assets/images/ic_fourth.png")),
                     onTap: () {
-                        Get.to(const SixPacTab4Screen());
+                      vm.changeTabIndexOfBottomAppBar(4);
                       if (kDebugMode) {
                         print("TAG_ic_forth");
                       }
