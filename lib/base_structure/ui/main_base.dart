@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/base_structure/base/constant.dart';
 import 'package:flutter_application_1/base_structure/base/local/local.dart';
 import 'package:flutter_application_1/base_structure/bindings/app_bindings.dart';
+import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/constants/app_strings.dart';
 import 'package:flutter_application_1/base_structure/constants/app_theme.dart';
 import 'package:flutter_application_1/base_structure/routes/app_pages.dart';
@@ -110,10 +111,20 @@ class _MyBaseAppState extends State<MyBaseApp> {
   @override
   Widget build(BuildContext context) {
     // Set status bar and navigation bar color
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    if(widget.myInitialTheme.toString() == AppTheme.lightTheme)
+    {
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: ColorConstant.backgroundBlueColor,
+        systemNavigationBarColor: ColorConstant.backgroundBlueColor,
+        systemNavigationBarDividerColor: ColorConstant.backgroundBlueColor));
+    }
+    else{
+        SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.green,
         systemNavigationBarColor: Colors.green,
         systemNavigationBarDividerColor: Colors.white));
+    }
+
 
     if (kDebugMode) {
       print("myInitialRoute =  ${widget.myInitialRoute.toString()}");

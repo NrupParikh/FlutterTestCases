@@ -44,4 +44,8 @@ class Routes {
 
   static const logActivity = '/logActivity';
   static const sixPackViewHome = '/sixPackViewHome';
+
+  static const sixPacInvite = '/sixPacInvite';
+  static const sixPacFitness = '/sixPacFitness';
+  static const sixPacNutrition = '/sixPacNutrition';
 }

@@ -6,6 +6,8 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_fitness_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_invite_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
@@ -30,6 +32,7 @@ import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart'
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_nutrition_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/tgi_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
@@ -89,5 +92,9 @@ class AppBindings extends Bindings {
 
     Get.lazyPut(() => SixPacHomeViewHomeModel(), fenix: true);
     Get.lazyPut(() => SixPacLogActivityViewModel(), fenix: true);
+
+    Get.lazyPut(() => SixPacInviteViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacFitnessViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacNutritionViewModel(), fenix: true);
   }
 }

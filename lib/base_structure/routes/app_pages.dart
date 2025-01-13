@@ -7,6 +7,7 @@ import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.d
 import 'package:flutter_application_1/base_structure/ui/haccp.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_review_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/industrial_trial_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_invite_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_log_activity_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/msa_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/nrd_screen.dart';
@@ -35,6 +36,8 @@ import 'package:flutter_application_1/base_structure/ui/tgi_screen.dart';
 import 'package:get/get.dart';
 
 import '../ui/change_language_screen.dart';
+import '../ui/six_pac_fitness_screen.dart';
+import '../ui/six_pac_nutrition_screen.dart';
 import '../ui/six_pac_tab2_screen.dart';
 import '../ui/six_pac_tab3_screen.dart';
 import '../ui/six_pac_tab4_screen.dart';
@@ -107,5 +110,9 @@ class AppPages {
 
     GetPage(name: Routes.sixPackViewHome, page: () => const SixPacViewHomeScreen()), 
     GetPage(name: Routes.logActivity, page: () => const SixPacLogActivityScreen()),
+
+    GetPage(name: Routes.sixPacInvite, page: () => const SixPacInviteScreen()),
+    GetPage(name: Routes.sixPacFitness, page: () => const SixPacFitnessScreen()),
+    GetPage(name: Routes.sixPacNutrition, page: () => const SixPacNutritionScreen()),
   ];
 }

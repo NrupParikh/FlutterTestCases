@@ -2,8 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
 import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_fitness_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_invite_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_nutrition_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
 import 'package:get/get.dart';
+
+import '../common_widgets/custom_dialog.dart';
 
 class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
   const SixPacViewHomeScreen({super.key});
@@ -84,9 +89,12 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                             ),
                                           ),
                                           onTap: () {
+                                            // PROFILE (Back and settings) : Tab2 > Profile Tab
+                                            vm.selectedOption.value = 1;
+                                            vm.changeTabIndexOfBottomAppBar(4);
+                                            
                                             if (kDebugMode) {
                                               print("TAG_1");
-                                              vm.selectedOption.value = 1;
                                             }
                                           },
                                         ),
@@ -128,9 +136,12 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                             ),
                                           ),
                                           onTap: () {
+                                            // Invite screen
+                                            vm.selectedOption.value = 2;
+                                            Get.to(const SixPacInviteScreen());
+
                                             if (kDebugMode) {
                                               print("TAG_2");
-                                              vm.selectedOption.value = 2;
                                             }
                                           },
                                         ),
@@ -183,9 +194,12 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                             ),
                                           ),
                                           onTap: () {
+                                            // Fitness Screen [FOR YOU/EXERCISE/WORKOUT/PLANS]
+                                            vm.selectedOption.value = 3;
+                                            Get.to(const SixPacFitnessScreen());
+
                                             if (kDebugMode) {
                                               print("TAG_3");
-                                              vm.selectedOption.value = 3;
                                             }
                                           },
                                         ),
@@ -227,9 +241,11 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                             ),
                                           ),
                                           onTap: () {
+                                            // Nutrition Screen [FOR YOU/RECIPES/MEALS/PLANS]
+                                            vm.selectedOption.value = 4;
+                                            Get.to(const SixPacNutritionScreen());
                                             if (kDebugMode) {
                                               print("TAG_4");
-                                              vm.selectedOption.value = 4;
                                             }
                                           },
                                         ),
@@ -280,10 +296,14 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                               ],
                                             ),
                                           ),
-                                          onTap: () {
+                                          onTap: () async {
                                             if (kDebugMode) {
                                               print("TAG_5");
                                               vm.selectedOption.value = 5;
+                                              final result = await CustomDialog
+                                                  .showMessageDialog("Sixpac",
+                                                      "Comming soon...");
+                                              if (result) {}
                                             }
                                           },
                                         ),
@@ -324,10 +344,15 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                               ],
                                             ),
                                           ),
-                                          onTap: () {
+                                          onTap: () async{
                                             if (kDebugMode) {
                                               print("TAG_6");
                                               vm.selectedOption.value = 6;
+                                              vm.selectedOption.value = 5;
+                                              final result = await CustomDialog
+                                                  .showMessageDialog("Sixpac",
+                                                      "Comming soon...");
+                                              if (result) {}
                                             }
                                           },
                                         ),
@@ -367,7 +392,11 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                         "assets/images/ic_notification.png")),
                               ),
                             ),
-                            onTap: () async {},
+                            onTap: () async {
+                              if (kDebugMode) {
+                                print("Notification");
+                              }
+                            },
                           ),
                         ),
                       ),

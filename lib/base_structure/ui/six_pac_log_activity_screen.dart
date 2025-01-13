@@ -20,6 +20,7 @@ class SixPacLogActivityScreen extends BaseScreen<SixPacLogActivityViewModel> {
           child: Column(
             children: [
               Switch(
+                activeColor: ColorConstant.blueColor,
                   value: isBurned.value,
                   onChanged: (value) {
                     isBurned.value = value;
@@ -27,19 +28,26 @@ class SixPacLogActivityScreen extends BaseScreen<SixPacLogActivityViewModel> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  cursorColor: ColorConstant.blueColor,
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   controller: vm.calController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    disabledBorder: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: ColorConstant.blueColor)
+                    ),
+                    disabledBorder: const OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: ColorConstant.blueColor)
+                    ),
                     hintText: "Enter calories",
                     hintStyle:
-                        TextStyle(fontFamily: AppTextConstant.poppinsRegular),
-                    label: Text("Calories",
+                        TextStyle(fontFamily: AppTextConstant.poppinsRegular,color: ColorConstant.blueColor),
+                    label: const Text("Calories",
                         style: TextStyle(
                             fontSize: 12,
                             fontFamily: AppTextConstant.poppinsRegular)),
+                            floatingLabelStyle: TextStyle(color: ColorConstant.blueColor)
                   ),
                   onFieldSubmitted: (submittedValue) {
                     if (kDebugMode) {
