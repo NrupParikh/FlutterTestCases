@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 
 import 'app_text_constant.dart';
 
@@ -110,15 +111,15 @@ class AppTheme {
         tabBarTheme: const TabBarTheme(
             labelColor: Colors.white,
             labelStyle: TextStyle(
-                fontSize: 14, fontFamily: AppTextConstant.poppinsBold),
+                fontSize: 12, fontFamily: AppTextConstant.poppinsBold),
             indicatorSize: TabBarIndicatorSize.tab,
-            indicatorColor: Color(0xFF00390C),
-            unselectedLabelColor: Color(0xFF66DF6E),
+            indicatorColor: Colors.white,
+            unselectedLabelColor: Colors.blue,
             unselectedLabelStyle: TextStyle(
-                fontSize: 12, fontFamily: AppTextConstant.poppinsRegular),
+                fontSize: 10, fontFamily: AppTextConstant.poppinsRegular),
             dividerColor: Colors.transparent),
         radioTheme: RadioThemeData(
-          fillColor: MaterialStateProperty.all(const Color(0xFF66DF6E)),
+          fillColor: MaterialStateProperty.all(ColorConstant.backgroundBlueColor),
         ),
         datePickerTheme: const DatePickerThemeData(
             backgroundColor: Color(0xFF1A1C19),
@@ -129,9 +130,9 @@ class AppTheme {
         dialogBackgroundColor: Colors.black,
         bottomSheetTheme:
             const BottomSheetThemeData(backgroundColor: Colors.black),
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle.dark,
-            backgroundColor: Colors.green));
+            backgroundColor: ColorConstant.backgroundBlueColor));
             
   }
 
