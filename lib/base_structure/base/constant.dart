@@ -45,4 +45,31 @@ class Constant {
 
   static const tagMSAScreen = "MSAScreen";
   static const tagMSA = "msa";
+  
+  static const tagSocialScreen = "SixPacSocialScreen";
+  static const tagSocial = "sixPacSocial";
+
+  static const tagInviteScreen = "SixPacInviteScreen";
+  static const tagInvite = "sixPacInvite";
+
+  static const tagFitnessScreen = "SixPacFitnessScreen";
+  static const tagFitness = "sixPacFitness";
+
+  static const tagNutritionScreen = "SixPacNutritionScreen";
+  static const tagNutrition = "sixPacNutrition";
+
+  static const tagGlobalFeedScreen = "SixPacGlobalFeedScreen";
+  static const tagGlobalFeed = "sixPacGlobalFeed";
+
+  static const tagYourFeedScreen = "SixPacYourFeedScreen";
+  static const tagYourFeed = "sixPacYourFeed";
+
+  static const tagSquadsScreen = "SixPacSquadsScreen";
+  static const tagSquads= "sixPacSquads";
+
+  static const tagSixPacProfileScreen = "SixPacProfileScreen";
+  static const tagSixPacProfile = "sixPacProfile";
+  
+  static const tagChatScreen = "SixPacChatScreen";
+  static const tagChat = "sixPacChat";
 }

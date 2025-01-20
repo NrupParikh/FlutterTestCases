@@ -5,6 +5,7 @@ import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_fitness_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_invite_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_nutrition_screen.dart';
+import 'package:flutter_application_1/base_structure/ui/six_pac_social_screen.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
 import 'package:get/get.dart';
 
@@ -91,7 +92,7 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                           onTap: () {
                                             // PROFILE (Back and settings) : Tab2 > Profile Tab
                                             vm.selectedOption.value = 1;
-                                            vm.changeTabIndexOfBottomAppBar(4);
+                                            Get.to(const SixPacSocialScreen());
                                             
                                             if (kDebugMode) {
                                               print("TAG_1");
@@ -301,8 +302,8 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                               print("TAG_5");
                                               vm.selectedOption.value = 5;
                                               final result = await CustomDialog
-                                                  .showMessageDialog("Sixpac",
-                                                      "Comming soon...");
+                                                  .showMessageDialog("SIXPAC",
+                                                      "This feature is not available in your region");
                                               if (result) {}
                                             }
                                           },
@@ -350,8 +351,8 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                                               vm.selectedOption.value = 6;
                                               vm.selectedOption.value = 5;
                                               final result = await CustomDialog
-                                                  .showMessageDialog("Sixpac",
-                                                      "Comming soon...");
+                                                  .showMessageDialog("SIXPAC",
+                                                      "This feature is not available in your region");
                                               if (result) {}
                                             }
                                           },

@@ -99,7 +99,6 @@ Future<void> main() async {
 
   // Set Application orientation to support only Portrait mode
   // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
   runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
 
   // runApp(const SampleTab());

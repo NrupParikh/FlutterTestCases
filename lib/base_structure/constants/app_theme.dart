@@ -108,16 +108,16 @@ class AppTheme {
             style: OutlinedButton.styleFrom(
                 textStyle: const TextStyle(
                     fontSize: 12, fontFamily: AppTextConstant.poppinsBold))),
-        tabBarTheme: const TabBarTheme(
-            labelColor: Colors.white,
+        tabBarTheme:  const TabBarTheme(
+            labelColor: Colors.green,
             labelStyle: TextStyle(
                 fontSize: 12, fontFamily: AppTextConstant.poppinsBold),
-            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorSize: TabBarIndicatorSize.label,
             indicatorColor: Colors.white,
-            unselectedLabelColor: Colors.blue,
+            unselectedLabelColor: Colors.white,
             unselectedLabelStyle: TextStyle(
                 fontSize: 10, fontFamily: AppTextConstant.poppinsRegular),
-            dividerColor: Colors.transparent),
+            dividerColor: Colors.white),
         radioTheme: RadioThemeData(
           fillColor: MaterialStateProperty.all(ColorConstant.backgroundBlueColor),
         ),

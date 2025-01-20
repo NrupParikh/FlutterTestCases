@@ -43,13 +43,15 @@ class SixPacNutritionScreen extends BaseScreen<SixPacNutritionViewModel> {
               ],
             ),
           ),
-          body: TabBarView(children: [
+          body: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
             Container(
                 color: ColorConstant.backgroundBlueColor,
                 child: const Center(
                   child: Text(
                     "FOR YOU",
-                    style: TextStyle(fontSize: 32, color: Colors.white),
+                    style: TextStyle(fontSize: 32, color: Colors.green),
                   ),
                 )),
             Container(
@@ -57,7 +59,7 @@ class SixPacNutritionScreen extends BaseScreen<SixPacNutritionViewModel> {
                 child: const Center(
                   child: Text(
                     "RECIPES",
-                    style: TextStyle(fontSize: 32, color: Colors.white),
+                    style: TextStyle(fontSize: 32, color: Colors.green),
                   ),
                 )),
             Container(
@@ -65,7 +67,7 @@ class SixPacNutritionScreen extends BaseScreen<SixPacNutritionViewModel> {
                 child: const Center(
                   child: Text(
                     "MEALS",
-                    style: TextStyle(fontSize: 32, color: Colors.white),
+                    style: TextStyle(fontSize: 32, color: Colors.green),
                   ),
                 )),
             Container(
@@ -73,7 +75,7 @@ class SixPacNutritionScreen extends BaseScreen<SixPacNutritionViewModel> {
                 child: const Center(
                   child: Text(
                     "PLANS",
-                    style: TextStyle(fontSize: 32, color: Colors.white),
+                    style: TextStyle(fontSize: 32, color: Colors.green),
                   ),
                 )),
           ]),

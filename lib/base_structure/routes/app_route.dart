@@ -45,7 +45,18 @@ class Routes {
   static const logActivity = '/logActivity';
   static const sixPackViewHome = '/sixPackViewHome';
 
+  static const sixPacSocial = '/sixPacSocial';
   static const sixPacInvite = '/sixPacInvite';
   static const sixPacFitness = '/sixPacFitness';
   static const sixPacNutrition = '/sixPacNutrition';
+
+  static const sixPacGlobalFeed = '/globalFeed';
+  static const sixPacYourFeed = '/yourFeed';
+  static const sixPacSquads = '/squads';
+  static const sixPacProfile = '/profile';
+  static const sixPacChat = '/chat';
+
+  static const sixPacDiscover = '/discover';
+  static const sixPacMember = '/member';
+  static const sixPacLeader = '/leader';
 }

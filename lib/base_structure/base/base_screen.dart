@@ -18,8 +18,12 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/haccp.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_chat_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_discover_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_fitness_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_global_feed_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_invite_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_leader_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_commertial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/pad_department_view_model.dart';
@@ -36,8 +40,13 @@ import 'package:flutter_application_1/base_structure/vm/rch_regulatory_view_mode
 import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_member_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_nutrition_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_profile_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_social_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_squads_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_your_feed_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
 import '../../main.dart';
@@ -84,12 +93,15 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
   }
 
   Widget _buildScaffold(BuildContext context, RxString currentTheme) {
+    // final AppBarController appBarController = Get.find<AppBarController>();
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
       print("currentRouteNameA _buildScaffold = $currentRouteName");
       print("Current VM = $controller");
     }
+
+  // appBarController.updateTitle(getAppBarTitle(controller));
 
     return Scaffold(
         // key: _scaffoldKey,
@@ -119,14 +131,21 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 (controller is SixPacTab1ViewModel) ||
                 (controller is SixPacTab2ViewModel) ||
                 (controller is SixPacTab3ViewModel) ||
-                (controller is SixPacTab4ViewModel) ||
                 (controller is SixPacHomeViewHomeModel) ||
                 (controller is SixPacLogActivityViewModel)||
                 (controller is SixPacInviteViewModel)||
                 (controller is SixPacFitnessViewModel)||
-                (controller is SixPacNutritionViewModel))
+                (controller is SixPacNutritionViewModel)||
+                (controller is SixPacGlobalFeedViewModel)||
+                (controller is SixPacYourFeedViewModel)||
+                (controller is SixPacSquadsViewModel)||
+                (controller is SixPacProfileViewModel)||
+                (controller is SixPacChatViewModel)||
+                (controller is SixPacDiscoverViewModel)||
+                (controller is SixPacMemberViewModel)||
+                (controller is SixPacLeaderViewModel))
             ? null
-            : buildAppBar(context),
+            : buildAppBar(context,controller),
         body: buildScreen(context),
         bottomNavigationBar: (
                 controller is SixPacTab1ViewModel ||
@@ -135,6 +154,7 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
                 controller is SixPacLogActivityViewModel||
+                (controller is SixPacSocialViewModel)||
                 (controller is SixPacInviteViewModel)||
                 (controller is SixPacFitnessViewModel)||
                 (controller is SixPacNutritionViewModel))
@@ -147,6 +167,7 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
                 controller is SixPacLogActivityViewModel||
+                (controller is SixPacSocialViewModel)||
                 (controller is SixPacInviteViewModel)||
                 (controller is SixPacFitnessViewModel)||
                 (controller is SixPacNutritionViewModel))
@@ -155,7 +176,11 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
         drawer: (!(currentRouteName == Constant.tagLoginScreen ||
                     currentRouteName == Constant.tagLogin) &&
                 !(currentRouteName == Constant.tagForgotPasswordScreen ||
-                    currentRouteName == Constant.tagForgotPassword))
+                    currentRouteName == Constant.tagForgotPassword)&&
+                !(currentRouteName == Constant.tagFitnessScreen ||
+                    currentRouteName == Constant.tagFitness)&&
+                !(currentRouteName == Constant.tagNutritionScreen ||
+                    currentRouteName == Constant.tagNutrition))
             ? SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: buildDrawer(context, currentRouteName, currentTheme))
@@ -361,23 +386,27 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
 
   @protected
   PreferredSizeWidget? buildAppBar(
-    BuildContext context,
+    BuildContext context, T controller,
   ) {
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
       print("currentRouteNameB buildAppBar = $currentRouteName");
+       print("currentVMB = $controller");
     }
-
     return AppBar(
-      title: Text(getTitle(currentRouteName),
+       title: Text(getTitle(currentRouteName),
           style: const TextStyle(
               fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
       centerTitle: true,
       leading: (currentRouteName == Constant.tagLoginScreen ||
               currentRouteName == Constant.tagLogin ||
               currentRouteName == Constant.tagForgotPasswordScreen ||
-              currentRouteName == Constant.tagForgotPassword)
+              currentRouteName == Constant.tagForgotPassword||
+              currentRouteName == Constant.tagFitnessScreen ||
+              currentRouteName == Constant.tagFitness||
+              currentRouteName == Constant.tagNutritionScreen ||
+              currentRouteName == Constant.tagNutrition)
           ? null
           : ((currentRouteName == Constant.tagProjectManagementScreen ||
                       currentRouteName == Constant.tagProjectManagement) ||
@@ -445,18 +474,18 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                     ]
                   : null,
       // Bottom is used to add some widget below the Title such as Sub Title/Search Bars/Tabs/Divider etc.
-      bottom: (currentRouteName == Constant.tagLoginScreen ||
-              currentRouteName == Constant.tagLogin ||
-              currentRouteName == Constant.tagForgotPasswordScreen ||
-              currentRouteName == Constant.tagForgotPassword)
-          ? null
-          : PreferredSize(
-              preferredSize: const Size.fromHeight(1.0),
-              child: Container(
-                color: Colors.grey,
-                child: const Divider(height: 1.0),
-              ),
-            ),
+      // bottom: (currentRouteName == Constant.tagLoginScreen ||
+      //         currentRouteName == Constant.tagLogin ||
+      //         currentRouteName == Constant.tagForgotPasswordScreen ||
+      //         currentRouteName == Constant.tagForgotPassword)
+      //     ? null
+      //     : PreferredSize(
+      //         preferredSize: const Size.fromHeight(1.0),
+      //         child: Container(
+      //           color: ColorConstant.backgroundBlueColor,
+      //           child: const Divider(height: 1.0),
+      //         ),
+      //       ),
     );
   }
 

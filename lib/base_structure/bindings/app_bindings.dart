@@ -6,8 +6,12 @@ import 'package:flutter_application_1/base_structure/vm/fast_track_evaluation_vi
 import 'package:flutter_application_1/base_structure/vm/forgot_password_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_review_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/industrial_trial_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_chat_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_discover_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_fitness_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_global_feed_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_invite_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_leader_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_log_activity_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/login_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/msa_view_model.dart';
@@ -32,8 +36,13 @@ import 'package:flutter_application_1/base_structure/vm/rch_rnd_view_model.dart'
 import 'package:flutter_application_1/base_structure/vm/rch_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/rnd_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_home_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_member_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_nutrition_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_profile_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_social_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_squads_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/six_pac_tab1_view_model.dart';
+import 'package:flutter_application_1/base_structure/vm/six_pac_your_feed_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/tgi_view_model.dart';
 import 'package:flutter_application_1/base_structure/vm/warehousing_view_model.dart';
 import 'package:get/get.dart';
@@ -93,8 +102,20 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => SixPacHomeViewHomeModel(), fenix: true);
     Get.lazyPut(() => SixPacLogActivityViewModel(), fenix: true);
 
+    Get.lazyPut(() => SixPacSocialViewModel(), fenix: true);
     Get.lazyPut(() => SixPacInviteViewModel(), fenix: true);
     Get.lazyPut(() => SixPacFitnessViewModel(), fenix: true);
     Get.lazyPut(() => SixPacNutritionViewModel(), fenix: true);
+
+    Get.lazyPut(() => SixPacGlobalFeedViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacYourFeedViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacSquadsViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacProfileViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacChatViewModel(), fenix: true);
+    
+    Get.lazyPut(() => SixPacDiscoverViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacMemberViewModel(), fenix: true);
+    Get.lazyPut(() => SixPacLeaderViewModel(), fenix: true);
+    
   }
 }
