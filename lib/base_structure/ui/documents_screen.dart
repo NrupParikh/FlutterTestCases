@@ -14,6 +14,7 @@ class DocumentsScreen extends BaseScreen<DocumentsViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.manageDocs.tr);
     return 
     Obx(() =>
     

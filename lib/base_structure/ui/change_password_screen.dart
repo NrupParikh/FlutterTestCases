@@ -14,6 +14,7 @@ class ChangePasswordScreen extends BaseScreen<ChangePasswordViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.changePassword.tr);
     return Obx(() => Form(
           child: Center(
             child: Padding(

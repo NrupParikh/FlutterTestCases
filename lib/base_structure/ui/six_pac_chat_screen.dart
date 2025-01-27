@@ -8,6 +8,7 @@ class SixPacChatScreen extends BaseScreen<SixPacChatViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateSocialOption(4);
     return Container(
       color: ColorConstant.backgroundBlueColor,
       child: const Center(

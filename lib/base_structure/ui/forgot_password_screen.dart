@@ -13,6 +13,7 @@ class ForgotPasswordScreen extends BaseScreen<ForgotPasswordViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblForgotPassword.tr);
     return Obx(
       () => Form(
         child: Center(

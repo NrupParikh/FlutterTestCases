@@ -93,15 +93,12 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
   }
 
   Widget _buildScaffold(BuildContext context, RxString currentTheme) {
-    // final AppBarController appBarController = Get.find<AppBarController>();
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
       print("currentRouteNameA _buildScaffold = $currentRouteName");
       print("Current VM = $controller");
     }
-
-  // appBarController.updateTitle(getAppBarTitle(controller));
 
     return Scaffold(
         // key: _scaffoldKey,
@@ -132,31 +129,30 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 (controller is SixPacTab2ViewModel) ||
                 (controller is SixPacTab3ViewModel) ||
                 (controller is SixPacHomeViewHomeModel) ||
-                (controller is SixPacLogActivityViewModel)||
-                (controller is SixPacInviteViewModel)||
-                (controller is SixPacFitnessViewModel)||
-                (controller is SixPacNutritionViewModel)||
-                (controller is SixPacGlobalFeedViewModel)||
-                (controller is SixPacYourFeedViewModel)||
-                (controller is SixPacSquadsViewModel)||
-                (controller is SixPacProfileViewModel)||
-                (controller is SixPacChatViewModel)||
-                (controller is SixPacDiscoverViewModel)||
-                (controller is SixPacMemberViewModel)||
+                (controller is SixPacLogActivityViewModel) ||
+                (controller is SixPacInviteViewModel) ||
+                (controller is SixPacFitnessViewModel) ||
+                (controller is SixPacNutritionViewModel) ||
+                (controller is SixPacGlobalFeedViewModel) ||
+                (controller is SixPacYourFeedViewModel) ||
+                (controller is SixPacSquadsViewModel) ||
+                (controller is SixPacProfileViewModel) ||
+                (controller is SixPacChatViewModel) ||
+                (controller is SixPacDiscoverViewModel) ||
+                (controller is SixPacMemberViewModel) ||
                 (controller is SixPacLeaderViewModel))
             ? null
-            : buildAppBar(context,controller),
+            : buildAppBar(context, controller),
         body: buildScreen(context),
-        bottomNavigationBar: (
-                controller is SixPacTab1ViewModel ||
+        bottomNavigationBar: (controller is SixPacTab1ViewModel ||
                 controller is SixPacTab2ViewModel ||
                 controller is SixPacTab3ViewModel ||
                 controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
-                controller is SixPacLogActivityViewModel||
-                (controller is SixPacSocialViewModel)||
-                (controller is SixPacInviteViewModel)||
-                (controller is SixPacFitnessViewModel)||
+                controller is SixPacLogActivityViewModel ||
+                (controller is SixPacSocialViewModel) ||
+                (controller is SixPacInviteViewModel) ||
+                (controller is SixPacFitnessViewModel) ||
                 (controller is SixPacNutritionViewModel))
             ? buildBottomNavigationBar(context)
             : null,
@@ -166,19 +162,19 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 controller is SixPacTab3ViewModel ||
                 controller is SixPacTab4ViewModel ||
                 controller is SixPacHomeViewHomeModel ||
-                controller is SixPacLogActivityViewModel||
-                (controller is SixPacSocialViewModel)||
-                (controller is SixPacInviteViewModel)||
-                (controller is SixPacFitnessViewModel)||
+                controller is SixPacLogActivityViewModel ||
+                (controller is SixPacSocialViewModel) ||
+                (controller is SixPacInviteViewModel) ||
+                (controller is SixPacFitnessViewModel) ||
                 (controller is SixPacNutritionViewModel))
             ? buildFloatingActionButton
             : null,
         drawer: (!(currentRouteName == Constant.tagLoginScreen ||
                     currentRouteName == Constant.tagLogin) &&
                 !(currentRouteName == Constant.tagForgotPasswordScreen ||
-                    currentRouteName == Constant.tagForgotPassword)&&
+                    currentRouteName == Constant.tagForgotPassword) &&
                 !(currentRouteName == Constant.tagFitnessScreen ||
-                    currentRouteName == Constant.tagFitness)&&
+                    currentRouteName == Constant.tagFitness) &&
                 !(currentRouteName == Constant.tagNutritionScreen ||
                     currentRouteName == Constant.tagNutrition))
             ? SizedBox(
@@ -302,10 +298,9 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 children: [
                   GestureDetector(
                     child: Image(
-                        color:
-                            (selectedBottomNavigationBarItemIndex.value == 1)
-                                ? ColorConstant.blueColor
-                                : Colors.white,
+                        color: (selectedBottomNavigationBarItemIndex.value == 1)
+                            ? ColorConstant.blueColor
+                            : Colors.white,
                         width: 30,
                         height: 30,
                         image: const AssetImage("assets/images/ic_first.png")),
@@ -318,10 +313,9 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                   ),
                   GestureDetector(
                     child: Image(
-                        color:
-                            (selectedBottomNavigationBarItemIndex.value == 2)
-                                ? ColorConstant.blueColor
-                                : Colors.white,
+                        color: (selectedBottomNavigationBarItemIndex.value == 2)
+                            ? ColorConstant.blueColor
+                            : Colors.white,
                         width: 30,
                         height: 30,
                         image: const AssetImage("assets/images/ic_second.png")),
@@ -346,10 +340,9 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                 children: [
                   GestureDetector(
                     child: Image(
-                        color:
-                            (selectedBottomNavigationBarItemIndex.value == 3)
-                                ? ColorConstant.blueColor
-                                : Colors.white,
+                        color: (selectedBottomNavigationBarItemIndex.value == 3)
+                            ? ColorConstant.blueColor
+                            : Colors.white,
                         width: 30,
                         height: 30,
                         image: const AssetImage("assets/images/ic_third.png")),
@@ -361,12 +354,10 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                     },
                   ),
                   GestureDetector(
-                    child: 
-                    Image(
-                        color:
-                            (selectedBottomNavigationBarItemIndex.value == 4)
-                                ? ColorConstant.blueColor
-                                : Colors.white,
+                    child: Image(
+                        color: (selectedBottomNavigationBarItemIndex.value == 4)
+                            ? ColorConstant.blueColor
+                            : Colors.white,
                         width: 30,
                         height: 30,
                         image: const AssetImage("assets/images/ic_fourth.png")),
@@ -386,25 +377,27 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
 
   @protected
   PreferredSizeWidget? buildAppBar(
-    BuildContext context, T controller,
+    BuildContext context,
+    T controller,
   ) {
     final String currentRouteName = getCurrentRouteName();
 
     if (kDebugMode) {
       print("currentRouteNameB buildAppBar = $currentRouteName");
-       print("currentVMB = $controller");
+      print("currentVMB = $controller");
     }
+
     return AppBar(
-       title: Text(getTitle(currentRouteName),
+      title: Obx(() => Text(controller.appBarTitle.value,
           style: const TextStyle(
-              fontSize: 18, fontFamily: AppTextConstant.poppinsBold)),
+              fontSize: 18, fontFamily: AppTextConstant.poppinsBold))),
       centerTitle: true,
       leading: (currentRouteName == Constant.tagLoginScreen ||
               currentRouteName == Constant.tagLogin ||
               currentRouteName == Constant.tagForgotPasswordScreen ||
-              currentRouteName == Constant.tagForgotPassword||
+              currentRouteName == Constant.tagForgotPassword ||
               currentRouteName == Constant.tagFitnessScreen ||
-              currentRouteName == Constant.tagFitness||
+              currentRouteName == Constant.tagFitness ||
               currentRouteName == Constant.tagNutritionScreen ||
               currentRouteName == Constant.tagNutrition)
           ? null
@@ -472,7 +465,21 @@ abstract class BaseScreen<T extends BaseViewModel> extends GetView<T> {
                           },
                           icon: const Icon(Icons.edit))
                     ]
-                  : null,
+                  : (controller is SixPacSocialViewModel &&
+                          (vm.appBarTitle.value == "GLOBAL FEED" ||
+                              vm.appBarTitle.value == "YOUR FEED" ||
+                              vm.appBarTitle.value == "SQUAD" ||
+                              vm.appBarTitle.value == "CHAT"))
+                      ? [
+                          IconButton(
+                              onPressed: () {
+                                if (kDebugMode) {
+                                  print("Search");
+                                }
+                              },
+                              icon: const Icon(Icons.search))
+                        ]
+                      : null,
       // Bottom is used to add some widget below the Title such as Sub Title/Search Bars/Tabs/Divider etc.
       // bottom: (currentRouteName == Constant.tagLoginScreen ||
       //         currentRouteName == Constant.tagLogin ||

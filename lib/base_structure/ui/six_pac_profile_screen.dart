@@ -8,6 +8,7 @@ class SixPacProfileScreen extends BaseScreen<SixPacProfileViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateSocialOption(3);
     return Container(
       color: ColorConstant.backgroundBlueColor,
       child: const Center(

@@ -14,6 +14,7 @@ class SixPacSocialScreen extends BaseScreen<SixPacSocialViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateTitleBasedOnIndex(vm.initialTabIndex.value);
     return Obx(() => DefaultTabController(
         initialIndex: vm.initialTabIndex.value,
         length: 5,
@@ -76,6 +77,7 @@ class SixPacSocialScreen extends BaseScreen<SixPacSocialViewModel> {
                       ],
                       onTap: (index) {
                         (context as Element).markNeedsBuild();
+                        vm.updateTitleBasedOnIndex(index);
                       },
                     );
                   },

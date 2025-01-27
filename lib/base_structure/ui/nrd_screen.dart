@@ -15,6 +15,7 @@ class NRDScreen extends BaseScreen<NRDViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblNRD.tr);
     List<Tab> tabs = [
       Tab(
         child: Text(AppStrings.tabRND.tr),

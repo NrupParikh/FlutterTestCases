@@ -13,6 +13,7 @@ class ProjectManagementScreen extends BaseScreen<ProjectManagementViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.projectManagement.tr);
     if (kDebugMode) {
       print("Total Projects ${vm.projects.length}");
     }

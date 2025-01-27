@@ -13,6 +13,7 @@ class DocumentFilterScreen extends BaseScreen<DocumentFilterViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.documentFilter.tr);
     return Obx(() => SingleChildScrollView(
           child: Form(
             child: Padding(

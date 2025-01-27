@@ -13,6 +13,7 @@ class MSAScreen extends BaseScreen<MSAViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblMSA.tr);
 
     List<Tab> tabs = [
       Tab(

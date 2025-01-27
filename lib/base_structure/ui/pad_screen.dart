@@ -17,6 +17,7 @@ class PADScreen extends BaseScreen<PADViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblPAD.tr);
     List<Tab> tabs = [
       Tab(
         child: Text(AppStrings.tabDepartment.tr),

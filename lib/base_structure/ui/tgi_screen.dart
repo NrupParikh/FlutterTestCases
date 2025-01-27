@@ -11,6 +11,7 @@ class TGIScreen extends BaseScreen<TGIViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblTGI.tr);
     List<Tab> tabs = [
       Tab(
         child: Text(AppStrings.tabPurchasing.tr),

@@ -8,7 +8,7 @@ class SixPacGlobalFeedScreen extends BaseScreen<SixPacGlobalFeedViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
-
+  vm.updateSocialOption(0);
 
     return Container(
       color: ColorConstant.backgroundBlueColor,

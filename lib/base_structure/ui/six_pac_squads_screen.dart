@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/base/base_screen.dart';
+import 'package:flutter_application_1/base_structure/constants/app_colors.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_discover_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_leader_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/six_pac_member_screen.dart';
@@ -10,6 +11,7 @@ class SixPacSquadsScreen extends BaseScreen<SixPacSquadsViewModel> {
 
  @override
   Widget buildScreen(BuildContext context) {
+    vm.updateSocialOption(2);
     return  DefaultTabController(
         initialIndex: 0,
         length: 5,
@@ -24,6 +26,7 @@ class SixPacSquadsScreen extends BaseScreen<SixPacSquadsViewModel> {
                 Builder(
                   builder: (context) {
                     return TabBar(
+                      dividerColor: ColorConstant.backgroundBlueColor,
                       tabAlignment: TabAlignment.fill,
                       isScrollable: false,
                       tabs: const [

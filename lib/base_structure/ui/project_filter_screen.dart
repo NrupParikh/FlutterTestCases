@@ -18,6 +18,7 @@ class ProjectFilterScreen extends BaseScreen<ProjectFilterViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.projectFilter.tr);
     return Obx(() => SingleChildScrollView(
           child: Form(
             child: Padding(

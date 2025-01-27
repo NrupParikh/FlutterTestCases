@@ -10,6 +10,8 @@ import '../ui/six_pac_tab4_screen.dart';
 abstract class BaseViewModel extends GetxController {
   final loading = false.obs;
   bool isDrawerOpen = true;
+  RxString appBarTitle = "TEST".obs;
+  RxInt selectedSocialOption = 0.obs;
 
   @override
   void onInit() {
@@ -27,6 +29,14 @@ abstract class BaseViewModel extends GetxController {
 
   void closeDrawer() {
     isDrawerOpen = false;
+  }
+
+  void updateAppBarTitle(String title){
+    appBarTitle.value  = title;
+  }
+
+  void updateSocialOption(int option){
+    selectedSocialOption.value = option;
   }
 
   // Method to update selected index

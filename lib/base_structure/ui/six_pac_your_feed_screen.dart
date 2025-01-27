@@ -8,6 +8,7 @@ class SixPacYourFeedScreen extends BaseScreen<SixPacYourFeedViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateSocialOption(1);
     return Container(
       color: ColorConstant.backgroundBlueColor,
       child: const Center(

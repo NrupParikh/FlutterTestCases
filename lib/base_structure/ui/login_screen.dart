@@ -17,6 +17,7 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblSignInNow.tr);
     return Obx(
       () => Form(
         child: Center(

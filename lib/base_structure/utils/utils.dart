@@ -2,11 +2,6 @@ import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/constants/app_key.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_chat_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_global_feed_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_profile_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_squads_view_model.dart';
-import 'package:flutter_application_1/base_structure/vm/six_pac_your_feed_view_model.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -125,6 +120,9 @@ String getTitle(String currentRouteName) {
   } else if (currentRouteName == Constant.tagSocialScreen ||
       currentRouteName == Constant.tagSocial) {
     title = "Social";
+  } else if (currentRouteName == Constant.tagProfileScreen ||
+      currentRouteName == Constant.tagProfile) {
+    title = "Profile";
   } 
   return title;
 }

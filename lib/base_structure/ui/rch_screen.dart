@@ -17,6 +17,7 @@ class RCHScreen extends BaseScreen<RCHViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.lblRCH.tr);
     List<Tab> tabs = [
       Tab(
         child: Text(AppStrings.tabRND.tr),

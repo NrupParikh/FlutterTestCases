@@ -12,6 +12,7 @@ class ProfileScreen extends BaseScreen<ProfileViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.profile.tr);
     return Obx(() => SingleChildScrollView(
           child: Form(
             child: Padding(

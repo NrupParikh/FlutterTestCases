@@ -10,6 +10,7 @@ class ChangeLanguageScreen extends BaseScreen<ChangeLanguageViewModel> {
 
   @override
   Widget buildScreen(BuildContext context) {
+    vm.updateAppBarTitle(AppStrings.changeLanguage.tr);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
