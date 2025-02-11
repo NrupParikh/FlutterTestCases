@@ -15,26 +15,26 @@ import '../constants/app_strings.dart';
 import '../singleton/secure_storage_singleton.dart';
 import '../ui/login_screen.dart';
 
-final iv = encrypt.IV.fromLength(16);
-final envKey = dotenv.env['KEY'];
-final key = encrypt.Key.fromUtf8("$envKey");
+// final iv = encrypt.IV.fromLength(16);
+// final envKey = dotenv.env['KEY'];
+// final key = encrypt.Key.fromUtf8("$envKey");
 
-final encrypter = encrypt.Encrypter(encrypt.AES(key));
+// final encrypter = encrypt.Encrypter(encrypt.AES(key));
 
-// Reading .env file data
-String envDetails() {
-  return 'ENV KEY: $envKey';
-}
+// // Reading .env file data
+// String envDetails() {
+//   return 'ENV KEY: $envKey';
+// }
 
-// Encryption
-encrypt.Encrypted doEncryption(String plainText) {
-  return encrypter.encrypt(plainText, iv: iv);
-}
+// // Encryption
+// encrypt.Encrypted doEncryption(String plainText) {
+//   return encrypter.encrypt(plainText, iv: iv);
+// }
 
-// Decryption
-String doDecryption(encrypt.Encrypted encryptedData) {
-  return encrypter.decrypt(encryptedData, iv: iv);
-}
+// // Decryption
+// String doDecryption(encrypt.Encrypted encryptedData) {
+//   return encrypter.decrypt(encryptedData, iv: iv);
+// }
 
 // Check Jailbroken iOS Devices
 Future<bool> isJailBroken() async {

@@ -69,10 +69,10 @@ class ProjectManagementViewModel extends BaseViewModel {
   void increaseCount() async {
     count(count.value + 1);
 
-    final envData = envDetails();
-    if (kDebugMode) {
-      print("EnvDetails $envData");
-    }
+    // final envData = envDetails();
+    // if (kDebugMode) {
+    //   print("EnvDetails $envData");
+    // }
 
     final lang = await getStoredLanguage();
     if (kDebugMode) {

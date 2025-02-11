@@ -55,7 +55,7 @@ class _MyBaseAppState extends State<MyBaseApp> {
     await Future.delayed(const Duration(seconds: 3));
     FlutterNativeSplash.remove();
 
-    await dotenv.load(fileName: ".env");
+    // await dotenv.load(fileName: ".env");
   }
 
 
