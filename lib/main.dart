@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base_structure/ui/forgot_password_screen.dart';
 import 'package:flutter_application_1/base_structure/ui/main_base.dart';
+import 'package:flutter_application_1/draggable_example.dart';
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/unit_test_class/album.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -18,6 +19,8 @@ import 'base_structure/routes/app_route.dart';
 
 import 'base_structure/utils/preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'navigation_rail_example.dart';
 
 FlutterLocalNotificationsPlugin localNotifications =
     FlutterLocalNotificationsPlugin();
@@ -47,62 +50,62 @@ final RxString firebaseToken = "".obs;
 final RxBool isBurned = false.obs;
 final RxInt selectedBottomNavigationBarItemIndex = 0.obs;
 
-Future<void> main() async {
-  // To guarantee that the Flutter framework is fully initialized before your app starts running
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+// Future<void> main() async {
+//   // To guarantee that the Flutter framework is fully initialized before your app starts running
+//   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
-  // ---------------------- Firebase ---------------------
+//   // ---------------------- Firebase ---------------------
 
-  // await Firebase.initializeApp(
-  //   options: const FirebaseOptions(
-  //     apiKey: 'any',
-  //     appId: 'any',
-  //     messagingSenderId: 'any',
-  //     projectId: 'demo-project')
-  // );
+//   // await Firebase.initializeApp(
+//   //   options: const FirebaseOptions(
+//   //     apiKey: 'any',
+//   //     appId: 'any',
+//   //     messagingSenderId: 'any',
+//   //     projectId: 'demo-project')
+//   // );
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // -------------- Firebase local notification plugin ---------
+//   // -------------- Firebase local notification plugin ---------
 
-  await localNotifications
-      .resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin>()
-      ?.createNotificationChannel(channel);
+//   await localNotifications
+//       .resolvePlatformSpecificImplementation<
+//           AndroidFlutterLocalNotificationsPlugin>()
+//       ?.createNotificationChannel(channel);
 
-  await localNotifications.initialize(
-      const InitializationSettings(
-          android: AndroidInitializationSettings("@mipmap/ic_launcher")),
-      onDidReceiveNotificationResponse: onDidReceiveNotificationResponse);
+//   await localNotifications.initialize(
+//       const InitializationSettings(
+//           android: AndroidInitializationSettings("@mipmap/ic_launcher")),
+//       onDidReceiveNotificationResponse: onDidReceiveNotificationResponse);
 
-  // -----------------------------------------------------
+//   // -----------------------------------------------------
 
-  // Below line is for secure the API keys or any Key(s) also look in pubspec.yaml assets
-  // env file is at root of the project where IV and DATA defined
-  // await dotenv.load(fileName: ".env");
+//   // Below line is for secure the API keys or any Key(s) also look in pubspec.yaml assets
+//   // env file is at root of the project where IV and DATA defined
+//   // await dotenv.load(fileName: ".env");
 
-  // Preseve splash
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+//   // Preseve splash
+//   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // Protecting against data leakage
-  await ScreenProtector.protectDataLeakageOff();
-  // Disable Screenshot Capabilities
-  // await ScreenProtector.preventScreenshotOn();
+//   // Protecting against data leakage
+//   await ScreenProtector.protectDataLeakageOff();
+//   // Disable Screenshot Capabilities
+//   // await ScreenProtector.preventScreenshotOn();
 
-  // Other initialization code, if needed
+//   // Other initialization code, if needed
 
-  final myInitialRoute = await getInitialRoute();
+//   final myInitialRoute = await getInitialRoute();
 
-  final myInitialLanguage = await getInitialLanguage();
+//   final myInitialLanguage = await getInitialLanguage();
 
-  final myInitialTheme = await getStoredTheme();
+//   final myInitialTheme = await getStoredTheme();
 
-  // Set Application orientation to support only Portrait mode
-  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
+//   // Set Application orientation to support only Portrait mode
+//   // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+//   runApp(MyBaseApp(myInitialRoute, myInitialLanguage, myInitialTheme));
 
-  // runApp(const SampleTab());
-}
+//   // runApp(const SampleTab());
+// }
 
 /*
 Getting initial route by checking key_is_loggedIn from secure storage
@@ -306,3 +309,5 @@ class _SampleTabState extends State<SampleTab> {
     );
   }
 }
+
+void main() => runApp(const DragAndDropExampleApp());
