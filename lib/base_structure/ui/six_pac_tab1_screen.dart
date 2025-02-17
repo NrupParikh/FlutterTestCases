@@ -119,40 +119,40 @@ class SixPacTab1Screen extends BaseScreen<SixPacTab1ViewModel> {
                                   "assets/images/img_six_pac_latest.png")),
                         ),
                       ),
-                      Center(
-                        child: Positioned(
-                          // Adjust this value to control overlap
-                          child: GestureDetector(
-                            child: SizedBox(
-                              width: myViewWidth,
-                              height: myViewHeight + 18,
-                              child: const Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Image(
-                                    width: 36,
-                                    height: 36,
-                                    image:
-                                        AssetImage("assets/images/ic_add.png")),
-                              ),
-                            ),
-                            onTap: () async {
-                              final result = await Get.to<Tuple2<bool, String>>(
-                                  const SixPacLogActivityScreen());
-                              if (result != null) {
-                                if (kDebugMode) {
-                                  print("TAG_Item1 ${result.item1}");
-                                  print("TAG_Item2 ${result.item2}");
-                                }
+                      // Center(
+                      //   child: Positioned(
+                      //     // Adjust this value to control overlap
+                      //     child: GestureDetector(
+                      //       child: SizedBox(
+                      //         width: myViewWidth,
+                      //         height: myViewHeight + 18,
+                      //         child: const Align(
+                      //           alignment: Alignment.bottomCenter,
+                      //           child: Image(
+                      //               width: 36,
+                      //               height: 36,
+                      //               image:
+                      //                   AssetImage("assets/images/ic_add.png")),
+                      //         ),
+                      //       ),
+                      //       onTap: () async {
+                      //         final result = await Get.to<Tuple2<bool, String>>(
+                      //             const SixPacLogActivityScreen());
+                      //         if (result != null) {
+                      //           if (kDebugMode) {
+                      //             print("TAG_Item1 ${result.item1}");
+                      //             print("TAG_Item2 ${result.item2}");
+                      //           }
 
-                                if (result.item2.isNotEmpty) {
-                                  isBurned.value = result.item1;
-                                  vm.updateProgress(result.item2);
-                                }
-                              }
-                            },
-                          ),
-                        ),
-                      ),
+                      //           if (result.item2.isNotEmpty) {
+                      //             isBurned.value = result.item1;
+                      //             vm.updateProgress(result.item2);
+                      //           }
+                      //         }
+                      //       },
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
 

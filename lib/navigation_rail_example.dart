@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/draggable_example.dart';
 
-void main() => runApp(const NavigationRailExampleApp());
+// void main() => runApp(const NavigationRailExampleApp());
 
 class NavigationRailExampleApp extends StatelessWidget {
   const NavigationRailExampleApp({super.key});
@@ -29,7 +30,7 @@ class _NavRailExampleState extends State<NavRailExample> {
 
   // List of screens corresponding to navigation items
   final List<Widget> _screens = [
-    const Center(child: Text('First Screen', style: TextStyle(fontSize: 24))),
+    const Center(child: DragAndDropExampleApp()),
     const Center(child: Text('Second Screen', style: TextStyle(fontSize: 24))),
     const Center(child: Text('Third Screen', style: TextStyle(fontSize: 24))),
   ];

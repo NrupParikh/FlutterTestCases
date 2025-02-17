@@ -377,30 +377,30 @@ class SixPacViewHomeScreen extends BaseScreen<SixPacHomeViewHomeModel> {
                           ),
                         ),
                       ),
-                      Center(
-                        child: Positioned(
-                          // Adjust this value to control overlap
-                          child: GestureDetector(
-                            child: SizedBox(
-                              width: myViewWidth,
-                              height: myViewHeight + 18,
-                              child: const Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Image(
-                                    width: 36,
-                                    height: 36,
-                                    image: AssetImage(
-                                        "assets/images/ic_notification.png")),
-                              ),
-                            ),
-                            onTap: () async {
-                              if (kDebugMode) {
-                                print("Notification");
-                              }
-                            },
-                          ),
-                        ),
-                      ),
+                      // Center(
+                      //   child: Positioned(
+                      //     // Adjust this value to control overlap
+                      //     child: GestureDetector(
+                      //       child: SizedBox(
+                      //         width: myViewWidth,
+                      //         height: myViewHeight + 18,
+                      //         child: const Align(
+                      //           alignment: Alignment.bottomCenter,
+                      //           child: Image(
+                      //               width: 36,
+                      //               height: 36,
+                      //               image: AssetImage(
+                      //                   "assets/images/ic_notification.png")),
+                      //         ),
+                      //       ),
+                      //       onTap: () async {
+                      //         if (kDebugMode) {
+                      //           print("Notification");
+                      //         }
+                      //       },
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                   Text(

@@ -10,7 +10,9 @@ import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
 import '../../main.dart';
+import '../../navigation_rail_example.dart';
 import '../common_widgets/custom_dialog.dart';
+import 'forgot_password_screen.dart';
 
 class LoginScreen extends BaseScreen<LoginViewModel> {
   const LoginScreen({super.key});
@@ -80,8 +82,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Get.to(const ForgotPasswordScreen());
-                     Get.to(const SixPacViewHomeScreen());
+                    Get.to(const ForgotPasswordScreen());
+                    //  Get.to(const SixPacViewHomeScreen());
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

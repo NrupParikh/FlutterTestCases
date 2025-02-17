@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const DragAndDropExampleApp());
+// void main() => runApp(const DragAndDropExampleApp());
 
 class DragAndDropExampleApp extends StatelessWidget {
   const DragAndDropExampleApp({super.key});
