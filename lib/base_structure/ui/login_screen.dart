@@ -82,7 +82,8 @@ class LoginScreen extends BaseScreen<LoginViewModel> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(const ForgotPasswordScreen());
+                    vm.pickMultipleImageOrVideos();
+                    // Get.to(const ForgotPasswordScreen());
                     //  Get.to(const SixPacViewHomeScreen());
                   },
                   child: Padding(
